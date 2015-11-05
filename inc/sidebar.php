@@ -22,10 +22,14 @@
         <ul>
             <li><a href="index.php?view=ovh"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
             <li>
-                <span><i class="icon  fa fa-laptop"></i> WEB</span>
+                <span><i class="icon  fa fa-globe"></i> WEB</span>
                 <ul>
                     <li><a href="index.php?view=ovh&sub=web_domaine"><i class="icon  fa fa-globe"></i> Domaine </a></li>
-                    <li><a href="index.php?view=ovh&sub=web_hebergement"><i class="icon  fa fa-"></i> Domaine </a></li>
+                    <li><a href="index.php?view=ovh&sub=web_hebergement"><i class="icon  fa fa-database"></i> Hebergement </a></li>
+                    <li><a href="index.php?view=ovh&sub=web_exchange"><i class="icon  fa fa-envelope-square"></i> Exchange </a></li>
+                    <li><a href="index.php?view=ovh&sub=web_office"><i class="icon  fa fa-windows"></i> Office </a></li>
+                    <li><a href="index.php?view=ovh&sub=web_vps"><i class="icon  fa fa-server"></i> VPS </a></li>
+                    <li><a href="index.php?view=ovh&sub=web_license"><i class="icon  fa fa-key"></i> License </a></li>
                 </ul>
             </li>
         </ul>
