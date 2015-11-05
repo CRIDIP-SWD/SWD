@@ -47,6 +47,21 @@
                     <li><a href="index.php?view=ovh&sub=tel_telephonie"> Téléphonie </a></li>
                 </ul>
             </li>
+            <li>
+                <span><i class="icon  fa fa-user-md"></i> Gestion de Compte</span>
+                <ul>
+                    <li><a href="index.php?view=ovh&sub=cpt_cpt"> Mon compte </a></li>
+                    <li><a href="index.php?view=ovh&sub=cpt_abo"> Mes Abonnements </a></li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon  fa fa-euro"></i> Facturation</span>
+                <ul>
+                    <li><a href="index.php?view=ovh&sub=fct_historique"> Historique Facture </a></li>
+                    <li><a href="index.php?view=ovh&sub=cpt_abo"> Mes Abonnements </a></li>
+                    <li><a href="index.php?view=ovh&sub=cpt_abo"> Catalogue des Offres </a></li>
+                </ul>
+            </li>
         </ul>
     <?php } ?>
 </nav>
