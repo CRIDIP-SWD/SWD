@@ -27,7 +27,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'connexion')
         // si on obtient une réponse, alors l'utilisateur est un membre
         if ($data == 1) {
             session_start();
-            $_SESSION['auth'] = $_POST['login'];
+            $_SESSION['login'] = $_POST['login'];
             $login = $_POST['login'];
 
             $sql_user = mysql_query("SELECT * FROM utilisateur WHERE login = '$login'")or die(mysql_error());
