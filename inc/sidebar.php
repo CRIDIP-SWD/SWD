@@ -60,7 +60,7 @@
                     <li><a href="index.php?view=ovh&sub=fct_historique"> Historique Facture </a></li>
                     <li><a href="index.php?view=ovh&sub=fct_abo"> Mes Abonnements </a></li>
                     <li><a href="index.php?view=ovh&sub=fct_catalogue"> Catalogue des Offres </a></li>
-                    <li><a href="index.php?view=ovh&sub=fct_order"> Nouvelle Commande </a></li>
+                    <li><a href="index.php?view=ovh&sub=fct_order"><i class="fa fa-plus-circle"></i> Nouvelle Commande </a></li>
                 </ul>
             </li>
         </ul>
