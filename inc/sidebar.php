@@ -5,7 +5,7 @@
 		-->
 <nav id="menu" data-search="close">
     <ul>
-        <li><span><i class="icon  fa fa-laptop"></i> Dashboard</span>
+        <li><span><i class="icon  fa fa-laptop"></i> ACCUEIL</span>
             <ul>
                 <li><a href="dashboard.html"><i class="icon  fa fa-rocket"></i> First Design </a></li>
                 <li><a href="dashboard2.html"><i class="icon  fa fa-th"></i> Dashboard New </a></li>

@@ -14,10 +14,26 @@
         <ul class="nav navbar-nav nav-main-xs">
             <li><a href="#" class="icon-toolsbar nav-mini"><i class="fa fa-bars"></i></a></li>
         </ul>
-        <!--<ul class="nav navbar-nav nav-top-xs hidden-xs tooltip-area">
+        <ul class="nav navbar-nav nav-top-xs hidden-xs tooltip-area">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown"><i class="fa fa-th-large"></i></a>
+                <ul class="dropdown-menu arrow animated fadeInDown fast">
+                    <li><a href="#"> Bookmarks</a></li>
+                    <li><a href="#"> Make a Deposit</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-submenu"> <a tabindex="-1" href="#">Multi level options &nbsp; <i class="fa fa-angle-right"></i></a>
+                        <ul class="dropdown-menu  animated fadeInRight fast">
+                            <li><a tabindex="-1" href="#">Second level</a></li>
+                            <li><a href="#">Second level</a></li>
+                            <li><a href="#">Second level</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- //dropdown-menu-->
+            </li>
             <li class="h-seperate"></li>
             <li><a href="#"> Online Store </a></li>
-        </ul>-->
+        </ul>
         <ul class="nav navbar-nav navbar-right tooltip-area">
             <li><a href="#" class="nav-collapse avatar-header" data-toggle="tooltip" title="Show / hide  menu" data-container="body" data-placement="bottom">
                     <img alt="" src="<?= SYNCHRONUS; ?>avatar/<?= $user['nom_user']; ?>.png"  class="circle">
