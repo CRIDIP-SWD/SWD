@@ -30,7 +30,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'connexion')
 
 
         // si on obtient une réponse, alors l'utilisateur est un membre
-        if ($data == 1) {
+        if ($data[0] == 1) {
             session_start();
             $_SESSION['login'] = $_POST['login'];
             $login = $_POST['login'];
