@@ -6,6 +6,9 @@ if(isset($_GET['view']))
         case "index":
             include "view/index.php";
             break;
+        case "login":
+            include "view/login.php";
+            break;
     }
 }else{
     include "view/error404.php";

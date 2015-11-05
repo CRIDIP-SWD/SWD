@@ -12,6 +12,7 @@ DEFINE("ICO", "ico/");
 DEFINE("IMG", "img/");
 DEFINE("JS", "js/");
 DEFINE("PLUGINS", "plugins/");
+DEFINE("CONTROL", "control/");
 DEFINE("API", "API/");
 DEFINE("TOKEN", "token/");
 DEFINE("VENDOR", "vendor/");
