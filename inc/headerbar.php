@@ -19,9 +19,6 @@
             <li><a href="#"> Online Store </a></li>
         </ul>-->
         <ul class="nav navbar-nav navbar-right tooltip-area">
-            <li><a href="#menu-right" data-toggle="tooltip" title="Right Menu" data-container="body" data-placement="left"><i class="fa fa-align-right"></i></a></li>
-            <li class="hidden-xs hidden-sm btn-help"><a href="#" class="h-seperate">Help</a></li>
-            <li><button class="btn btn-circle btn-header-search" ><i class="fa fa-search"></i></button></li>
             <li><a href="#" class="nav-collapse avatar-header" data-toggle="tooltip" title="Show / hide  menu" data-container="body" data-placement="bottom">
                     <img alt="" src="<?= SYNCHRONUS; ?>avatar/<?= $user['nom_user']; ?>.png"  class="circle">
                     <span class="badge">3</span>
@@ -35,11 +32,6 @@
                     <li><a href="<?= ROOT,CONTROL; ?>user.php?action=logout&iduser=<?= $user['iduser']; ?>"><i class="fa fa-sign-out"></i> Déconnexion </a></li>
                 </ul>
                 <!-- //dropdown-menu-->
-            </li>
-            <li class="visible-lg">
-                <a href="#" class="h-seperate fullscreen" data-toggle="tooltip" title="Full Screen" data-container="body"  data-placement="left">
-                    <i class="fa fa-expand"></i>
-                </a>
             </li>
         </ul>
     </div>
@@ -56,7 +48,8 @@
 -->
 <div id="nav">
     <div id="nav-title">
-        <h3><strong>Hi</strong>, Nutprawee</h3>
+        <h3><strong>Bonjour</strong>, <?= $user['nom_user']; ?> <?= $user['prenom_user']; ?></h3>
+        <h5><?= $user['poste']; ?></h5>
     </div>
     <!-- //nav-title-->
     <div id="nav-scroll">
