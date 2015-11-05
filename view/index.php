@@ -9,9 +9,9 @@ include "inc/header.php";
 		<div id="main">
 
 				<ol class="breadcrumb">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Library</a></li>
-						<li class="active">Data</li>
+						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
 				</ol>
 				<!-- //breadcrumb-->
 
