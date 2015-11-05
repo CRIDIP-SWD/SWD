@@ -32,6 +32,21 @@
                     <li><a href="index.php?view=ovh&sub=web_license"><i class="icon  fa fa-key"></i> License </a></li>
                 </ul>
             </li>
+            <li>
+                <span><i class="icon  fa fa-server"></i> DEDIE</span>
+                <ul>
+                    <li><a href="index.php?view=ovh&sub=dedie_ip"><i class="icon  fa fa-adn"></i> IP </a></li>
+                    <li><a href="index.php?view=ovh&sub=dedie_server"><i class="icon  fa fa-server"></i> Serveur dédiés </a></li>
+                    <li><a href="index.php?view=ovh&sub=dedie_cloud"><i class="icon  fa fa-cloud"></i> Dedicated Cloud </a></li>
+                </ul>
+            </li>
+            <li>
+                <span><i class="icon  fa fa-phone-square"></i> TELECOM</span>
+                <ul>
+                    <li><a href="index.php?view=ovh&sub=tel_xdsl"> xDSL </a></li>
+                    <li><a href="index.php?view=ovh&sub=tel_telephonie"> Téléphonie </a></li>
+                </ul>
+            </li>
         </ul>
     <?php } ?>
 </nav>
