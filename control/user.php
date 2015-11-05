@@ -13,6 +13,7 @@ class user
 
 if(isset($_POST['action']) && $_POST['action'] == 'connexion')
 {
+    require "../inc/config.php";
     if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['password']) && !empty($_POST['password']))) {
         $login = $_POST['login'];
         $pass = $_POST['password'];
