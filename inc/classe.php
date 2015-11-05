@@ -21,6 +21,6 @@ $csk3 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
 $ovh3 = new Api($apk3,$ask3,$endpoint,$csk3);
 
 
-require_once "../control/user.php";
+require_once "control/user.php";
 $user_cls = new user();
 $user = $user_cls->info_user($login);
