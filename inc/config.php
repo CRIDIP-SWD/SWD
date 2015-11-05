@@ -7,13 +7,13 @@ DEFINE("BUILD_LOGICIEL", "1236");
 //DEFINE LINK
 DEFINE("ROOT", "http://swd.cridip.com/");
 DEFINE("ASSETS", "assets/");
-DEFINE("AUDIO", "audio/");
 DEFINE("CSS", "css/");
+DEFINE("ICO", "ico/");
 DEFINE("IMG", "img/");
-DEFINE("IMAGES", "images/");
 DEFINE("JS", "js/");
 DEFINE("PLUGINS", "plugins/");
-DEFINE("CONTROL", "control/");
+DEFINE("API", "API/");
+DEFINE("TOKEN", "token/");
 DEFINE("VENDOR", "vendor/");
 
 //DATE
