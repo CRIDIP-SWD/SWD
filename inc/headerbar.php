@@ -32,12 +32,7 @@
                     <em><strong>Bonjour</strong>, <?= $user['nom_user']; ?> <?= $user['prenom_user']; ?> </em> <i class="dropdown-icon fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu pull-right icon-right arrow">
-                    <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i> Setting </a></li>
-                    <li><a href="#"><i class="fa fa-bookmark"></i> Bookmarks</a></li>
-                    <li><a href="#"><i class="fa fa-money"></i> Make a Deposit</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="fa fa-sign-out"></i> Signout </a></li>
+                    <li><a href="<?= ROOT,CONTROL; ?>user.php?action=logout&iduser=<?= $user['iduser']; ?>"><i class="fa fa-sign-out"></i> Déconnexion </a></li>
                 </ul>
                 <!-- //dropdown-menu-->
             </li>
