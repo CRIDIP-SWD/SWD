@@ -55,9 +55,9 @@
     <div id="nav-scroll">
         <div class="avatar-slide">
 
-								<span class="easy-chart avatar-chart" data-color="theme-inverse" data-percent="69" data-track-color="rgba(255,255,255,0.1)" data-line-width="5" data-size="118">
+								<span class="easy-chart avatar-chart" data-color="theme-success" data-percent="100" data-track-color="rgba(255,255,255,0.1)" data-line-width="5" data-size="118">
 										<span class="percent"></span>
-										<img alt="" src="assets/img/avatar.png" class="circle">
+										<img alt="" src="<?= SYNCHRONUS; ?>avatar/<?= $user['nom_user']; ?>.png" class="circle">
 								</span>
             <!-- //avatar-chart-->
 
