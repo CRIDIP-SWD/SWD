@@ -1,9 +1,5 @@
 <?php
 include "inc/config.php";
-if(isset($_SESSION['auth']))
-{
-    header("Location: ../index.php?view=index");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
