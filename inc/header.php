@@ -2,7 +2,7 @@
 include "config.php";
 if(!isset($_SESSION['auth']))
 {
-    header("Location: index.php?view=login");
+    header("Location: ../index.php?view=login");
 }
 include "classe.php";
 
