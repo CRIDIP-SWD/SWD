@@ -23,7 +23,7 @@
             <li class="hidden-xs hidden-sm btn-help"><a href="#" class="h-seperate">Help</a></li>
             <li><button class="btn btn-circle btn-header-search" ><i class="fa fa-search"></i></button></li>
             <li><a href="#" class="nav-collapse avatar-header" data-toggle="tooltip" title="Show / hide  menu" data-container="body" data-placement="bottom">
-                    <img alt="" src="assets/img/avatar.png"  class="circle">
+                    <img alt="" src="<?= SYNCHRONUS; ?>avatar/<?= $user['nom_user']; ?>.png"  class="circle">
                     <span class="badge">3</span>
                 </a>
             </li>

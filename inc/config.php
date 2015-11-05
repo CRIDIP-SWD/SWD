@@ -16,6 +16,7 @@ DEFINE("CONTROL", "control/");
 DEFINE("API", "API/");
 DEFINE("TOKEN", "token/");
 DEFINE("VENDOR", "vendor/");
+DEFINE("SYNCHRONUS", "http://synchronus-media.cridip.com/gestcom/");
 
 //DATE
 $date_jour = date("d-m-Y");
