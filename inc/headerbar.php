@@ -61,12 +61,6 @@
 								</span>
             <!-- //avatar-chart-->
 
-            <div class="avatar-detail">
-                <p><button class="btn btn-inverse btn-sm"><i class="fa fa-pencil"></i> Edit Profile</button></p>
-                <p><a href="#">@ Chaing Mai , TH</a></p>
-                <span>12,110 Sales</span>
-                <span>106 Follower</span>
-            </div>
             <!-- //avatar-detail-->
 
             <div class="avatar-link btn-group btn-group-justified">
@@ -77,6 +71,7 @@
                 <a class="btn"  data-toggle="modal" href="#md-messages"  title="Messages">
                     <i class="fa fa-envelope-o"></i><em class="active"></em>
                 </a>
+                <a class="btn" href="#menu-right" title="Contact List"><i class="fa fa-book"></i></a>
                 <a class="btn" href="#menu-right" title="Contact List"><i class="fa fa-book"></i></a>
             </div>
             <!-- //avatar-link-->
