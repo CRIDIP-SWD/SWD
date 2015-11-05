@@ -58,8 +58,9 @@
                 <span><i class="icon  fa fa-euro"></i> Facturation</span>
                 <ul>
                     <li><a href="index.php?view=ovh&sub=fct_historique"> Historique Facture </a></li>
-                    <li><a href="index.php?view=ovh&sub=cpt_abo"> Mes Abonnements </a></li>
-                    <li><a href="index.php?view=ovh&sub=cpt_abo"> Catalogue des Offres </a></li>
+                    <li><a href="index.php?view=ovh&sub=fct_abo"> Mes Abonnements </a></li>
+                    <li><a href="index.php?view=ovh&sub=fct_catalogue"> Catalogue des Offres </a></li>
+                    <li><a href="index.php?view=ovh&sub=fct_order"> Nouvelle Commande </a></li>
                 </ul>
             </li>
         </ul>
