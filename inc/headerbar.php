@@ -29,7 +29,7 @@
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-                    <em><strong>Hi</strong>, Nutprawee </em> <i class="dropdown-icon fa fa-angle-down"></i>
+                    <em><strong>Bonjour</strong>, <?= $user['nom_user']; ?> <?= $user['prenom_user']; ?> </em> <i class="dropdown-icon fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu pull-right icon-right arrow">
                     <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
