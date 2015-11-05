@@ -1,0 +1,16 @@
+{
+  "name": "CRIDIP-SWD/SWD",
+  "description": "description_text",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "ovh/ovh": "v1.1.1",
+    "mikehaertl/phpwkhtmltopdf": "2.1.1"
+  }
+}
