@@ -8,7 +8,12 @@
  */
 class user
 {
-
+    public function info_user($login)
+    {
+        $sql = mysql_query("SELECT * FROM utilisateur WHERE login = '$login'")or die(mysql_error());
+        $data = mysql_fetch_array($sql);
+        return $data;
+    }
 }
 
 if(isset($_POST['action']) && $_POST['action'] == 'connexion')
