@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - gestcom@vps116895.ovh.net" uuid="52b6b09a-16c7-4d70-9af0-4052f91297da">
+    <database-info product="MySQL" version="5.5.46-0ubuntu0.14.04.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="gestcom"/>
+    <table name="c_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_article" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_article" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="short_description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="long_description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="tag_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="prix_achat_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="prix_vente_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="famille" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="quantite_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idarticle"/>
+    </table>
+    <table name="c_article_image" schema="" catalog="gestcom" type="TABLE">
+      <column name="idarticleimage" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idarticleimage"/>
+    </table>
+    <table name="c_commande" schema="" catalog="gestcom" type="TABLE">
+      <column name="idcommande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_devis" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_commande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idcommande"/>
+    </table>
+    <table name="c_devis" schema="" catalog="gestcom" type="TABLE">
+      <column name="iddevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_devis" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_devis" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_expire" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_devis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="iddevis"/>
+    </table>
+    <table name="c_etat_bilan" schema="" catalog="gestcom" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="debit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="credit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="c_etat_cpt_resultat" schema="" catalog="gestcom" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="debit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="credit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="c_facture" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_echeance" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_facture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idfacture"/>
+    </table>
+    <table name="c_facture_achat" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idfournisseur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_echeance" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_facture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idfacture"/>
+    </table>
+    <table name="c_famille_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfamillearticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idfamillearticle"/>
+    </table>
+    <table name="c_ligne_commande" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignecommande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idcommande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignecommande"/>
+    </table>
+    <table name="c_ligne_devis" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignedevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="iddevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignedevis"/>
+    </table>
+    <table name="c_ligne_facture" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignefacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="commentaire" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignefacture"/>
+    </table>
+    <table name="c_ligne_facture_achat" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignefacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignefacture"/>
+    </table>
+    <table name="c_reglement" schema="" catalog="gestcom" type="TABLE">
+      <column name="idreglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mode_reglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="montant_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idreglement"/>
+    </table>
+    <table name="c_reglement_achat" schema="" catalog="gestcom" type="TABLE">
+      <column name="idreglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mode_reglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="montant_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idreglement"/>
+    </table>
+    <table name="client" schema="" catalog="gestcom" type="TABLE">
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_societe" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telephone" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="adresse" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ville" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="region" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_postal" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_client" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cridip" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="swd" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="scpvs" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idclient"/>
+    </table>
+    <table name="client_bancaire" schema="" catalog="gestcom" type="TABLE">
+      <column name="idclientbancaire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="iban" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="bic" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="signed" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idclientbancaire"/>
+    </table>
+    <table name="client_called" schema="" catalog="gestcom" type="TABLE">
+      <column name="idclientcalled" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_user" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_appel" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idclientcalled"/>
+    </table>
+    <table name="config_icon" schema="" catalog="gestcom" type="TABLE">
+      <column name="idconfigicon" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idconfigicon"/>
+    </table>
+    <table name="fournisseur" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfournisseur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="raison_social" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="adresse" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_postal" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ville" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telephone" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idfournisseur"/>
+    </table>
+    <table name="p_maj" schema="" catalog="gestcom" type="TABLE">
+      <column name="idmaj" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date_maj" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="titre_maj" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description_maj" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type_maj" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MTogYWRkIDI6IGVkaXQgMzogZGVs"/>
+      <primary-key name="PRIMARY" columns="idmaj"/>
+    </table>
+    <table name="p_service" schema="" catalog="gestcom" type="TABLE">
+      <column name="idservice" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_service" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idservice"/>
+    </table>
+    <table name="p_travaux" schema="" catalog="gestcom" type="TABLE">
+      <column name="idtravaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="infrastructure" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="service" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type_travaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MTogbWFpbnRlbmFuY2UgMjogaW5jaWRlbnQgMzogYW1lbGlvcmF0aW9u"/>
+      <column name="titre_travaux" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="detail_travaux" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="date_travaux" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_update" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_travaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MDogcHJvZ3JhbW1lciAxOiBFbiBjb3VycyAyOiBUZXJtaW5l"/>
+      <primary-key name="PRIMARY" columns="idtravaux"/>
+    </table>
+    <table name="p_travaux_discussion" schema="" catalog="gestcom" type="TABLE">
+      <column name="idtravauxsocial" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idtravaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_social" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="idtravauxsocial"/>
+    </table>
+    <table name="swift" schema="" catalog="gestcom" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="bank" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="swift" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user_activity" schema="" catalog="gestcom" type="TABLE">
+      <column name="iduseractivity" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type_activite" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="domaine" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_activite" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="iduseractivity"/>
+    </table>
+    <table name="user_calendar" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusercalendar" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="semaine" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_start" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_start" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_end" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_end" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="lieu" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idusercalendar"/>
+    </table>
+    <table name="user_messagerie" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusermessagerie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="expediteur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="destinataire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sujet" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="importance" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_message" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idusermessagerie"/>
+    </table>
+    <table name="user_messagerie_envoie" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusermessagerieenvoie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idusermessagerie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="num" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="expediteur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="destinataire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sujet" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="importance" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idusermessagerieenvoie"/>
+    </table>
+    <table name="user_messagerie_piece" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusermessageriepiece" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idusermessagerie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type_piece" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="taille_piece" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_piece" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idusermessageriepiece"/>
+    </table>
+    <table name="utilisateur" schema="" catalog="gestcom" type="TABLE">
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="login" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_user" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="prenom_user" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="poste" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="interne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="signature_support" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="last_login" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="connect" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="avatar" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="active_totp" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="totp_key" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="iduser"/>
+    </table>
+    <table name="wiki_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idwikiarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="contenue" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="mot_clef" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idwikicategorie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="identifiant" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_article" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idwikiarticle"/>
+    </table>
+    <table name="wiki_categorie" schema="" catalog="gestcom" type="TABLE">
+      <column name="idwikicategorie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="color" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="icon" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idwikicategorie"/>
+    </table>
+    <table name="wiki_commentaire" schema="" catalog="gestcom" type="TABLE">
+      <column name="idwikicommentaire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idwikiarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="commentaire" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="date_commentaire" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idwikicommentaire"/>
+    </table>
+  </data-source>
+</component>
