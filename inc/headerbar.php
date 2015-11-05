@@ -18,16 +18,10 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown"><i class="fa fa-th-large"></i></a>
                 <ul class="dropdown-menu arrow animated fadeInDown fast">
-                    <li><a href="#"> Bookmarks</a></li>
-                    <li><a href="#"> Make a Deposit</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-submenu"> <a tabindex="-1" href="#">Multi level options &nbsp; <i class="fa fa-angle-right"></i></a>
-                        <ul class="dropdown-menu  animated fadeInRight fast">
-                            <li><a tabindex="-1" href="#">Second level</a></li>
-                            <li><a href="#">Second level</a></li>
-                            <li><a href="#">Second level</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.php?view=gestion"> Gestion Commercial</a></li>
+                    <li><a href="index.php?view=ovh">OVH</a></li>
+                    <li><a href="index.php?view=project">Projet</a></li>
+                    <li><a href="index.php?view=outil">Outils</a></li>
                 </ul>
                 <!-- //dropdown-menu-->
             </li>
