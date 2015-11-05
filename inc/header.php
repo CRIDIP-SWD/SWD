@@ -1,6 +1,6 @@
 <?php
 include "config.php";
-if(!isset($_SESSION['login']))
+if(isset($_SESSION['login']))
 {
     header("Location: ../index.php?view=login");
 }
