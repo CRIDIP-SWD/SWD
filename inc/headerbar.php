@@ -34,7 +34,7 @@
                 <ul class="dropdown-menu pull-right icon-right arrow">
                     <li>
                         <a class="online">
-                            <small>mm294092-ovh</small>
+                            mm294092-ovh<span class="pull-right"><i class="fa fa-circle text-success"></i></span>
                         </a>
                     </li>
                 </ul>
