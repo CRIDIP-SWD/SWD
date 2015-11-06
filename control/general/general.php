@@ -16,4 +16,11 @@ class general
         $data = mysql_result($sql, 0);
         return round($data, 2);
     }
+
+    public function data_chart_client()
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM client")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
 }
