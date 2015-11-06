@@ -1,25 +1,29 @@
 <?php
 $nom_sector = "";
-$nom_page = "Bienvenue";
+$nom_page = "GESTION";
 include "inc/header.php";
 ?>
 <body class="leftMenu nav-collapse">
 <div id="wrapper">
 	<?php include "inc/headerbar.php"; ?>
 		<div id="main">
-
+			<?php if(!isset($_GET['sub'])){ ?>
+				<?php
+				$nom_sector = "GESTION";
+				$nom_page = "Accueil";
+				?>
 				<ol class="breadcrumb">
-						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
-						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
-						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
 				</ol>
 				<!-- //breadcrumb-->
 
 				<div id="content">
-						
+
 				</div>
 				<!-- //content-->
-								
+			<?php } ?>
 		</div>
 		<!-- //main-->
 		
