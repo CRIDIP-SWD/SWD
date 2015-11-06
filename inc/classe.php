@@ -9,17 +9,17 @@ $csk1 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
 $ovh1 = new Api($apk1,$ask1,$endpoint,$csk1);
 $me1 = $ovh1->get("/me");
 
-$apk2 = "vXjHPaL84Jct1zaB";
+$apk2 = "nP9Ij0PFvlZw0wV6";
 $endpoint = "ovh-eu";
-$ask2 = "WwSivyMF8kcmKMlsjd6SRCQsmox8XKnO";
-$csk2 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
+$ask2 = "GpwkoBOZijNgqYFygxyEg2zMSGg4X3pX";
+$csk2 = "tGEmEglYpqu2xkdOTM563FAQ3Y9sPJys";
 $ovh2 = new Api($apk2,$ask2,$endpoint,$csk2);
 $me2 = $ovh2->get("/me");
 
-$apk3 = "vXjHPaL84Jct1zaB";
+$apk3 = "YDrgCr1VvT3LtVf8";
 $endpoint = "ovh-eu";
-$ask3 = "WwSivyMF8kcmKMlsjd6SRCQsmox8XKnO";
-$csk3 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
+$ask3 = "eKekzBFbKfWeh3gKB1Fb4n9zXa16D6D2";
+$csk3 = "5tQNjCGSfYHdxetHfWORhOvGufGXlFBg";
 $ovh3 = new Api($apk3,$ask3,$endpoint,$csk3);
 $me3 = $ovh3->get("/me");
 
