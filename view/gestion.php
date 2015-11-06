@@ -61,7 +61,7 @@ include "inc/header.php";
 										<h5><strong>Nombre</strong> de Facture </h5>
 										<h2>1</h2>
 									</section>
-									<div class="hold-icon"><i class="fa fa-users"></i></div>
+									<div class="hold-icon"><i class="fa fa-euro"></i></div>
 								</div>
 							</div>
 						</div>
