@@ -184,7 +184,11 @@ include "inc/header.php";
 													<?= $client['code_postal']; ?> <?= html_entity_decode($client['ville']); ?>
 												</td>
 												<td>
-													<i class="fa fa-phone"></i>: <?= $client['telephone']; ?>
+													<i class="fa fa-phone"></i>: <?= $client['telephone']; ?><br>
+													<i class="fa fa-envelope"></i>: <?= $client['email']; ?>
+												</td>
+												<td>
+
 												</td>
 											</tr>
 										<?php } ?>
