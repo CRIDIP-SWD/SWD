@@ -33,9 +33,12 @@
                 </a>
                 <ul class="dropdown-menu pull-right icon-right arrow">
                     <li>
-                        <a class="online">
-                            mm294092-ovh<span class="pull-right"><i class="fa fa-circle text-success"></i></span>
-                        </a>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 50%;">mm294092-ovh</td>
+                                <td style="width: 50%;"><i class="fa fa-circle text-success"></i></td>
+                            </tr>
+                        </table>
                     </li>
                 </ul>
             </li>
