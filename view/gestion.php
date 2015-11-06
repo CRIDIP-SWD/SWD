@@ -134,6 +134,36 @@ include "inc/header.php";
 				</div>
 				<!-- //content-->
 			<?php } ?>
+			<?php if(isset($_GET['sub']) && $_GET['sub'] == 'client'){ ?>
+				<?php
+				$nom_sector = "GESTION";
+				$nom_page = "CLIENT";
+				?>
+				<ol class="breadcrumb">
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+				</ol>
+				<!-- //breadcrumb-->
+
+				<div id="content">
+					<div class="row">
+						<div class="col-md-12">
+							<section class="panel">
+								<header class="panel-heading bg-warning-gradient">
+									<h2>Liste des <strong>Clients</strong> </h2>
+								</header>
+								<div class="panel-body">
+									<p>Panel-body</p>
+								</div>
+								<footer class="panel-footer">
+									<p>Panel-footer</p>
+								</footer>
+							</section>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
 		</div>
 		<!-- //main-->
 		
