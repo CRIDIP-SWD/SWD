@@ -179,6 +179,10 @@ include "inc/header.php";
 													<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
 													<?= $client['nom_client']; ?>
 												</td>
+												<td>
+													<?= html_entity_decode($client['adresse']); ?>
+													<?= $client['code_postal']; ?> <?= html_entity_decode($client['ville']); ?>
+												</td>
 											</tr>
 										<?php } ?>
 										</tbody>
