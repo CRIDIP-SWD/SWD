@@ -164,7 +164,6 @@ include "inc/header.php";
 												<th class="text-center">Identité</th>
 												<th class="text-center">Adresse</th>
 												<th class="text-center">Coordonnée</th>
-												<th class="text-center">Action</th>
 											</tr>
 										</thead>
 										<tbody align="center">
@@ -173,22 +172,19 @@ include "inc/header.php";
 										while($client = mysql_fetch_array($sql_client))
 										{
 										?>
-											<tr>
+											<tr onclick="window.location.href='index.php?view=gestion&sub=client&data=view_client&num_client=<?= $client['num_client']; ?>'">
 												<td><?= $client['num_client']; ?></td>
 												<td>
 													<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
 													<?= $client['nom_client']; ?>
 												</td>
 												<td>
-													<?= html_entity_decode($client['adresse']); ?>
+													<?= html_entity_decode($client['adresse']); ?><br>
 													<?= $client['code_postal']; ?> <?= html_entity_decode($client['ville']); ?>
 												</td>
 												<td>
 													<i class="fa fa-phone"></i>: <?= $client['telephone']; ?><br>
 													<i class="fa fa-envelope"></i>: <?= $client['email']; ?>
-												</td>
-												<td>
-
 												</td>
 											</tr>
 										<?php } ?>
