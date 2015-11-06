@@ -5,7 +5,7 @@ $.extend(true, $.fn.dataTable.defaults, {
    "sScrollX": "auto",
   "oLanguage": {
     "sLengthMenu": "Afficher _MENU_ &eacute;l&eacute;ments",
-     "sSearch":"Rechercher&nbsp;..."
+     "sSearch":"Rechercher..."
   },
   "fnInitComplete": function (oSettings, json) {
     var currentId = $(this).attr('id');
