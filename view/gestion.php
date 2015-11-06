@@ -55,7 +55,7 @@ include "inc/header.php";
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div class="well bg-info-gradient">
+							<div class="well bg-danger-gradient">
 								<div class="widget-tile">
 									<section>
 										<h5><strong>Nombre</strong> de Facture </h5>
