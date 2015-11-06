@@ -68,5 +68,8 @@
     <?php if(isset($_GET['view']) && $_GET['view'] == 'project'){ ?>
 
     <?php } ?>
+    <?php if(isset($_GET['view']) && $_GET['view'] == 'outil'){ ?>
+
+    <?php } ?>
 </nav>
 <!-- //nav left menu-->
