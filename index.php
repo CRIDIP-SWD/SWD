@@ -23,5 +23,5 @@ if(isset($_GET['view']))
             break;
     }
 }else{
-    include "view/error404.php";
+    include "view/index.php";
 }
