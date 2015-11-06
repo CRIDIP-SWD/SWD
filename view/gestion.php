@@ -84,47 +84,47 @@ include "inc/header.php";
 									</tr>
 									<tr>
 										<th>FEB</th>
-										<td>5145</td>
+										<td><?= $gen_cls->data_chart_general("01-02-2015", "28-02-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>MAR</th>
-										<td>1015</td>
+										<td><?= $gen_cls->data_chart_general("01-03-2015", "31-03-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>APR</th>
-										<td>2500</td>
+										<td><?= $gen_cls->data_chart_general("01-04-2015", "30-04-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>MAY</th>
-										<td>0</td>
+										<td><?= $gen_cls->data_chart_general("01-05-2015", "31-05-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>JUN</th>
-										<td>15700</td>
+										<td><?= $gen_cls->data_chart_general("01-06-2015", "30-06-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>JUL</th>
-										<td>2315</td>
+										<td><?= $gen_cls->data_chart_general("01-07-2015", "31-07-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>AUG</th>
-										<td>200</td>
+										<td><?= $gen_cls->data_chart_general("01-08-2015", "31-08-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>SEP</th>
-										<td>5605</td>
+										<td><?= $gen_cls->data_chart_general("01-09-2015", "30-09-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>OCT</th>
-										<td>1900</td>
+										<td><?= $gen_cls->data_chart_general("01-10-2015", "31-10-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>NOV</th>
-										<td>1900</td>
+										<td><?= $gen_cls->data_chart_general("01-11-2015", "30-11-2015"); ?></td>
 									</tr>
 									<tr>
 										<th>DEC</th>
-										<td>1900</td>
+										<td><?= $gen_cls->data_chart_general("01-12-2015", "31-12-2015"); ?></td>
 									</tr>
 									</tbody>
 								</table>
