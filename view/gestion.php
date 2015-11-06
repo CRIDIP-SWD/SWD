@@ -32,6 +32,39 @@ include "inc/header.php";
 								</div>
 							</div>
 						</div>
+						<div class="col-md-3">
+							<div class="well bg-success-gradient">
+								<div class="widget-tile">
+									<section>
+										<h5><strong>Nombre</strong> de Devis </h5>
+										<h2>0</h2>
+									</section>
+									<div class="hold-icon"><i class="fa fa-file"></i></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="well bg-warning-gradient">
+								<div class="widget-tile">
+									<section>
+										<h5><strong>Nombre</strong> de Commande </h5>
+										<h2>7</h2>
+									</section>
+									<div class="hold-icon"><i class="fa fa-cubes"></i></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="well bg-info-gradient">
+								<div class="widget-tile">
+									<section>
+										<h5><strong>Nombre</strong> de Facture </h5>
+										<h2>1</h2>
+									</section>
+									<div class="hold-icon"><i class="fa fa-users"></i></div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- //content-->
