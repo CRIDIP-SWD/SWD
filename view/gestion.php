@@ -172,6 +172,9 @@ include "inc/header.php";
 						<p>One fine body&hellip;</p>
 					</div>
 					<!-- //modal-body-->
+					<div class="modal-footer bg-success-gradient pull-right">
+						<button type="submit"><i class="fa fa-check"></i> Valider</button>
+					</div>
 				</div>
 			<?php } ?>
 		</div>
