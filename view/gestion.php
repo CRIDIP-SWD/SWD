@@ -66,6 +66,71 @@ include "inc/header.php";
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<section class="panel corner-flip">
+							<div class="widget-chart bg-lightseagreen bg-gradient-green">
+								<h2>Chiffre d'affaire</h2>
+								<table class="flot-chart" data-type="lines" data-tick-color="rgba(255,255,255,0.2)" data-width="100%" data-height="220px">
+									<thead>
+									<tr>
+										<th></th>
+										<th style="color : #FFF;">Test</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<th>JAN</th>
+										<td><?= $gen_cls->data_chart_general("01-01-2015", "31-01-2015"); ?></td>
+									</tr>
+									<tr>
+										<th>FEB</th>
+										<td>5145</td>
+									</tr>
+									<tr>
+										<th>MAR</th>
+										<td>1015</td>
+									</tr>
+									<tr>
+										<th>APR</th>
+										<td>2500</td>
+									</tr>
+									<tr>
+										<th>MAY</th>
+										<td>0</td>
+									</tr>
+									<tr>
+										<th>JUN</th>
+										<td>15700</td>
+									</tr>
+									<tr>
+										<th>JUL</th>
+										<td>2315</td>
+									</tr>
+									<tr>
+										<th>AUG</th>
+										<td>200</td>
+									</tr>
+									<tr>
+										<th>SEP</th>
+										<td>5605</td>
+									</tr>
+									<tr>
+										<th>OCT</th>
+										<td>1900</td>
+									</tr>
+									<tr>
+										<th>NOV</th>
+										<td>1900</td>
+									</tr>
+									<tr>
+										<th>DEC</th>
+										<td>1900</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+					</div>
 				</div>
 				<!-- //content-->
 			<?php } ?>

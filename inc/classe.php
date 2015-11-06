@@ -27,3 +27,6 @@ $me3 = $ovh3->get("/me");
 require_once "control/user.php";
 $user_cls = new user();
 $user = $user_cls->info_user($login);
+
+require_once "control/general/general.php";
+$gen_cls = new general();
