@@ -66,10 +66,14 @@
         </ul>
     <?php } ?>
     <?php if(isset($_GET['view']) && $_GET['view'] == 'project'){ ?>
-
+        <ul>
+            <li><a href="index.php?view=index"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
+        </ul>
     <?php } ?>
     <?php if(isset($_GET['view']) && $_GET['view'] == 'outil'){ ?>
-
+        <ul>
+            <li><a href="index.php?view=index"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
+        </ul>
     <?php } ?>
 </nav>
 <!-- //nav left menu-->
