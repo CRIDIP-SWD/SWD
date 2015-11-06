@@ -30,4 +30,11 @@ class general
         $data = mysql_result($sql, 0);
         return $data;
     }
+
+    public function data_count_facture()
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM swd_facture")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
 }
