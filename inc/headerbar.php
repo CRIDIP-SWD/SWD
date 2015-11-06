@@ -38,6 +38,14 @@
                                 <td style="width: 50%; padding-left: 3px;"><?= $me1['nichandle']; ?></td>
                                 <td style="width: 50%; text-align: right; padding-right: 3px;"><i class="fa fa-circle <?php if($me1){echo 'text-success';}else{echo 'text-danger';} ?>"></i></td>
                             </tr>
+                            <tr>
+                                <td style="width: 50%; padding-left: 3px;"><?= $me2['nichandle']; ?></td>
+                                <td style="width: 50%; text-align: right; padding-right: 3px;"><i class="fa fa-circle <?php if($me2){echo 'text-success';}else{echo 'text-danger';} ?>"></i></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%; padding-left: 3px;"><?= $me3['nichandle']; ?></td>
+                                <td style="width: 50%; text-align: right; padding-right: 3px;"><i class="fa fa-circle <?php if($me3){echo 'text-success';}else{echo 'text-danger';} ?>"></i></td>
+                            </tr>
                         </table>
                     </li>
                 </ul>
