@@ -48,7 +48,7 @@ include "inc/header.php";
 								<div class="widget-tile">
 									<section>
 										<h5><strong>Nombre</strong> de Commande </h5>
-										<h2>7</h2>
+										<h2>0</h2>
 									</section>
 									<div class="hold-icon"><i class="fa fa-cubes"></i></div>
 								</div>
@@ -59,7 +59,7 @@ include "inc/header.php";
 								<div class="widget-tile">
 									<section>
 										<h5><strong>Nombre</strong> de Facture </h5>
-										<h2>1</h2>
+										<h2><?= $gen_cls->data_count_facture(); ?></h2>
 									</section>
 									<div class="hold-icon"><i class="fa fa-euro"></i></div>
 								</div>
