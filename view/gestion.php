@@ -37,7 +37,7 @@ include "inc/header.php";
 								<div class="widget-tile">
 									<section>
 										<h5><strong>Nombre</strong> de Devis </h5>
-										<h2>0</h2>
+										<h2><?= $gen_cls->data_count_devis(); ?></h2>
 									</section>
 									<div class="hold-icon"><i class="fa fa-file"></i></div>
 								</div>
