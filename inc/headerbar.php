@@ -35,8 +35,8 @@
                     <li>
                         <table style="width: 100%;">
                             <tr>
-                                <td style="width: 50%;">mm294092-ovh</td>
-                                <td style="width: 50%;"><i class="fa fa-circle text-success"></i></td>
+                                <td style="width: 50%; padding-left: 3px;">mm294092-ovh</td>
+                                <td style="width: 50%; text-align: right; padding-right: 3px;"><i class="fa fa-circle text-success"></i></td>
                             </tr>
                         </table>
                     </li>
