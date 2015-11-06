@@ -5,7 +5,7 @@ $.extend(true, $.fn.dataTable.defaults, {
    "sScrollX": "auto",
   "oLanguage": {
 	  "sProcessing":     "Traitement en cours...",
-	  "sSearch":         "Rechercher&nbsp;:",
+	  "sSearch":         "Rechercher...",
 	  "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
 	  "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
 	  "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
