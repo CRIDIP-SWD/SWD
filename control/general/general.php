@@ -23,4 +23,11 @@ class general
         $data = mysql_result($sql, 0);
         return $data;
     }
+
+    public function data_count_devis()
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM swd_devis")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
 }
