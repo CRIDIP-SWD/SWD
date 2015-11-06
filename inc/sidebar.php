@@ -77,6 +77,9 @@
         <ul>
             <li><a href="index.php?view=outil"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
             <li><a href="index.php?view=outil&sub=whois"><i class="icon  fa fa-search"></i> Whois </a></li>
+            <li><a href="index.php?view=outil&sub=ticket"><i class="icon  fa fa-ticket"></i> Ticket </a></li>
+            <li><a href="index.php?view=outil&sub=guide"><i class="icon  fa fa-book"></i> Guide Utilisateur </a></li>
+            <li><a href="index.php?view=outil&sub=travaux"><i class="icon  fa fa-wrench"></i> Travaux </a></li>
         </ul>
     <?php } ?>
 </nav>
