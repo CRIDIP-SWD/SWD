@@ -65,5 +65,8 @@
             </li>
         </ul>
     <?php } ?>
+    <?php if(isset($_GET['view']) && $_GET['view'] == 'project'){ ?>
+
+    <?php } ?>
 </nav>
 <!-- //nav left menu-->
