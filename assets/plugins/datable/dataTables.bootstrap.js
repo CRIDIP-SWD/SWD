@@ -4,8 +4,8 @@ $.extend(true, $.fn.dataTable.defaults, {
   "sPaginationType": "bs_normal",
    "sScrollX": "auto",
   "oLanguage": {
-    "sLengthMenu": "records per page _MENU_ ",
-     "sSearch":"Search..."
+    "sLengthMenu": "Afficher _MENU_ &eacute;l&eacute;ments",
+     "sSearch":"Rechercher&nbsp;:..."
   },
   "fnInitComplete": function (oSettings, json) {
     var currentId = $(this).attr('id');
