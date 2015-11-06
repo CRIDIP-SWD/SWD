@@ -154,13 +154,24 @@ include "inc/header.php";
 									<h2>Liste des <strong>Clients</strong> </h2>
 								</header>
 								<div class="panel-body">
-									<div>
-										<button type="button" class="btn btn-rounded btn-success">TEST</button>
+									<div class="pull-right">
+										<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-client"><i class="fa fa-plus"></i> Ajouter un Client</button>
 									</div>
 								</div>
 							</section>
 						</div>
 					</div>
+				</div>
+				<div id="add-client" data-width="700" class="modal fade"  data-header-color="#736086">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+						<h4 class="modal-title">Modals custom header color</h4>
+					</div>
+					<!-- //modal-header-->
+					<div class="modal-body">
+						<p>One fine body&hellip;</p>
+					</div>
+					<!-- //modal-body-->
 				</div>
 			<?php } ?>
 		</div>
