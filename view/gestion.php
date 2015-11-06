@@ -157,6 +157,27 @@ include "inc/header.php";
 									<div class="pull-right">
 										<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-client"><i class="fa fa-plus"></i> Ajouter un Client</button>
 									</div>
+									<table class="table table-striped" id="listing-client">
+										<thead>
+											<tr>
+												<th  class="text-center">#</th>
+												<th class="text-center">Identité</th>
+												<th class="text-center">Adresse</th>
+												<th class="text-center">Coordonnée</th>
+												<th class="text-center">Action</th>
+											</tr>
+										</thead>
+										<tbody align="center">
+											<tr class="odd gradeX">
+												<td>Trident</td>
+												<td>Internet
+													Explorer 4.0</td>
+												<td>Win 95+</td>
+												<td class="center"> 4</td>
+												<td class="center">X</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</section>
 						</div>
