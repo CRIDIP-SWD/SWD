@@ -152,13 +152,15 @@ include "inc/header.php";
 							<section class="panel">
 								<header class="panel-heading bg-warning-gradient">
 									<h2>Liste des <strong>Clients</strong> </h2>
+									<div class="panel-tools pull-right">
+										<ul>
+											<li><a class="btn btn-circle btn-success">TEST</a></li>
+										</ul>
+									</div>
 								</header>
 								<div class="panel-body">
 									<p>Panel-body</p>
 								</div>
-								<footer class="panel-footer">
-									<p>Panel-footer</p>
-								</footer>
 							</section>
 						</div>
 					</div>
