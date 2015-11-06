@@ -13,6 +13,7 @@
         <ul>
             <li><a href="index.php?view=gestion"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
             <li><a href="index.php?view=gestion&sub=client"><i class="icon  fa fa-users"></i> Client </a></li>
+            <li><a href="index.php?view=gestion&sub=article"><i class="icon  fa fa-cube"></i> Article </a></li>
             <li><a href="index.php?view=gestion&sub=devis"><i class="icon  fa fa-file-o"></i> Devis </a></li>
             <li><a href="index.php?view=gestion&sub=commande"><i class="icon  fa fa-cubes"></i> Commandes </a></li>
             <li><a href="index.php?view=gestion&sub=facture"><i class="icon  fa fa-eur"></i> Factures </a></li>
@@ -67,12 +68,15 @@
     <?php } ?>
     <?php if(isset($_GET['view']) && $_GET['view'] == 'project'){ ?>
         <ul>
-            <li><a href="index.php?view=index"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
+            <li><a href="index.php?view=project"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
+            <li><a href="index.php?view=project&sub=projet"><i class="icon  fa fa-lightbulb-o"></i> Projet </a></li>
+            <li><a href="index.php?view=project&sub=license"><i class="icon  fa fa-certificate"></i> License </a></li>
         </ul>
     <?php } ?>
     <?php if(isset($_GET['view']) && $_GET['view'] == 'outil'){ ?>
         <ul>
-            <li><a href="index.php?view=index"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
+            <li><a href="index.php?view=outil"><i class="icon  fa fa-laptop"></i> Accueil </a></li>
+            <li><a href="index.php?view=outil&sub=whois"><i class="icon  fa fa-search"></i> Whois </a></li>
         </ul>
     <?php } ?>
 </nav>
