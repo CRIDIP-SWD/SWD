@@ -31,6 +31,13 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
                     <em>Etat des Services</em>
                 </a>
+                <ul class="dropdown-menu pull-right icon-right arrow">
+                    <li>
+                        <a class="online">
+                            <small>mm294092-ovh</small>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li><a href="#" class="nav-collapse avatar-header" data-toggle="tooltip" title="Show / hide  menu" data-container="body" data-placement="bottom">
                     <img alt="" src="<?= SYNCHRONUS; ?>avatar/<?= $user['nom_user']; ?>.png"  class="circle">
