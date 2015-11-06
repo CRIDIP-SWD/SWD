@@ -25,8 +25,6 @@
                 </ul>
                 <!-- //dropdown-menu-->
             </li>
-            <li class="h-seperate"></li>
-            <li><a href="#"> Online Store </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right tooltip-area">
             <li><a href="#" class="nav-collapse avatar-header" data-toggle="tooltip" title="Show / hide  menu" data-container="body" data-placement="bottom">
