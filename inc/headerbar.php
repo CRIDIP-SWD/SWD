@@ -27,6 +27,11 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right tooltip-area">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                    <em>Etat des Services</em>
+                </a>
+            </li>
             <li><a href="#" class="nav-collapse avatar-header" data-toggle="tooltip" title="Show / hide  menu" data-container="body" data-placement="bottom">
                     <img alt="" src="<?= SYNCHRONUS; ?>avatar/<?= $user['nom_user']; ?>.png"  class="circle">
                     <span class="badge">3</span>
