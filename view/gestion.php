@@ -168,14 +168,19 @@ include "inc/header.php";
 											</tr>
 										</thead>
 										<tbody align="center">
-											<tr class="odd gradeX">
-												<td>Trident</td>
-												<td>Internet
-													Explorer 4.0</td>
-												<td>Win 95+</td>
-												<td class="center"> 4</td>
-												<td class="center">X</td>
+										<?php
+										$sql_client = mysql_query("SELECT * FROM client ORDER BY nom_client ASC")or die(mysql_error());
+										while($client = mysql_fetch_array($sql_client))
+										{
+										?>
+											<tr>
+												<td><?= $client['num_client']; ?></td>
+												<td>
+													<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
+													<?= $client['nom_client']; ?>
+												</td>
 											</tr>
+										<?php } ?>
 										</tbody>
 									</table>
 								</div>
