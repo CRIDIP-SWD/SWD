@@ -26,7 +26,7 @@ include "inc/header.php";
 								<div class="widget-tile">
 									<section>
 										<h5><strong>Nombre</strong> de Client </h5>
-										<h2>3</h2>
+										<h2><?= $gen_cls->data_count_client(); ?></h2>
 									</section>
 									<div class="hold-icon"><i class="fa fa-users"></i></div>
 								</div>
