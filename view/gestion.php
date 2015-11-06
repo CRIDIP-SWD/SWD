@@ -162,10 +162,10 @@ include "inc/header.php";
 						</div>
 					</div>
 				</div>
-				<div id="add-client" data-width="700" class="modal fade"  data-header-color="#736086">
-					<div class="modal-header">
+				<div id="add-client" data-width="700" class="modal fade">
+					<div class="modal-header bg-success-gradient">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-						<h4 class="modal-title">Modals custom header color</h4>
+						<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un client</h4>
 					</div>
 					<!-- //modal-header-->
 					<div class="modal-body">
