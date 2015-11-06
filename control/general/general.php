@@ -1,5 +1,5 @@
 <?php
-include ('../../inc/config.php');
+
 /**
  * Created by PhpStorm.
  * User: CRIDIP-SWD
