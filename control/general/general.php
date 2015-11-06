@@ -17,7 +17,7 @@ class general
         return round($data, 2);
     }
 
-    public function data_chart_client()
+    public function data_count_client()
     {
         $sql = mysql_query("SELECT COUNT(*) FROM client")or die(mysql_error());
         $data = mysql_result($sql, 0);
