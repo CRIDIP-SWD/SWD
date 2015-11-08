@@ -220,7 +220,8 @@ include "inc/header.php";
 								<section class="panel corner-flip">
 									<div class="panel-body bg-info-gradient">
 										<div class="text-center">
-											<i class="fa fa-building fa-5x"></i>
+											<i class="fa fa-building fa-5x"></i><br>
+											<div style="font-weight: 800;"><?= if(!empty($client['nom_societe'])){echo $client['nom_societe'];} ?></div>
 										</div>
 									</div>
 									<footer class="panel-footer">
