@@ -207,11 +207,6 @@ include "inc/header.php";
 					$nom_sector = "GESTION";
 					$nom_page = "CLIENT";
 					?>
-					<ol class="breadcrumb">
-						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
-						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
-						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
-					</ol>
 					<!-- //breadcrumb-->
 
 					<div id="main">
