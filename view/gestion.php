@@ -218,15 +218,8 @@ include "inc/header.php";
 						<div class="row">
 							<div class="col-md-4">
 								<section class="panel corner-flip">
-									<div class="panel-body bg-info">
-										<div class="avatar-slide">
-											<span data-size="118" data-line-width="5" data-track-color="rgba(255,255,255,0.1)" data-percent="100" data-color="theme-inverse" class="easy-chart avatar-chart">
-												<span class="percent" style="line-height: 118px;">100</span>
-												<i class="circle fa fa-building fa-4x"></i>
-												<canvas height="118" width="118"></canvas>
-											</span>
-											<!-- //avatar-chart-->
-										</div>
+									<div class="panel-body bg-info-gradient">
+
 									</div>
 									<footer class="panel-footer">
 										<p>Panel-footer</p>
