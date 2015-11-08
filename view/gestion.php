@@ -216,50 +216,15 @@ include "inc/header.php";
 
 					<div id="content">
 						<div class="row">
-							<div class="col-md-12">
-								<section class="panel">
-									<header class="panel-heading bg-warning-gradient">
-										<h2>Liste des <strong>Clients</strong> </h2>
-									</header>
-									<div class="panel-body">
-										<div class="pull-right">
-											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-client"><i class="fa fa-plus"></i> Ajouter un Client</button>
-										</div>
-										<table class="table table-striped" id="listing-client">
-											<thead>
-											<tr>
-												<th  class="text-center">#</th>
-												<th class="text-center">Identité</th>
-												<th class="text-center">Adresse</th>
-												<th class="text-center">Coordonnée</th>
-											</tr>
-											</thead>
-											<tbody align="center">
-											<?php
-											$sql_client = mysql_query("SELECT * FROM client ORDER BY nom_client ASC")or die(mysql_error());
-											while($client = mysql_fetch_array($sql_client))
-											{
-												?>
-												<tr onclick="window.location.href='index.php?view=gestion&sub=client&data=view_client&num_client=<?= $client['num_client']; ?>'">
-													<td><?= $client['num_client']; ?></td>
-													<td>
-														<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
-														<?= $client['nom_client']; ?>
-													</td>
-													<td>
-														<?= html_entity_decode($client['adresse']); ?><br>
-														<?= $client['code_postal']; ?> <?= html_entity_decode($client['ville']); ?>
-													</td>
-													<td>
-														<i class="fa fa-phone"></i>: <?= $client['telephone']; ?><br>
-														<i class="fa fa-envelope"></i>: <?= $client['email']; ?>
-													</td>
-												</tr>
-											<?php } ?>
-											</tbody>
-										</table>
+							<div class="col-md-4">
+								<section class="panel corner-flip">
+									<div class="panel-body bg-info-lighten">
+										<p>Panel-body</p>
 									</div>
-								</section>
+									<footer class="panel-footer">
+										<p>Panel-footer</p>
+									</footer>
+									<div class="flip"></div></section>
 							</div>
 						</div>
 					</div>
