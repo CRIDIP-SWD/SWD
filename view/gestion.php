@@ -218,7 +218,7 @@ include "inc/header.php";
 						<div class="row">
 							<div class="col-md-4">
 								<section class="panel corner-flip">
-									<div class="panel-body bg-info-lighten">
+									<div class="panel-body bg-info">
 										<p>Panel-body</p>
 									</div>
 									<footer class="panel-footer">
