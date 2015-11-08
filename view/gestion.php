@@ -219,7 +219,9 @@ include "inc/header.php";
 							<div class="col-md-4">
 								<section class="panel corner-flip">
 									<div class="panel-body bg-info-gradient">
-
+										<div class="text-center">
+											<i class="fa fa-building fa-5x"></i>
+										</div>
 									</div>
 									<footer class="panel-footer">
 										<p>Panel-footer</p>
