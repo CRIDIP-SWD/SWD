@@ -222,6 +222,7 @@ include "inc/header.php";
 										<div class="text-center">
 											<i class="fa fa-building fa-5x"></i><br>
 											<div style="font-weight: 800; font-size: 25px;"><?php if(!empty($client['nom_societe'])){echo $client['nom_societe'];} ?></div>
+											<?= $client['nom_client']; ?>
 										</div>
 									</div>
 									<footer class="panel-footer">
