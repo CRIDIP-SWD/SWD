@@ -222,7 +222,7 @@ include "inc/header.php";
 										<div class="avatar-slide">
 											<span data-size="118" data-line-width="5" data-track-color="rgba(255,255,255,0.1)" data-percent="100" data-color="theme-inverse" class="easy-chart avatar-chart">
 												<span class="percent" style="line-height: 118px;">100</span>
-												<img class="circle" src="http://synchronus-media.cridip.com/gwcswd/avatar/MOCKELYN.png" alt="">
+												<i class="circle fa fa-building fa-4x"></i>
 												<canvas height="118" width="118"></canvas>
 											</span>
 											<!-- //avatar-chart-->
