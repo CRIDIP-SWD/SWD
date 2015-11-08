@@ -214,7 +214,7 @@ include "inc/header.php";
 					</ol>
 					<!-- //breadcrumb-->
 
-					<div id="content">
+					<div id="main">
 						<div id="overview">
 							<div class="row">
 								<div class="col-sm-9">
