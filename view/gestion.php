@@ -226,7 +226,8 @@ include "inc/header.php";
 										</div>
 									</div>
 									<footer class="panel-footer">
-										<p>Panel-footer</p>
+										<button type="button" class="btn btn-block btn-info"><i class="fa fa-edit"></i> Editer le client</button>
+										<button type="button" class="btn btn-block btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
 									</footer>
 									<div class="flip"></div></section>
 							</div>
