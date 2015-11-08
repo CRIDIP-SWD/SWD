@@ -1,1272 +1,394 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - gestcom@vps116895.ovh.net" uuid="816af9a2-a086-40b4-9dc4-6a49fac65832">
+  <data-source name="MySQL - gestcom@vps116895.ovh.net" uuid="2658cb87-b874-4ad3-bafb-674bb2c1651a">
     <database-info product="MySQL" version="5.5.46-0ubuntu0.14.04.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
-      <schema id="1" name="gestcom"/>
-      <table id="2" parent="1" name="c_article"/>
-      <table id="3" parent="1" name="c_article_image"/>
-      <table id="4" parent="1" name="c_commande"/>
-      <table id="5" parent="1" name="c_devis"/>
-      <table id="6" parent="1" name="c_etat_bilan"/>
-      <table id="7" parent="1" name="c_etat_cpt_resultat"/>
-      <table id="8" parent="1" name="c_facture"/>
-      <table id="9" parent="1" name="c_facture_achat"/>
-      <table id="10" parent="1" name="c_famille_article"/>
-      <table id="11" parent="1" name="c_ligne_commande"/>
-      <table id="12" parent="1" name="c_ligne_devis"/>
-      <table id="13" parent="1" name="c_ligne_facture"/>
-      <table id="14" parent="1" name="c_ligne_facture_achat"/>
-      <table id="15" parent="1" name="c_reglement"/>
-      <table id="16" parent="1" name="c_reglement_achat"/>
-      <table id="17" parent="1" name="client"/>
-      <table id="18" parent="1" name="client_bancaire"/>
-      <table id="19" parent="1" name="client_called"/>
-      <table id="20" parent="1" name="config_icon"/>
-      <table id="21" parent="1" name="fournisseur"/>
-      <table id="22" parent="1" name="p_maj"/>
-      <table id="23" parent="1" name="p_service"/>
-      <table id="24" parent="1" name="p_travaux"/>
-      <table id="25" parent="1" name="p_travaux_discussion"/>
-      <table id="26" parent="1" name="swd_article"/>
-      <table id="27" parent="1" name="swd_devis"/>
-      <table id="28" parent="1" name="swd_devis_ligne"/>
-      <table id="29" parent="1" name="swd_facture"/>
-      <table id="30" parent="1" name="swd_facture_ligne"/>
-      <table id="31" parent="1" name="swd_famille_article"/>
-      <table id="32" parent="1" name="swift"/>
-      <table id="33" parent="1" name="user_activity"/>
-      <table id="34" parent="1" name="user_calendar"/>
-      <table id="35" parent="1" name="user_messagerie"/>
-      <table id="36" parent="1" name="user_messagerie_envoie"/>
-      <table id="37" parent="1" name="user_messagerie_piece"/>
-      <table id="38" parent="1" name="utilisateur"/>
-      <table id="39" parent="1" name="wiki_article"/>
-      <table id="40" parent="1" name="wiki_categorie"/>
-      <table id="41" parent="1" name="wiki_commentaire"/>
-      <column id="42" parent="2" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="43" parent="2" name="type_article">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="44" parent="2" name="nom_article">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="45" parent="2" name="code_article">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="46" parent="2" name="etat_article">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="47" parent="2" name="short_description">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="48" parent="2" name="long_description">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="49" parent="2" name="tag_article">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="50" parent="2" name="prix_achat_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="51" parent="2" name="prix_vente_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="52" parent="2" name="famille">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="53" parent="2" name="quantite_article">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="54" parent="2" name="PRIMARY">
-        <columns>idarticle</columns>
-        <primary>1</primary>
-      </key>
-      <column id="55" parent="3" name="idarticleimage">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="56" parent="3" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="57" parent="3" name="nom_image">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="58" parent="3" name="PRIMARY">
-        <columns>idarticleimage</columns>
-        <primary>1</primary>
-      </key>
-      <column id="59" parent="4" name="idcommande">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="60" parent="4" name="num_devis">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="61" parent="4" name="num_commande">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="62" parent="4" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="63" parent="4" name="date_commande">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="64" parent="4" name="total_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="65" parent="4" name="etat_commande">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="66" parent="4" name="PRIMARY">
-        <columns>idcommande</columns>
-        <primary>1</primary>
-      </key>
-      <column id="67" parent="5" name="iddevis">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="68" parent="5" name="num_devis">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="69" parent="5" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="70" parent="5" name="date_devis">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="71" parent="5" name="date_expire">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="72" parent="5" name="total_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="73" parent="5" name="etat_devis">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="74" parent="5" name="PRIMARY">
-        <columns>iddevis</columns>
-        <primary>1</primary>
-      </key>
-      <column id="75" parent="6" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="76" parent="6" name="num_mouvement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="77" parent="6" name="date_mouvement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="78" parent="6" name="designation">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="79" parent="6" name="debit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="80" parent="6" name="credit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="81" parent="6" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="82" parent="7" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="83" parent="7" name="num_mouvement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="84" parent="7" name="date_mouvement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="85" parent="7" name="designation">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="86" parent="7" name="debit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="87" parent="7" name="credit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="88" parent="7" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="89" parent="8" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="90" parent="8" name="num_commande">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="91" parent="8" name="num_facture">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="92" parent="8" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="93" parent="8" name="date_facture">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="94" parent="8" name="date_echeance">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="95" parent="8" name="total_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="96" parent="8" name="etat_facture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="97" parent="8" name="PRIMARY">
-        <columns>idfacture</columns>
-        <primary>1</primary>
-      </key>
-      <column id="98" parent="9" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="99" parent="9" name="num_commande">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="100" parent="9" name="num_facture">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="101" parent="9" name="idfournisseur">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="102" parent="9" name="date_facture">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="103" parent="9" name="date_echeance">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="104" parent="9" name="total_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="105" parent="9" name="etat_facture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="106" parent="9" name="PRIMARY">
-        <columns>idfacture</columns>
-        <primary>1</primary>
-      </key>
-      <column id="107" parent="10" name="idfamillearticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="108" parent="10" name="designation">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="109" parent="10" name="PRIMARY">
-        <columns>idfamillearticle</columns>
-        <primary>1</primary>
-      </key>
-      <column id="110" parent="11" name="idlignecommande">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="111" parent="11" name="idcommande">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="112" parent="11" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="113" parent="11" name="qte">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="114" parent="11" name="total_ligne">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="115" parent="11" name="PRIMARY">
-        <columns>idlignecommande</columns>
-        <primary>1</primary>
-      </key>
-      <column id="116" parent="12" name="idlignedevis">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="117" parent="12" name="iddevis">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="118" parent="12" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="119" parent="12" name="qte">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="120" parent="12" name="total_ligne">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="121" parent="12" name="PRIMARY">
-        <columns>idlignedevis</columns>
-        <primary>1</primary>
-      </key>
-      <column id="122" parent="13" name="idlignefacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="123" parent="13" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="124" parent="13" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="125" parent="13" name="qte">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="126" parent="13" name="total_ligne">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="127" parent="13" name="commentaire">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="128" parent="13" name="PRIMARY">
-        <columns>idlignefacture</columns>
-        <primary>1</primary>
-      </key>
-      <column id="129" parent="14" name="idlignefacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="130" parent="14" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="131" parent="14" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="132" parent="14" name="qte">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="133" parent="14" name="total_ligne">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="134" parent="14" name="PRIMARY">
-        <columns>idlignefacture</columns>
-        <primary>1</primary>
-      </key>
-      <column id="135" parent="15" name="idreglement">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="136" parent="15" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="137" parent="15" name="date_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="138" parent="15" name="mode_reglement">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="139" parent="15" name="nom_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="140" parent="15" name="num_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="141" parent="15" name="montant_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="142" parent="15" name="PRIMARY">
-        <columns>idreglement</columns>
-        <primary>1</primary>
-      </key>
-      <column id="143" parent="16" name="idreglement">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="144" parent="16" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="145" parent="16" name="date_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="146" parent="16" name="mode_reglement">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="147" parent="16" name="nom_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="148" parent="16" name="num_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="149" parent="16" name="montant_reglement">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="150" parent="16" name="PRIMARY">
-        <columns>idreglement</columns>
-        <primary>1</primary>
-      </key>
-      <column id="151" parent="17" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="152" parent="17" name="num_client">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="153" parent="17" name="nom_client">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="154" parent="17" name="nom_societe">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="155" parent="17" name="email">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="156" parent="17" name="password">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="157" parent="17" name="telephone">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="158" parent="17" name="adresse">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="159" parent="17" name="ville">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="160" parent="17" name="region">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="161" parent="17" name="code_postal">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="162" parent="17" name="etat_client">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="163" parent="17" name="cridip">
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <column id="164" parent="17" name="swd">
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <column id="165" parent="17" name="scpvs">
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <key id="166" parent="17" name="PRIMARY">
-        <columns>idclient</columns>
-        <primary>1</primary>
-      </key>
-      <column id="167" parent="18" name="idclientbancaire">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="168" parent="18" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="169" parent="18" name="iban">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="170" parent="18" name="bic">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="171" parent="18" name="signed">
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <key id="172" parent="18" name="PRIMARY">
-        <columns>idclientbancaire</columns>
-        <primary>1</primary>
-      </key>
-      <column id="173" parent="19" name="idclientcalled">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="174" parent="19" name="num_user">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="175" parent="19" name="num_client">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="176" parent="19" name="nom_client">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="177" parent="19" name="date_appel">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="178" parent="19" name="status">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="179" parent="19" name="PRIMARY">
-        <columns>idclientcalled</columns>
-        <primary>1</primary>
-      </key>
-      <column id="180" parent="20" name="idconfigicon">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="181" parent="20" name="designation">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="182" parent="20" name="PRIMARY">
-        <columns>idconfigicon</columns>
-        <primary>1</primary>
-      </key>
-      <column id="183" parent="21" name="idfournisseur">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="184" parent="21" name="raison_social">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="185" parent="21" name="adresse">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="186" parent="21" name="code_postal">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="187" parent="21" name="ville">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="188" parent="21" name="telephone">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="189" parent="21" name="email">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="190" parent="21" name="PRIMARY">
-        <columns>idfournisseur</columns>
-        <primary>1</primary>
-      </key>
-      <column id="191" parent="22" name="idmaj">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="192" parent="22" name="date_maj">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="193" parent="22" name="titre_maj">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="194" parent="22" name="description_maj">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="195" parent="22" name="type_maj">
-        <comment>1: add 2: edit 3: del</comment>
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <key id="196" parent="22" name="PRIMARY">
-        <columns>idmaj</columns>
-        <primary>1</primary>
-      </key>
-      <column id="197" parent="23" name="idservice">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="198" parent="23" name="type_service">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="199" parent="23" name="designation">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="200" parent="23" name="PRIMARY">
-        <columns>idservice</columns>
-        <primary>1</primary>
-      </key>
-      <column id="201" parent="24" name="idtravaux">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="202" parent="24" name="infrastructure">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="203" parent="24" name="service">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="204" parent="24" name="type_travaux">
-        <comment>1: maintenance 2: incident 3: amelioration</comment>
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <column id="205" parent="24" name="titre_travaux">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="206" parent="24" name="detail_travaux">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="207" parent="24" name="date_travaux">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="208" parent="24" name="date_update">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="209" parent="24" name="etat_travaux">
-        <comment>0: programmer 1: En cours 2: Termine</comment>
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <key id="210" parent="24" name="PRIMARY">
-        <columns>idtravaux</columns>
-        <primary>1</primary>
-      </key>
-      <column id="211" parent="25" name="idtravauxsocial">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="212" parent="25" name="idtravaux">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="213" parent="25" name="date_social">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="214" parent="25" name="description">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <key id="215" parent="25" name="PRIMARY">
-        <columns>idtravauxsocial</columns>
-        <primary>1</primary>
-      </key>
-      <column id="216" parent="26" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="217" parent="26" name="type_article">
-        <comment>1: Web 2: Serveur 3: Telecom</comment>
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <column id="218" parent="26" name="nom_article">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="219" parent="26" name="code_article">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="220" parent="26" name="short_description">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="221" parent="26" name="long_description">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="222" parent="26" name="caracteristique">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="223" parent="26" name="prix_vente_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="224" parent="26" name="famille">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="225" parent="26" name="quantite">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="226" parent="26" name="PRIMARY">
-        <columns>idarticle</columns>
-        <primary>1</primary>
-      </key>
-      <column id="227" parent="27" name="iddevis">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="228" parent="27" name="reference">
-        <comment>Aléatoire</comment>
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="229" parent="27" name="etat_devis">
-        <comment>1: Ouvert 2: Envoyer 3 : accepter 4: Refuser 5: Transformé 6: Réformé</comment>
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <column id="230" parent="27" name="date_devis">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="231" parent="27" name="date_echeance">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="232" parent="27" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="233" parent="27" name="total_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="234" parent="27" name="PRIMARY">
-        <columns>iddevis</columns>
-        <primary>1</primary>
-      </key>
-      <column id="235" parent="28" name="iddevisligne">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="236" parent="28" name="iddevis">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="237" parent="28" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="238" parent="28" name="qte">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="239" parent="28" name="commentaire">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="240" parent="28" name="total_ligne">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="241" parent="28" name="PRIMARY">
-        <columns>iddevisligne</columns>
-        <primary>1</primary>
-      </key>
-      <column id="242" parent="29" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="243" parent="29" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="244" parent="29" name="etat_facture">
-        <comment>1: Ouvert 2: Envoyer 3: Payer</comment>
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="245" parent="29" name="date_facture">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="246" parent="29" name="date_echeance">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="247" parent="29" name="idprojet">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="248" parent="29" name="total_ht">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="249" parent="29" name="PRIMARY">
-        <columns>idfacture</columns>
-        <primary>1</primary>
-      </key>
-      <column id="250" parent="30" name="idfactureligne">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="251" parent="30" name="idfacture">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="252" parent="30" name="idarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="253" parent="30" name="qte">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="254" parent="30" name="commentaire">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="255" parent="30" name="total_ligne">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="256" parent="30" name="PRIMARY">
-        <columns>idfactureligne</columns>
-        <primary>1</primary>
-      </key>
-      <column id="257" parent="31" name="idfamillearticle">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="258" parent="31" name="designation_famille">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="259" parent="31" name="PRIMARY">
-        <columns>idfamillearticle</columns>
-        <primary>1</primary>
-      </key>
-      <column id="260" parent="32" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="261" parent="32" name="bank">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="262" parent="32" name="city">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="263" parent="32" name="swift">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="264" parent="32" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="265" parent="33" name="iduseractivity">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="266" parent="33" name="iduser">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="267" parent="33" name="type_activite">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="268" parent="33" name="domaine">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="269" parent="33" name="date_activite">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="270" parent="33" name="description">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="271" parent="33" name="PRIMARY">
-        <columns>iduseractivity</columns>
-        <primary>1</primary>
-      </key>
-      <column id="272" parent="34" name="idusercalendar">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="273" parent="34" name="iduser">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="274" parent="34" name="semaine">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="275" parent="34" name="date_start">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="276" parent="34" name="heure_start">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="277" parent="34" name="date_end">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="278" parent="34" name="heure_end">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="279" parent="34" name="title">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="280" parent="34" name="description">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="281" parent="34" name="lieu">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="282" parent="34" name="PRIMARY">
-        <columns>idusercalendar</columns>
-        <primary>1</primary>
-      </key>
-      <column id="283" parent="35" name="idusermessagerie">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="284" parent="35" name="num">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="285" parent="35" name="expediteur">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="286" parent="35" name="destinataire">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="287" parent="35" name="sujet">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="288" parent="35" name="message">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="289" parent="35" name="importance">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="290" parent="35" name="date_message">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="291" parent="35" name="heure_message">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="292" parent="35" name="etat_message">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="293" parent="35" name="PRIMARY">
-        <columns>idusermessagerie</columns>
-        <primary>1</primary>
-      </key>
-      <column id="294" parent="36" name="idusermessagerieenvoie">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="295" parent="36" name="idusermessagerie">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="296" parent="36" name="num">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="297" parent="36" name="expediteur">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="298" parent="36" name="destinataire">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="299" parent="36" name="sujet">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="300" parent="36" name="message">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="301" parent="36" name="importance">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="302" parent="36" name="date_message">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="303" parent="36" name="heure_message">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="304" parent="36" name="PRIMARY">
-        <columns>idusermessagerieenvoie</columns>
-        <primary>1</primary>
-      </key>
-      <column id="305" parent="37" name="idusermessageriepiece">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="306" parent="37" name="idusermessagerie">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="307" parent="37" name="type_piece">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="308" parent="37" name="taille_piece">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="309" parent="37" name="nom_piece">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="310" parent="37" name="PRIMARY">
-        <columns>idusermessageriepiece</columns>
-        <primary>1</primary>
-      </key>
-      <column id="311" parent="38" name="iduser">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="312" parent="38" name="login">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="313" parent="38" name="password">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="314" parent="38" name="nom_user">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="315" parent="38" name="prenom_user">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="316" parent="38" name="poste">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="317" parent="38" name="interne">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="318" parent="38" name="signature_support">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="319" parent="38" name="last_login">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="320" parent="38" name="connect">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="321" parent="38" name="avatar">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="322" parent="38" name="active_totp">
-        <mandatory>1</mandatory>
-        <data-type>int(1)</data-type>
-      </column>
-      <column id="323" parent="38" name="totp_key">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="324" parent="38" name="PRIMARY">
-        <columns>iduser</columns>
-        <primary>1</primary>
-      </key>
-      <column id="325" parent="39" name="idwikiarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="326" parent="39" name="titre">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="327" parent="39" name="contenue">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="328" parent="39" name="mot_clef">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="329" parent="39" name="idwikicategorie">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="330" parent="39" name="identifiant">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="331" parent="39" name="date_article">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="332" parent="39" name="etat_article">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="333" parent="39" name="PRIMARY">
-        <columns>idwikiarticle</columns>
-        <primary>1</primary>
-      </key>
-      <column id="334" parent="40" name="idwikicategorie">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="335" parent="40" name="designation">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="336" parent="40" name="color">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="337" parent="40" name="icon">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="338" parent="40" name="PRIMARY">
-        <columns>idwikicategorie</columns>
-        <primary>1</primary>
-      </key>
-      <column id="339" parent="41" name="idwikicommentaire">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="340" parent="41" name="idwikiarticle">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="341" parent="41" name="iduser">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="342" parent="41" name="commentaire">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="343" parent="41" name="date_commentaire">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="344" parent="41" name="PRIMARY">
-        <columns>idwikicommentaire</columns>
-        <primary>1</primary>
-      </key>
-    </database-model>
+    <schema name="" catalog="gestcom"/>
+    <table name="c_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_article" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_article" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="short_description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="long_description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="tag_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="prix_achat_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="prix_vente_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="famille" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="quantite_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idarticle"/>
+    </table>
+    <table name="c_article_image" schema="" catalog="gestcom" type="TABLE">
+      <column name="idarticleimage" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idarticleimage"/>
+    </table>
+    <table name="c_commande" schema="" catalog="gestcom" type="TABLE">
+      <column name="idcommande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_devis" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_commande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idcommande"/>
+    </table>
+    <table name="c_devis" schema="" catalog="gestcom" type="TABLE">
+      <column name="iddevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_devis" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_devis" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_expire" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_devis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="iddevis"/>
+    </table>
+    <table name="c_etat_bilan" schema="" catalog="gestcom" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="debit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="credit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="c_etat_cpt_resultat" schema="" catalog="gestcom" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_mouvement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="debit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="credit" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="c_facture" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_echeance" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_facture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idfacture"/>
+    </table>
+    <table name="c_facture_achat" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_commande" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idfournisseur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_echeance" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_facture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idfacture"/>
+    </table>
+    <table name="c_famille_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfamillearticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idfamillearticle"/>
+    </table>
+    <table name="c_ligne_commande" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignecommande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idcommande" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignecommande"/>
+    </table>
+    <table name="c_ligne_devis" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignedevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="iddevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignedevis"/>
+    </table>
+    <table name="c_ligne_facture" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignefacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="commentaire" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignefacture"/>
+    </table>
+    <table name="c_ligne_facture_achat" schema="" catalog="gestcom" type="TABLE">
+      <column name="idlignefacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idlignefacture"/>
+    </table>
+    <table name="c_reglement" schema="" catalog="gestcom" type="TABLE">
+      <column name="idreglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mode_reglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="montant_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idreglement"/>
+    </table>
+    <table name="c_reglement_achat" schema="" catalog="gestcom" type="TABLE">
+      <column name="idreglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mode_reglement" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nom_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="montant_reglement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idreglement"/>
+    </table>
+    <table name="client" schema="" catalog="gestcom" type="TABLE">
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_societe" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telephone" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="adresse" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ville" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="region" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_postal" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_client" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cridip" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="swd" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="scpvs" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idclient"/>
+    </table>
+    <table name="client_bancaire" schema="" catalog="gestcom" type="TABLE">
+      <column name="idclientbancaire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="iban" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="bic" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="signed" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idclientbancaire"/>
+    </table>
+    <table name="client_called" schema="" catalog="gestcom" type="TABLE">
+      <column name="idclientcalled" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num_user" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="num_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_client" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_appel" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idclientcalled"/>
+    </table>
+    <table name="config_icon" schema="" catalog="gestcom" type="TABLE">
+      <column name="idconfigicon" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idconfigicon"/>
+    </table>
+    <table name="fournisseur" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfournisseur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="raison_social" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="adresse" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_postal" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ville" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telephone" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idfournisseur"/>
+    </table>
+    <table name="p_maj" schema="" catalog="gestcom" type="TABLE">
+      <column name="idmaj" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date_maj" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="titre_maj" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description_maj" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type_maj" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MTogYWRkIDI6IGVkaXQgMzogZGVs"/>
+      <primary-key name="PRIMARY" columns="idmaj"/>
+    </table>
+    <table name="p_service" schema="" catalog="gestcom" type="TABLE">
+      <column name="idservice" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_service" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idservice"/>
+    </table>
+    <table name="p_travaux" schema="" catalog="gestcom" type="TABLE">
+      <column name="idtravaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="infrastructure" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="service" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type_travaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MTogbWFpbnRlbmFuY2UgMjogaW5jaWRlbnQgMzogYW1lbGlvcmF0aW9u"/>
+      <column name="titre_travaux" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="detail_travaux" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="date_travaux" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_update" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_travaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MDogcHJvZ3JhbW1lciAxOiBFbiBjb3VycyAyOiBUZXJtaW5l"/>
+      <primary-key name="PRIMARY" columns="idtravaux"/>
+    </table>
+    <table name="p_travaux_discussion" schema="" catalog="gestcom" type="TABLE">
+      <column name="idtravauxsocial" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idtravaux" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_social" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="idtravauxsocial"/>
+    </table>
+    <table name="swd_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_article" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MTogV2ViIDI6IFNlcnZldXIgMzogVGVsZWNvbQ=="/>
+      <column name="nom_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="short_description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="long_description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="caracteristique" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="prix_vente_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="famille" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="quantite" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idarticle"/>
+    </table>
+    <table name="swd_devis" schema="" catalog="gestcom" type="TABLE">
+      <column name="iddevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="reference" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="QWzDqWF0b2lyZQ=="/>
+      <column name="etat_devis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MTogT3V2ZXJ0IDI6IEVudm95ZXIgMyA6IGFjY2VwdGVyIDQ6IFJlZnVzZXIgNTogVHJhbnNmb3Jtw6kgNjogUsOpZm9ybcOp"/>
+      <column name="date_devis" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_echeance" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="iddevis"/>
+    </table>
+    <table name="swd_devis_ligne" schema="" catalog="gestcom" type="TABLE">
+      <column name="iddevisligne" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="iddevis" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="commentaire" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="iddevisligne"/>
+    </table>
+    <table name="swd_facture" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idclient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="etat_facture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MTogT3V2ZXJ0IDI6IEVudm95ZXIgMzogUGF5ZXI="/>
+      <column name="date_facture" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_echeance" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idprojet" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="total_ht" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idfacture"/>
+    </table>
+    <table name="swd_facture_ligne" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfactureligne" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idfacture" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="qte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="commentaire" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="total_ligne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idfactureligne"/>
+    </table>
+    <table name="swd_famille_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idfamillearticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="designation_famille" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idfamillearticle"/>
+    </table>
+    <table name="swift" schema="" catalog="gestcom" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="bank" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="swift" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user_activity" schema="" catalog="gestcom" type="TABLE">
+      <column name="iduseractivity" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type_activite" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="domaine" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_activite" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="iduseractivity"/>
+    </table>
+    <table name="user_calendar" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusercalendar" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="semaine" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_start" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_start" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_end" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_end" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="lieu" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idusercalendar"/>
+    </table>
+    <table name="user_messagerie" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusermessagerie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="num" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="expediteur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="destinataire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sujet" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="importance" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_message" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idusermessagerie"/>
+    </table>
+    <table name="user_messagerie_envoie" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusermessagerieenvoie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idusermessagerie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="num" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="expediteur" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="destinataire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sujet" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="message" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="importance" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="heure_message" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idusermessagerieenvoie"/>
+    </table>
+    <table name="user_messagerie_piece" schema="" catalog="gestcom" type="TABLE">
+      <column name="idusermessageriepiece" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idusermessagerie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type_piece" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="taille_piece" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_piece" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idusermessageriepiece"/>
+    </table>
+    <table name="utilisateur" schema="" catalog="gestcom" type="TABLE">
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="login" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_user" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="prenom_user" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="poste" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="interne" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="signature_support" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="last_login" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="connect" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="avatar" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="active_totp" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="totp_key" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="iduser"/>
+    </table>
+    <table name="wiki_article" schema="" catalog="gestcom" type="TABLE">
+      <column name="idwikiarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="contenue" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="mot_clef" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idwikicategorie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="identifiant" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_article" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="etat_article" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idwikiarticle"/>
+    </table>
+    <table name="wiki_categorie" schema="" catalog="gestcom" type="TABLE">
+      <column name="idwikicategorie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="designation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="color" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="icon" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idwikicategorie"/>
+    </table>
+    <table name="wiki_commentaire" schema="" catalog="gestcom" type="TABLE">
+      <column name="idwikicommentaire" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idwikiarticle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="commentaire" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="date_commentaire" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idwikicommentaire"/>
+    </table>
   </data-source>
 </component>

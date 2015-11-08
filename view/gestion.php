@@ -197,6 +197,74 @@ include "inc/header.php";
 						</div>
 					</div>
 				<?php } ?>
+				<?php if(isset($_GET['data']) && $_GET['data'] == 'view_client'){ ?>
+					<?php
+						$num_client = $_GET['num_client'];
+						$sql_client = mysql_query("SELECT * FROM client WHERE num_client = '$num_client'")or die(mysql_error());
+						$client = mysql_fetch_array($sql_client);
+					?>
+					<?php
+					$nom_sector = "GESTION";
+					$nom_page = "CLIENT";
+					?>
+					<ol class="breadcrumb">
+						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+					</ol>
+					<!-- //breadcrumb-->
+
+					<div id="content">
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading bg-warning-gradient">
+										<h2>Liste des <strong>Clients</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<div class="pull-right">
+											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-client"><i class="fa fa-plus"></i> Ajouter un Client</button>
+										</div>
+										<table class="table table-striped" id="listing-client">
+											<thead>
+											<tr>
+												<th  class="text-center">#</th>
+												<th class="text-center">Identité</th>
+												<th class="text-center">Adresse</th>
+												<th class="text-center">Coordonnée</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_client = mysql_query("SELECT * FROM client ORDER BY nom_client ASC")or die(mysql_error());
+											while($client = mysql_fetch_array($sql_client))
+											{
+												?>
+												<tr onclick="window.location.href='index.php?view=gestion&sub=client&data=view_client&num_client=<?= $client['num_client']; ?>'">
+													<td><?= $client['num_client']; ?></td>
+													<td>
+														<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
+														<?= $client['nom_client']; ?>
+													</td>
+													<td>
+														<?= html_entity_decode($client['adresse']); ?><br>
+														<?= $client['code_postal']; ?> <?= html_entity_decode($client['ville']); ?>
+													</td>
+													<td>
+														<i class="fa fa-phone"></i>: <?= $client['telephone']; ?><br>
+														<i class="fa fa-envelope"></i>: <?= $client['email']; ?>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+
+				<?php } ?>
 				<div id="add-client" data-width="700" class="modal fade">
 					<div class="modal-header bg-success-gradient">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
