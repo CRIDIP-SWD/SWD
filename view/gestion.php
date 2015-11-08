@@ -215,22 +215,36 @@ include "inc/header.php";
 					<!-- //breadcrumb-->
 
 					<div id="content">
-						<div class="row">
-							<div class="col-md-4">
-								<section class="panel corner-flip">
-									<div class="panel-body bg-info-gradient">
-										<div class="text-center">
-											<i class="fa fa-building fa-5x"></i><br>
-											<div style="font-weight: 800; font-size: 25px;"><?php if(!empty($client['nom_societe'])){echo $client['nom_societe'];} ?></div>
-											<?= $client['nom_client']; ?>
+						<div id="overview">
+							<div class="row">
+								<div class="col-sm-9">
+									<section class="profile-cover">
+										<div class="profile-avatar">
+											<div>
+												<img alt="" src="assets/img/avatar5.png" class="circle">
+												<span>Ramyana Chai</span>
+											</div>
+											<a class="btn btn-theme" title="Add friends"><i class="fa fa-plus"></i> friends</a>
+											<a class="btn btn-theme-inverse" ><i class="fa fa-comments"></i> messages</a>
 										</div>
-									</div>
-									<footer class="panel-footer">
-										<button type="button" class="btn btn-block btn-info"><i class="fa fa-edit"></i> Editer le client</button>
-										<button type="button" class="btn btn-block btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
-									</footer>
-									<div class="flip"></div></section>
+										<div class="profile-status">
+											<a class="btn"> 14,548 <small>Sales</small></a>
+											<a class="btn"> 254 <small> Follower</small></a>
+										</div>
+									</section>
+								</div>
+								<!-- //content > row > col-sm-9 -->
+
+								<div class="col-sm-3">
+									<section class="profile-about">
+										<h3>About</h3>
+										<hr>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non leo convallis nibh tristique commodo.</p>
+									</section>
+								</div>
+								<!-- //content > row > col-lg-3 -->
 							</div>
+							<!-- //row-->
 						</div>
 					</div>
 
