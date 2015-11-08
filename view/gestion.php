@@ -219,7 +219,14 @@ include "inc/header.php";
 							<div class="col-md-4">
 								<section class="panel corner-flip">
 									<div class="panel-body bg-info">
-										<p>Panel-body</p>
+										<div class="avatar-slide">
+											<span data-size="118" data-line-width="5" data-track-color="rgba(255,255,255,0.1)" data-percent="100" data-color="theme-inverse" class="easy-chart avatar-chart">
+												<span class="percent" style="line-height: 118px;">100</span>
+												<img class="circle" src="http://synchronus-media.cridip.com/gwcswd/avatar/MOCKELYN.png" alt="">
+												<canvas height="118" width="118"></canvas>
+											</span>
+											<!-- //avatar-chart-->
+										</div>
 									</div>
 									<footer class="panel-footer">
 										<p>Panel-footer</p>
