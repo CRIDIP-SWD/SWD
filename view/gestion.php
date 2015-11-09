@@ -577,6 +577,7 @@ include "inc/header.php";
 												<tr onclick="window.location.href='index.php?view=outil&sub=ticket&data=view_ticket&code_ticket=<?= $ticket['code_ticket']; ?>'">
 													<td>
 														<?= $ticket['code_ticket']; ?>
+														<?php if(!empty($ticket['num_fact'])){echo "<i><strong>Numéro de la facture:</strong> ".$ticket['num_fact']."</i>"}
 													</td>
 													<td>
 														<?php
