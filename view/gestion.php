@@ -227,7 +227,7 @@ include "inc/header.php";
 											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-client-modal"><i class="fa fa-edit"></i> Editer le client</button>
 											<button type="button" class="btn btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
 											<button type="button" class="btn btn-success" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/client.php?num_client=<?= $num_client; ?>&num_appeler=<?= $client['telephone']; ?>&num_appelant=<?= $user['interne']; ?>&action=calling'"><i class="fa fa-phone"></i></button>
-											<button type="button" class="btn btn-success" onclick="window.location.href='<?php $ovh1->post("/telephony/ovhtel-32816764-1/line/".$user['interne']."/click2Call",array("calledNumber" => $client['telephone'])); ?>'"><i class="fa fa-phone"></i></button>
+											<button type="button" class="btn btn-success" onclick="window.location.href='<?php $ovh1->post("/telephony/ovhtel-32816764-1/line/".$user['interne']."/click2Call",(object) array("calledNumber" => $client['telephone'])) ?>'"><i class="fa fa-phone"></i></button>
 										</div>
 										<div class="profile-status">
 											<a class="btn"> <?= $client_cls->count_devis($idclient); ?> <small>Devis</small></a>
