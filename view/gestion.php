@@ -295,7 +295,6 @@ include "inc/header.php";
 												?>
 												<tr onclick="window.location.href='index.php?view=gestion&sub=devis&data=view_devis&num_devis=<?= $devis['reference']; ?>'">
 													<td><?= $devis['reference']; ?></td>
-													<td><?= date("d/m/Y", $devis['date_devis']); ?></td>
 													<td>
 														<?php if($devis_cls->verif_echeance($date_jour_strt, $devis['date_echeance']) == 1){ ?>
 															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $devis['date_echeance']); ?></span>
