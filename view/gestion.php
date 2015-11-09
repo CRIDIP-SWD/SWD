@@ -316,7 +316,11 @@ include "inc/header.php";
 <?php if(isset($_GET['success']) && $_GET['success'] == 'calling'){ ?>
 <script type="text/javascript">
 	$(function(){
-		toastr.success("TEST")
+		toastr.success("Appel Enregistrer dans la base", "APPEL",{
+			progressBar: true,
+			iconClass: "fa fa-phone",
+			positionClass: "toast-top-full-width"
+		})
 	})
 </script>
 <?php } ?>
