@@ -47,7 +47,26 @@ class client
         return $data;
     }
 
+    public function count_projet($idclient)
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM swd_projet WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
 
+    public function count_license($idclient)
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM swd_license WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function count_ticket($idclient)
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM swd_ticket WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
 }
 if(isset($_GET['action']) && $_GET['action'] == 'calling')
 {

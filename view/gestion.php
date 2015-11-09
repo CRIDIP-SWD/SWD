@@ -229,11 +229,11 @@ include "inc/header.php";
 											<button type="button" class="btn btn-success" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/client.php?num_client=<?= $num_client; ?>&num_appeler=<?= $client['telephone']; ?>&num_appelant=<?= $user['interne']; ?>&action=calling'"><i class="fa fa-phone"></i></button>
 										</div>
 										<div class="profile-status">
-											<a class="btn"> 5 <small>Devis</small></a>
-											<a class="btn"> 3 <small> Factures</small></a>
-											<a class="btn"> 0 <small> Projets</small></a>
-											<a class="btn"> 1 <small> Licenses</small></a>
-											<a class="btn"> 0 <small> Tickets</small></a>
+											<a class="btn"> <?= $client_cls->count_devis($idclient); ?> <small>Devis</small></a>
+											<a class="btn"> <?= $client_cls->count_facture($idclient); ?> <small> Factures</small></a>
+											<a class="btn"> <?= $client_cls->count_projet($idclient); ?> <small> Projets</small></a>
+											<a class="btn"> <?= $client_cls->count_license($idclient); ?> <small> Licenses</small></a>
+											<a class="btn"> <?= $client_cls->count_ticket($idclient); ?> <small> Tickets</small></a>
 										</div>
 									</section>
 								</div>
