@@ -28,4 +28,5 @@
     $('#listing-devis').dataTable();
     $('#listing-facture').dataTable();
     $('#listing-projet').dataTable();
+    $('#listing-license').dataTable();
 </script>
