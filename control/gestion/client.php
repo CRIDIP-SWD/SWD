@@ -13,7 +13,7 @@ class client
 }
 if(isset($_GET['action']) && $_GET['action'] == 'calling')
 {
-    namespace Ovh\Api
+    namespace \Ovh\Api;
     use Ovh\Api;
     $apk1 = "vXjHPaL84Jct1zaB";
     $endpoint = "ovh-eu";
