@@ -315,18 +315,22 @@ include "inc/header.php";
 	<?php include "inc/script.php"; ?>
 <?php if(isset($_GET['success']) && $_GET['success'] == 'calling'){ ?>
 <script type="text/javascript">
-	toastr.success("Appel Enregistrer", "Appel",{
-		progressBar: true,
-		positionClass: "toast-top-full-width"
+	$.notific8('Appel Enregistrer',{
+		sticky:true,
+		horizontalEdge:"top",
+		theme:"success" ,
+		heading:"APPEL"
 	})
 </script>
 <?php } ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
 	<script type="text/javascript">
-		toastr.error("Appel Non Enregistrer", "Appel",{
-			progressBar: true,
-			positionClass: "toast-top-full-width"
+		$.notific8('Appel non Enregistrer',{
+			sticky:true,
+			horizontalEdge:"top",
+			theme:"error" ,
+			heading:"APPEL"
 		})
 	</script>
 <?php } ?>
