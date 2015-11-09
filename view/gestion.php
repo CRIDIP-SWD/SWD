@@ -327,7 +327,7 @@ include "inc/header.php";
 <?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
 	<script type="text/javascript">
 		$(function(){
-			toastr.error("Appel Enregistrer dans la base", "APPEL",{
+			toastr.error("Appel non Enregistrer dans la base", "APPEL",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})
