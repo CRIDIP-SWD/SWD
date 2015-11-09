@@ -225,7 +225,7 @@ include "inc/header.php";
 											</div>
 											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-client-modal"><i class="fa fa-edit"></i> Editer le client</button>
 											<button type="button" class="btn btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
-											<button type="button" class="btn btn-success"><i class="fa fa-phone"></i></button>
+											<button type="button" class="btn btn-success" onclick="window.location.href='<?= ROOT,CONTROL; ?>'"><i class="fa fa-phone"></i></button>
 										</div>
 										<div class="profile-status">
 											<a class="btn"> 5 <small>Devis</small></a>
