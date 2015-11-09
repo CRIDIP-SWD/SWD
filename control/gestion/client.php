@@ -29,7 +29,7 @@ class client
         $facture = $this->balance_facture($idclient);
         $rglt = $this->balance_reglement($idclient);
 
-        $calc = $facture - $rglt;
+        $calc = $rglt - $facture;
         return $calc;
     }
 
