@@ -21,7 +21,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'calling')
     $soap = new SoapClient("https://www.ovh.com/soapi/soapi-re-1.63.wsdl");
     $responder = $soap->telephonyClick2CallDo("mmockelyn", "1992maxime", $num_appelant, $num_appeler, $num_appelant);
 
-    if($call === TRUE)
+    if($soap === TRUE)
     {
         header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&success=calling");
     }else{
