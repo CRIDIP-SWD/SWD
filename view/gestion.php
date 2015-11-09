@@ -239,8 +239,14 @@ include "inc/header.php";
 								<!-- //content > row > col-sm-9 -->
 
 								<div class="col-sm-4 bg-white">
-									<h3>Balance</h3>
+									<div style="padding-top: 5px;">BALANCE</div>
 									<hr>
+									<table style="width: 100%;">
+										<tr>
+											<td style="width: 50%;">TEST</td>
+											<td style="width: 50%;">TEST</td>
+										</tr>
+									</table>
 								</div>
 								<!-- //content > row > col-lg-3 -->
 							</div>
