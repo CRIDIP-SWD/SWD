@@ -8,6 +8,16 @@
  */
 class projet
 {
+    public function verif_echeance($date_jour, $date_echeance)
+    {
+        if($date_echeance > $date_jour)
+        {
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
     public function count_etape($idprojet)
     {
         $sql = mysql_query("SELECT COUNT(*) FROM swd_projet_etape WHERE idprojet = '$idprojet'")or die(mysql_error());

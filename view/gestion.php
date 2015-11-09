@@ -477,18 +477,14 @@ include "inc/header.php";
 														?>
 													</td>
 													<td>
-														<?php if($facture_cls->verif_echeance($date_jour_strt, $facture['date_echeance']) == 1){ ?>
-															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $facture['date_echeance']); ?></span>
-														<?php }else{ ?>
-															<span class="label label-success"><?= date("d-m-Y", $facture['date_echeance']); ?></span>
-														<?php } ?>
+														<?= date("d/m/Y", $projet['date_debut']); ?>
 													</td>
 													<td>
-														<?php
-														if($facture['etat_facture'] == 1){echo "<span class='label label-danger'><i class='fa fa-spinner fa-spin'></i> Impayé</span>";}
-														if($facture['etat_facture'] == 2){echo "<span class='label label-warning'><i class='fa fa-check'></i> Partiellement Payé</span>";}
-														if($facture['etat_facture'] == 3){echo "<span class='label label-success'><i class='fa fa-times'></i> Payé</span>";}
-														?>
+														<?php if($projet_cls->verif_echeance($date_jour_strt, $projet['date_echeance']) == 1){ ?>
+															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $projet['date_echeance']); ?></span>
+														<?php }else{ ?>
+															<span class="label label-success"><?= date("d-m-Y", $projet['date_echeance']); ?></span>
+														<?php } ?>
 													</td>
 													<td>
 														<?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?>
