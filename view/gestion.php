@@ -520,31 +520,28 @@ include "inc/header.php";
 											while($license = mysql_fetch_array($sql_license))
 											{
 												?>
-												<tr onclick="window.location.href='index.php?view=projet&sub=projet&data=view_projet&num_projet=<?= $projet['num_projet']; ?>'">
+												<tr onclick="window.location.href='index.php?view=projet&sub=license&data=view_license&license_key=<?= $license['license_key']; ?>'">
 													<td>
-														<?= $projet['nom_projet']; ?>
-														<div class="progress progress-shine progress-sm">
-															<div class="progress-bar bg-primary" aria-valuetransitiongoal="<?= $projet_cls->sum_percent_tache($projet['idprojet']); ?>"></div>
-														</div>
-														<label class="progress-label">Completer à <?= $projet_cls->sum_percent_tache($projet['idprojet']); ?> %</label>
+														<?= $license['nom_product']; ?>
 													</td>
 													<td>
-														<?php
-														if($projet_cls->sum_percent_tache($projet['idprojet']) != 100){echo "<span class='label label-warning'>En cours...</span>";}else{echo "<span class='label label-success'>Terminé</span>";}
-														?>
+														<?= $license['license_key']; ?>
 													</td>
 													<td>
-														<?= date("d/m/Y", $projet['date_debut']); ?>
+														<?= date("d/m/Y", $license['date_create']); ?>
 													</td>
 													<td>
-														<?php if($projet_cls->verif_echeance($date_jour_strt, $projet['date_echeance']) == 1){ ?>
-															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $projet['date_echeance']); ?></span>
+														<?php if($license_cls->verif_echeance($date_jour_strt, $license['date_expire']) == 1){ ?>
+															<span class="label label-danger" data-toggle="tooltip" data-original-title="Expiré"><i class="fa fa-warning text-warning"></i> <?= date("d-m-Y", $license['date_expire']); ?></span>
 														<?php }else{ ?>
-															<span class="label label-success"><?= date("d-m-Y", $projet['date_echeance']); ?></span>
+															<span class="label label-success"><?= date("d-m-Y", $license['date_expire']); ?></span>
 														<?php } ?>
 													</td>
 													<td>
-														<?= number_format($projet['total_projet'], 2, ',', ' ')." €"; ?>
+														<?php
+														if($license['status'] == 0){echo "<span class='label label-danger'>Inactive</span>";}
+														if($license['status'] == 1){echo "<span class='label label-success'>Active</span>";}
+														?>
 													</td>
 												</tr>
 											<?php } ?>

@@ -45,3 +45,6 @@ $facture_cls = new facture();
 
 require_once "control/projet/projet.php";
 $projet_cls = new projet();
+
+require_once "control/projet/license.php";
+$license_cls = new license();
