@@ -17,4 +17,5 @@ class devis
             return 0;
         }
     }
+
 }

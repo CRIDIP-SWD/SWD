@@ -304,6 +304,13 @@ include "inc/header.php";
 															<span class="label label-success"><?= date("d-m-Y", $devis['date_echeance']); ?></span>
 														<?php } ?>
 													</td>
+													<td>
+														<?php
+														if($devis['etat_devis'] == 1){echo "<span class='label label-info'><i class='fa fa-spinner fa-spin'></i> En cours...</span>";}
+														if($devis['etat_devis'] == 2){echo "<span class='label label-success'><i class='fa fa-check'></i> Accepté</span>";}
+														if($devis['etat_devis'] == 3){echo "<span class='label label-danger'><i class='fa fa-times'></i> Refusé</span>";}
+														?>
+													</td>
 												</tr>
 											<?php } ?>
 											</tbody>
