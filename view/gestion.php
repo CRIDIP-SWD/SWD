@@ -281,7 +281,7 @@ include "inc/header.php";
 										<table class="table table-striped" id="listing-devis">
 											<thead>
 											<tr>
-												<th  class="text-center">#</th>
+												<th class="text-center">#</th>
 												<th class="text-center">Date du Devis</th>
 												<th class="text-center">Date d'écheance</th>
 												<th class="text-center">Etat</th>
@@ -325,15 +325,15 @@ include "inc/header.php";
 						<div class="row">
 							<div class="col-md-8">
 								<section class="panel">
-									<header class="panel-heading bg-warning-gradient">
-										<h2>Liste des <strong>Devis</strong> </h2>
+									<header class="panel-heading bg-danger-gradient">
+										<h2>Liste des <strong>Factures</strong> </h2>
 									</header>
 									<div class="panel-body">
 										<table class="table table-striped" id="listing-facture">
 											<thead>
 											<tr>
 												<th  class="text-center">#</th>
-												<th class="text-center">Date du Devis</th>
+												<th class="text-center">Date de la facture</th>
 												<th class="text-center">Date d'écheance</th>
 												<th class="text-center">Etat</th>
 												<th class="text-right">Montant</th>
@@ -341,29 +341,29 @@ include "inc/header.php";
 											</thead>
 											<tbody align="center">
 											<?php
-											$sql_devis = mysql_query("SELECT * FROM swd_devis WHERE idclient = '$idclient'")or die(mysql_error());
-											while($devis = mysql_fetch_array($sql_devis))
+											$sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idclient = '$idclient'")or die(mysql_error());
+											while($facture = mysql_fetch_array($sql_facture))
 											{
 												?>
-												<tr onclick="window.location.href='index.php?view=gestion&sub=devis&data=view_devis&num_devis=<?= $devis['reference']; ?>'">
-													<td><?= $devis['reference']; ?></td>
-													<td><?= date("d/m/Y", $devis['date_devis']); ?></td>
+												<tr onclick="window.location.href='index.php?view=gestion&sub=facture&data=view_facture&num_facture=<?= $facture['reference']; ?>'">
+													<td><?= $facture['reference']; ?></td>
+													<td><?= date("d/m/Y", $facture['date_devis']); ?></td>
 													<td>
-														<?php if($devis_cls->verif_echeance($date_jour_strt, $devis['date_echeance']) == 1){ ?>
-															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $devis['date_echeance']); ?></span>
+														<?php if($facture_cls->verif_echeance($date_jour_strt, $facture['date_echeance']) == 1){ ?>
+															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $facture['date_echeance']); ?></span>
 														<?php }else{ ?>
-															<span class="label label-success"><?= date("d-m-Y", $devis['date_echeance']); ?></span>
+															<span class="label label-success"><?= date("d-m-Y", $facture['date_echeance']); ?></span>
 														<?php } ?>
 													</td>
 													<td>
 														<?php
-														if($devis['etat_devis'] == 1){echo "<span class='label label-info'><i class='fa fa-spinner fa-spin'></i> En cours...</span>";}
-														if($devis['etat_devis'] == 2){echo "<span class='label label-success'><i class='fa fa-check'></i> Accepté</span>";}
-														if($devis['etat_devis'] == 3){echo "<span class='label label-danger'><i class='fa fa-times'></i> Refusé</span>";}
+														if($facture['etat_facture'] == 1){echo "<span class='label label-danger'><i class='fa fa-spinner fa-spin'></i> Impayé</span>";}
+														if($facture['etat_facture'] == 2){echo "<span class='label label-warning'><i class='fa fa-check'></i> Partiellement Payé</span>";}
+														if($facture['etat_facture'] == 3){echo "<span class='label label-success'><i class='fa fa-times'></i> Payé</span>";}
 														?>
 													</td>
 													<td>
-														<?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?>
+														<?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?>
 													</td>
 												</tr>
 											<?php } ?>
