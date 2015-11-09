@@ -21,6 +21,7 @@
 
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
 <!-- APPEL DATATABLE -->
 <script type="text/javascript">
     $('#listing-client').dataTable();
