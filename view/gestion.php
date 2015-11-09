@@ -245,11 +245,11 @@ include "inc/header.php";
 										<table style="width: 100%;">
 											<tr>
 												<td style="width: 50%;">Total Facturer:</td>
-												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;"><?= number_format($client_cls->balance_facture($client['idclient']), 2, ',', ' ')." €"; ?></td>
 											</tr>
 											<tr>
 												<td style="width: 50%;">Total Payer:</td>
-												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;"><?= number_format($client_cls->balance_reglement($client['idclient']), 2, ',', ' ')." €"; ?></td>
 											</tr>
 											<tr>
 												<td colspan="2"><hr></td>
