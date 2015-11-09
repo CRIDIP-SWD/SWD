@@ -14,7 +14,7 @@ class client
 if(isset($_GET['action']) && $_GET['action'] == 'calling')
 {
     include ('../../vendor/ovh/ovh/src/Api.php');
-    use Ovh\Api;
+
     $apk1 = "vXjHPaL84Jct1zaB";
     $endpoint = "ovh-eu";
     $ask1 = "WwSivyMF8kcmKMlsjd6SRCQsmox8XKnO";
