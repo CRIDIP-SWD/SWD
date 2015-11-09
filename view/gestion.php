@@ -316,12 +316,7 @@ include "inc/header.php";
 <?php if(isset($_GET['success']) && $_GET['success'] == 'calling'){ ?>
 <script type="text/javascript">
 	$(function(){
-		$.notific8('Appel Enregistrer',{
-			sticky:true,
-			horizontalEdge:"top",
-			theme:"success" ,
-			heading:"APPEL"
-		})
+		toastr.success("TEST")
 	})
 </script>
 <?php } ?>
