@@ -27,4 +27,5 @@
     $('#listing-client').dataTable();
     $('#listing-devis').dataTable();
     $('#listing-facture').dataTable();
+    $('#listing-projet').dataTable();
 </script>

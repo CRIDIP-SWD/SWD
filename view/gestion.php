@@ -443,11 +443,11 @@ include "inc/header.php";
 						<div class="row">
 							<div class="col-md-12">
 								<section class="panel">
-									<header class="panel-heading bg-danger-gradient">
+									<header class="panel-heading bg-info-gradient">
 										<h2>Liste des <strong>Projet</strong> </h2>
 									</header>
 									<div class="panel-body">
-										<table class="table table-striped" id="listing-facture">
+										<table class="table table-striped" id="listing-projet">
 											<thead>
 											<tr>
 												<th  class="text-center">Nom du Projet</th>
