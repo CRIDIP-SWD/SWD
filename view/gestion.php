@@ -255,7 +255,7 @@ include "inc/header.php";
 												<td colspan="2"><hr></td>
 											</tr>
 											<tr>
-												<td style="width: 50%;">Total Facturer:</td>
+												<td style="width: 50%;">BALANCE:</td>
 												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
 											</tr>
 										</table>
