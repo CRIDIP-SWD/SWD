@@ -318,7 +318,7 @@ include "inc/header.php";
 	$(function(){
 		toastr.success("Appel Enregistrer dans la base", "APPEL",{
 			progressBar: true,
-			positionClass: "toast-top-full-width"
+			positionClass: "toast-bottom-right"
 		})
 	})
 </script>
@@ -326,7 +326,12 @@ include "inc/header.php";
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
 	<script type="text/javascript">
-		$.notific8('Appel non Enregistrer')
+		$(function(){
+			toastr.error("Appel Enregistrer dans la base", "APPEL",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
 	</script>
 <?php } ?>
 
