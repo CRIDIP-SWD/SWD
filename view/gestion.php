@@ -238,15 +238,12 @@ include "inc/header.php";
 								</div>
 								<!-- //content > row > col-sm-9 -->
 
-								<div class="col-sm-4 bg-white">
-									<div style="padding-top: 5px;">BALANCE</div>
-									<hr>
-									<table style="width: 100%;">
-										<tr>
-											<td style="width: 50%;">TEST</td>
-											<td style="width: 50%;">TEST</td>
-										</tr>
-									</table>
+								<div class="col-sm-4">
+									<section class="profile-about">
+										<h3>About</h3>
+										<hr>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non leo convallis nibh tristique commodo.</p>
+									</section>
 								</div>
 								<!-- //content > row > col-lg-3 -->
 							</div>

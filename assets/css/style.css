@@ -3057,7 +3057,7 @@ body.leftMenu #nav-scroll, body.leftMenu #mailbox #nav-scroll, #mailbox body.lef
   height: 232px;
   overflow: hidden;
   padding: 15px 25px;
-  position: absolute;
+  /*position: absolute;*/
 }
 
 /*
