@@ -272,7 +272,7 @@ include "inc/header.php";
 							<!-- //row-->
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<section class="panel">
 									<header class="panel-heading bg-warning-gradient">
 										<h2>Liste des <strong>Devis</strong> </h2>
@@ -282,6 +282,7 @@ include "inc/header.php";
 											<thead>
 											<tr>
 												<th  class="text-center">#</th>
+												<th class="text-center">Date du Devis</th>
 												<th class="text-center">Date d'écheance</th>
 												<th class="text-center">Etat</th>
 												<th class="text-right">Montant</th>
@@ -295,6 +296,58 @@ include "inc/header.php";
 												?>
 												<tr onclick="window.location.href='index.php?view=gestion&sub=devis&data=view_devis&num_devis=<?= $devis['reference']; ?>'">
 													<td><?= $devis['reference']; ?></td>
+													<td><?= date("d/m/Y", $devis['date_devis']); ?></td>
+													<td>
+														<?php if($devis_cls->verif_echeance($date_jour_strt, $devis['date_echeance']) == 1){ ?>
+															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $devis['date_echeance']); ?></span>
+														<?php }else{ ?>
+															<span class="label label-success"><?= date("d-m-Y", $devis['date_echeance']); ?></span>
+														<?php } ?>
+													</td>
+													<td>
+														<?php
+														if($devis['etat_devis'] == 1){echo "<span class='label label-info'><i class='fa fa-spinner fa-spin'></i> En cours...</span>";}
+														if($devis['etat_devis'] == 2){echo "<span class='label label-success'><i class='fa fa-check'></i> Accepté</span>";}
+														if($devis['etat_devis'] == 3){echo "<span class='label label-danger'><i class='fa fa-times'></i> Refusé</span>";}
+														?>
+													</td>
+													<td>
+														<?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>>
+						</div>
+						<div class="row">
+							<div class="col-md-8">
+								<section class="panel">
+									<header class="panel-heading bg-warning-gradient">
+										<h2>Liste des <strong>Devis</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<table class="table table-striped" id="listing-facture">
+											<thead>
+											<tr>
+												<th  class="text-center">#</th>
+												<th class="text-center">Date du Devis</th>
+												<th class="text-center">Date d'écheance</th>
+												<th class="text-center">Etat</th>
+												<th class="text-right">Montant</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_devis = mysql_query("SELECT * FROM swd_devis WHERE idclient = '$idclient'")or die(mysql_error());
+											while($devis = mysql_fetch_array($sql_devis))
+											{
+												?>
+												<tr onclick="window.location.href='index.php?view=gestion&sub=devis&data=view_devis&num_devis=<?= $devis['reference']; ?>'">
+													<td><?= $devis['reference']; ?></td>
+													<td><?= date("d/m/Y", $devis['date_devis']); ?></td>
 													<td>
 														<?php if($devis_cls->verif_echeance($date_jour_strt, $devis['date_echeance']) == 1){ ?>
 															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $devis['date_echeance']); ?></span>
@@ -319,7 +372,7 @@ include "inc/header.php";
 									</div>
 								</section>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-4">
 
 							</div>
 						</div>

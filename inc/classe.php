@@ -36,3 +36,6 @@ $client_cls = new client();
 
 require_once "control/gestion/devis.php";
 $devis_cls = new devis();
+
+require_once "control/gestion/facture.php";
+$facture_cls = new facture();
