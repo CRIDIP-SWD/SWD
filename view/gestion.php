@@ -216,7 +216,7 @@ include "inc/header.php";
 									<section class="profile-cover">
 										<div class="profile-avatar">
 											<div>
-												<img alt="" src="assets/img/avatar5.png" class="circle">
+												<i class="fa fa-building"></i>
 												<span>Ramyana Chai</span>
 											</div>
 											<a class="btn btn-theme" title="Add friends"><i class="fa fa-plus"></i> friends</a>
