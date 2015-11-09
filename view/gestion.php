@@ -256,7 +256,12 @@ include "inc/header.php";
 											</tr>
 											<tr>
 												<td style="width: 50%;">BALANCE:</td>
-												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;">
+													<?php
+													if($client_cls->balance($client['idclient']) <= '0.01'){echo "<strong class='text-danger'>".$client_cls->balance($client['idclient'])."</strong>";}
+													if($client_cls->balance($client['idclient']) > '0.01'){echo "<strong class='text-success'>".$client_cls->balance($client['idclient'])."</strong>";}
+													?>
+												</td>
 											</tr>
 										</table>
 									</section>

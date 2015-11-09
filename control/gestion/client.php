@@ -23,6 +23,15 @@ class client
         $reglement = mysql_result($sql_reglement, 0);
         return $reglement;
     }
+
+    public function balance($idclient)
+    {
+        $facture = $this->balance_facture($idclient);
+        $rglt = $this->balance_reglement($idclient);
+
+        $calc = $facture - $rglt;
+        return $calc;
+    }
 }
 if(isset($_GET['action']) && $_GET['action'] == 'calling')
 {
