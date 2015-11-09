@@ -29,4 +29,5 @@
     $('#listing-facture').dataTable();
     $('#listing-projet').dataTable();
     $('#listing-license').dataTable();
+    $('#listing-ticket').dataTable();
 </script>
