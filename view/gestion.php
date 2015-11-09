@@ -318,7 +318,7 @@ include "inc/header.php";
 	$.notific8('Appel Enregistrer',{
 		sticky:true,
 		horizontalEdge:"top",
-		theme:"success" ,
+		theme:"theme" ,
 		heading:"APPEL"
 	})
 </script>
@@ -329,7 +329,7 @@ include "inc/header.php";
 		$.notific8('Appel non Enregistrer',{
 			sticky:true,
 			horizontalEdge:"top",
-			theme:"error" ,
+			theme:"theme" ,
 			heading:"APPEL"
 		})
 	</script>
