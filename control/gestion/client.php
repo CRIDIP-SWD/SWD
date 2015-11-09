@@ -13,21 +13,13 @@ class client
 }
 if(isset($_GET['action']) && $_GET['action'] == 'calling')
 {
-    include ('../../vendor/autoload.php');
-    use Ovh\Api;
-    $apk1 = "vXjHPaL84Jct1zaB";
-    $endpoint = "ovh-eu";
-    $ask1 = "WwSivyMF8kcmKMlsjd6SRCQsmox8XKnO";
-    $csk1 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
-    $ovh1 = new Api($apk1,$ask1,$endpoint,$csk1);
 
     $num_client = $_GET['num_client'];
     $num_appeler = $_GET['num_appeler'];
     $num_appelant = $_GET['num_appelant'];
 
-    $call = $ovh1->post("/telephony/ovhtel-32816764-1/line/".$num_appelant."/click2Call", array(
-        "calledNumber" => $num_appeler
-    ));
+    $soap = new SoapClient("https://www.ovh.com/soapi/soapi-re-1.63.wsdl");
+    $responder = $soap->telephonyClick2CallDo("mmockelyn", "1992maxime", $num_appelant, $num_appeler, $num_appelant);
 
     if($call === TRUE)
     {
