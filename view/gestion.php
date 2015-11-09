@@ -323,5 +323,15 @@ include "inc/header.php";
 </script>
 <?php } ?>
 
+<?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
+	<script type="text/javascript">
+		toastr.error("Appel Non Enregistrer", "Appel",{
+			iconClass: "fa fa-phone",
+			progressBar: true,
+			positionClass: "toast-top-full-width"
+		})
+	</script>
+<?php } ?>
+
 </body>
 </html>
