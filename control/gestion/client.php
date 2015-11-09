@@ -30,7 +30,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'calling')
     $soap = new SoapClient("https://www.ovh.com/soapi/soapi-re-1.63.wsdl");
     $responder = $soap->telephonyClick2CallDo("mmockelyn", "1992maxime", $num_appelant, $num_appeler, $num_appelant);
 
-    if($soap === TRUE)
+    if($responder === NULL)
     {
         $sql_called = mysql_query("INSERT INTO `client_called`(`idclientcalled`, `num_user`, `num_client`, `nom_client`, `date_appel`, `status`)
                                 VALUES (NULL,'$num_appelant','$num_appeler','$nom_client','$date_jour_heure_strt','1')")or die("ERROR SQL: ".mysql_error());
