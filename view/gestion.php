@@ -487,7 +487,7 @@ include "inc/header.php";
 														<?php } ?>
 													</td>
 													<td>
-														<?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?>
+														<?= number_format($projet['total_projet'], 2, ',', ' ')." €"; ?>
 													</td>
 												</tr>
 											<?php } ?>
