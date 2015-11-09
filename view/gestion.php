@@ -247,6 +247,15 @@ include "inc/header.php";
 												<td style="width: 50%;">Total Facturer:</td>
 												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
 											</tr>
+											<tr>
+												<td style="width: 50%;">Total Payer:</td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
+											</tr>
+											<hr>
+											<tr>
+												<td style="width: 50%;">Total Facturer:</td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
+											</tr>
 										</table>
 									</section>
 								</div>
