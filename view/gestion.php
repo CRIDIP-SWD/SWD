@@ -318,7 +318,6 @@ include "inc/header.php";
 	$(function(){
 		toastr.success("Appel Enregistrer dans la base", "APPEL",{
 			progressBar: true,
-			iconClass: "fa fa-phone",
 			positionClass: "toast-top-full-width"
 		})
 	})
