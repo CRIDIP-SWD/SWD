@@ -39,3 +39,9 @@ $devis_cls = new devis();
 
 require_once "control/gestion/facture.php";
 $facture_cls = new facture();
+
+
+
+
+require_once "control/projet/projet.php";
+$projet_cls = new projet();

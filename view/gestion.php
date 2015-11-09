@@ -440,6 +440,67 @@ include "inc/header.php";
 								</section>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading bg-danger-gradient">
+										<h2>Liste des <strong>Projet</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<table class="table table-striped" id="listing-facture">
+											<thead>
+											<tr>
+												<th  class="text-center">Nom du Projet</th>
+												<th class="text-center">Etat</th>
+												<th class="text-center">Date de Début</th>
+												<th class="text-center">Date d'échéance</th>
+												<th class="text-right">Montant Global du Projet</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_projet = mysql_query("SELECT * FROM swd_projet WHERE idclient = '$idclient'")or die(mysql_error());
+											while($projet = mysql_fetch_array($sql_projet))
+											{
+												?>
+												<tr onclick="window.location.href='index.php?view=projet&sub=projet&data=view_projet&num_projet=<?= $projet['num_projet']; ?>'">
+													<td>
+														<?= $projet['nom_projet']; ?>
+														<div class="progress progress-shine progress-sm">
+															<div class="progress-bar bg-primary" aria-valuetransitiongoal="<?= $projet_cls->sum_percent_tache($projet['idprojet']); ?>"></div>
+														</div>
+														<label class="progress-label">Completer à <?= $projet_cls->sum_percent_tache($projet['idprojet']); ?> %</label>
+													</td>
+													<td>
+														<?php
+
+														?>
+													</td>
+													<td>
+														<?php if($facture_cls->verif_echeance($date_jour_strt, $facture['date_echeance']) == 1){ ?>
+															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $facture['date_echeance']); ?></span>
+														<?php }else{ ?>
+															<span class="label label-success"><?= date("d-m-Y", $facture['date_echeance']); ?></span>
+														<?php } ?>
+													</td>
+													<td>
+														<?php
+														if($facture['etat_facture'] == 1){echo "<span class='label label-danger'><i class='fa fa-spinner fa-spin'></i> Impayé</span>";}
+														if($facture['etat_facture'] == 2){echo "<span class='label label-warning'><i class='fa fa-check'></i> Partiellement Payé</span>";}
+														if($facture['etat_facture'] == 3){echo "<span class='label label-success'><i class='fa fa-times'></i> Payé</span>";}
+														?>
+													</td>
+													<td>
+														<?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+						</div>
 					</div>
 					<div id="edit-client-modal" data-width="700" class="modal fade">
 						<div class="modal-header bg-success-gradient">
