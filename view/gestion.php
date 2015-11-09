@@ -324,71 +324,69 @@ include "inc/header.php";
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="col-md-4">
-									<section class="panel corner-flip">
-										<div class="widget-chart bg-lightseagreen bg-gradient-green">
-											<h2>Chiffre d'affaire (<?php if(!empty($client['nom_societe'])){echo $client['nom_societe'];}else{echo $client['nom_client'];} ?></h2>
-											<table class="flot-chart" data-type="lines" data-tick-color="rgba(255,255,255,0.2)" data-width="100%" data-height="220px">
-												<thead>
-												<tr>
-													<th></th>
-													<th style="color : #FFF;">CA</th>
-												</tr>
-												</thead>
-												<tbody>
-												<tr>
-													<th>JAN</th>
-													<td><?= $facture_cls->chart_fct_client("01-01-2015", "31-01-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>FEB</th>
-													<td><?= $facture_cls->chart_fct_client("01-02-2015", "28-02-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>MAR</th>
-													<td><?= $facture_cls->chart_fct_client("01-03-2015", "31-03-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>APR</th>
-													<td><?= $facture_cls->chart_fct_client("01-04-2015", "30-04-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>MAY</th>
-													<td><?= $facture_cls->chart_fct_client("01-05-2015", "31-05-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>JUN</th>
-													<td><?= $facture_cls->chart_fct_client("01-06-2015", "30-06-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>JUL</th>
-													<td><?= $facture_cls->chart_fct_client("01-07-2015", "31-07-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>AUG</th>
-													<td><?= $facture_cls->chart_fct_client("01-08-2015", "31-08-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>SEP</th>
-													<td><?= $facture_cls->chart_fct_client("01-09-2015", "30-09-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>OCT</th>
-													<td><?= $facture_cls->chart_fct_client("01-10-2015", "31-10-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>NOV</th>
-													<td><?= $facture_cls->chart_fct_client("01-11-2015", "30-11-2015", $idclient); ?></td>
-												</tr>
-												<tr>
-													<th>DEC</th>
-													<td><?= $facture_cls->chart_fct_client("01-12-2015", "31-12-2015", $idclient); ?></td>
-												</tr>
-												</tbody>
-											</table>
-										</div>
-									</section>
-								</div>
+								<section class="panel corner-flip">
+									<div class="widget-chart bg-lightseagreen bg-gradient-green">
+										<h2>Chiffre d'affaire (<?php if(!empty($client['nom_societe'])){echo $client['nom_societe'];}else{echo $client['nom_client'];} ?></h2>
+										<table class="flot-chart" data-type="lines" data-tick-color="rgba(255,255,255,0.2)" data-width="100%" data-height="220px">
+											<thead>
+											<tr>
+												<th></th>
+												<th style="color : #FFF;">CA</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<th>JAN</th>
+												<td><?= $facture_cls->chart_fct_client("01-01-2015", "31-01-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>FEB</th>
+												<td><?= $facture_cls->chart_fct_client("01-02-2015", "28-02-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>MAR</th>
+												<td><?= $facture_cls->chart_fct_client("01-03-2015", "31-03-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>APR</th>
+												<td><?= $facture_cls->chart_fct_client("01-04-2015", "30-04-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>MAY</th>
+												<td><?= $facture_cls->chart_fct_client("01-05-2015", "31-05-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>JUN</th>
+												<td><?= $facture_cls->chart_fct_client("01-06-2015", "30-06-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>JUL</th>
+												<td><?= $facture_cls->chart_fct_client("01-07-2015", "31-07-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>AUG</th>
+												<td><?= $facture_cls->chart_fct_client("01-08-2015", "31-08-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>SEP</th>
+												<td><?= $facture_cls->chart_fct_client("01-09-2015", "30-09-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>OCT</th>
+												<td><?= $facture_cls->chart_fct_client("01-10-2015", "31-10-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>NOV</th>
+												<td><?= $facture_cls->chart_fct_client("01-11-2015", "30-11-2015", $idclient); ?></td>
+											</tr>
+											<tr>
+												<th>DEC</th>
+												<td><?= $facture_cls->chart_fct_client("01-12-2015", "31-12-2015", $idclient); ?></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</section>
 							</div>
 						</div>
 						<div class="row">
