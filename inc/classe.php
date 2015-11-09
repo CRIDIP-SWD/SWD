@@ -33,3 +33,6 @@ $gen_cls = new general();
 
 require_once "control/gestion/client.php";
 $client_cls = new client();
+
+require_once "control/gestion/devis.php";
+$devis_cls = new devis();

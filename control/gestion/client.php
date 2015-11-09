@@ -67,6 +67,7 @@ class client
         $data = mysql_result($sql, 0);
         return $data;
     }
+
 }
 if(isset($_GET['action']) && $_GET['action'] == 'calling')
 {
