@@ -259,8 +259,8 @@ include "inc/header.php";
 												<td style="width: 50%;">BALANCE:</td>
 												<td style="width: 50%; text-align: right; padding-right: 5px;">
 													<?php
-													if($client_cls->balance($idclient) < '0.00'){echo "<strong class='text-danger'>".number_format($client_cls->balance($idclient), 2, ',', ' ')." €</strong>";}
-													if($client_cls->balance($idclient) >= '0.00'){echo "<strong class='text-success'>".number_format($client_cls->balance($idclient), 2, ',', ' ')." €</strong>";}
+													if($client_cls->balance($idclient) >= '0.00'){echo "<strong class='text-danger'>".number_format($client_cls->balance($idclient), 2, ',', ' ')." €</strong>";}
+													if($client_cls->balance($idclient) < '0.00'){echo "<strong class='text-success'>".number_format($client_cls->balance($idclient), 2, ',', ' ')." €</strong>";}
 													?>
 												</td>
 											</tr>
