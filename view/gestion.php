@@ -373,7 +373,69 @@ include "inc/header.php";
 								</section>
 							</div>
 							<div class="col-md-4">
-
+								<section class="panel corner-flip">
+									<div class="widget-chart bg-lightseagreen bg-gradient-green">
+										<h2>Chiffre d'affaire (<?php if(!empty($client['nom_societe'])){echo $client['nom_societe'];}else{echo $client['nom_client'];} ?></h2>
+										<table class="flot-chart" data-type="lines" data-tick-color="rgba(255,255,255,0.2)" data-width="100%" data-height="220px">
+											<thead>
+											<tr>
+												<th></th>
+												<th style="color : #FFF;">CA</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<th>JAN</th>
+												<td><?= $gen_cls->data_chart_general("01-01-2015", "31-01-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>FEB</th>
+												<td><?= $gen_cls->data_chart_general("01-02-2015", "28-02-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>MAR</th>
+												<td><?= $gen_cls->data_chart_general("01-03-2015", "31-03-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>APR</th>
+												<td><?= $gen_cls->data_chart_general("01-04-2015", "30-04-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>MAY</th>
+												<td><?= $gen_cls->data_chart_general("01-05-2015", "31-05-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>JUN</th>
+												<td><?= $gen_cls->data_chart_general("01-06-2015", "30-06-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>JUL</th>
+												<td><?= $gen_cls->data_chart_general("01-07-2015", "31-07-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>AUG</th>
+												<td><?= $gen_cls->data_chart_general("01-08-2015", "31-08-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>SEP</th>
+												<td><?= $gen_cls->data_chart_general("01-09-2015", "30-09-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>OCT</th>
+												<td><?= $gen_cls->data_chart_general("01-10-2015", "31-10-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>NOV</th>
+												<td><?= $gen_cls->data_chart_general("01-11-2015", "30-11-2015"); ?></td>
+											</tr>
+											<tr>
+												<th>DEC</th>
+												<td><?= $gen_cls->data_chart_general("01-12-2015", "31-12-2015"); ?></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</section>
 							</div>
 						</div>
 					</div>
