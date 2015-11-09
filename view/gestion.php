@@ -500,7 +500,7 @@ include "inc/header.php";
 						<div class="row">
 							<div class="col-md-12">
 								<section class="panel">
-									<header class="panel-heading bg-info-gradient">
+									<header class="panel-heading bg-palevioletred-gradient">
 										<h2>Liste des <strong>Licenses</strong> </h2>
 									</header>
 									<div class="panel-body">
