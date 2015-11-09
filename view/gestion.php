@@ -311,6 +311,9 @@ include "inc/header.php";
 														if($devis['etat_devis'] == 3){echo "<span class='label label-danger'><i class='fa fa-times'></i> Refusé</span>";}
 														?>
 													</td>
+													<td>
+														<?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?>
+													</td>
 												</tr>
 											<?php } ?>
 											</tbody>
