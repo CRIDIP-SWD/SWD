@@ -473,7 +473,64 @@ include "inc/header.php";
 													</td>
 													<td>
 														<?php
-															if($projet_cls->sum_percent_tache($projet['idprojet']) != 100){echo "<span class='label label-warning'>En cours...</span>";}else{echo "<span class='label label-success'>Terminé</span>";}
+														if($projet_cls->sum_percent_tache($projet['idprojet']) != 100){echo "<span class='label label-warning'>En cours...</span>";}else{echo "<span class='label label-success'>Terminé</span>";}
+														?>
+													</td>
+													<td>
+														<?= date("d/m/Y", $projet['date_debut']); ?>
+													</td>
+													<td>
+														<?php if($projet_cls->verif_echeance($date_jour_strt, $projet['date_echeance']) == 1){ ?>
+															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $projet['date_echeance']); ?></span>
+														<?php }else{ ?>
+															<span class="label label-success"><?= date("d-m-Y", $projet['date_echeance']); ?></span>
+														<?php } ?>
+													</td>
+													<td>
+														<?= number_format($projet['total_projet'], 2, ',', ' ')." €"; ?>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading bg-info-gradient">
+										<h2>Liste des <strong>Licenses</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<table class="table table-striped" id="listing-license">
+											<thead>
+											<tr>
+												<th  class="text-center">Nom du Produit</th>
+												<th class="text-center">Numéro de license</th>
+												<th class="text-center">Date de création</th>
+												<th class="text-center">Date d'expiration</th>
+												<th class="text-right">Status</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_license = mysql_query("SELECT * FROM swd_license, swd_license_product WHERE swd_license.idproductlicense = swd_license_product.idproductlicense AND swd_license.idclient = '$idclient'")or die(mysql_error());
+											while($license = mysql_fetch_array($sql_license))
+											{
+												?>
+												<tr onclick="window.location.href='index.php?view=projet&sub=projet&data=view_projet&num_projet=<?= $projet['num_projet']; ?>'">
+													<td>
+														<?= $projet['nom_projet']; ?>
+														<div class="progress progress-shine progress-sm">
+															<div class="progress-bar bg-primary" aria-valuetransitiongoal="<?= $projet_cls->sum_percent_tache($projet['idprojet']); ?>"></div>
+														</div>
+														<label class="progress-label">Completer à <?= $projet_cls->sum_percent_tache($projet['idprojet']); ?> %</label>
+													</td>
+													<td>
+														<?php
+														if($projet_cls->sum_percent_tache($projet['idprojet']) != 100){echo "<span class='label label-warning'>En cours...</span>";}else{echo "<span class='label label-success'>Terminé</span>";}
 														?>
 													</td>
 													<td>
