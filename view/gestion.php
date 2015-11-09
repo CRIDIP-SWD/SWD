@@ -239,24 +239,8 @@ include "inc/header.php";
 								<!-- //content > row > col-sm-9 -->
 
 								<div class="col-sm-4">
-									<section class="profile-about">
-										<h3>BALANCE</h3>
-										<hr>
-										<table style="width: 100%;">
-											<tr>
-												<td style="width: 50%;">Total Facturer:</td>
-												<td style="width: 50%;">0,00 €</td>
-											</tr>
-											<tr>
-												<td style="width: 50%;">Total Payer:</td>
-												<td style="width: 50%;">0,00 €</td>
-											</tr>
-											<tr>
-												<td style="width: 50%;">BALANCE</td>
-												<td style="width: 50%;">0,00 €</td>
-											</tr>
-										</table>
-									</section>
+									<h3>Balance</h3>
+									<hr>
 								</div>
 								<!-- //content > row > col-lg-3 -->
 							</div>
@@ -266,7 +250,7 @@ include "inc/header.php";
 					<div id="edit-client-modal" data-width="700" class="modal fade">
 						<div class="modal-header bg-success-gradient">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un client</h4>
+							<h4 class="modal-title"><i class="fa fa-edit"></i> Editer un client</h4>
 						</div>
 						<!-- //modal-header-->
 						<div class="modal-body">
