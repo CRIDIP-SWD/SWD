@@ -528,7 +528,7 @@ include "inc/header.php";
 														<?= $license['license_key']; ?>
 													</td>
 													<td>
-														<?= date("d/m/Y", $license['date_create']); ?>
+														<?= date("d/m/Y", $license['date_created']); ?>
 													</td>
 													<td>
 														<?php if($license_cls->verif_echeance($date_jour_strt, $license['date_expire']) == 1){ ?>
