@@ -551,6 +551,61 @@ include "inc/header.php";
 								</section>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading bg-darkorange-gradient">
+										<h2>Liste des <strong>Ticket</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<table class="table table-striped" id="listing-ticket">
+											<thead>
+											<tr>
+												<th  class="text-center">Code</th>
+												<th class="text-center">Département</th>
+												<th class="text-center">Date de création</th>
+												<th class="text-center">Sujet</th>
+												<th class="text-right">Status</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_ticket = mysql_query("SELECT * FROM swd_ticket WHERE idclient = '$idclient'")or die(mysql_error());
+											while($ticket = mysql_fetch_array($sql_ticket))
+											{
+												?>
+												<tr onclick="window.location.href='index.php?view=outil&sub=ticket&data=view_ticket&code_ticket=<?= $ticket['code_ticket']; ?>'">
+													<td>
+														<?= $ticket['code_ticket']; ?>
+													</td>
+													<td>
+														<?php
+														if($ticket['departement'] == 1){echo "CRIDIP";}
+														if($ticket['departement'] == 2){echo "Solution Web Developpement";}
+														if($ticket['departement'] == 3){echo "SCPVS";}
+														?>
+													</td>
+													<td>
+														<?= date("d/m/Y", $license['date_created']); ?>
+													</td>
+													<td>
+														<?= html_entity_decode($ticket['sujet']); ?>
+													</td>
+													<td>
+														<?php
+														if($ticket['status'] == 0){echo "<span class='label label-default'>Créer</span>";}
+														if($ticket['status'] == 1){echo "<span class='label label-warning'><i class='fa fa-spinner fa-spin'></i> En cours...</span>";}
+														if($ticket['status'] == 2){echo "<span class='label label-success'><i class='fa fa-check'></i> Résolue</span>";}
+														?>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+						</div>
 					</div>
 					<div id="edit-client-modal" data-width="700" class="modal fade">
 						<div class="modal-header bg-success-gradient">
