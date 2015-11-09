@@ -587,7 +587,7 @@ include "inc/header.php";
 														?>
 													</td>
 													<td>
-														<?= date("d/m/Y", $license['date_created']); ?>
+														<?= date("d/m/Y", $ticket['date_created']); ?>
 													</td>
 													<td>
 														<?= html_entity_decode($ticket['sujet']); ?>
