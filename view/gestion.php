@@ -326,7 +326,7 @@ include "inc/header.php";
 							<div class="col-md-12">
 								<section class="panel corner-flip">
 									<div class="widget-chart bg-lightseagreen bg-gradient-green">
-										<h2>Chiffre d'affaire (<?php if(!empty($client['nom_societe'])){echo $client['nom_societe'];}else{echo $client['nom_client'];} ?></h2>
+										<h2>Chiffre d'affaire (<?php if(!empty($client['nom_societe'])){echo $client['nom_societe'];}else{echo $client['nom_client'];} ?>)</h2>
 										<table class="flot-chart" data-type="lines" data-tick-color="rgba(255,255,255,0.2)" data-width="100%" data-height="220px">
 											<thead>
 											<tr>
@@ -414,7 +414,7 @@ include "inc/header.php";
 												?>
 												<tr onclick="window.location.href='index.php?view=gestion&sub=facture&data=view_facture&num_facture=<?= $facture['reference']; ?>'">
 													<td><?= $facture['reference']; ?></td>
-													<td><?= date("d/m/Y", $facture['date_devis']); ?></td>
+													<td><?= date("d/m/Y", $facture['date_facture']); ?></td>
 													<td>
 														<?php if($facture_cls->verif_echeance($date_jour_strt, $facture['date_echeance']) == 1){ ?>
 															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $facture['date_echeance']); ?></span>
