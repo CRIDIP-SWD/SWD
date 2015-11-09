@@ -316,7 +316,6 @@ include "inc/header.php";
 <?php if(isset($_GET['success']) && $_GET['success'] == 'calling'){ ?>
 <script type="text/javascript">
 	toastr.success("Appel Enregistrer", "Appel",{
-		iconClass: "fa fa-phone",
 		progressBar: true,
 		positionClass: "toast-top-full-width"
 	})
@@ -326,7 +325,6 @@ include "inc/header.php";
 <?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
 	<script type="text/javascript">
 		toastr.error("Appel Non Enregistrer", "Appel",{
-			iconClass: "fa fa-phone",
 			progressBar: true,
 			positionClass: "toast-top-full-width"
 		})
