@@ -378,7 +378,7 @@ include "inc/header.php";
 														if($devis['etat_devis'] == 3){echo "<span class='label label-danger'><i class='fa fa-times'></i> Refusé</span>";}
 														?>
 													</td>
-													<td>
+													<td class="text-right">
 														<?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?>
 													</td>
 												</tr>
@@ -429,7 +429,7 @@ include "inc/header.php";
 														if($facture['etat_facture'] == 3){echo "<span class='label label-success'><i class='fa fa-times'></i> Payé</span>";}
 														?>
 													</td>
-													<td>
+													<td class="text-right">
 														<?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?>
 													</td>
 												</tr>
@@ -486,7 +486,7 @@ include "inc/header.php";
 															<span class="label label-success"><?= date("d-m-Y", $projet['date_echeance']); ?></span>
 														<?php } ?>
 													</td>
-													<td>
+													<td class="text-right">
 														<?= number_format($projet['total_projet'], 2, ',', ' ')." €"; ?>
 													</td>
 												</tr>
