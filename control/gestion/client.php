@@ -36,6 +36,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'calling')
                                 VALUES (NULL,'$num_appelant','$num_appeler','$nom_client','$date_jour_heure_strt','1')")or die("ERROR SQL: ".mysql_error());
         header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&success=calling");
     }else{
+        $sql_called = mysql_query("INSERT INTO `client_called`(`idclientcalled`, `num_user`, `num_client`, `nom_client`, `date_appel`, `status`)
+                                VALUES (NULL,'$num_appelant','$num_appeler','$nom_client','$date_jour_heure_strt','0')")or die("ERROR SQL: ".mysql_error());
         header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&error=calling");
     }
 
