@@ -25,4 +25,5 @@
 <!-- APPEL DATATABLE -->
 <script type="text/javascript">
     $('#listing-client').dataTable();
+    $('#listing-devis').dataTable();
 </script>

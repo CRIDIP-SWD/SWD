@@ -32,6 +32,22 @@ class client
         $calc = $facture - $rglt;
         return $calc;
     }
+
+    public function count_devis($idclient)
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM swd_devis WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function count_facture($idclient)
+    {
+        $sql = mysql_query("SELECT COUNT(*) FROM swd_facture WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+
 }
 if(isset($_GET['action']) && $_GET['action'] == 'calling')
 {

@@ -202,6 +202,7 @@ include "inc/header.php";
 						$num_client = $_GET['num_client'];
 						$sql_client = mysql_query("SELECT * FROM client WHERE num_client = '$num_client'")or die(mysql_error());
 						$client = mysql_fetch_array($sql_client);
+						$idclient = $client['idclient'];
 					?>
 					<?php
 					$nom_sector = "GESTION";
@@ -245,11 +246,11 @@ include "inc/header.php";
 										<table style="width: 100%;">
 											<tr>
 												<td style="width: 50%;">Total Facturer:</td>
-												<td style="width: 50%; text-align: right; padding-right: 5px;"><?= number_format($client_cls->balance_facture($client['idclient']), 2, ',', ' ')." €"; ?></td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;"><?= number_format($client_cls->balance_facture($idclient), 2, ',', ' ')." €"; ?></td>
 											</tr>
 											<tr>
 												<td style="width: 50%;">Total Payer:</td>
-												<td style="width: 50%; text-align: right; padding-right: 5px;"><?= number_format($client_cls->balance_reglement($client['idclient']), 2, ',', ' ')." €"; ?></td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;"><?= number_format($client_cls->balance_reglement($idclient), 2, ',', ' ')." €"; ?></td>
 											</tr>
 											<tr>
 												<td colspan="2"><hr></td>
@@ -258,8 +259,8 @@ include "inc/header.php";
 												<td style="width: 50%;">BALANCE:</td>
 												<td style="width: 50%; text-align: right; padding-right: 5px;">
 													<?php
-													if($client_cls->balance($client['idclient']) < '0.00'){echo "<strong class='text-danger'>".number_format($client_cls->balance($client['idclient']), 2, ',', ' ')." €</strong>";}
-													if($client_cls->balance($client['idclient']) >= '0.00'){echo "<strong class='text-success'>".number_format($client_cls->balance($client['idclient']), 2, ',', ' ')." €</strong>";}
+													if($client_cls->balance($idclient) < '0.00'){echo "<strong class='text-danger'>".number_format($client_cls->balance($idclient), 2, ',', ' ')." €</strong>";}
+													if($client_cls->balance($idclient) >= '0.00'){echo "<strong class='text-success'>".number_format($client_cls->balance($idclient), 2, ',', ' ')." €</strong>";}
 													?>
 												</td>
 											</tr>
@@ -269,6 +270,53 @@ include "inc/header.php";
 								<!-- //content > row > col-lg-3 -->
 							</div>
 							<!-- //row-->
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<section class="panel">
+									<header class="panel-heading bg-warning-gradient">
+										<h2>Liste des <strong>Devis</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<table class="table table-striped" id="listing-devis">
+											<thead>
+											<tr>
+												<th  class="text-center">#</th>
+												<th class="text-center">Identité</th>
+												<th class="text-center">Adresse</th>
+												<th class="text-center">Coordonnée</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_devis = mysql_query("SELECT * FROM swd_devis WHERE idclient = ")or die(mysql_error());
+											while($client = mysql_fetch_array($sql_client))
+											{
+												?>
+												<tr onclick="window.location.href='index.php?view=gestion&sub=client&data=view_client&num_client=<?= $client['num_client']; ?>'">
+													<td><?= $client['num_client']; ?></td>
+													<td>
+														<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
+														<?= $client['nom_client']; ?>
+													</td>
+													<td>
+														<?= html_entity_decode($client['adresse']); ?><br>
+														<?= $client['code_postal']; ?> <?= html_entity_decode($client['ville']); ?>
+													</td>
+													<td>
+														<i class="fa fa-phone"></i>: <?= $client['telephone']; ?><br>
+														<i class="fa fa-envelope"></i>: <?= $client['email']; ?>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+							<div class="col-md-6">
+
+							</div>
 						</div>
 					</div>
 					<div id="edit-client-modal" data-width="700" class="modal fade">
