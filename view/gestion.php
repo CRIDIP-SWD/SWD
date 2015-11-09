@@ -282,18 +282,19 @@ include "inc/header.php";
 											<thead>
 											<tr>
 												<th  class="text-center">#</th>
-												<th class="text-center">Identité</th>
-												<th class="text-center">Adresse</th>
-												<th class="text-center">Coordonnée</th>
+												<th class="text-center">Date du Devis</th>
+												<th class="text-center">Date d'écheance</th>
+												<th class="text-center">Etat</th>
+												<th class="text-right">Montant</th>
 											</tr>
 											</thead>
 											<tbody align="center">
 											<?php
-											$sql_devis = mysql_query("SELECT * FROM swd_devis WHERE idclient = ")or die(mysql_error());
-											while($client = mysql_fetch_array($sql_client))
+											$sql_devis = mysql_query("SELECT * FROM swd_devis WHERE idclient = '$idclient'")or die(mysql_error());
+											while($devis = mysql_fetch_array($sql_devis))
 											{
 												?>
-												<tr onclick="window.location.href='index.php?view=gestion&sub=client&data=view_client&num_client=<?= $client['num_client']; ?>'">
+												<tr onclick="window.location.href='index.php?view=gestion&sub=devis&data=view_devis&num_devis=<?= $devis['reference']; ?>'">
 													<td><?= $client['num_client']; ?></td>
 													<td>
 														<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
