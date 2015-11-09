@@ -238,7 +238,7 @@ include "inc/header.php";
 								</div>
 								<!-- //content > row > col-sm-9 -->
 
-								<div class="col-sm-4">
+								<div class="col-sm-4 bg-white">
 									<h3>Balance</h3>
 									<hr>
 								</div>
