@@ -315,17 +315,13 @@ include "inc/header.php";
 	<?php include "inc/script.php"; ?>
 <?php if(isset($_GET['success']) && $_GET['success'] == 'calling'){ ?>
 <script type="text/javascript">
-	$.notific8('Appel Enregistrer',{
-		theme: "theme"
-	})
+	$.notific8('Appel Enregistrer')
 </script>
 <?php } ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
 	<script type="text/javascript">
-		$.notific8('Appel non Enregistrer',{
-			theme: "theme"
-		})
+		$.notific8('Appel non Enregistrer')
 	</script>
 <?php } ?>
 
