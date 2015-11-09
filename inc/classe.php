@@ -30,3 +30,6 @@ $user = $user_cls->info_user($login);
 
 require_once "control/general/general.php";
 $gen_cls = new general();
+
+require_once "control/gestion/client.php";
+$client_cls = new client();
