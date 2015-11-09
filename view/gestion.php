@@ -313,6 +313,15 @@ include "inc/header.php";
 -->
 		
 	<?php include "inc/script.php"; ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'calling'){ ?>
+<script type="text/javascript">
+	toastr.success("Appel Enregistrer", "Appel",{
+		iconClass: "fa fa-phone",
+		progressBar: true,
+		positionClass: "toast-top-full-width"
+	})
+</script>
+<?php } ?>
 
 </body>
 </html>
