@@ -244,8 +244,8 @@ include "inc/header.php";
 										<hr>
 										<table style="width: 100%;">
 											<tr>
-												<td style="width: 50%;">TEST</td>
-												<td style="width: 50%;">TEST</td>
+												<td style="width: 50%;">Total Facturer:</td>
+												<td style="width: 50%; text-align: right; padding-right: 5px;">0,00 €</td>
 											</tr>
 										</table>
 									</section>
