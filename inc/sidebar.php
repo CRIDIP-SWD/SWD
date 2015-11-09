@@ -15,7 +15,6 @@
             <li><a href="index.php?view=gestion&sub=client"><i class="icon  fa fa-users"></i> Client </a></li>
             <li><a href="index.php?view=gestion&sub=article"><i class="icon  fa fa-cube"></i> Article </a></li>
             <li><a href="index.php?view=gestion&sub=devis"><i class="icon  fa fa-file-o"></i> Devis </a></li>
-            <li><a href="index.php?view=gestion&sub=commande"><i class="icon  fa fa-cubes"></i> Commandes </a></li>
             <li><a href="index.php?view=gestion&sub=facture"><i class="icon  fa fa-eur"></i> Factures </a></li>
         </ul>
     <?php } ?>
