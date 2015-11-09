@@ -282,7 +282,6 @@ include "inc/header.php";
 											<thead>
 											<tr>
 												<th  class="text-center">#</th>
-												<th class="text-center">Date du Devis</th>
 												<th class="text-center">Date d'écheance</th>
 												<th class="text-center">Etat</th>
 												<th class="text-right">Montant</th>
