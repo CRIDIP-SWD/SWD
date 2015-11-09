@@ -473,7 +473,7 @@ include "inc/header.php";
 													</td>
 													<td>
 														<?php
-
+															if($projet_cls->sum_percent_tache($projet['idprojet']) != 100){echo "<span class='label label-warning'>En cours...</span>";}else{echo "<span class='label label-success'>Terminé</span>";}
 														?>
 													</td>
 													<td>
