@@ -386,51 +386,51 @@ include "inc/header.php";
 											<tbody>
 											<tr>
 												<th>JAN</th>
-												<td><?= $gen_cls->data_chart_general("01-01-2015", "31-01-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-01-2015", "31-01-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>FEB</th>
-												<td><?= $gen_cls->data_chart_general("01-02-2015", "28-02-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-02-2015", "28-02-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>MAR</th>
-												<td><?= $gen_cls->data_chart_general("01-03-2015", "31-03-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-03-2015", "31-03-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>APR</th>
-												<td><?= $gen_cls->data_chart_general("01-04-2015", "30-04-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-04-2015", "30-04-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>MAY</th>
-												<td><?= $gen_cls->data_chart_general("01-05-2015", "31-05-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-05-2015", "31-05-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>JUN</th>
-												<td><?= $gen_cls->data_chart_general("01-06-2015", "30-06-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-06-2015", "30-06-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>JUL</th>
-												<td><?= $gen_cls->data_chart_general("01-07-2015", "31-07-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-07-2015", "31-07-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>AUG</th>
-												<td><?= $gen_cls->data_chart_general("01-08-2015", "31-08-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-08-2015", "31-08-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>SEP</th>
-												<td><?= $gen_cls->data_chart_general("01-09-2015", "30-09-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-09-2015", "30-09-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>OCT</th>
-												<td><?= $gen_cls->data_chart_general("01-10-2015", "31-10-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-10-2015", "31-10-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>NOV</th>
-												<td><?= $gen_cls->data_chart_general("01-11-2015", "30-11-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-11-2015", "30-11-2015", $idclient); ?></td>
 											</tr>
 											<tr>
 												<th>DEC</th>
-												<td><?= $gen_cls->data_chart_general("01-12-2015", "31-12-2015"); ?></td>
+												<td><?= $facture_cls->chart_fct_client("01-12-2015", "31-12-2015", $idclient); ?></td>
 											</tr>
 											</tbody>
 										</table>
