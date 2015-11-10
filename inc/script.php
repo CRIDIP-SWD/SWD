@@ -31,3 +31,6 @@
     $('#listing-license').dataTable();
     $('#listing-ticket').dataTable();
 </script>
+<script type="text/javascript">
+    $('#masked_date').mask('99-99-9999');
+</script>

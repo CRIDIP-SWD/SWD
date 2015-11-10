@@ -387,7 +387,7 @@ include "inc/header.php";
 										</table>
 									</div>
 								</section>
-							</div>>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
@@ -629,13 +629,43 @@ include "inc/header.php";
 						<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un client</h4>
 					</div>
 					<!-- //modal-header-->
-					<div class="modal-body">
-						<p>One fine body&hellip;</p>
-					</div>
-					<!-- //modal-body-->
-					<div class="modal-footer bg-success-gradient">
-						<button type="submit" class="btn btn-default pull-right"><i class="fa fa-check"></i> Valider</button>
-					</div>
+                    <form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/client.php" method="post">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" style="text-align: left;">Nom de la société</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="nom_societe">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" style="text-align: left;">Nom du client</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="nom_client">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" style="text-align: left;">Email</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" style="text-align: left;">Nom de la société</label>
+                                <div class="col-md-9">
+                                    <input id="masked_date" type="text" class="form-control" name="nom_societe">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- //modal-body-->
+                        <div class="modal-footer bg-success-gradient">
+                            <button type="submit" class="btn btn-default pull-right"><i class="fa fa-check"></i> Valider</button>
+                        </div>
+                    </form>
 				</div>
 			<?php } ?>
 		</div>
