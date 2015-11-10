@@ -49,7 +49,6 @@
     });
 </script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('#short_description').ckeditor();
-    });
+    // Call CkEditor
+    CKEDITOR.replace( 'short_description', {startupFocus : false, uiColor: '#FFFFFF'});
 </script>
