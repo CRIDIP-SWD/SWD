@@ -39,6 +39,7 @@
     $('#listing-license').dataTable();
     $('#listing-ticket').dataTable();
     $('#listing-famille').dataTable();
+    $('#listing-article').dataTable();
 </script>
 <script type="text/javascript">
     $(document).ready(function(){
