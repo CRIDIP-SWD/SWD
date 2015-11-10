@@ -948,7 +948,7 @@ include "inc/header.php";
 							</div>
 							<!-- //modal-body-->
 							<div class="modal-footer bg-success-gradient">
-								<button type="submit" class="btn btn-default pull-right" name="action" value="add-famille"><i class="fa fa-check"></i> Valider</button>
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-article"><i class="fa fa-check"></i> Valider</button>
 							</div>
 						</form>
 					</div>
@@ -1014,6 +1014,16 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-famille'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La famille d'article à été créé", "FAMILLE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
@@ -1051,6 +1061,16 @@ include "inc/header.php";
 	<script type="text/javascript">
 		$(function(){
 			toastr.error("Une erreur à eu lieu lors de la suppression du client", "CLIENT",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-famille'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la création de la famille d'article", "FAMILLE ARTICLE",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})
