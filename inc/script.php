@@ -50,5 +50,5 @@
 </script>
 <script type="text/javascript">
     // Call CkEditor
-    CKEDITOR.replace( 'short_description', {startupFocus : false, uiColor: '#FFFFFF'});
+    //CKEDITOR.replace( 'short_description', {startupFocus : false, uiColor: '#FFFFFF'});
 </script>
