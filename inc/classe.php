@@ -42,6 +42,9 @@ $devis_cls = new devis();
 require_once dirname(__DIR__)."/classe/gestion/facture.php";
 $facture_cls = new facture();
 
+require_once dirname(__DIR__)."/classe/gestion/article.php";
+$article_cls = new article();
+
 
 
 

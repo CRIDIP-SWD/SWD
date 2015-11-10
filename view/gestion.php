@@ -791,7 +791,7 @@ include "inc/header.php";
 													<td><?= $famille['idfamillearticle']; ?></td>
 													<td><?= $famille['designation_famille']; ?></td>
 													<td>
-														<button type="button" class="btn" onclick="" data-toggle="tooltip" data-original-title="Supprimer la famille"><i class="fa fa-trash text-danger"></i></button>
+														<button type="button" class="btn" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/article.php?action=supp-famille&idfamillearticle=<?= $famille['idfamillearticle']; ?>'" data-toggle="tooltip" data-original-title="Supprimer la famille"><i class="fa fa-trash text-danger"></i></button>
 													</td>
 												</tr>
 											<?php } ?>
