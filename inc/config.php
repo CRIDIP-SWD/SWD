@@ -5,7 +5,7 @@ DEFINE("VERSION_LOGICIEL", "0.1.0");
 DEFINE("BUILD_LOGICIEL", "1236");
 
 //DEFINE LINK
-DEFINE("ROOT", dirname(__DIR__));
+DEFINE("ROOT", dirname(__DIR__)."/");
 DEFINE("ASSETS", "assets/");
 DEFINE("CSS", "css/");
 DEFINE("ICO", "ico/");
