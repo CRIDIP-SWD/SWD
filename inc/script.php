@@ -8,6 +8,7 @@
 <script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>styleswitch.js"></script>
 <!-- Library 10+ Form plugins-->
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>form/form.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js"></script>
 <!-- Datetime plugins -->
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datetime/datetime.js"></script>
 <!-- Library Chart-->
@@ -50,5 +51,4 @@
 <script type="text/javascript">
     // Call CkEditor
     CKEDITOR.replace( 'short_description', {startupFocus : false, uiColor: '#FFFFFF'});
-
 </script>
