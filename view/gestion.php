@@ -674,7 +674,7 @@ include "inc/header.php";
 								</div>
 								<label class="control-label col-md-3" style="text-align: left;">Ville</label>
 								<div class="col-md-4">
-									<input id="masked_cp" type="text" class="form-control" name="ville">
+									<input type="text" class="form-control" name="ville">
 								</div>
 							</div>
 
