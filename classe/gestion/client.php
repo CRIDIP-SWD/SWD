@@ -66,4 +66,38 @@ class client
         $data = mysql_result($sql, 0);
         return $data;
     }
+
+    public function gen_num_client()
+    {
+        $chaine = "AZERTYUIOPQSDFGHJKLMWXCVBN";
+        $num = "1234567890";
+        $num_client = "";
+        $gen_caractere = str_shuffle(substr($chaine, 0, 2));
+        $gen_num = str_shuffle(substr($num, 0, 6));
+        $num_client .= $gen_caractere.$gen_num;
+        return $num_client;
+    }
+
+    public function gen_password($longueur)
+    {
+        $mdp = "";
+        $chaine = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
+        $longueur_max = strlen($chaine);
+        if($longueur > $longueur_max)
+        {
+            $longueur = $longueur_max;
+        }
+
+        $i = 0;
+        while($i < $longueur)
+        {
+            $caractere = substr($chaine, mt_rand(0, $longueur_max-1), 1);
+            if(!strstr($mdp, $caractere))
+            {
+                $mdp .= $caractere;
+                $i++;
+            }
+        }
+        return $mdp;
+    }
 }

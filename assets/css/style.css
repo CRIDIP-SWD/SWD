@@ -9443,4 +9443,16 @@ div.col5 {
   background: #1B1E24;
 }
 
+/*Email*/
+#email{font-family: "Arial", "Comic Sans MS", sans-serif, Arial, Verdana, "Trebuchet MS";width: 100%;}
+#email > .header{width: auto;}
+#email > .header > .logo{background: url("../img/logo_white_icon.png") no-repeat; width: 120px; height: 60px;}
+#email > .header > .dot-bar{background: url("../img/dot-bar.png")no-repeat; width: 1000px; height: 5px;}
+#email > .header > .adresse{width: 15%; font-size: 13px;}
+#email > .corps{width: 100%;}
+#email > table.id{width: 100%;}
+#email > table.id > td{width: 50%;}
+#email > .corps > button.button{width: 320px; height: 60px; background-color: #8ef2ff; color: black;}
+#email > .footer{font-size: 5px; color: rgba(34, 61, 69, 0.29);}
+
 
