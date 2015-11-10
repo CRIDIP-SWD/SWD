@@ -47,3 +47,8 @@
         $('#masked_cp').inputmask("mask", {"mask": "99999"});
     });
 </script>
+<script type="text/javascript">
+    // Call CkEditor
+    CKEDITOR.replace( 'short_description', {startupFocus : false, uiColor: '#FFFFFF'});
+
+</script>

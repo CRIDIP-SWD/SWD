@@ -899,6 +899,20 @@ include "inc/header.php";
 									</div>
 								</div>
 
+								<div class="form-group">
+									<label class="control-label col-md-3">Nom de l'article</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="nom_article">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Courte description</label>
+									<div class="col-md-9">
+										<textarea cols="80" id="short_description" name="short_description" rows="10"></textarea>
+									</div>
+								</div>
+
 
 							</div>
 							<!-- //modal-body-->
