@@ -224,7 +224,7 @@ include "inc/header.php";
 													<strong><?= $client['nom']; ?></strong>
 												<?php } ?>
 											</div>
-											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-client-modal"><i class="fa fa-edit"></i> Editer le client</button>
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-client"><i class="fa fa-edit"></i> Editer le client</button>
 											<button type="button" class="btn btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
 											<button type="button" class="btn btn-success" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/client.php?num_client=<?= $num_client; ?>&num_appeler=<?= $client['telephone']; ?>&num_appelant=<?= $user['interne']; ?>&action=calling'"><i class="fa fa-phone"></i></button>
 										</div>
@@ -608,19 +608,75 @@ include "inc/header.php";
 							</div>
 						</div>
 					</div>
-					<div id="edit-client-modal" data-width="700" class="modal fade">
-						<div class="modal-header bg-success-gradient">
+					<div id="edit-client" data-width="700" class="modal fade">
+						<div class="modal-header bg-info-gradient">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
 							<h4 class="modal-title"><i class="fa fa-edit"></i> Editer un client</h4>
 						</div>
 						<!-- //modal-header-->
-						<div class="modal-body">
-							<p>One fine body&hellip;</p>
-						</div>
-						<!-- //modal-body-->
-						<div class="modal-footer bg-success-gradient">
-							<button type="submit" class="btn btn-default pull-right"><i class="fa fa-check"></i> Valider</button>
-						</div>
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/client.php" method="post">
+							<input type="hidden" name="idclient" value="<?= $idclient; ?>" />
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Nom de la société</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="nom_societe" value="<?= $client['nom_societe']; ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Nom du client</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="nom_client" value="<?= $client['nom_client']; ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Email</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="email" value="<?= $client['email']; ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Téléphone</label>
+									<div class="col-md-9">
+										<input id="masked_phone" type="text" class="form-control rounded" name="telephone" value="<?= substr($client['telephone'], 4, 12); ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Adresse Postal</label>
+									<div class="col-md-9">
+										<textarea rows="3" class="form-control" name="adresse"><?= html_entity_decode($client['adresse']); ?></textarea>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Code Postal</label>
+									<div class="col-md-2">
+										<input id="masked_cp" type="text" class="form-control rounded" name="code_postal" value="<?= $client['code_postal']; ?>">
+									</div>
+									<label class="control-label col-md-3" style="text-align: left;">Ville</label>
+									<div class="col-md-4">
+										<input type="text" class="form-control rounded" name="ville" value="<?= html_entity_decode($client['ville']); ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Région</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="region" value="<?= html_entity_decode($client['region']); ?>">
+									</div>
+								</div>
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="edit-client"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
 					</div>
 				<?php } ?>
 				<div id="add-client" data-width="700" class="modal fade">
