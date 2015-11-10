@@ -1,7 +1,7 @@
 <?php
 require_once(ROOT.'/vendor/autoload.php');
 
-use Ovh\Api;
+use \Ovh\Api;
 $apk1 = "vXjHPaL84Jct1zaB";
 $endpoint = "ovh-eu";
 $ask1 = "WwSivyMF8kcmKMlsjd6SRCQsmox8XKnO";
