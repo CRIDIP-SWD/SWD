@@ -806,33 +806,33 @@ include "inc/header.php";
 						<div class="row">
 							<div class="col-md-12">
 								<section class="panel">
-									<header class="panel-heading bg-warning-gradient">
-										<h2>Liste des <strong>Familles d'articles</strong> </h2>
+									<header class="panel-heading bg-info-gradient">
+										<h2>Liste des <strong>articles</strong> </h2>
 									</header>
 									<div class="panel-body">
 										<div class="pull-right">
-											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-famille"><i class="fa fa-plus"></i> Ajouter une famille</button>
+											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-article"><i class="fa fa-plus"></i> Ajouter un article</button>
 										</div>
-										<table class="table table-striped" id="listing-famille">
+										<table class="table table-striped" id="listing-article">
 											<thead>
 											<tr>
 												<th  class="text-center">#</th>
 												<th class="text-center">Désignation</th>
-												<th>Action</th>
+												<th class="text-center">Famille</th>
+												<th class="text-center">Prix de Vente</th>
 											</tr>
 											</thead>
 											<tbody align="center">
 											<?php
-											$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
-											while($famille = mysql_fetch_array($sql_famille))
+											$sql_article = mysql_query("SELECT * FROM swd_article, swd_famille_article WHERE swd_article.famille = swd_famille_article.idfamillearticle")or die(mysql_error());
+											while($article = mysql_fetch_array($sql_article))
 											{
-												?>
-												<tr>
-													<td><?= $famille['idfamillearticle']; ?></td>
-													<td><?= $famille['designation_famille']; ?></td>
-													<td>
-														<button type="button" class="btn" onclick="" data-toggle="tooltip" data-original-title="Supprimer la famille"><i class="fa fa-trash text-danger"></i></button>
-													</td>
+											?>
+												<tr onclick="window.location.href='index.php?view=gestion&sub=article&data=view_article&code_article=<?= $article['code_article']; ?>'" style="cursor: hand;">
+													<td><?= $article['code_article']; ?></td>
+													<td><?= html_entity_decode($article['nom_article']); ?></td>
+													<td><?= $article['designation_famille']; ?></td>
+													<td class="text-right"><?= number_format($article['prix_vente_ht'], 2, ',', ' ')." €"; ?></td>
 												</tr>
 											<?php } ?>
 											</tbody>
