@@ -938,7 +938,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Prix</label>
 									<div class="col-md-9">
-										<div class="input-group"> <span class="input-group-addon">€</span>
+										<div class="input-group rounded"> <span class="input-group-addon">€</span>
 											<input type="text" name="prix_vente_ht" class="form-control rounded">
 										</div>
 									</div>
