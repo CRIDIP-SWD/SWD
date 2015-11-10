@@ -902,7 +902,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Famille</label>
 									<div class="col-md-9">
-										<select  class="selectpicker form-control" name="famille" data-size="10" data-live-search="true">
+										<select  class="selectpicker form-control rounded" name="famille" data-size="10" data-live-search="true">
 											<?php
 												$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
 												while($famille = mysql_fetch_array($sql_famille))
