@@ -262,8 +262,11 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-client')
     $sql_delete_swd_projet = mysql_query("DELETE FROM swd_projet WHERE idclient = '$idclient'")or die(mysql_error());
     $sql_delete_swd_ticket = mysql_query("DELETE FROM swd_ticket WHERE idclient = '$idclient'")or die(mysql_error());
 
+    $sql_delete_client = mysql_query("DELETE FROM client WHERE idclient = '$idclient'")or die(mysql_error());
+
     if($sql_delete_bank === TRUE AND $sql_delete_call === TRUE AND $sql_delete_devis_c === TRUE AND $sql_delete_commande_c === TRUE AND $sql_delete_facture_c === TRUE
-    AND $sql_delete_swd_devis === TRUE AND $sql_delete_swd_facture === TRUE AND $sql_delete_swd_license === TRUE AND $sql_delete_swd_projet === TRUE AND $sql_delete_swd_ticket === TRUE)
+    AND $sql_delete_swd_devis === TRUE AND $sql_delete_swd_facture === TRUE AND $sql_delete_swd_license === TRUE AND $sql_delete_swd_projet === TRUE
+    AND $sql_delete_swd_ticket === TRUE AND $sql_delete_client === TRUE)
     {
         header("Location: ../../index.php?view=gestion&sub=client&success=supp-client");
     }else{
