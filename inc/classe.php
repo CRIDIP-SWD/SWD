@@ -1,5 +1,5 @@
 <?php
-require_once('vendor/autoload.php');
+require_once(ROOT.VENDOR.'autoload.php');
 
 use Ovh\Api;
 $apk1 = "vXjHPaL84Jct1zaB";
