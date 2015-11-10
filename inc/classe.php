@@ -28,7 +28,6 @@ $db_password = "1992maxime";
 $db = new PDO('mysql: host=localhost', $db_username, $db_password);
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 $q = $db->query("SHOW DATABASE");
-$database =$q->fet
 
 
 
