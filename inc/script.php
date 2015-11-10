@@ -35,6 +35,6 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#masked_phone').inputmask("0033999999999");
+        $('#masked_phone').inputmask("mask", {"mask": "(999) 999-9999"});
     });
 </script>
