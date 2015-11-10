@@ -87,8 +87,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-client')
     <body>
     <div id="email">
         <div class="header">
-            <div class="logo"></div>
-            <div class="dot-bar"></div>
+            <div class="logo"><img src="<?= ROOT,ASSETS,IMG; ?>logo_white_icon.png" /></div>
+            <div class="dot-bar"><img src="<?= ROOT,ASSETS,IMG; ?>dot-bar.png" /></div>
             <div class="adresse">
                 <strong>CRIDIP SWD</strong><br>
                 8 Rue Octave Voyer<br>
