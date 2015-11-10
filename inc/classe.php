@@ -44,8 +44,8 @@ $facture_cls = new facture();
 
 
 
-require_once "control/projet/projet.php";
+require_once dirname(__DIR__)."/control/projet/projet.php";
 $projet_cls = new projet();
 
-require_once "control/projet/license.php";
+require_once dirname(__DIR__)."/control/projet/license.php";
 $license_cls = new license();
