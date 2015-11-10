@@ -369,5 +369,41 @@
             "wkhtmltoimage",
             "wkhtmltopdf"
         ]
+    },
+    {
+        "name": "ifsnop/mysqldump-php",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ifsnop/mysqldump-php.git",
+            "reference": "db21cb8777856feb3effd4b4e93a34a75e4c4703"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ifsnop/mysqldump-php/zipball/db21cb8777856feb3effd4b4e93a34a75e4c4703",
+            "reference": "db21cb8777856feb3effd4b4e93a34a75e4c4703",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-11-21 16:56:50",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Clouddueling\\": "src/"
+            }
+        },
+        "notification-url": "http://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "This is a php version of linux's mysqldump in terminal \"$ mysqldump -u username -p...\"",
+        "keywords": [
+            "backup",
+            "mysqldump"
+        ]
     }
 ]
