@@ -663,7 +663,7 @@ include "inc/header.php";
 							<div class="form-group">
 								<label class="control-label col-md-3" style="text-align: left;">Adresse Postal</label>
 								<div class="col-md-9">
-									<textarea rows="3" class="form-control rounded" name="adresse"></textarea>
+									<textarea rows="3" class="form-control" name="adresse"></textarea>
 								</div>
 							</div>
 
