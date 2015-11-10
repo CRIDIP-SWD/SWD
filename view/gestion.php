@@ -635,46 +635,46 @@ include "inc/header.php";
                             <div class="form-group">
                                 <label class="control-label col-md-3" style="text-align: left;">Nom de la société</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="nom_societe">
+                                    <input type="text" class="form-control rounded" name="nom_societe">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-3" style="text-align: left;">Nom du client</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="nom_client">
+                                    <input type="text" class="form-control rounded" name="nom_client">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-3" style="text-align: left;">Email</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="email">
+                                    <input type="text" class="form-control rounded" name="email">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-3" style="text-align: left;">Téléphone</label>
                                 <div class="col-md-9">
-                                    <input id="masked_phone" type="text" class="form-control" name="telephone">
+                                    <input id="masked_phone" type="text" class="form-control rounded" name="telephone">
                                 </div>
                             </div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3" style="text-align: left;">Adresse Postal</label>
 								<div class="col-md-9">
-									<textarea rows="3" class="form-control" name="adresse"></textarea>
+									<textarea rows="3" class="form-control rounded" name="adresse"></textarea>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="control-label col-md-3" style="text-align: left;">Code Postal</label>
 								<div class="col-md-2">
-									<input id="masked_cp" type="text" class="form-control" name="code_postal">
+									<input id="masked_cp" type="text" class="form-control rounded" name="code_postal">
 								</div>
 								<label class="control-label col-md-3" style="text-align: left;">Ville</label>
 								<div class="col-md-4">
-									<input type="text" class="form-control" name="ville">
+									<input type="text" class="form-control rounded" name="ville">
 								</div>
 							</div>
 
