@@ -22,7 +22,7 @@
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
+<!--<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>-->
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
 <!-- APPEL DATATABLE -->
 <script type="text/javascript">
