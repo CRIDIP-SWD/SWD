@@ -72,7 +72,8 @@ class client
         $chaine = "AZERTYUIOPQSDFGHJKLMWXCVBN";
         $num = "1234567890";
         $num_client = "";
-        $gen_caractere = str_shuffle(substr($chaine, 0, 2));
+        $mel_caractere = str_shuffle($chaine);
+        $gen_caractere = substr($mel_caractere, 0, 2);
         $gen_num = str_shuffle(substr($num, 0, 6));
         $num_client .= $gen_caractere.$gen_num;
         return $num_client;
