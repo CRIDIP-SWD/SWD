@@ -802,6 +802,46 @@ include "inc/header.php";
 							</div>
 						</div>
 					</div>
+					<div id="content">
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading bg-warning-gradient">
+										<h2>Liste des <strong>Familles d'articles</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<div class="pull-right">
+											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-famille"><i class="fa fa-plus"></i> Ajouter une famille</button>
+										</div>
+										<table class="table table-striped" id="listing-famille">
+											<thead>
+											<tr>
+												<th  class="text-center">#</th>
+												<th class="text-center">Désignation</th>
+												<th>Action</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
+											while($famille = mysql_fetch_array($sql_famille))
+											{
+												?>
+												<tr>
+													<td><?= $famille['idfamillearticle']; ?></td>
+													<td><?= $famille['designation_famille']; ?></td>
+													<td>
+														<button type="button" class="btn" onclick="" data-toggle="tooltip" data-original-title="Supprimer la famille"><i class="fa fa-trash text-danger"></i></button>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
 				<?php } ?>
 			<?php } ?>
 		</div>
