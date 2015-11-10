@@ -42,5 +42,6 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#masked_phone').inputmask("mask", {"mask": "0033999999999"});
+        $('#masked_cp').inputmask("mask", {"mask": "99999"});
     });
 </script>

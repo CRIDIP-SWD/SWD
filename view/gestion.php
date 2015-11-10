@@ -660,6 +660,24 @@ include "inc/header.php";
                                 </div>
                             </div>
 
+							<div class="form-group">
+								<label class="control-label col-md-3" style="text-align: left;">Adresse Postal</label>
+								<div class="col-md-9">
+									<textarea rows="3" class="form-control" name="adresse"></textarea>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-md-3" style="text-align: left;">Code Postal</label>
+								<div class="col-md-2">
+									<input id="masked_cp" type="text" class="form-control" name="code_postal">
+								</div>
+								<label class="control-label col-md-3" style="text-align: left;">Ville</label>
+								<div class="col-md-4">
+									<input id="masked_cp" type="text" class="form-control" name="ville">
+								</div>
+							</div>
+
                         </div>
                         <!-- //modal-body-->
                         <div class="modal-footer bg-success-gradient">
