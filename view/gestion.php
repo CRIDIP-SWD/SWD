@@ -723,11 +723,31 @@ include "inc/header.php";
 	})
 </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-client'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le client à bien été Créé", "CLIENT",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
 	<script type="text/javascript">
 		$(function(){
 			toastr.error("Appel non Enregistrer dans la base", "APPEL",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la création du client", "CLIENT",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})
