@@ -909,7 +909,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Courte description</label>
 									<div class="col-md-9">
-										<textarea cols="80" id="short_description" name="short_description" rows="10"></textarea>
+										<textarea class="form-control" data-provide="markdown" rows="3" maxlength="255"  data-always-show="true" placeholder="Tapez un courte description de l'article" data-pre-text='Il vous reste ' data-post-text=' caractère'></textarea>
 									</div>
 								</div>
 

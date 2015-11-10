@@ -49,5 +49,7 @@
     });
 </script>
 <script type="text/javascript">
-
+    $(document).ready(function(){
+        $('#short_description').ckeditor();
+    });
 </script>
