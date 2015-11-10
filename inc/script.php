@@ -24,6 +24,7 @@
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.extension.js"></script>
 <!-- APPEL DATATABLE -->
 <script type="text/javascript">
     $('#listing-client').dataTable();
