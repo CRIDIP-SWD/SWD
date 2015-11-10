@@ -678,6 +678,13 @@ include "inc/header.php";
 								</div>
 							</div>
 
+							<div class="form-group">
+								<label class="control-label col-md-3" style="text-align: left;">Région</label>
+								<div class="col-md-9">
+									<input type="text" class="form-control rounded" name="region">
+								</div>
+							</div>
+
                         </div>
                         <!-- //modal-body-->
                         <div class="modal-footer bg-success-gradient">
