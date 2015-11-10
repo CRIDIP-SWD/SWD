@@ -16,6 +16,7 @@ DEFINE("CONTROL", "control/");
 DEFINE("API", "API/");
 DEFINE("TOKEN", "token/");
 DEFINE("VENDOR", "vendor/");
+DEFINE("CLASSE", "classe/");
 DEFINE("SYNCHRONUS", "http://synchronus-media.cridip.com/gwcswd/");
 
 //DATE

@@ -25,27 +25,27 @@ $me3 = $ovh3->get("/me");
 
 
 
-require_once dirname(__DIR__)."/control/user.php";
+require_once dirname(__DIR__)."/classe/user.php";
 $user_cls = new user();
 $user = $user_cls->info_user($login);
 
-require_once dirname(__DIR__)."/control/general/general.php";
+require_once dirname(__DIR__)."/classe/general.php";
 $gen_cls = new general();
 
-require_once dirname(__DIR__)."/control/gestion/client.php";
+require_once dirname(__DIR__)."/classe/gestion/client.php";
 $client_cls = new client();
 
-require_once dirname(__DIR__)."/control/gestion/devis.php";
+require_once dirname(__DIR__)."/classe/gestion/devis.php";
 $devis_cls = new devis();
 
-require_once dirname(__DIR__)."/control/gestion/facture.php";
+require_once dirname(__DIR__)."/classe/gestion/facture.php";
 $facture_cls = new facture();
 
 
 
 
-require_once dirname(__DIR__)."/control/projet/projet.php";
+require_once dirname(__DIR__)."/classe/projet/projet.php";
 $projet_cls = new projet();
 
-require_once dirname(__DIR__)."/control/projet/license.php";
+require_once dirname(__DIR__)."/classe/projet/license.php";
 $license_cls = new license();

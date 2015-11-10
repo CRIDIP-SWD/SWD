@@ -1,21 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: CRIDIP-SWD
- * Date: 05/11/2015
- * Time: 19:05
- */
-class user
-{
-    public function info_user($login)
-    {
-        $sql = mysql_query("SELECT * FROM utilisateur WHERE login = '$login'")or die(mysql_error());
-        $data = mysql_fetch_array($sql);
-        return $data;
-    }
-}
-
 if(isset($_POST['action']) && $_POST['action'] == 'connexion')
 {
     require "../inc/config.php";
