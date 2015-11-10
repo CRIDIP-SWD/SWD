@@ -25,20 +25,20 @@ $me3 = $ovh3->get("/me");
 
 
 
-require_once "control/user.php";
+require_once dirname(__DIR__)."/control/user.php";
 $user_cls = new user();
 $user = $user_cls->info_user($login);
 
-require_once "control/general/general.php";
+require_once dirname(__DIR__)."/control/general/general.php";
 $gen_cls = new general();
 
-require_once "control/gestion/client.php";
+require_once dirname(__DIR__)."/control/gestion/client.php";
 $client_cls = new client();
 
-require_once "control/gestion/devis.php";
+require_once dirname(__DIR__)."/control/gestion/devis.php";
 $devis_cls = new devis();
 
-require_once "control/gestion/facture.php";
+require_once dirname(__DIR__)."/control/gestion/facture.php";
 $facture_cls = new facture();
 
 
