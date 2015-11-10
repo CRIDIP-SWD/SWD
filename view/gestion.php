@@ -225,7 +225,7 @@ include "inc/header.php";
 												<?php } ?>
 											</div>
 											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-client"><i class="fa fa-edit"></i> Editer le client</button>
-											<button type="button" class="btn btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
+											<button type="button" class="btn btn-danger" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/client.php?action=supp-client&idclient=<?= $idclient; ?>'"><i class="fa fa-remove"></i> Supprimer le client</button>
 											<button type="button" class="btn btn-success" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/client.php?num_client=<?= $num_client; ?>&num_appeler=<?= $client['telephone']; ?>&num_appelant=<?= $user['interne']; ?>&action=calling'"><i class="fa fa-phone"></i></button>
 										</div>
 										<div class="profile-status">
@@ -799,6 +799,18 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-client'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le client à bien été Supprimé", "CLIENT",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+
+<!-- ////////////////////////////////////////////////////////////////-->
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
 	<script type="text/javascript">
@@ -810,7 +822,7 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
-<?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-client'){ ?>
 	<script type="text/javascript">
 		$(function(){
 			toastr.error("Une erreur à eu lieu lors de la création du client", "CLIENT",{
@@ -820,10 +832,20 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
-<?php if(isset($_GET['error']) && $_GET['error'] == 'calling'){ ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'edit-client'){ ?>
 	<script type="text/javascript">
 		$(function(){
 			toastr.error("Une erreur à eu lieu lors de la modification du client", "CLIENT",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'supp-client'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la suppression du client", "CLIENT",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})

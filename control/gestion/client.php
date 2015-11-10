@@ -235,3 +235,40 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-client')
         header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&error=edit-client");
     }
 }
+if(isset($_GET['action']) && $_GET['action'] == 'supp-client')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idclient = $_GET['idclient'];
+    $client = $client_cls->info_client($idclient);
+    $num_client = $client['num_client'];
+    if(!empty($client['nom_societe']))
+    {
+        $nom_client = $client['nom_societe']." - ".$client['nom_client'];
+    }else{
+        $nom_client = $client['nom_client'];
+    }
+
+    $sql_delete_bank          = mysql_query("DELETE FROM client_bancaire WHERE idclient = '$idclient'")or die(mysql_error());
+    $sql_delete_call          = mysql_query("DELETE FROM client_called WHERE nom_client = '$nom_client'")or die(mysql_error());
+    $sql_delete_devis_c       = mysql_query("DELETE FROM c_devis WHERE idclient = '$idclient'")or die(mysql_error());
+    $sql_delete_commande_c    = mysql_query("DELETE FROM c_commande WHERE idclient = '$idclient'")or die(mysql_error());
+    $sql_delete_facture_c     = mysql_query("DELETE FROM c_facture WHERE idclient = '$idclient'")or die(mysql_error());
+    
+    $sql_delete_swd_devis     = mysql_query("DELETE FROM swd_devis WHERE idclient = '$idclient'")or die(mysql_error());
+    $sql_delete_swd_facture = mysql_query("DELETE FROM swd_facture WHERE idclient = '$idclient'")or die(mysql_error());
+    $sql_delete_swd_license = mysql_query("DELETE FROM swd_license WHERE idclient = '$idclient'")or die(mysql_error());
+    $sql_delete_swd_projet = mysql_query("DELETE FROM swd_projet WHERE idclient = '$idclient'")or die(mysql_error());
+    $sql_delete_swd_ticket = mysql_query("DELETE FROM swd_ticket WHERE idclient = '$idclient'")or die(mysql_error());
+
+    if($sql_delete_bank === TRUE AND $sql_delete_call === TRUE AND $sql_delete_devis_c === TRUE AND $sql_delete_commande_c === TRUE AND $sql_delete_facture_c === TRUE
+    AND $sql_delete_swd_devis === TRUE AND $sql_delete_swd_facture === TRUE AND $sql_delete_swd_license === TRUE AND $sql_delete_swd_projet === TRUE AND $sql_delete_swd_ticket === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=client&success=supp-client");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=client&error=supp-client");
+    }
+
+
+}
