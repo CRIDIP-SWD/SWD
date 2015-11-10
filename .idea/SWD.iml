@@ -3,9 +3,11 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dropbox/dropbox-sdk" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ifsnop/mysqldump-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ovh/ovh" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/react/promise" />
     </content>
@@ -25,17 +27,21 @@
       <library name="PHP">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/dropbox/dropbox-sdk" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+          <root url="file://$MODULE_DIR$/vendor/ifsnop/mysqldump-php" />
           <root url="file://$MODULE_DIR$/vendor/ovh/ovh" />
           <root url="file://$MODULE_DIR$/vendor/react/promise" />
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/dropbox/dropbox-sdk" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+          <root url="file://$MODULE_DIR$/vendor/ifsnop/mysqldump-php" />
           <root url="file://$MODULE_DIR$/vendor/ovh/ovh" />
           <root url="file://$MODULE_DIR$/vendor/react/promise" />
         </SOURCES>

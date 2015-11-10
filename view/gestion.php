@@ -749,6 +749,51 @@ include "inc/header.php";
                     </form>
 				</div>
 			<?php } ?>
+			<?php if(isset($_GET['sub']) && $_GET['sub'] == 'article'){ ?>
+				<?php if(!isset($_GET['data'])){ ?>
+					<?php
+					$nom_sector = "GESTION";
+					$nom_page = "ARTICLE";
+					?>
+					<ol class="breadcrumb">
+						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+					</ol>
+					<!-- //breadcrumb-->
+
+					<div id="content">
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading bg-warning-gradient">
+										<h2>Liste des <strong>Familles d'articles</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<div class="pull-right">
+											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-famille"><i class="fa fa-plus"></i> Ajouter une famille</button>
+										</div>
+										<table class="table table-striped" id="listing-client">
+											<thead>
+											<tr>
+												<th  class="text-center">#</th>
+												<th class="text-center">Désignation</th>
+												<th>Action</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+
+											?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				<?php } ?>
+			<?php } ?>
 		</div>
 		<!-- //main-->
 		

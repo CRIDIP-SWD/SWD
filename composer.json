@@ -10,6 +10,8 @@
     }
   ],
   "require": {
-    "ovh/ovh": "dev-master"
+    "ovh/ovh": "dev-master",
+    "dropbox/dropbox-sdk": "v1.1.6",
+    "ifsnop/mysqldump-php": "dev-master"
   }
 }

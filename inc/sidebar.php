@@ -79,6 +79,7 @@
             <li><a href="index.php?view=outil&sub=ticket"><i class="icon  fa fa-ticket"></i> Ticket </a></li>
             <li><a href="index.php?view=outil&sub=guide"><i class="icon  fa fa-book"></i> Guide Utilisateur </a></li>
             <li><a href="index.php?view=outil&sub=travaux"><i class="icon  fa fa-wrench"></i> Travaux </a></li>
+            <li><a href="index.php?view=outil&sub=bdd"><i class="icon  fa fa-database"></i> Base de données </a></li>
         </ul>
     <?php } ?>
 </nav>

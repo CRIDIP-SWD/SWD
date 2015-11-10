@@ -23,6 +23,14 @@ $csk3 = "5tQNjCGSfYHdxetHfWORhOvGufGXlFBg";
 $ovh3 = new Api($apk3,$ask3,$endpoint,$csk3);
 $me3 = $ovh3->get("/me");
 
+$db_username = "remote_user";
+$db_password = "1992maxime";
+$db = new PDO('mysql: host=localhost', $db_username, $db_password);
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+$q = $db->query("SHOW DATABASE");
+$database =$q->fet
+
+
 
 
 require_once dirname(__DIR__)."/classe/user.php";
