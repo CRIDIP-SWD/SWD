@@ -137,7 +137,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-client')
     }
 
 }
-if(isset($_POST['action']) && $_POST['action'] == 'edit_client')
+if(isset($_POST['action']) && $_POST['action'] == 'edit-client')
 {
     include "../../inc/config.php";
     include "../../inc/classe.php";
