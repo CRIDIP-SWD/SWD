@@ -52,8 +52,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'calling')
 }
 if(isset($_POST['action']) && $_POST['action'] == 'add-client')
 {
-    include "../../inc/classe.php";
     include "../../inc/config.php";
+    include "../../inc/classe.php";
 
     //Variable
     $num_client     = $client_cls->gen_num_client();
