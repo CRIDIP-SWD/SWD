@@ -23,7 +23,6 @@ $csk3 = "5tQNjCGSfYHdxetHfWORhOvGufGXlFBg";
 $ovh3 = new Api($apk3,$ask3,$endpoint,$csk3);
 $me3 = $ovh3->get("/me");
 
-$dump = new \Clouddueling\Mysqldump\Mysqldump();
 
 
 require_once "control/user.php";
