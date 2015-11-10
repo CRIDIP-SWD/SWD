@@ -75,6 +75,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'calling')
     $num_client = $_GET['num_client'];
     $num_appeler = $_GET['num_appeler'];
     $num_appelant = $_GET['num_appelant'];
+    include ('../../inc/classe.php');
 
     $sql_client = mysql_query("SELECT * FROM client WHERE num_client = '$num_client'")or die(mysql_error());
     $client = mysql_fetch_array($sql_client);
