@@ -842,6 +842,71 @@ include "inc/header.php";
 							</div>
 						</div>
 					</div>
+					<div id="add-famille" data-width="700" class="modal fade">
+						<div class="modal-header bg-success-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter une Famille</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3" style="text-align: left;">Désignation</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="designation_famille">
+									</div>
+								</div>
+
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-famille"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
+					<div id="add-article" data-width="700" class="modal fade">
+						<div class="modal-header bg-success-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un article</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label"> Type de Produit</label>
+									<div>
+										<div class="row">
+											<div class="col-sm-12">
+												<ul class="iCheck" data-color="red">
+													<li>
+														<input type="radio" name="type_article" value="1">
+														<label><i class="fa fa-globe"></i> Web</label>
+													</li>
+													<li>
+														<input  type="radio" name="type_article" value="2" checked="checked">
+														<label ><i class="fa fa-server"></i> Serveur</label>
+													</li>
+													<li>
+														<input  type="radio" name="type_article" value="3">
+														<label ><i class="fa fa-phone-square"></i> Télécom</label>
+													</li>
+												</ul>
+											</div><!-- //col-sm-6 -->
+										</div><!-- //row-->
+									</div>
+								</div>
+
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-famille"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
 				<?php } ?>
 			<?php } ?>
 		</div>
