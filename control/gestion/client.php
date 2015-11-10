@@ -131,7 +131,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-client')
 
     if($sql_add_client === TRUE AND $mail_envoie === TRUE)
     {
-        header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=<?= $num_client; ?>&success=add-client");
+        header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&success=add-client");
     }else{
         header("Location: ../../index.php?view=gestion&sub=client&error=add-client");
     }
