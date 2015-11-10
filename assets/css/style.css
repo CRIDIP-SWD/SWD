@@ -9446,8 +9446,8 @@ div.col5 {
 /*Email*/
 #email{font-family: "Arial", "Comic Sans MS", sans-serif, Arial, Verdana, "Trebuchet MS";width: 100%;}
 #email > .header{width: auto;}
-#email > .header > .logo{background: url("../img/logo_white_icon.png") no-repeat; width: 120px; height: 60px;}
-#email > .header > .dot-bar{background: url("../img/dot-bar.png")no-repeat; width: 1000px; height: 5px;}
+#email > .header > .logo{background: url("http://swd.cridip.com/assets/img/logo_white_icon.png") no-repeat; width: 120px; height: 60px;}
+#email > .header > .dot-bar{background: url("http://swd.cridip.com/assets/img/dot-bar.png")no-repeat; width: 1000px; height: 5px;}
 #email > .header > .adresse{width: 15%; font-size: 13px;}
 #email > .corps{width: 100%;}
 #email > table.id{width: 100%;}
