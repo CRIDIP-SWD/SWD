@@ -654,9 +654,9 @@ include "inc/header.php";
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3" style="text-align: left;">Nom de la société</label>
+                                <label class="control-label col-md-3" style="text-align: left;">Téléphone</label>
                                 <div class="col-md-9">
-                                    <input id="masked_date" type="text" class="form-control" name="nom_societe">
+                                    <input id="masked_phone" type="text" class="form-control" name="telephone">
                                 </div>
                             </div>
 

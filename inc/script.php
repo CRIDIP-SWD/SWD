@@ -22,6 +22,8 @@
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
 <!-- APPEL DATATABLE -->
 <script type="text/javascript">
     $('#listing-client').dataTable();
@@ -32,5 +34,5 @@
     $('#listing-ticket').dataTable();
 </script>
 <script type="text/javascript">
-    $('#masked_date').mask('99-99-9999');
+    $('#masked_phone').inputmask("0033999999999");
 </script>
