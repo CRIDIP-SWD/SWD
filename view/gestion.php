@@ -900,6 +900,21 @@ include "inc/header.php";
 								</div>
 
 								<div class="form-group">
+									<label class="control-label col-md-3">Famille</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control" name="famille" data-size="10" data-live-search="true">
+											<?php
+												$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
+												while($famille = mysql_fetch_array($sql_famille))
+												{
+												?>
+												<option value="<?= $famille['idfamillearticle']; ?>"><?= $famille['designation_famille']; ?></option>
+												<?php } ?>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
 									<label class="control-label col-md-3">Nom de l'article</label>
 									<div class="col-md-9">
 										<input type="text" class="form-control rounded" name="nom_article">
@@ -909,7 +924,23 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Courte description</label>
 									<div class="col-md-9">
-										<textarea class="form-control" id="short_description" rows="3" maxlength="255"  data-always-show="true" placeholder="Tapez un courte description de l'article" data-pre-text='Il vous reste ' data-post-text=' caractère' name="short_description"></textarea>
+										<textarea class="form-control" data-provide="markdown" rows="3" maxlength="255"  data-always-show="true" placeholder="Tapez un courte description de l'article" data-pre-text='Il vous reste ' data-post-text=' caractère' name="short_description"></textarea>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Description</label>
+									<div class="col-md-9">
+										<textarea class="form-control" data-provide="markdown" rows="3" name="long_description"></textarea>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Prix</label>
+									<div class="col-md-9">
+										<div class="input-group"> <span class="input-group-addon">€</span>
+											<input type="text" name="prix_vente_ht" class="form-control">
+										</div>
 									</div>
 								</div>
 
