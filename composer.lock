@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20e1f1b13b46968c793b411b1f7f704f",
-    "content-hash": "c4892912ed844d23fcbf8dd159cf77f1",
+    "hash": "6951a1037779fa6b836431a043ea43ed",
+    "content-hash": "76b105c291eda08c4e697c5f1fd62984",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
-            "version": "5.3.x-dev",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "8e6f5732242fe833eb5fd553648924a200e50492"
+                "reference": "f3c8c22471cb55475105c14769644a49c3262b93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8e6f5732242fe833eb5fd553648924a200e50492",
-                "reference": "8e6f5732242fe833eb5fd553648924a200e50492",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f3c8c22471cb55475105c14769644a49c3262b93",
+                "reference": "f3c8c22471cb55475105c14769644a49c3262b93",
                 "shasum": ""
             },
             "require": {
@@ -27,9 +27,15 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0"
+                "phpunit/phpunit": "^4.0",
+                "psr/log": "^1.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "GuzzleHttp\\": "src/"
@@ -57,20 +63,20 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-08-15 20:00:28"
+            "time": "2015-05-20 03:47:55"
         },
         {
             "name": "guzzlehttp/ringphp",
-            "version": "dev-master",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/RingPHP.git",
-                "reference": "9465032ac5d6beaa55f10923403e6e1c36018d9c"
+                "reference": "dbbb91d7f6c191e5e405e900e3102ac7f261bc0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/9465032ac5d6beaa55f10923403e6e1c36018d9c",
-                "reference": "9465032ac5d6beaa55f10923403e6e1c36018d9c",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/dbbb91d7f6c191e5e405e900e3102ac7f261bc0b",
+                "reference": "dbbb91d7f6c191e5e405e900e3102ac7f261bc0b",
                 "shasum": ""
             },
             "require": {
@@ -108,20 +114,20 @@
                 }
             ],
             "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
-            "time": "2015-05-21 17:23:02"
+            "time": "2015-05-20 03:37:09"
         },
         {
             "name": "guzzlehttp/streams",
-            "version": "dev-master",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/streams.git",
-                "reference": "d1f8a6c55f0f753cfd6f6755856473eb02cedb19"
+                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/streams/zipball/d1f8a6c55f0f753cfd6f6755856473eb02cedb19",
-                "reference": "d1f8a6c55f0f753cfd6f6755856473eb02cedb19",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+                "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
                 "shasum": ""
             },
             "require": {
@@ -158,175 +164,20 @@
                 "Guzzle",
                 "stream"
             ],
-            "time": "2015-01-22 00:01:34"
-        },
-        {
-            "name": "ifsnop/mysqldump-php",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ifsnop/mysqldump-php.git",
-                "reference": "db21cb8777856feb3effd4b4e93a34a75e4c4703"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ifsnop/mysqldump-php/zipball/db21cb8777856feb3effd4b4e93a34a75e4c4703",
-                "reference": "db21cb8777856feb3effd4b4e93a34a75e4c4703",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Clouddueling\\": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "This is a php version of linux's mysqldump in terminal \"$ mysqldump -u username -p...\"",
-            "keywords": [
-                "backup",
-                "mysqldump"
-            ],
-            "time": "2013-11-21 16:56:50"
-        },
-        {
-            "name": "mikehaertl/php-shellcommand",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mikehaertl/php-shellcommand.git",
-                "reference": "c7bbaf2e01a6d6dbf39d54dd077a8f9061a845c2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/c7bbaf2e01a6d6dbf39d54dd077a8f9061a845c2",
-                "reference": "c7bbaf2e01a6d6dbf39d54dd077a8f9061a845c2",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "mikehaertl\\shellcommand\\": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Härtl",
-                    "email": "haertl.mike@gmail.com"
-                }
-            ],
-            "description": "An object oriented interface to shell commands",
-            "keywords": [
-                "shell"
-            ],
-            "time": "2015-09-22 18:26:51"
-        },
-        {
-            "name": "mikehaertl/php-tmpfile",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mikehaertl/php-tmpfile.git",
-                "reference": "e34d43fa546d09f434b59ea8c05d4e4d55d55687"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mikehaertl/php-tmpfile/zipball/e34d43fa546d09f434b59ea8c05d4e4d55d55687",
-                "reference": "e34d43fa546d09f434b59ea8c05d4e4d55d55687",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "mikehaertl\\tmp\\": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Haertl",
-                    "email": "haertl.mike@gmail.com"
-                }
-            ],
-            "description": "A convenience class for temporary files",
-            "keywords": [
-                "files"
-            ],
-            "time": "2014-07-09 11:08:51"
-        },
-        {
-            "name": "mikehaertl/phpwkhtmltopdf",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mikehaertl/phpwkhtmltopdf.git",
-                "reference": "bb578247c6a92c172eb2c9d017f2c4ff3ea96ed0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mikehaertl/phpwkhtmltopdf/zipball/bb578247c6a92c172eb2c9d017f2c4ff3ea96ed0",
-                "reference": "bb578247c6a92c172eb2c9d017f2c4ff3ea96ed0",
-                "shasum": ""
-            },
-            "require": {
-                "mikehaertl/php-shellcommand": "^1.0.2",
-                "mikehaertl/php-tmpfile": "^1.0.0",
-                "php": ">=5.0.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "mikehaertl\\wkhtmlto\\": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Haertl",
-                    "email": "haertl.mike@gmail.com"
-                }
-            ],
-            "description": "A slim PHP wrapper around wkhtmltopdf with an easy to use and clean OOP interface",
-            "homepage": "http://mikehaertl.github.com/phpwkhtmltopdf/",
-            "keywords": [
-                "pdf",
-                "wkhtmltoimage",
-                "wkhtmltopdf"
-            ],
-            "time": "2015-10-21 11:16:53"
+            "time": "2014-10-12 19:18:40"
         },
         {
             "name": "ovh/ovh",
-            "version": "v1.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ovh/php-ovh.git",
-                "reference": "893191d15127e6f33ff9b47169ba3ec7334807fd"
+                "reference": "3a8ce8a924d7625a869dfab9c962949d73bdc576"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ovh/php-ovh/zipball/893191d15127e6f33ff9b47169ba3ec7334807fd",
-                "reference": "893191d15127e6f33ff9b47169ba3ec7334807fd",
+                "url": "https://api.github.com/repos/ovh/php-ovh/zipball/3a8ce8a924d7625a869dfab9c962949d73bdc576",
+                "reference": "3a8ce8a924d7625a869dfab9c962949d73bdc576",
                 "shasum": ""
             },
             "require": {
@@ -334,7 +185,7 @@
             },
             "require-dev": {
                 "phpdocumentor/phpdocumentor": "2.*",
-                "phpunit/phpunit": "4.0.*",
+                "phpunit/phpunit": "4.*",
                 "squizlabs/php_codesniffer": "1.*"
             },
             "type": "library",
@@ -344,13 +195,16 @@
                 }
             },
             "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
             "authors": [
                 {
                     "name": "Vincent Cassé"
                 }
             ],
             "description": "Wrapper for OVH APIs",
-            "time": "2014-12-19 00:20:42"
+            "time": "2015-10-09 20:29:18"
         },
         {
             "name": "react/promise",
@@ -399,8 +253,10 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "ovh/ovh": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

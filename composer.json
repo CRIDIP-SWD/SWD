@@ -1,7 +1,7 @@
 {
-  "name": "CRIDIP-SWD/SWD",
+  "name": "vendor_name/package_name",
   "description": "description_text",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
@@ -10,8 +10,6 @@
     }
   ],
   "require": {
-    "ovh/ovh": "v1.1.1",
-    "mikehaertl/phpwkhtmltopdf": "2.1.1",
-    "ifsnop/mysqldump-php": "1.0.0"
+    "ovh/ovh": "dev-master"
   }
 }
