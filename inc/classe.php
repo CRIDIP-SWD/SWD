@@ -6,7 +6,7 @@ $apk1 = "vXjHPaL84Jct1zaB";
 $endpoint = "ovh-eu";
 $ask1 = "WwSivyMF8kcmKMlsjd6SRCQsmox8XKnO";
 $csk1 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
-$ovh1 = new Api($apk1,$ask1,$endpoint,$csk1);
+$ovh1 = new Ovh\Api($apk1,$ask1,$endpoint,$csk1);
 $me1 = $ovh1->get("/me");
 
 $apk2 = "nP9Ij0PFvlZw0wV6";
