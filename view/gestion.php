@@ -773,7 +773,7 @@ include "inc/header.php";
 										<div class="pull-right">
 											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-famille"><i class="fa fa-plus"></i> Ajouter une famille</button>
 										</div>
-										<table class="table table-striped" id="listing-client">
+										<table class="table table-striped" id="listing-famille">
 											<thead>
 											<tr>
 												<th  class="text-center">#</th>

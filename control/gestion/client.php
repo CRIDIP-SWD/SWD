@@ -32,7 +32,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'calling')
     $csk1 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
     $ovh1 = new \Ovh\Api($apk1,$ask1,$endpoint,$csk1);
 
-    $content_call = (object) array(
+    $content_call = array(
       "calledNumber" => $num_appeler
     );
 
