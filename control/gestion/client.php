@@ -142,7 +142,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit_client')
     include "../../inc/config.php";
     include "../../inc/classe.php";
 
-    $idclient   = $_POST['idclient'];
+    $idclient       = $_POST['idclient'];
     $nom_client     = $_POST['nom_client'];
     $nom_societe    = $_POST['nom_societe'];
     $email          = $_POST['email'];
@@ -153,7 +153,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit_client')
     $region         = htmlentities(addslashes($_POST['region']));
 
     $sql_edit_client = mysql_query("UPDATE client SET nom_client = '$nom_client',nom_societe = '$nom_societe',email = '$email',telephone = '$telephone',adresse = '$adresse',code_postal = '$code_postal',ville = '$code_postal',region = '$region'WHERE idclient = '$idclient'")or die(mysql_error());
-
+    $client = $client_cls->info_client($idclient);
+    $num_client = $client['num_client'];
 
 //Email
     $to = $email;
@@ -227,10 +228,10 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit_client')
     $msg = ob_get_contents();
     $mail_envoie = mail($to, $sujet, $msg, $headers);
 
-    if($sql_add_client === TRUE AND $mail_envoie === TRUE)
+    if($sql_edit_client === TRUE AND $mail_envoie === TRUE)
     {
-        header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&success=add-client");
+        header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&success=edit-client");
     }else{
-        header("Location: ../../index.php?view=gestion&sub=client&error=add-client");
+        header("Location: ../../index.php?view=gestion&sub=client&data=view_client&num_client=$num_client&error=edit-client");
     }
 }

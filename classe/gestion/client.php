@@ -101,4 +101,11 @@ class client
         }
         return $mdp;
     }
+
+    public function info_client($idclient)
+    {
+        $sql = mysql_query("SELECT * FROM client WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_fetch_array($sql);
+        return $data;
+    }
 }
