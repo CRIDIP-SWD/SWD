@@ -783,8 +783,18 @@ include "inc/header.php";
 											</thead>
 											<tbody align="center">
 											<?php
-
+											$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
+											while($famille = mysql_fetch_array($sql_famille))
+											{
 											?>
+												<tr>
+													<td><?= $famille['idfamillearticle']; ?></td>
+													<td><?= $famille['designation_famille']; ?></td>
+													<td>
+														<button type="button" class="btn" onclick="" data-toggle="tooltip" data-original-title="Supprimer la famille"><i class="fa fa-trash text-danger"></i></button>
+													</td>
+												</tr>
+											<?php } ?>
 											</tbody>
 										</table>
 									</div>
