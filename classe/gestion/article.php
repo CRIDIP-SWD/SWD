@@ -10,7 +10,7 @@ class article
 {
     public function count_product_as_famille($idfamillearticle)
     {
-        $sql = mysql_query("SELECT COUNT(*) FROM swd_article WHERE famille = '$idfamillearticle'")or die(mysql_error());
+        $sql = mysql_query("SELECT COUNT(idarticle) FROM swd_article WHERE famille = '$idfamillearticle'")or die(mysql_error());
         $data = mysql_result($sql, 0);
         return $data;
     }
