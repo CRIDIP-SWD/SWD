@@ -1304,6 +1304,177 @@ include "inc/header.php";
 						</form>
 					</div>
 				<?php } ?>
+				<?php if(isset($_GET['data']) && $_GET['data'] == 'view_devis'){ ?>
+					<?php
+					$nom_sector = "GESTION";
+					$nom_page = "DEVIS";
+					$reference = $_GET['reference']
+					?>
+					<ol class="breadcrumb">
+						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+					</ol>
+					<!-- //breadcrumb-->
+
+					<div id="content">
+
+						<div class="row">
+							<section class="panel corner-flip">
+								<div class="panel-body">
+									<div class="invoice">
+										<div class="row">
+											<div class="col-sm-6">
+												<a href="#"> <img alt="" src="assets/img/logo_invice.png"> </a>
+											</div>
+											<div class="col-sm-6 align-lg-right">
+												<h3>INVOICE NO. #572307</h3>
+												<span>25 january 2014</span>
+											</div>
+										</div>
+										<hr>
+										<div class="row">
+											<div class="col-sm-3">
+												<h4>From :</h4>
+												John Doe <br>
+												Mr Nilson Otto <br>
+												FoodMaster Ltd </div>
+											<div class="col-sm-3">
+												<h4>To :</h4>
+												1982 OOP <br>
+												Madrid, Spain <br>
+												+1 (151) 225-4183 </div>
+											<div class="col-md-6 align-lg-right">
+												<h4>Payment Details :</h4>
+												<strong>V.A.T Reg #:</strong> 542554(DEMO)78 <br>
+												<strong>Account Name:</strong> FoodMaster Ltd <br>
+												<strong>SWIFT code:</strong> 45454DEMO545DEMO
+											</div>
+										</div>
+										<br>
+										<br>
+										<table class="table table-bordered">
+											<thead>
+											<tr>
+												<th>#</th>
+												<th width="60%" class="text-left">Product</th>
+												<th>Quantity</th>
+												<th class="text-right">Price</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td class="text-center">1</td>
+												<td>Lorem Ipsum</td>
+												<td class="text-center">1</td>
+												<td class="text-right">$852</td>
+											</tr>
+											<tr>
+												<td class="text-center">2</td>
+												<td>Nulla pellentesque</td>
+												<td class="text-center">1</td>
+												<td class="text-right">$785</td>
+											</tr>
+											<tr>
+												<td class="text-center">4</td>
+												<td>Leo ornare lacinia</td>
+												<td class="text-center">1</td>
+												<td class="text-right">$1524</td>
+											</tr>
+											<tr>
+												<td class="text-center">5</td>
+												<td>Est arcu integer consectetuer</td>
+												<td class="text-center">1</td>
+												<td class="text-right">$74</td>
+											</tr>
+											</tbody>
+										</table>
+										<br><br>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="align-lg-left"> 795 Park Ave, Suite 120 <br>
+													San Francisco, CA 94107 <br>
+													P: (234) 145-1810 <br>
+													Full Name <br>
+													first.last@email.com
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="align-lg-right">
+													<ul>
+														<li> Sub - Total amount: <strong>$3,235</strong> </li>
+														<li> VAT: <strong>7.7%</strong> </li>
+														<li> Discount: ----- </li>
+														<li> Grand Total: <strong>$3,485</strong> </li>
+													</ul>
+													<br>
+													<a href="javascript:window.print();" class="btn btn-theme hidden-print"><i class="fa fa-print"></i> </a>
+													<a href="#" class="btn btn-theme-inverse hidden-print"> SAVE </a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- //invoice -->
+								</div>
+							</section>
+						</div>
+						<!-- //content > row-->
+
+					</div>
+					<div id="add-devis" data-width="1400" class="modal fade">
+						<div class="modal-header bg-success-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un devis</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Client</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="idclient" data-size="10" data-live-search="true">
+											<?php
+											$sql_client = mysql_query("SELECT * FROM client")or die(mysql_error());
+											while($client = mysql_fetch_array($sql_client))
+											{
+												?>
+												<option value="<?= $client['idclient']; ?>"><?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_societe']."</strong> - <i>".$client['nom_client']."</i>";}else{echo $client['nom_client'];} ?></option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Date du Devis</label>
+									<div class="col-md-9">
+										<input type="text" id="date_devis" class="form-control" name="date_devis" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Echéance</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="echeance" data-size="10" data-live-search="true">
+											<option value="0">Immédiat</option>
+											<option value="604800">7 Jours</option>
+											<option value="1296000">15 Jours</option>
+											<option value="2592000">30 Jours</option>
+											<option value="5184000">60 Jours</option>
+											<option value="7776000">90 Jours</option>
+										</select>
+									</div>
+								</div>
+
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-devis"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
+				<?php } ?>
 			<?php } ?>
 		</div>
 		<!-- //main-->
