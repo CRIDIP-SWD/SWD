@@ -1427,29 +1427,7 @@ include "inc/header.php";
 										</table>
 										<button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un article</button>
 										<br><br>
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="align-lg-left"> 795 Park Ave, Suite 120 <br>
-													San Francisco, CA 94107 <br>
-													P: (234) 145-1810 <br>
-													Full Name <br>
-													first.last@email.com
-												</div>
-											</div>
-											<div class="col-sm-6">
-												<div class="align-lg-right">
-													<ul>
-														<li> Sub - Total amount: <strong>$3,235</strong> </li>
-														<li> VAT: <strong>7.7%</strong> </li>
-														<li> Discount: ----- </li>
-														<li> Grand Total: <strong>$3,485</strong> </li>
-													</ul>
-													<br>
-													<a href="javascript:window.print();" class="btn btn-theme hidden-print"><i class="fa fa-print"></i> </a>
-													<a href="#" class="btn btn-theme-inverse hidden-print"> SAVE </a>
-												</div>
-											</div>
-										</div>
+
 									</div>
 									<!-- //invoice -->
 								</div>
