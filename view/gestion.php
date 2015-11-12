@@ -1173,6 +1173,171 @@ include "inc/header.php";
 					</div>
 				<?php } ?>
 			<?php } ?>
+			<?php if(isset($_GET['sub']) && $_GET['sub'] == 'devis'){ ?>
+				<?php if(!isset($_GET['data'])){ ?>
+					<?php
+					$nom_sector = "GESTION";
+					$nom_page = "DEVIS";
+					?>
+					<ol class="breadcrumb">
+						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+					</ol>
+					<!-- //breadcrumb-->
+
+					<div id="content">
+						<div class="row">
+							<div class="col-md-12">
+								<section class="panel">
+									<header class="panel-heading bg-warning-gradient">
+										<h2>Liste des <strong>devis clients</strong> </h2>
+									</header>
+									<div class="panel-body">
+										<div class="pull-right">
+											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-devis"><i class="fa fa-plus"></i> Ajouter un devis</button>
+										</div>
+										<table class="table table-striped" id="listing-famille">
+											<thead>
+											<tr>
+												<th class="text-center">#</th>
+												<th class="text-center">Client</th>
+												<th class="text-center">Date du Devis</th>
+												<th class="text-center">Date d'échéance</th>
+												<th class="text-center">Etat du Devis</th>
+												<th class="text-center">Montant</th>
+												<th>Action</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_devis = mysql_query("SELECT * FROM swd_devis, client WHERE swd_devis.idclient = client.idclient")or die(mysql_error());
+											while($devis = mysql_fetch_array($sql_devis))
+											{
+											?>
+												<tr>
+													<td class="text-center"><?= $devis['reference']; ?></td>
+													<td>
+														<?php if(!empty($devis['nom_societe'])){echo "<strong>".$devis['nom_societe']."</strong><br><i>".$devis['nom_client']."</i>";}else{echo $devis['nom_client'];} ?>
+													</td>
+													<td class="text-center"><?= date("d/m/Y", $devis['date_devis']); ?></td>
+													<td class="text-center">
+														<?php if($devis_cls->verif_echeance($date_jour_strt, $devis['date_echeance']) == 1){ ?>
+															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $devis['date_echeance']); ?></span>
+														<?php }else{ ?>
+															<span class="label label-success"><?= date("d-m-Y", $devis['date_echeance']); ?></span>
+														<?php } ?>
+													</td>
+													<td class="text-center">
+														<?php
+														if($devis['etat_devis'] == 1){echo "<span class='label label-info'><i class='fa fa-spinner fa-spin'></i> En cours...</span>";}
+														if($devis['etat_devis'] == 2){echo "<span class='label label-success'><i class='fa fa-check'></i> Accepté</span>";}
+														if($devis['etat_devis'] == 3){echo "<span class='label label-danger'><i class='fa fa-times'></i> Refusé</span>";}
+														?>
+													</td>
+													<td class="text-right">
+														<?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?>
+													</td>
+													<td>
+														<button type="button" class="btn" onclick=""><i class="fa fa-eye text-primary"></i></button>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div id="add-article" data-width="1400" class="modal fade">
+						<div class="modal-header bg-success-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un article</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label"> Type de Produit</label>
+									<div>
+										<div class="row">
+											<div class="col-sm-12">
+												<ul class="iCheck" data-color="red">
+													<li>
+														<input type="radio" name="type_article" value="1">
+														<label><i class="fa fa-globe"></i> Web</label>
+													</li>
+													<li>
+														<input  type="radio" name="type_article" value="2" checked="checked">
+														<label ><i class="fa fa-server"></i> Serveur</label>
+													</li>
+													<li>
+														<input  type="radio" name="type_article" value="3">
+														<label ><i class="fa fa-phone-square"></i> Télécom</label>
+													</li>
+												</ul>
+											</div><!-- //col-sm-6 -->
+										</div><!-- //row-->
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Famille</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="famille" data-size="10" data-live-search="true">
+											<?php
+											$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
+											while($famille = mysql_fetch_array($sql_famille))
+											{
+												?>
+												<option value="<?= $famille['idfamillearticle']; ?>"><?= $famille['designation_famille']; ?></option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Nom de l'article</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="nom_article">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Courte description</label>
+									<div class="col-md-9">
+										<textarea class="form-control" data-provide="markdown" rows="3" maxlength="255"  data-always-show="true" placeholder="Tapez un courte description de l'article" data-pre-text='Il vous reste ' data-post-text=' caractère' name="short_description"></textarea>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Description</label>
+									<div class="col-md-9">
+										<textarea class="form-control" data-provide="markdown" rows="3" name="long_description"></textarea>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Prix</label>
+									<div class="col-md-9">
+										<div class="input-group rounded"> <span class="input-group-addon">€</span>
+											<input type="text" name="prix_vente_ht" class="form-control rounded">
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-article"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
+				<?php } ?>
+			<?php } ?>
 		</div>
 		<!-- //main-->
 		
