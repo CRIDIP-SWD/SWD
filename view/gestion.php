@@ -1308,7 +1308,9 @@ include "inc/header.php";
 					<?php
 					$nom_sector = "GESTION";
 					$nom_page = "DEVIS";
-					$reference = $_GET['reference']
+					$reference = $_GET['reference'];
+					$sql_devis = mysql_query("SELECT * FROM swd_devis WHERE reference = '$reference'")or die(mysql_error());
+					$devis = mysql_fetch_array($sql_devis);
 					?>
 					<ol class="breadcrumb">
 						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
@@ -1328,8 +1330,8 @@ include "inc/header.php";
 												<a href="#"> <img alt="" src="assets/img/logo_invice.png"> </a>
 											</div>
 											<div class="col-sm-6 align-lg-right">
-												<h3>INVOICE NO. #572307</h3>
-												<span>25 january 2014</span>
+												<h3>DEVIS NO. <?= $reference; ?></h3>
+												<span><?= date("d",$devis['date_devis']); ?> <?= $date_class->mois(date('n', $devis['date_devis'])); ?> <?= date("Y",$devis['date_devis']); ?></span>
 											</div>
 										</div>
 										<hr>
