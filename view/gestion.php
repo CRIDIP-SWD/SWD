@@ -1537,7 +1537,83 @@ include "inc/header.php";
 							</div>
 							<!-- //modal-body-->
 							<div class="modal-footer bg-success-gradient">
-								<button type="submit" class="btn btn-default pull-right" name="action" value="add-devis"><i class="fa fa-check"></i> Valider</button>
+								<button type="submit" class="btn btn-default pull-right" name="action" value="edit-devis"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
+					<div id="envoie-devis" data-width="1400" class="modal fade">
+						<div class="modal-header bg-info-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-envelope"></i> Envoie par mail du devis</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Client</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="email" value="<?= $devis['email']; ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Sujet</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="sujet" value="CRIDIP-SWD - Votre devis Ref: <?= $reference; ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Message</label>
+									<div class="col-md-9">
+										<textarea class="form-control"  rows="10"  data-provide="markdown" name="message">
+											<div id="email">
+												<div class="header">
+													<div class="logo"><img src="<?= ROOT,ASSETS,IMG; ?>logo_white_icon.png" /></div>
+													<div class="dot-bar"><img src="<?= ROOT,ASSETS,IMG; ?>dot-bar.png" /></div>
+													<div class="adresse">
+														<strong>CRIDIP SWD</strong><br>
+														8 Rue Octave Voyer<br>
+														85100 Les Sables d'Olonne
+													</div>
+													<div class="sujet"><?= $sujet; ?></div>
+												</div>
+												<div class="corps">
+													<p>Bonjour,</p>
+													<p>Vous avez fait appel à nos services et nous vous remercions.</p>
+													<p>Voici un récapitulatif de l'inscription à votre Espace Client CRIDIP, où vous pourrez:</p>
+													<ul>
+														<li>Avoir accès à vos coordonnées et les modifiés</li>
+														<li>Avoir accès à tous vos documents contractuel, factures, commandes et devis</li>
+													</ul>
+													<p>Voici vos identifiants:</p>
+													<table class="id">
+														<tr>
+															<td>Login:</td>
+															<td><?= $num_client; ?></td>
+														</tr>
+														<tr>
+															<td>Mot de Passe:</td>
+															<td><?= $password_clear; ?></td>
+														</tr>
+													</table>
+													<a class="button" href="http://portail.cridip.com">ACCEDER A VOTRE ESPACE CLIENT</a>
+												</div>
+												<div class="footer">
+													<hr />
+													SAS au capital de 100€ - RCS La Roche sur Yon 811 772 235 - Siège social: 8 rue Octave Voyer, 85100 Les Sables d'Olonne - FRANCE
+												</div>
+
+											</div>
+										</textarea>
+									</div>
+								</div>
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="envoie-devis"><i class="fa fa-check"></i> Valider</button>
 							</div>
 						</form>
 					</div>
