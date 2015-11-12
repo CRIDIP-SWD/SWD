@@ -229,7 +229,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article-devis')
     $prix_vente_ht = $article['prix_vente_ht'];
     
     $total_ligne = $prix_vente_ht + $qte;
-    $total_ht .= + $total_ligne;
+    $total_ht = $total_ht + $total_ligne;
     
     $sql_update_devis = mysql_query("UPDATE swd_devis SET total_ht = '$total_ht' WHERE iddevis = '$iddevis'")or die(mysql_error());
     $sql_add_ligne_devis = mysql_query("INSERT INTO swd_devis_ligne(iddevisligne, iddevis, idarticle, qte, commentaire, total_ligne) VALUES (NULL, '$iddevis', '$idarticle', '$qte', '$commentaire', '$total_ligne')")or die(mysql_error());
@@ -290,7 +290,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-article-devis')
     $reference = $devis['reference'];
 
 
-    $total_ht .= - $total_ligne;
+    $total_ht = $total_ht - $total_ligne;
 
 
     $sql_update_devis = mysql_query("UPDATE swd_devis SET total_ht = '$total_ht' WHERE iddevis = '$iddevis'")or die(mysql_error());
