@@ -1309,7 +1309,7 @@ include "inc/header.php";
 					$nom_sector = "GESTION";
 					$nom_page = "DEVIS";
 					$reference = $_GET['reference'];
-					$sql_devis = mysql_query("SELECT * FROM swd_devis WHERE reference = '$reference'")or die(mysql_error());
+					$sql_devis = mysql_query("SELECT * FROM swd_devis, client WHERE swd_devis.idclient = client.idclient AND reference = '$reference'")or die(mysql_error());
 					$devis = mysql_fetch_array($sql_devis);
 					?>
 					<ol class="breadcrumb">
@@ -1338,19 +1338,20 @@ include "inc/header.php";
 										<div class="row">
 											<div class="col-sm-3">
 												<h4>From :</h4>
-												John Doe <br>
-												Mr Nilson Otto <br>
-												FoodMaster Ltd </div>
+												CRIDIP-SWD <br>
+												20 Avenue Jean Jaures <br>
+												85100 Les Sables d'Olonne
+											</div>
 											<div class="col-sm-3">
 												<h4>To :</h4>
-												1982 OOP <br>
-												Madrid, Spain <br>
-												+1 (151) 225-4183 </div>
+												<?php if(!empty($devis['nom_societe'])){echo "<strong>".$devis['nom_societe']."</strong><br><i>".$devis['nom_client']."</i>";}else{echo "<strong>".$devis['nom_client']."</strong>";} ?><br>
+												<?= html_entity_decode($devis['adresse']); ?><br>
+												<?= $devis['code_postal']; ?> <?= html_entity_decode($devis['ville']); ?>
+											</div>
 											<div class="col-md-6 align-lg-right">
-												<h4>Payment Details :</h4>
-												<strong>V.A.T Reg #:</strong> 542554(DEMO)78 <br>
-												<strong>Account Name:</strong> FoodMaster Ltd <br>
-												<strong>SWIFT code:</strong> 45454DEMO545DEMO
+												<h4>Détail des Informations :</h4>
+												<strong>Téléphone:</strong> 0<?= substr($devis['telephone'], 4, 12); ?>  <br>
+												<strong>Numéro de compte:</strong> <?= $devis['num_client']; ?> <br>
 											</div>
 										</div>
 										<br>
@@ -1371,25 +1372,13 @@ include "inc/header.php";
 												<td class="text-center">1</td>
 												<td class="text-right">$852</td>
 											</tr>
-											<tr>
-												<td class="text-center">2</td>
-												<td>Nulla pellentesque</td>
-												<td class="text-center">1</td>
-												<td class="text-right">$785</td>
-											</tr>
-											<tr>
-												<td class="text-center">4</td>
-												<td>Leo ornare lacinia</td>
-												<td class="text-center">1</td>
-												<td class="text-right">$1524</td>
-											</tr>
-											<tr>
-												<td class="text-center">5</td>
-												<td>Est arcu integer consectetuer</td>
-												<td class="text-center">1</td>
-												<td class="text-right">$74</td>
-											</tr>
 											</tbody>
+											<tfoot>
+											<tr>
+												<td colspan="3" class="text-right" style="font-weight: 700;">Total du devis</td>
+												<td class="text-right"></td>
+											</tr>
+											</tfoot>
 										</table>
 										<br><br>
 										<div class="row">
