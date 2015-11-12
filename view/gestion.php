@@ -1334,13 +1334,13 @@ include "inc/header.php";
 														<button type="button" class="btn btn-info">Plus...</button>
 														<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
 														<ul class="dropdown-menu align-xs-left " role="menu">
-															<li><a href="#">Modifier le devis</a></li>
-															<li><a href="#">Envoyer par email</a></li>
-															<li><a href="#">Marqué comme Refusé</a></li>
-															<li><a href="#">Marqué comme Accepté</a></li>
-															<li><a href="#">Transformer en facture</a></li>
+															<li><a data-toggle="modal" data-target="#edit-devis">Modifier le devis</a></li>
+															<li><a data-toggle="modal" data-target="#envoie-devis">Envoyer par email</a></li>
+															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=devis-refuser&reference=<?= $reference; ?>">Marqué comme Refusé</a></li>
+															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=devis-accepter&reference=<?= $reference; ?>">Marqué comme Accepté</a></li>
+															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=transf-facture&reference=<?= $reference; ?>">Transformer en facture</a></li>
 															<li class="divider"></li>
-															<li><a href="#">Supprimer le devis</a></li>
+															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=supp-devis&reference=<?= $reference; ?>">Supprimer le devis</a></li>
 														</ul>
 													</div>
 												</div>
