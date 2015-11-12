@@ -73,11 +73,13 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-article')
     $long_description = htmlentities(addslashes($_POST['long_description']));
     $prix_vente_ht = $_POST['prix_vente_ht'];
 
+
+
+    $sql_update_article = mysql_query("UPDATE swd_article SET type_article = '$type_article', famille = '$famille', nom_article = '$nom_article', short_description = '$short_description', long_description = '$long_description', prix_vente_ht = '$prix_vente_ht' WHERE idarticle = '$idarticle'")or die(mysql_error());
+
     $sql_article = mysql_query("SELECT * FROM swd_article WHERE idarticle = '$idarticle'")or die(mysql_error());
     $article = mysql_fetch_array($sql_article);
     $code_article = $article['code_article'];
-
-    $sql_update_article = mysql_query("UPDATE swd_article SET type_article = '$type_article', famille = '$famille', nom_article = '$nom_article', short_description = '$short_description', long_description = '$long_description', prix_vente_ht = '$prix_vente_ht' WHERE idarticle = '$idarticle'")or die(mysql_error());
 
     if($sql_update_article === TRUE)
     {
