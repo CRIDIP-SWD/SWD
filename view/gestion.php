@@ -1379,6 +1379,18 @@ include "inc/header.php";
 												<tr>
 													<td colspan="4" style="background-color: #00a1f3; color: white; font-weight: 700;">NOM DE DOMAINE</td>
 												</tr>
+												<?php
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='4' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												while($ligne = mysql_fetch_array($sql_ligne))
+												{
+												?>
+												<tr>
+													<td><?= $ligne['code_article']; ?></td>
+													<td><?= $ligne['nom_article']; ?></td>
+													<td><?= $ligne['qte']; ?></td>
+													<td><?= $ligne['total_ligne']; ?></td>
+												</tr>
+												<?php } ?>
 											<?php } ?>
 											</tbody>
 											<tfoot>
