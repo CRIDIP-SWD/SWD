@@ -1327,8 +1327,8 @@ include "inc/header.php";
 								<div class="panel-body">
 									<div class="invoice">
 										<div class="row">
-											<div class="col-md-12 pull-right">
-												<div class="btn-group">
+											<div class="col-md-12">
+												<div class="btn-group pull-right">
 													<button type="button" class="btn btn-info">Action</button>
 													<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
 													<ul class="dropdown-menu align-xs-left " role="menu">
