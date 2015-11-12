@@ -55,9 +55,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article')
 
     if($sql_add_article === TRUE)
     {
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-article");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-article");
     }else{
-        header("../../index.php?view=gestion&sub=article&error=add-article");
+        header("Location: ../../index.php?view=gestion&sub=article&error=add-article");
     }
 }
 if(isset($_POST['action']) && $_POST['action'] == 'edit-article')
@@ -81,9 +81,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-article')
 
     if($sql_update_article === TRUE)
     {
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=edit-article");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=edit-article");
     }else{
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=edit-article");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=edit-article");
     }
 }
 if(isset($_GET['action']) && $_GET['action'] == 'supp-article')
@@ -98,16 +98,16 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-article')
 
     if($article_cls->count_product_as_facture($idarticle) != 0)
     {
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&warning=existing-facture");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&warning=existing-facture");
     }
 
     $sql_delete_article = mysql_query("DELETE FROM swd_article WHERE idarticle = '$idarticle'")or die(mysql_error());
 
     if($sql_delete_article === TRUE)
     {
-        header("../../index.php?view=gestion&sub=article&success=supp-article");
+        header("Location: ../../index.php?view=gestion&sub=article&success=supp-article");
     }else{
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=supp-article");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=supp-article");
     }
 }
 if(isset($_POST['action']) && $_POST['action'] == 'add-caracteristique')
@@ -127,9 +127,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-caracteristique')
 
     if($sql_add_caracteristique === TRUE)
     {
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-caracteristique");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-caracteristique");
     }else{
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=add-caracteristique");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=add-caracteristique");
     }
 }
 if(isset($_GET['action']) && $_GET['action'] == 'supp-caracteristique')
@@ -147,8 +147,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-caracteristique')
 
     if($sql_delete_cara === TRUE)
     {
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-caracteristique");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-caracteristique");
     }else{
-        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=add-caracteristique");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=add-caracteristique");
     }
 }
