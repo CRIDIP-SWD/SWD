@@ -1239,7 +1239,7 @@ include "inc/header.php";
 														<?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?>
 													</td>
 													<td>
-														<button type="button" class="btn" onclick=""><i class="fa fa-eye text-primary"></i></button>
+														<button type="button" class="btn" onclick="window.location.href='index.php?view=gestion&sub=devis&data=view_devis&reference=<?= $devis['reference']; ?>'"><i class="fa fa-eye text-primary"></i></button>
 													</td>
 												</tr>
 											<?php } ?>
