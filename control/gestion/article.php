@@ -52,4 +52,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article')
 
     $sql_add_article = mysql_query("INSERT INTO swd_article(`idarticle`, `type_article`, `nom_article`, `code_article`, `short_description`, `long_description`, `caracteristique`, `prix_vente_ht`, `famille`, `quantite`)
                                   VALUES (NULL, '$type_article', '$nom_article', '$code_article', '$short_description', '$long_description', '', '$prix_vente_ht', '$famille', '0')")or die(mysql_error());
+
+    if($sql_add_article === TRUE)
+    {
+        header("../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-article");
+    }else{
+        header("../../index.php?view=gestion&sub=article&error=add-article");
+    }
 }

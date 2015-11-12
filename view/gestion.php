@@ -953,6 +953,50 @@ include "inc/header.php";
 						</form>
 					</div>
 				<?php } ?>
+				<?php if(isset($_GET['data']) && $_GET['data'] == 'view_article'){ ?>
+					<?php
+					$nom_sector = "GESTION";
+					$nom_page = "ARTICLE";
+
+					$code_article = $_GET['code_article'];
+					$sql_article = mysql_query("SELECT * FROM swd_article WHERE code_article = '$code_article'")or die(mysql_error());
+					$article = mysql_fetch_array($sql_article);
+					?>
+					<ol class="breadcrumb">
+						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+					</ol>
+					<!-- //breadcrumb-->
+
+					<div id="content">
+						<div class="row">
+							<div class="col-sm-9">
+								<section class="profile-cover">
+									<div class="profile-avatar">
+										<div>
+											<img alt="" src="assets/img/avatar6.png" class="circle">
+											<span><?= $article['nom_article']; ?></span>
+										</div>
+										<a class="btn btn-theme" title="Add friends"><i class="fa fa-edit"></i> Editer l'article</a>
+										<a class="btn btn-theme-inverse" ><i class="fa fa-remove"></i> Supprimer l'article</a>
+									</div>
+
+								</section>
+							</div>
+							<!-- //content > row > col-sm-9 -->
+
+							<div class="col-sm-3">
+								<section class="profile-about">
+									<h3>About</h3>
+									<hr>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non leo convallis nibh tristique commodo.</p>
+								</section>
+							</div>
+							<!-- //content > row > col-lg-3 -->
+						</div>
+					</div>
+				<?php } ?>
 			<?php } ?>
 		</div>
 		<!-- //main-->
@@ -1034,6 +1078,16 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-article'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("L'article <strong><?= $_GET['code_article']; ?></strong> à été créé", "ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
@@ -1097,6 +1151,17 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-article'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la création de l'article", "ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+
 <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'existing-product'){ ?>
 	<script type="text/javascript">
