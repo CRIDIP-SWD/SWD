@@ -1281,7 +1281,19 @@ include "inc/header.php";
 									</div>
 								</div>
 
-
+								<div class="form-group">
+									<label class="control-label col-md-3">Echéance</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="echeance" data-size="10" data-live-search="true">
+											<option value="0">Immédiat</option>
+											<option value="604800">7 Jours</option>
+											<option value="1296000">15 Jours</option>
+											<option value="2592000">30 Jours</option>
+											<option value="5184000">60 Jours</option>
+											<option value="7776000">90 Jours</option>
+										</select>
+									</div>
+								</div>
 
 
 							</div>
@@ -1423,6 +1435,16 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le devis <strong><?= $_GET['reference']; ?></strong> à été créé", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
@@ -1530,6 +1552,16 @@ include "inc/header.php";
 	<script type="text/javascript">
 		$(function(){
 			toastr.error("Une erreur à eu lieu lors de la suppression de la caractéristique", "CARACTERISTIQUE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la création du devis", "DEVIS",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})
