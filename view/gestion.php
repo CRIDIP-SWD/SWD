@@ -1024,6 +1024,16 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-famille'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La famille d'article à été supprimé", "FAMILLE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
@@ -1071,6 +1081,27 @@ include "inc/header.php";
 	<script type="text/javascript">
 		$(function(){
 			toastr.error("Une erreur à eu lieu lors de la création de la famille d'article", "FAMILLE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'supp-famille'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la suppression de la famille d'article", "FAMILLE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'existing-product'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.warning("La famille d'article ne peut pas être supprimer car des articles lui son affilié", "FAMILLE ARTICLE",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})
