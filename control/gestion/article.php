@@ -68,9 +68,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-article')
     $idarticle = $_POST['idarticle'];
     $type_article = $_POST['type_article'];
     $famille = $_POST['famille'];
-    $nom_article = $_POST['nom_article'];
-    $short_description = $_POST['short_description'];
-    $long_description = $_POST['long_description'];
+    $nom_article = htmlentities(addslashes($_POST['nom_article']));
+    $short_description = htmlentities(addslashes($_POST['short_description']));
+    $long_description = htmlentities(addslashes($_POST['long_description']));
     $prix_vente_ht = $_POST['prix_vente_ht'];
 
     $sql_article = mysql_query("SELECT * FROM swd_article WHERE idarticle = '$idarticle'")or die(mysql_error());
@@ -116,8 +116,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-caracteristique')
     include "../../inc/classe.php";
     
     $idarticle = $_POST['idarticle'];
-    $caracteristique = $_POST['caracteristique'];
-    $value = $_POST['value'];
+    $caracteristique = htmlentities(addslashes($_POST['caracteristique']));
+    $value = htmlentities(addslashes($_POST['value']));
     
     $sql_article = mysql_query("SELECT * FROM swd_article WHERE idarticle = '$idarticle'")or die(mysql_error());
     $article = mysql_fetch_array($sql_article);

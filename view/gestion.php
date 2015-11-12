@@ -1280,6 +1280,26 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-caracteristique'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La caractéristique à été créé", "CARACTERISTIQUE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-caracteristique'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La caractéristique à été supprimé", "CARACTERISTIQUE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
@@ -1367,6 +1387,26 @@ include "inc/header.php";
 	<script type="text/javascript">
 		$(function(){
 			toastr.error("Une erreur à eu lieu lors de la suppression de l'article", "ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-caracteristique'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la création de la caractéristique", "CARACTERISTIQUE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'supp-caracteristique'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la suppression de la caractéristique", "CARACTERISTIQUE ARTICLE",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})
