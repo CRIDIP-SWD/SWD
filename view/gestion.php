@@ -1385,10 +1385,10 @@ include "inc/header.php";
 												{
 												?>
 												<tr>
-													<td><?= $ligne['code_article']; ?></td>
-													<td><?= $ligne['nom_article']; ?></td>
-													<td><?= $ligne['qte']; ?></td>
-													<td><?= $ligne['total_ligne']; ?></td>
+													<td class="text-center"><?= $ligne['code_article']; ?></td>
+													<td><?= html_entity_decode($ligne['nom_article']); ?><br><?= html_entity_decode($ligne['commentaire']); ?></td>
+													<td class="text-center"><?= $ligne['qte']; ?></td>
+													<td class="text-right"><?= number_format($ligne['total_ligne'], 2, ',',' ')." €"; ?></td>
 												</tr>
 												<?php } ?>
 											<?php } ?>
@@ -1396,7 +1396,7 @@ include "inc/header.php";
 											<tfoot>
 											<tr>
 												<td colspan="3" class="text-right" style="font-weight: 700;">Total du devis</td>
-												<td class="text-right"></td>
+												<td class="text-right"><?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?></td>
 											</tr>
 											</tfoot>
 										</table>
