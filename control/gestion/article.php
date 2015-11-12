@@ -44,9 +44,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article')
     
     $type_article = $_POST['type_article'];
     $famille = $_POST['famille'];
-    $nom_article = $_POST['nom_article'];
-    $short_description = $_POST['short_description'];
-    $long_description = $_POST['long_description'];
+    $nom_article = htmlentities(addslashes($_POST['nom_article']));
+    $short_description = htmlentities(addslashes($_POST['short_description']));
+    $long_description = htmlentities(addslashes($_POST['long_description']));
     $prix_vente_ht = $_POST['prix_vente_ht'];
     $code_article = $article_cls->gen_num_article();
 
