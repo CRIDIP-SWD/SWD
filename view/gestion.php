@@ -980,7 +980,7 @@ include "inc/header.php";
 											<span><?= $article['nom_article']; ?></span>
 										</div>
 										<a class="btn btn-theme" title="Add friends" data-toggle="modal" data-target="#edit-article"><i class="fa fa-edit"></i> Editer l'article</a>
-										<a class="btn btn-theme-inverse" ><i class="fa fa-remove"></i> Supprimer l'article</a>
+										<a class="btn btn-theme-inverse" href="<?= ROOT,CONTROL; ?>gestion/article.php?action=supp-article"><i class="fa fa-remove"></i> Supprimer l'article</a>
 									</div>
 
 								</section>
@@ -1034,7 +1034,7 @@ include "inc/header.php";
 													<td><?= html_entity_decode($caracteristique['caracteristique']); ?></td>
 													<td><?= html_entity_decode($caracteristique['value']); ?></td>
 													<td>
-														<button type="button" class="btn" onclick=""><i class="fa fa-remove text-danger"></i></button>
+														<button type="button" class="btn" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/article.php?action=supp-caracteristique&$idarticlecaracteristique=<?= $caracteristique['idarticlecaracteristique']; ?>'"><i class="fa fa-remove text-danger"></i></button>
 													</td>
 												</tr>
 											<?php } ?>
@@ -1078,9 +1078,9 @@ include "inc/header.php";
 						</form>
 					</div>
 					<div id="edit-article" data-width="1400" class="modal fade">
-						<div class="modal-header bg-success-gradient">
+						<div class="modal-header bg-info-gradient">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un article</h4>
+							<h4 class="modal-title"><i class="fa fa-edit"></i> Editer un article</h4>
 						</div>
 						<!-- //modal-header-->
 						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
@@ -1260,6 +1260,26 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'edit-article'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("L'article <strong><?= $_GET['code_article']; ?></strong> à été modifié", "ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-article'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("L'article à été supprimé", "ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
@@ -1333,12 +1353,42 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'edit-article'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de l'édition de l'article", "ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'supp-article'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.error("Une erreur à eu lieu lors de la suppression de l'article", "ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'existing-product'){ ?>
 	<script type="text/javascript">
 		$(function(){
 			toastr.warning("La famille d'article ne peut pas être supprimer car des articles lui son affilié", "FAMILLE ARTICLE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'existing-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.warning("L'article ne peut pas être supprimer car cette article existe dans des factures émise au client", "ARTICLE",{
 				progressBar: true,
 				positionClass: "toast-bottom-right"
 			})

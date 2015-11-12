@@ -14,6 +14,14 @@ class article
         $data = mysql_result($sql, 0);
         return $data;
     }
+
+    public function count_product_as_facture($idarticle)
+    {
+        $sql = mysql_query("SELECT COUNT(idarticle) FROM swd_facture_ligne WHERE idarticle = '$idarticle'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
     public function gen_num_article()
     {
         $chaine = "AZERTYUIOPQSDFGHJKLMWXCVBN";
