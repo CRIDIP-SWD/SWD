@@ -1405,8 +1405,8 @@ include "inc/header.php";
 													<td class="text-center"><?= $ligne['qte']; ?></td>
 													<td class="text-right"><?= number_format($ligne['total_ligne'], 2, ',',' ')." €"; ?></td>
 													<td>
-														<button type="button" class="btn"><i class="fa fa-edit text-info"></i></button>
-														<button type="button" class="btn"><i class="fa fa-remove text-danger"></i></button>
+														<button type="button" class="btn" data-toggle="modal" data-target="#edit-article-devis"><i class="fa fa-edit text-info"></i></button>
+														<button type="button" class="btn" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/devis.php?action=supp-article-devis&iddevisligne=<?= $ligne['iddevisligne']; ?>'"><i class="fa fa-remove text-danger"></i></button>
 													</td>
 												</tr>
 												<?php } ?>
@@ -1419,7 +1419,7 @@ include "inc/header.php";
 											</tr>
 											</tfoot>
 										</table>
-										<button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un article</button>
+										<button type="button" class="btn btn-success" data-toggle="modal" data-target="#add-article-devis"><i class="fa fa-plus"></i> Ajouter un article</button>
 										<br><br>
 
 									</div>
