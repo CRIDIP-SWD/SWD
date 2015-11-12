@@ -1327,6 +1327,21 @@ include "inc/header.php";
 								<div class="panel-body">
 									<div class="invoice">
 										<div class="row">
+											<div class="col-md-12 pull-right">
+												<div class="btn-group">
+													<button type="button" class="btn btn-info">Action</button>
+													<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+													<ul class="dropdown-menu align-xs-left " role="menu">
+														<li><a href="#">Action</a></li>
+														<li><a href="#">Another action</a></li>
+														<li><a href="#">Something else here</a></li>
+														<li class="divider"></li>
+														<li><a href="#">Separated link</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="row">
 											<div class="col-sm-6">
 												<a href="#"> <img alt="" src="assets/img/logo_invice.png"> </a>
 											</div>
@@ -1386,7 +1401,7 @@ include "inc/header.php";
 												?>
 												<tr>
 													<td class="text-center"><?= $ligne['code_article']; ?></td>
-													<td><?= html_entity_decode($ligne['nom_article']); ?><br><?= html_entity_decode($ligne['commentaire']); ?></td>
+													<td><?= html_entity_decode($ligne['nom_article']); ?><br><i><?= html_entity_decode($ligne['commentaire']); ?></i></td>
 													<td class="text-center"><?= $ligne['qte']; ?></td>
 													<td class="text-right"><?= number_format($ligne['total_ligne'], 2, ',',' ')." €"; ?></td>
 												</tr>
