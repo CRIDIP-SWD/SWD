@@ -1833,6 +1833,96 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'edit-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le devis <strong><?= $_GET['reference']; ?></strong> à été modifié", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le devis à été supprimé", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'envoie-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le mail à été envoyer au client", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'devis-refuser'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le devis <strong><?= $_GET['reference']; ?></strong> à été refusé", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'devis-accepter'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le devis <strong><?= $_GET['reference']; ?></strong> à été accepté", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'transf-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Le devis à été transformer en facture", "DEVIS <i class='fa fa-arrow-right'></i> FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-article-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un article à été ajouter au devis", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'edit-article-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un article à été modifier au devis", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-article-devis'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un article à été supprimer du devis", "DEVIS",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
