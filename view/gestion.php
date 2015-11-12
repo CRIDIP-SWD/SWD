@@ -988,9 +988,9 @@ include "inc/header.php";
 
 							<div class="col-sm-3">
 								<section class="profile-about">
-									<h3>About</h3>
+									<h3>Courte description</h3>
 									<hr>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non leo convallis nibh tristique commodo.</p>
+									<?= html_entity_decode($article['short_description']); ?>
 								</section>
 							</div>
 							<!-- //content > row > col-lg-3 -->
