@@ -1311,6 +1311,7 @@ include "inc/header.php";
 					$reference = $_GET['reference'];
 					$sql_devis = mysql_query("SELECT * FROM swd_devis, client WHERE swd_devis.idclient = client.idclient AND reference = '$reference'")or die(mysql_error());
 					$devis = mysql_fetch_array($sql_devis);
+					$iddevis = $devis['iddevis'];
 					?>
 					<ol class="breadcrumb">
 						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
@@ -1368,18 +1369,23 @@ include "inc/header.php";
 											<thead>
 											<tr>
 												<th>#</th>
-												<th width="60%" class="text-left">Product</th>
-												<th>Quantity</th>
-												<th class="text-right">Price</th>
+												<th width="60%" class="text-left">Désignation</th>
+												<th>Quantité/Heure</th>
+												<th class="text-right">Prix</th>
 											</tr>
 											</thead>
 											<tbody>
-											<tr>
-												<td class="text-center">1</td>
-												<td>Lorem Ipsum</td>
-												<td class="text-center">1</td>
-												<td class="text-right">$852</td>
-											</tr>
+												<?php if($devis_cls->verif_count_famille($devis['iddevis']) != 0){ ?>
+													<?php
+													$sql_famille = mysql_query("SELECT * FROM swd_devis_ligne, swd_article, swd_famille_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = swd_famille_article.idfamillearticle AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+													while($famille = mysql_fetch_array($sql_famille))
+													{
+													?>
+														<tr>
+															<td colspan="4"><strong><?= html_entity_decode($famille['designation_famille']); ?></strong></td>
+														</tr>
+													<?php } ?>
+												<?php } ?>
 											</tbody>
 											<tfoot>
 											<tr>
