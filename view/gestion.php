@@ -1489,7 +1489,7 @@ include "inc/header.php";
 							<h4 class="modal-title"><i class="fa fa-edit"></i> Editer un devis</h4>
 						</div>
 						<!-- //modal-header-->
-						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
 							<div class="modal-body">
 
 								<div class="form-group">
@@ -1547,7 +1547,7 @@ include "inc/header.php";
 							<h4 class="modal-title"><i class="fa fa-envelope"></i> Envoie par mail du devis</h4>
 						</div>
 						<!-- //modal-header-->
-						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
 							<div class="modal-body">
 
 								<div class="form-group">
@@ -1564,51 +1564,47 @@ include "inc/header.php";
 									</div>
 								</div>
 
-								<div class="form-group">
-									<label class="control-label col-md-3">Message</label>
-									<div class="col-md-9">
-										<textarea class="form-control"  rows="10"  data-provide="markdown" name="message">
-											<div id="email">
-												<div class="header">
-													<div class="logo"><img src="<?= ROOT,ASSETS,IMG; ?>logo_white_icon.png" /></div>
-													<div class="dot-bar"><img src="<?= ROOT,ASSETS,IMG; ?>dot-bar.png" /></div>
-													<div class="adresse">
-														<strong>CRIDIP SWD</strong><br>
-														8 Rue Octave Voyer<br>
-														85100 Les Sables d'Olonne
-													</div>
-													<div class="sujet"><?= $sujet; ?></div>
-												</div>
-												<div class="corps">
-													<p>Bonjour,</p>
-													<p>Vous avez fait appel à nos services et nous vous remercions.</p>
-													<p>Voici un récapitulatif de l'inscription à votre Espace Client CRIDIP, où vous pourrez:</p>
-													<ul>
-														<li>Avoir accès à vos coordonnées et les modifiés</li>
-														<li>Avoir accès à tous vos documents contractuel, factures, commandes et devis</li>
-													</ul>
-													<p>Voici vos identifiants:</p>
-													<table class="id">
-														<tr>
-															<td>Login:</td>
-															<td><?= $num_client; ?></td>
-														</tr>
-														<tr>
-															<td>Mot de Passe:</td>
-															<td><?= $password_clear; ?></td>
-														</tr>
-													</table>
-													<a class="button" href="http://portail.cridip.com">ACCEDER A VOTRE ESPACE CLIENT</a>
-												</div>
-												<div class="footer">
-													<hr />
-													SAS au capital de 100€ - RCS La Roche sur Yon 811 772 235 - Siège social: 8 rue Octave Voyer, 85100 Les Sables d'Olonne - FRANCE
-												</div>
 
-											</div>
-										</textarea>
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="envoie-devis"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
+					<div id="add-article-devis" data-width="1400" class="modal fade">
+						<div class="modal-header bg-success-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un article au devis</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
+							<input type="hidden" name="iddevis" value="<?= $iddevis; ?>" />
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Article</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="echeance" data-size="10" data-live-search="true">
+											<?php
+											$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
+											while($famille = mysql_fetch_array($sql_famille))
+											{
+											?>
+												<optgroup label="<?= $famille['designation_famille']; ?>">
+													<?php
+													$sql_article = mysql_query("SELECT * FROM swd_article WHERE famille =".$famille['idfamillearticle'])or die(mysql_error());
+													while($article = mysql_fetch_array($sql_article))
+													{
+													?>
+													<option value="<?= $article['idarticle']; ?>"><?= $article['nom_article']; ?></option>
+													<?php } ?>
+												</optgroup>
+											<?php } ?>
+										</select>
 									</div>
 								</div>
+
 
 							</div>
 							<!-- //modal-body-->
