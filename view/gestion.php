@@ -1331,7 +1331,7 @@ include "inc/header.php";
 											</div>
 											<div class="col-sm-6 align-lg-right">
 												<h3>DEVIS NO. <?= $reference; ?></h3>
-												<span><?= date("d",$devis['date_devis']); ?> <?= $date_class->mois(date('n', $devis['date_devis'])); ?> <?= date("Y",$devis['date_devis']); ?></span>
+												<span><?= date("d",$devis['date_devis']); ?> <?= $date_class->mois(date('n', $devis['date_devis'])); ?> <?= date("Y",$devis['date_devis']); ?></span><br>
 												<span>
 													&Eacute;chéance:
 													<?php if($devis_cls->verif_echeance($date_jour_strt, $devis['date_echeance']) == 1){ ?>
