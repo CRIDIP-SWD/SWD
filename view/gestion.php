@@ -1515,7 +1515,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Date du Devis</label>
 									<div class="col-md-9">
-										<input type="text" id="date_devis" class="form-control" name="date_devis" />
+										<input type="text" id="date_devis" class="form-control" name="date_devis" value="<?= date("d-m-Y", $devis['date_devis']); ?>"/>
 									</div>
 								</div>
 
