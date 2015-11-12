@@ -147,8 +147,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-caracteristique')
 
     if($sql_delete_cara === TRUE)
     {
-        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=add-caracteristique");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&success=supp-caracteristique");
     }else{
-        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=add-caracteristique");
+        header("Location: ../../index.php?view=gestion&sub=article&data=view_article&code_article=$code_article&error=supp-caracteristique");
     }
 }
