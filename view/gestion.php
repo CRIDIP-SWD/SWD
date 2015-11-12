@@ -1377,7 +1377,7 @@ include "inc/header.php";
 											<tbody>
 											<?php if($devis_cls->verif_count_fam_ndd($iddevis) != 0){ ?>
 												<tr>
-													<td colspan="4" style="background-color: #00a1f3;">NOM DE DOMAINE</td>
+													<td colspan="4" style="background-color: #00a1f3; color: white; font-weight: 700;">NOM DE DOMAINE</td>
 												</tr>
 											<?php } ?>
 											</tbody>
