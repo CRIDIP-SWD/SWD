@@ -1409,6 +1409,67 @@ include "inc/header.php";
 														<button type="button" class="btn" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/devis.php?action=supp-article-devis&iddevisligne=<?= $ligne['iddevisligne']; ?>'"><i class="fa fa-remove text-danger"></i></button>
 													</td>
 												</tr>
+												<div id="edit-article-devis" data-width="1400" class="modal fade">
+														<div class="modal-header bg-info-gradient">
+															<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+															<h4 class="modal-title"><i class="fa fa-edit"></i> Editer un article du devis</h4>
+														</div>
+														<!-- //modal-header-->
+														<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
+															<input type="hidden" name="iddevisligne" value="<?= $ligne['iddevisligne']; ?>" />
+															<div class="modal-body">
+
+																<div class="form-group">
+																	<label class="control-label col-md-3">Article</label>
+																	<div class="col-md-9">
+																		<select  class="selectpicker form-control rounded" name="echeance" data-size="10" data-live-search="true">
+																			<?php
+																			$sql_article_ligne = mysql_query("SELECT * FROM swd_article WHERE idarticle = ".$ligne['idarticle']);
+																			$article_ligne = mysql_fetch_array($sql_article_ligne);
+																			?>
+																			<option value="<?= $article_ligne['idarticle']; ?>"><?= $article_ligne['nom_article']; ?></option>
+																			<?php
+																			$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
+																			while($famille = mysql_fetch_array($sql_famille))
+																			{
+																				?>
+																				<optgroup label="<?= $famille['designation_famille']; ?>">
+																					<?php
+																					$sql_article = mysql_query("SELECT * FROM swd_article WHERE famille =".$famille['idfamillearticle'])or die(mysql_error());
+																					while($article = mysql_fetch_array($sql_article))
+																					{
+																						?>
+																						<option value="<?= $article['idarticle']; ?>"><?= $article['nom_article']; ?></option>
+																					<?php } ?>
+																				</optgroup>
+																			<?php } ?>
+																		</select>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label class="control-label col-md-3">Quantité</label>
+																	<div class="col-md-9">
+																		<input type="text" class="form-control" name="qte" value="<?= $ligne['qte']; ?>"/>
+																		<span class="help-block">Quantité Réel ou Heure</span>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label class="control-label col-md-3">Commentaire</label>
+																	<div class="col-md-9">
+																		<textarea class="form-control" rows="5" maxlength="255" data-always-show="true"  data-position="bottom-left" name="commentaire"><?= html_entity_decode($ligne['commentaire']); ?></textarea>
+																	</div>
+																</div>
+
+
+															</div>
+															<!-- //modal-body-->
+															<div class="modal-footer bg-success-gradient">
+																<button type="submit" class="btn btn-default pull-right" name="action" value="edit-article-devis"><i class="fa fa-check"></i> Valider</button>
+															</div>
+														</form>
+													</div>
 												<?php } ?>
 											<?php } ?>
 											</tbody>
@@ -1490,6 +1551,7 @@ include "inc/header.php";
 						</div>
 						<!-- //modal-header-->
 						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
+							<input type="hidden" name="iddevis" value="<?= $iddevis; ?>" />
 							<div class="modal-body">
 
 								<div class="form-group">
@@ -1548,6 +1610,7 @@ include "inc/header.php";
 						</div>
 						<!-- //modal-header-->
 						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
+							<input type="hidden" name="iddevis" value="<?= $iddevis; ?>" />
 							<div class="modal-body">
 
 								<div class="form-group">
@@ -1585,7 +1648,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Article</label>
 									<div class="col-md-9">
-										<select  class="selectpicker form-control rounded" name="echeance" data-size="10" data-live-search="true">
+										<select  class="selectpicker form-control rounded" name="idarticle" data-size="10" data-live-search="true">
 											<?php
 											$sql_famille = mysql_query("SELECT * FROM swd_famille_article")or die(mysql_error());
 											while($famille = mysql_fetch_array($sql_famille))
@@ -1616,7 +1679,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Commentaire</label>
 									<div class="col-md-9">
-										<textarea class="form-control" rows="5" maxlength="255" data-always-show="true"  data-position="bottom-left"></textarea>
+										<textarea class="form-control" rows="5" maxlength="255" data-always-show="true"  data-position="bottom-left" name="commentaire"></textarea>
 									</div>
 								</div>
 
@@ -1624,7 +1687,7 @@ include "inc/header.php";
 							</div>
 							<!-- //modal-body-->
 							<div class="modal-footer bg-success-gradient">
-								<button type="submit" class="btn btn-default pull-right" name="action" value="envoie-devis"><i class="fa fa-check"></i> Valider</button>
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-article-devis"><i class="fa fa-check"></i> Valider</button>
 							</div>
 						</form>
 					</div>
