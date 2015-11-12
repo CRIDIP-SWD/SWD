@@ -1613,6 +1613,13 @@ include "inc/header.php";
 									</div>
 								</div>
 
+								<div class="form-group">
+									<label class="control-label col-md-3">Commentaire</label>
+									<div class="col-md-9">
+										<textarea class="form-control" rows="5" maxlength="255" data-always-show="true"  data-position="bottom-left"></textarea>
+									</div>
+								</div>
+
 
 							</div>
 							<!-- //modal-body-->
