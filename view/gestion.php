@@ -979,7 +979,7 @@ include "inc/header.php";
 											<img alt="" src="assets/img/avatar6.png" class="circle">
 											<span><?= $article['nom_article']; ?></span>
 										</div>
-										<a class="btn btn-theme" title="Add friends" data-toggle="modal" data-href="#edit-article"><i class="fa fa-edit"></i> Editer l'article</a>
+										<a class="btn btn-theme" title="Add friends" data-toggle="modal" data-target="#edit-article"><i class="fa fa-edit"></i> Editer l'article</a>
 										<a class="btn btn-theme-inverse" ><i class="fa fa-remove"></i> Supprimer l'article</a>
 									</div>
 
