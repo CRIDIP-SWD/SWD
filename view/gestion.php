@@ -967,6 +967,9 @@ include "inc/header.php";
 						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
 						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
 						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+						<li class="pull-right">
+							<button type="button" class="btn btn-xs btn-info">Retour</button>
+						</li>
 					</ol>
 					<!-- //breadcrumb-->
 
