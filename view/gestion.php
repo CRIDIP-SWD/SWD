@@ -1375,17 +1375,11 @@ include "inc/header.php";
 											</tr>
 											</thead>
 											<tbody>
-												<?php if($devis_cls->verif_count_famille($devis['iddevis']) != 0){ ?>
-													<?php
-													$sql_famille = mysql_query("SELECT * FROM swd_devis_ligne, swd_article, swd_famille_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = swd_famille_article.idfamillearticle AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
-													while($famille = mysql_fetch_array($sql_famille))
-													{
-													?>
-														<tr>
-															<td colspan="4"><strong><?= html_entity_decode($famille['designation_famille']); ?></strong></td>
-														</tr>
-													<?php } ?>
-												<?php } ?>
+											<?php if($devis_cls->verif_count_fam_ndd($iddevis) != 0){ ?>
+												<tr>
+													<td colspan="4" style="background-color: #00a1f3;">NOM DE DOMAINE</td>
+												</tr>
+											<?php } ?>
 											</tbody>
 											<tfoot>
 											<tr>

@@ -17,11 +17,87 @@ class devis
             return 0;
         }
     }
-    public function verif_count_famille($iddevis)
+
+    public function verif_count_fam_ndd($iddevis)
     {
-        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article, swd_famille_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle
-                            AND swd_article.famille = swd_famille_article.idfamillearticle
-                            AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '4' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_heber($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '5' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_em($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '6' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_sd($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '7' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_vps($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '8' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_ri($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '9' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_oi($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '10' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_voip($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '11' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_sms($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '12' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_service($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '14' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_license($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '15' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function verif_count_fam_materiel($iddevis)
+    {
+        $sql = mysql_query("SELECT COUNT(swd_devis_ligne.idarticle) FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille = '16' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
         $data = mysql_result($sql, 0);
         return $data;
     }
