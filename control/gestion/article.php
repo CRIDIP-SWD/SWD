@@ -15,7 +15,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-famille')
         header("Location: ../../index.php?view=gestion&sub=article&error=add-famille");
     }
 }
-if(isset($_POST['action']) && $_POST['action'] == 'supp-famille')
+if(isset($_GET['action']) && $_GET['action'] == 'supp-famille')
 {
     include "../../inc/config.php";
     include "../../inc/classe.php";
