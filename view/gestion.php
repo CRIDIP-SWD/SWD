@@ -961,6 +961,7 @@ include "inc/header.php";
 					$code_article = $_GET['code_article'];
 					$sql_article = mysql_query("SELECT * FROM swd_article WHERE code_article = '$code_article'")or die(mysql_error());
 					$article = mysql_fetch_array($sql_article);
+					$idarticle = $article['idarticle'];
 					?>
 					<ol class="breadcrumb">
 						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
@@ -994,6 +995,54 @@ include "inc/header.php";
 								</section>
 							</div>
 							<!-- //content > row > col-lg-3 -->
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<section class="panel">
+									<header class="panel-heading">
+										<h3>DESCRIPTION </h3>
+									</header>
+									<div class="panel-body">
+										<?= html_entity_decode($article['long_description']); ?>
+									</div>
+								</section>
+							</div>
+							<div class="col-md-6">
+								<section class="panel">
+									<header class="panel-heading">
+										<h3>CCARACTERISTIQUE </h3>
+									</header>
+									<div class="panel-body">
+										<div class="pull-right">
+											<button type="button" class="btn btn-rounded btn-success" data-toggle="modal" data-target="#add-caracteristique"><i class="fa fa-plus"></i> Ajouter une caractéristique</button>
+										</div>
+										<table class="table table-striped" id="listing-famille">
+											<thead>
+											<tr>
+												<th class="text-center">Caractéristique</th>
+												<th>Valeur</th>
+												<th>Action</th>
+											</tr>
+											</thead>
+											<tbody align="center">
+											<?php
+											$sql_cara = mysql_query("SELECT * FROM swd_article_caracteristique WHERE idarticle = '$idarticle'")or die(mysql_error());
+											while($caracteristique = mysql_fetch_array($sql_cara))
+											{
+											?>
+												<tr>
+													<td><?= html_entity_decode($caracteristique['caracteristique']); ?></td>
+													<td><?= html_entity_decode($caracteristique['value']); ?></td>
+													<td>
+														<button type="button" class="btn" onclick=""><i class="fa fa-remove text-danger"></i></button>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody>
+										</table>
+									</div>
+								</section>
+							</div>
 						</div>
 					</div>
 				<?php } ?>
