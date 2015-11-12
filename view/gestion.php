@@ -1371,7 +1371,7 @@ include "inc/header.php";
 												<?= html_entity_decode($devis['adresse']); ?><br>
 												<?= $devis['code_postal']; ?> <?= html_entity_decode($devis['ville']); ?>
 											</div>
-											<div class="col-md-6 align-lg-right">
+											<div class="col-md-9 align-lg-right">
 												<h4>Détail des Informations :</h4>
 												<strong>Téléphone:</strong> 0<?= substr($devis['telephone'], 4, 12); ?>  <br>
 												<strong>Numéro de compte:</strong> <?= $devis['num_client']; ?> <br>
