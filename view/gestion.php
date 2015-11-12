@@ -1366,13 +1366,7 @@ include "inc/header.php";
 										<hr>
 										<div class="row">
 											<div class="col-sm-3">
-												<h4>From :</h4>
-												CRIDIP-SWD <br>
-												20 Avenue Jean Jaures <br>
-												85100 Les Sables d'Olonne
-											</div>
-											<div class="col-sm-3">
-												<h4>To :</h4>
+												<h4>Adresser à :</h4>
 												<?php if(!empty($devis['nom_societe'])){echo "<strong>".$devis['nom_societe']."</strong><br><i>".$devis['nom_client']."</i>";}else{echo "<strong>".$devis['nom_client']."</strong>";} ?><br>
 												<?= html_entity_decode($devis['adresse']); ?><br>
 												<?= $devis['code_postal']; ?> <?= html_entity_decode($devis['ville']); ?>
