@@ -1332,6 +1332,14 @@ include "inc/header.php";
 											<div class="col-sm-6 align-lg-right">
 												<h3>DEVIS NO. <?= $reference; ?></h3>
 												<span><?= date("d",$devis['date_devis']); ?> <?= $date_class->mois(date('n', $devis['date_devis'])); ?> <?= date("Y",$devis['date_devis']); ?></span>
+												<span>
+													&Eacute;chéance:
+													<?php if($devis_cls->verif_echeance($date_jour_strt, $devis['date_echeance']) == 1){ ?>
+														<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $devis['date_echeance']); ?></span>
+													<?php }else{ ?>
+														<span class="label label-success"><?= date("d-m-Y", $devis['date_echeance']); ?></span>
+													<?php } ?>
+												</span>
 											</div>
 										</div>
 										<hr>
