@@ -1483,6 +1483,64 @@ include "inc/header.php";
 							</div>
 						</form>
 					</div>
+					<div id="edit-devis" data-width="1400" class="modal fade">
+						<div class="modal-header bg-info-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-edit"></i> Editer un devis</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Client</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="idclient" data-size="10" data-live-search="true">
+											<?php
+											$sql_default = mysql_query("SELECT * FROM client WHERE idclient =".$devis['idclient'])or die(mysql_error());
+											$default = mysql_fetch_array($sql_default);
+											?>
+											<option value="<?= $default['idclient']; ?>"><?php if(!empty($default['nom_societe'])){echo "<strong>".$default['nom_societe']."</strong> - <i>".$default['nom_client']."</i>";}else{echo $default['nom_client'];} ?></option>
+											<?php
+											$sql_client = mysql_query("SELECT * FROM client")or die(mysql_error());
+											while($client = mysql_fetch_array($sql_client))
+											{
+												?>
+												<option value="<?= $client['idclient']; ?>"><?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_societe']."</strong> - <i>".$client['nom_client']."</i>";}else{echo $client['nom_client'];} ?></option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Date du Devis</label>
+									<div class="col-md-9">
+										<input type="text" id="date_devis" class="form-control" name="date_devis" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Echéance</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="echeance" data-size="10" data-live-search="true">
+											<option value="0">Immédiat</option>
+											<option value="604800">7 Jours</option>
+											<option value="1296000">15 Jours</option>
+											<option value="2592000">30 Jours</option>
+											<option value="5184000">60 Jours</option>
+											<option value="7776000">90 Jours</option>
+										</select>
+									</div>
+								</div>
+
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-devis"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
 				<?php } ?>
 			<?php } ?>
 		</div>
