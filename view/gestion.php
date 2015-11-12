@@ -1392,6 +1392,7 @@ include "inc/header.php";
 												<th width="60%" class="text-left">Désignation</th>
 												<th>Quantité/Heure</th>
 												<th class="text-right">Prix</th>
+												<th class="text-center">Action</th>
 											</tr>
 											</thead>
 											<tbody>
@@ -1409,6 +1410,10 @@ include "inc/header.php";
 													<td><?= html_entity_decode($ligne['nom_article']); ?><br><i><?= html_entity_decode($ligne['commentaire']); ?></i></td>
 													<td class="text-center"><?= $ligne['qte']; ?></td>
 													<td class="text-right"><?= number_format($ligne['total_ligne'], 2, ',',' ')." €"; ?></td>
+													<td>
+														<button type="button" class="btn"><i class="fa fa-edit text-info"></i></button>
+														<button type="button" class="btn"><i class="fa fa-remove text-danger"></i></button>
+													</td>
 												</tr>
 												<?php } ?>
 											<?php } ?>
@@ -1420,6 +1425,7 @@ include "inc/header.php";
 											</tr>
 											</tfoot>
 										</table>
+										<button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un article</button>
 										<br><br>
 										<div class="row">
 											<div class="col-sm-6">
