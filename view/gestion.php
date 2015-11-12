@@ -1328,16 +1328,21 @@ include "inc/header.php";
 									<div class="invoice">
 										<div class="row">
 											<div class="col-md-12">
-												<div class="btn-group pull-right">
-													<button type="button" class="btn btn-info">Action</button>
-													<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
-													<ul class="dropdown-menu align-xs-left " role="menu">
-														<li><a href="#">Action</a></li>
-														<li><a href="#">Another action</a></li>
-														<li><a href="#">Something else here</a></li>
-														<li class="divider"></li>
-														<li><a href="#">Separated link</a></li>
-													</ul>
+												<div class="pull-right">
+													<button type="button" class="btn btn-default" onclick="window.location.href='<?= ROOT,TOKEN; ?>pdf/devis.php?reference=<?= $devis['reference']; ?>'"><i class="fa fa-print"></i></button>
+													<div class="btn-group pull-right">
+														<button type="button" class="btn btn-info">Plus...</button>
+														<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+														<ul class="dropdown-menu align-xs-left " role="menu">
+															<li><a href="#">Modifier le devis</a></li>
+															<li><a href="#">Envoyer par email</a></li>
+															<li><a href="#">Marqué comme Refusé</a></li>
+															<li><a href="#">Marqué comme Accepté</a></li>
+															<li><a href="#">Transformer en facture</a></li>
+															<li class="divider"></li>
+															<li><a href="#">Supprimer le devis</a></li>
+														</ul>
+													</div>
 												</div>
 											</div>
 										</div>
