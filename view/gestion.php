@@ -1277,13 +1277,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Date du Devis</label>
 									<div class="col-md-9">
-										<div class="input-group date form_datetime col-lg-6" data-picker-position="bottom-left"  data-date-format="dd mm YYYY" >
-											<input type="text" class="form-control" name="date_devis">
-											<span class="input-group-btn">
-												<button class="btn btn-default" type="button"><i class="fa fa-times"></i></button>
-												<button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-										</div>
+										<input type="text" id="date_devis" class="form-control" name="date_devis" />
 									</div>
 								</div>
 

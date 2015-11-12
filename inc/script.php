@@ -46,6 +46,7 @@
     $(document).ready(function(){
         $('#masked_phone').inputmask("mask", {"mask": "0033999999999"});
         $('#masked_cp').inputmask("mask", {"mask": "99999"});
+        $('#date_devis').inputmask("mask", {"mask": "99-99-9999"});
     });
 </script>
 <script type="text/javascript">
