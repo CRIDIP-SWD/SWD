@@ -14,4 +14,15 @@ class article
         $data = mysql_result($sql, 0);
         return $data;
     }
+    public function gen_num_article()
+    {
+        $chaine = "AZERTYUIOPQSDFGHJKLMWXCVBN";
+        $num = "1234567890";
+        $code_article = "";
+        $mel_caractere = str_shuffle($chaine);
+        $gen_caractere = substr($mel_caractere, 0, 2);
+        $gen_num = str_shuffle(substr($num, 0, 6));
+        $code_article .= $gen_caractere.$gen_num;
+        return $code_article;
+    }
 }

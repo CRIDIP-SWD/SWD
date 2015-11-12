@@ -37,3 +37,19 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-famille')
     }
 
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-article')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+    
+    $type_article = $_POST['type_article'];
+    $famille = $_POST['famille'];
+    $nom_article = $_POST['nom_article'];
+    $short_description = $_POST['short_description'];
+    $long_description = $_POST['long_description'];
+    $prix_vente_ht = $_POST['prix_vente_ht'];
+    $code_article = $article_cls->gen_num_article();
+
+    $sql_add_article = mysql_query("INSERT INTO swd_article(`idarticle`, `type_article`, `nom_article`, `code_article`, `short_description`, `long_description`, `caracteristique`, `prix_vente_ht`, `famille`, `quantite`)
+                                  VALUES (NULL, '$type_article', '$nom_article', '$code_article', '$short_description', '$long_description', '', '$prix_vente_ht', '$famille', '0')")or die(mysql_error());
+}
