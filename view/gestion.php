@@ -1164,7 +1164,7 @@ include "inc/header.php";
 							</div>
 							<!-- //modal-body-->
 							<div class="modal-footer bg-success-gradient">
-								<button type="submit" class="btn btn-default pull-right" name="action" value="add-article"><i class="fa fa-check"></i> Valider</button>
+								<button type="submit" class="btn btn-default pull-right" name="action" value="edit-article"><i class="fa fa-check"></i> Valider</button>
 							</div>
 						</form>
 					</div>
