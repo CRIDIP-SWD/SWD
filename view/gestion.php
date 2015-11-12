@@ -1097,11 +1097,11 @@ include "inc/header.php";
 														<label><i class="fa fa-globe"></i> Web</label>
 													</li>
 													<li>
-														<input  type="radio" name="type_article" value="2" <?php if($article['type_article'] == 1){echo "checked='checked'";} ?>>
+														<input  type="radio" name="type_article" value="2" <?php if($article['type_article'] == 2){echo "checked='checked'";} ?>>
 														<label ><i class="fa fa-server"></i> Serveur</label>
 													</li>
 													<li>
-														<input  type="radio" name="type_article" value="3" <?php if($article['type_article'] == 1){echo "checked='checked'";} ?>>
+														<input  type="radio" name="type_article" value="3" <?php if($article['type_article'] == 3){echo "checked='checked'";} ?>>
 														<label ><i class="fa fa-phone-square"></i> Télécom</label>
 													</li>
 												</ul>
