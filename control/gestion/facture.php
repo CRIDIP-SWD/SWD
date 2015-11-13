@@ -329,6 +329,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
                 $params["L_PAYMENTREQUEST_0_AMT$k"] = $product['total_ligne'];
                 $params["L_PAYMENTREQUEST_0_QTY$k"] = $product['qte'];
             }
+            print_r($products);
         }
 
         $response = $paypal_cls->request('SetExpressCheckout', $params);
