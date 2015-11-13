@@ -325,6 +325,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             'HDRIMG'                            => ROOT.ASSETS.IMG."logo_2x.png",
             'EMAIL'                             => $email,
             'BRANDNAME'                         => "CRIDIP SWD X1.00",
+            'L_PAYMENTREQUEST_0_NAME0'          => $reference,
         );
         $response = $paypal_cls->request('SetExpressCheckout', $params);
         if($response){
