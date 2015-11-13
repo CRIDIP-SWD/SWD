@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5839d1f820040d367623095c70e39c2f",
-    "content-hash": "2255eeb6daff9240cf1c714d7ee0cddb",
+    "hash": "c884fe05b2e10bf56022fe3bb6b16b5f",
+    "content-hash": "b69f1abcc6e2f92c3e3cd7aee19f12ab",
     "packages": [
         {
             "name": "dropbox/dropbox-sdk",
@@ -296,6 +296,54 @@
             ],
             "description": "Wrapper for OVH APIs",
             "time": "2015-10-09 20:29:18"
+        },
+        {
+            "name": "paypal/rest-api-sdk-php",
+            "version": "v1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
+                "reference": "89bc07aa1eae833b6d1f38188fe1787b8141685b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/89bc07aa1eae833b6d1f38188fe1787b8141685b",
+                "reference": "89bc07aa1eae833b6d1f38188fe1787b8141685b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PayPal": "lib/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "PayPal",
+                    "homepage": "https://github.com/paypal/rest-api-sdk-php/contributors"
+                }
+            ],
+            "description": "PayPal's PHP SDK for REST APIs",
+            "homepage": "http://paypal.github.io/PayPal-PHP-SDK/",
+            "keywords": [
+                "payments",
+                "paypal",
+                "rest",
+                "sdk"
+            ],
+            "time": "2015-10-29 18:18:16"
         },
         {
             "name": "react/promise",
