@@ -2695,12 +2695,12 @@ include "inc/header.php";
 										<div class="row">
 											<div class="col-md-12">
 												<div class="pull-right">
-													<button type="button" class="btn btn-xs"><i class="fa fa-print"></i> Imprimer le devis</button>
-													<button type="button" class="btn btn-xs bg-info"><i class="fa fa-envelope"></i> Envoyer la facture</button>
-													<button type="button" class="btn btn-xs bg-info"><i class="fa fa-envelope"></i> Envoyer un rappel</button>
-													<button type="button" class="btn btn-xs bg-warning"><i class="fa fa-money"></i> Ajouter un réglement</button>
-													<button type="button" class="btn btn-xs bg-success"><i class="fa fa-pencil-square"></i> Modifier la facture</button>
-													<button type="button" class="btn btn-xs bg-danger"><i class="fa fa-remove"></i> Supprimer la facture</button>
+													<button type="button" class="btn btn-xs" onclick="window.location.href='<?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?>'"><i class="fa fa-print"></i> Imprimer le devis</button>
+													<button type="button" class="btn btn-xs bg-info" data-toggle="modal" data-target="#envoie-facture"><i class="fa fa-envelope"></i> Envoyer la facture</button>
+													<button type="button" class="btn btn-xs bg-info" data-toggle="modal" data-target="#envoie-rappel"><i class="fa fa-envelope"></i> Envoyer un rappel</button>
+													<button type="button" class="btn btn-xs bg-warning" data-toggle="modal" data-target="#add-reglement"><i class="fa fa-money"></i> Ajouter un réglement</button>
+													<button type="button" class="btn btn-xs bg-success" data-toggle="modal" data-target="#edit-facture"><i class="fa fa-pencil-square"></i> Modifier la facture</button>
+													<button type="button" class="btn btn-xs bg-danger" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/facture.php?action=supp-facture&idfacture=<?= $idfacture; ?>'"><i class="fa fa-remove"></i> Supprimer la facture</button>
 												</div>
 											</div>
 										</div>
