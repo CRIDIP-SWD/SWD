@@ -4009,14 +4009,10 @@ include "inc/header.php";
 								</div>
 
 
-
-
-
-
 							</div>
 							<!-- //modal-body-->
 							<div class="modal-footer bg-success-gradient">
-								<button type="submit" class="btn btn-default pull-right" name="action" value="add-facture"><i class="fa fa-check"></i> Valider</button>
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-reglement"><i class="fa fa-check"></i> Valider</button>
 							</div>
 						</form>
 					</div>
