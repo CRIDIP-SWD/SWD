@@ -173,6 +173,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'envoie-rappel')
             <p>Sauf erreur ou omission de notre part, le montant de <strong><?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?></strong> concernant la facture N°<strong><?= $reference; ?></strong> ne nous est pas parvenue.</p>
             <p>Afin d'éviter des surcout dù en l'abscence de paiement, nous vous inviton à régulariser votre situation en réglant la facture par le lien ci-dessous:</p>
             <p><a href="<?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?>"><?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?></a></p>
+            <p>Si votre facture n'est pas régularisée sous 7 jours, nous procéderons à la fermeture des services associés et à la transmission de votre compte débiteur à notre service créancier (Surcout obligatoire suivant les termes de nos conditions générales).</p>
             <p>Nous vous informons également, que vous avez la possibilité de payer par prélèvement automatique par l'intermédiaire de votre espace client.</p>
             <p>Si vous avez des questions ou des difficultés de paiement relatives à cette facture n'hésitez pas à nous contacter par téléphone au: 0 899 492 648 ou par mail: contact@cridip.com</p>
             <p>Cordialement,</p>
