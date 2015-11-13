@@ -272,7 +272,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-article-facture')
 
     $sql_ligne = mysql_query("SELECT * FROM swd_facture_ligne WHERE idfactureligne = '$idfactureligne'")or die(mysql_error());
     $ligne = mysql_fetch_array($sql_ligne);
-    $iddevis = $ligne['iddevis'];
+    $idfacture = $ligne['idfacture'];
     $total_ligne = $ligne['total_ligne'];
 
     $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
