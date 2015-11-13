@@ -23,11 +23,17 @@ if(isset($_GET['action']) && $_GET['action'] == 'calling')
         $nom_client = $client['nom_client'];
     }
 
-    $soap = new SoapClient("https://www.ovh.com/soapi/soapi-re-1.63.wsdl");
-    $responder = $soap->telephonyClick2CallDo("mmockelyn", "1992maxime", $num_appelant, $num_appeler, $num_appelant);
+    //$soap = new SoapClient("https://www.ovh.com/soapi/soapi-re-1.63.wsdl");
+    //$responder = $soap->telephonyClick2CallDo("mmockelyn", "1992maxime", $num_appelant, $num_appeler, $num_appelant);
+
+    $content = array(
+        "calledNumber" => $num_appeler
+    );
+
+    $call = $ovh1->post("/telephony/ovhtel-32816764-1/line/0033972527971/click2Call", $content);
 
 
-    if($responder === NULL)
+    if($call === NULL)
     {
         $sql_called = mysql_query("INSERT INTO `client_called`(`idclientcalled`, `num_user`, `num_client`, `nom_client`, `date_appel`, `status`)
                                 VALUES (NULL,'$num_appelant','$num_appeler','$nom_client','$date_jour_heure_strt','1')")or die("ERROR SQL: ".mysql_error());
