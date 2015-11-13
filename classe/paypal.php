@@ -38,12 +38,12 @@ class paypal
             "PAYMENTREQUEST_0_AMT" => $total_ht
         );
         $sql_article = mysql_query("SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '$idfacture'")or die(mysql_error());
-        $article = mysql_fetch_array($sql_article);
-        foreach($article as $k => $product){
-            $params["L_PAYMENTREQUEST_0_NAME$k"] = $product['nom_article'];
-            $params["L_PAYMENTREQUEST_0_DESC$k"] = $product['commentaire'];
-            $params["L_PAYMENTREQUEST_0_AMT$k"] = $product['total_ligne'];
-            $params["L_PAYMENTREQUEST_0_QTY$k"] = $product['qte'];
+        while($article = mysql_fetch_array($sql_article))
+        {
+            $params["L_PAYMENTREQUEST_0_NAME"] = $article['nom_article'];
+            $params["L_PAYMENTREQUEST_0_DESC"] = $article['commentaire'];
+            $params["L_PAYMENTREQUEST_0_AMT"] = $article['total_ligne'];
+            $params["L_PAYMENTREQUEST_0_QTY"] = $article['qte'];
         }
         //Initialisation de cURL
         $curl = curl_init();
