@@ -2698,7 +2698,7 @@ include "inc/header.php";
 													<button type="button" class="btn btn-xs"><i class="fa fa-print"></i> Imprimer le devis</button>
 													<button type="button" class="btn btn-xs bg-info"><i class="fa fa-envelope"></i> Envoyer la facture</button>
 													<button type="button" class="btn btn-xs bg-info"><i class="fa fa-envelope"></i> Envoyer un rappel</button>
-													<button type="button" class="btn btn-xs bg-warning"><i class="fa fa-moeny"></i> Ajouter un réglement</button>
+													<button type="button" class="btn btn-xs bg-warning"><i class="fa fa-money"></i> Ajouter un réglement</button>
 													<button type="button" class="btn btn-xs bg-success"><i class="fa fa-pencil-square"></i> Modifier la facture</button>
 													<button type="button" class="btn btn-xs bg-danger"><i class="fa fa-remove"></i> Supprimer la facture</button>
 												</div>
