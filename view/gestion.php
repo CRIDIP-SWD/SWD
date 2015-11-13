@@ -4001,6 +4001,15 @@ include "inc/header.php";
 									</div>
 								</div>
 
+								<div class="form-group">
+									<label class="control-label col-md-3">Montant du réglement</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" name="montant_reglement" />
+									</div>
+								</div>
+
+
+
 
 
 
