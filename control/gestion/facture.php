@@ -324,10 +324,10 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         $sql_article = mysql_query("SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '$idfacture'")or die(mysql_error());
         while($products = mysql_fetch_assoc($sql_article)) {
             foreach($products as $k => $product){
-                $params["L_PAYMENTREQUEST_0_NAME$k"] = $product['nom_article'];
+                $params["L_PAYMENTREQUEST_0_NAME$k"] = $product["nom_article"];
                 $params["L_PAYMENTREQUEST_0_DESC$k"] = '';
-                $params["L_PAYMENTREQUEST_0_AMT$k"] = $product['total_ligne'];
-                $params["L_PAYMENTREQUEST_0_QTY$k"] = $product['qte'];
+                $params["L_PAYMENTREQUEST_0_AMT$k"] = $product["total_ligne"];
+                $params["L_PAYMENTREQUEST_0_QTY$k"] = $product["qte"];
             }
             print_r($products);
         }
