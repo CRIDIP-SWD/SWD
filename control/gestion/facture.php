@@ -331,7 +331,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         {
             var_dump($product);
         }
-
+        die();
         $response = $paypal_cls->request('SetExpressCheckout', $params);
         if($response){
             header("Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=". $response['TOKEN']);
