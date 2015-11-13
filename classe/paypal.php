@@ -34,7 +34,7 @@ class paypal
     public function setExpressCheckout($method, $returnurl, $cancelurl, $total_ht, $idfacture)
     {
         $params = $this->params($method, $returnurl, $cancelurl);
-        $params .= array(
+        $params = array(
             "PAYMENTREQUEST_0_AMT" => $total_ht
         );
         $sql_article = mysql_query("SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '$idfacture'")or die(mysql_error());
