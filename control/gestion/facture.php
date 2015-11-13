@@ -30,6 +30,10 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-facture')
     $date_echeance = $date_facture + $_POST['echeance'];
     $projet = $_POST['projet'];
 
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+    $reference = $facture['reference'];
+
     $sql_up_facture = mysql_query("UPDATE swd_facture SET idclient = '$idclient', date_facture = '$date_facture', date_echeance = '$date_echeance', idprojet = '$projet' WHERE idfacture = '$idfacture'")or die(mysql_error());
 
     if($sql_up_facture === TRUE)
