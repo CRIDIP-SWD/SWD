@@ -321,14 +321,6 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             'PAYMENTREQUEST_0_AMT' => $montant_reglement,
             'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
         );
-        $sql_article = mysql_query("SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '$idfacture'")or die(mysql_error());
-        $products = mysql_fetch_array($sql_article);
-        foreach($products as $k => $product){
-            $params["L_PAYMENTREQUEST_0_NAME$k"] = $product['nom_article'];
-            $params["L_PAYMENTREQUEST_0_DESC$k"] = '';
-            $params["L_PAYMENTREQUEST_0_AMT$k"] = $product['total_ligne'];
-            $params["L_PAYMENTREQUEST_0_QTY$k"] = $product['qte'];
-        }
         $response = $paypal_cls->request('SetExpressCheckout', $params);
         if($response){
             $paypal = 'https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=' . $response['TOKEN'];
