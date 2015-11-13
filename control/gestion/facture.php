@@ -327,6 +327,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             $params["L_PAYMENTREQUEST_0_DESC".$products['idfactureligne']] = '';
             $params["L_PAYMENTREQUEST_0_AMT".$products['idfactureligne']] = $products['total_ligne'];
             $params["L_PAYMENTREQUEST_0_QTY".$products['idfactureligne']] = $products['qte'];
+            var_dump($products);
         }
         var_dump($products);
         die();
