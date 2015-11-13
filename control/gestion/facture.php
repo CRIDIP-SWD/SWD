@@ -329,7 +329,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
 
         foreach($query as $k => $product)
         {
-            var_dump($product);
+            print_r($product);
         }
         die();
         $response = $paypal_cls->request('SetExpressCheckout', $params);
