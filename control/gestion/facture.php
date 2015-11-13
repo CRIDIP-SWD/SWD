@@ -326,6 +326,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             'EMAIL'                             => $email,
             'BRANDNAME'                         => "CRIDIP SWD X1.00",
             'L_PAYMENTREQUEST_0_NAME0'          => $reference,
+            'L_PAYMENTREQUEST_0_AMT0'           => $montant_reglement,
         );
         $response = $paypal_cls->request('SetExpressCheckout', $params);
         if($response){
