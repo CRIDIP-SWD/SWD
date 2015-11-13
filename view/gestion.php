@@ -1037,7 +1037,7 @@ include "inc/header.php";
 													<td><?= html_entity_decode($caracteristique['caracteristique']); ?></td>
 													<td><?= html_entity_decode($caracteristique['value']); ?></td>
 													<td>
-														<button type="button" class="btn" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/article.php?action=supp-caracteristique&$idarticlecaracteristique=<?= $caracteristique['idarticlecaracteristique']; ?>'"><i class="fa fa-remove text-danger"></i></button>
+														<button type="button" class="btn" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/article.php?action=supp-caracteristique&idarticlecaracteristique=<?= $caracteristique['idarticlecaracteristique']; ?>'"><i class="fa fa-remove text-danger"></i></button>
 													</td>
 												</tr>
 											<?php } ?>
