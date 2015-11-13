@@ -3756,7 +3756,7 @@ include "inc/header.php";
 									<div class="col-md-9">
 										<select  class="selectpicker form-control rounded" name="idclient" data-size="10" data-live-search="true">
 											<?php
-											$sql_default = mysql_query("SELECT * FROM client WHERE idclient =".$devis['idclient'])or die(mysql_error());
+											$sql_default = mysql_query("SELECT * FROM client WHERE idclient =".$facture['idclient'])or die(mysql_error());
 											$default = mysql_fetch_array($sql_default);
 											?>
 											<option value="<?= $default['idclient']; ?>"><?php if(!empty($default['nom_societe'])){echo "<strong>".$default['nom_societe']."</strong> - <i>".$default['nom_client']."</i>";}else{echo $default['nom_client'];} ?></option>
