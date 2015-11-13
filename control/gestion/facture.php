@@ -124,9 +124,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'envoie-facture')
 
     if($mail_envoie === TRUE)
     {
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=envoie-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=envoie-facture");
     }else{
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=envoie-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=envoie-facture");
     }
 }
 if(isset($_POST['action']) && $_POST['action'] == 'envoie-rappel')
@@ -193,9 +193,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'envoie-rappel')
 
     if($mail_envoie === TRUE)
     {
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=envoie-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=envoie-facture");
     }else{
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=envoie-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=envoie-facture");
     }
 }
 
