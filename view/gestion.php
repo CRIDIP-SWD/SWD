@@ -1450,13 +1450,6 @@ include "inc/header.php";
 																	</div>
 																</div>
 
-																<div class="form-group">
-																	<label class="control-label col-md-3">Quantité</label>
-																	<div class="col-md-9">
-																		<input type="text" class="form-control" name="qte" value="<?= $ligne['qte']; ?>"/>
-																		<span class="help-block">Quantité Réel ou Heure</span>
-																	</div>
-																</div>
 
 																<div class="form-group">
 																	<label class="control-label col-md-3">Commentaire</label>
