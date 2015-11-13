@@ -3885,7 +3885,7 @@ include "inc/header.php";
 							</div>
 						</form>
 					</div>
-					<div id="add-article-devis" data-width="1400" class="modal fade">
+					<div id="add-article-facture" data-width="1400" class="modal fade">
 						<div class="modal-header bg-success-gradient">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
 							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un article à la facture</h4>
