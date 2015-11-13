@@ -14,6 +14,7 @@ class paypal
     private $endpoint = "https://api-3t.sandbox.paypal.com/nvp";
     private $version = "202";
     private $devise = "EUR";
+    private $error = array();
 
 
     private function params($method, $returnurl, $cancelurl, $total_ht)
