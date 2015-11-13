@@ -1365,6 +1365,11 @@ include "inc/header.php";
 													<?php } ?>
 												</span><br>
 												<button type="button" class="btn disabled" style="font-size: 25px"><i class="fa fa-spinner fa-spin"></i> EN COURS...</button>
+												<?php
+												if($devis['etat_devis'] == 1){echo "<button type=\"button\" class=\"btn disabled bg-info-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-spinner fa-spin\"></i> EN COURS...</button>";}
+												if($devis['etat_devis'] == 2){echo "<button type=\"button\" class=\"btn disabled bg-success-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-check\"></i> ACCEPTER</button>";}
+												if($devis['etat_devis'] == 3){echo "<button type=\"button\" class=\"btn disabled bg-danger-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-remove\"></i> REFUSER</button>";}
+												?>
 											</div>
 										</div>
 										<hr>
