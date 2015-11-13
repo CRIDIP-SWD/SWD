@@ -328,7 +328,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             $params["L_PAYMENTREQUEST_0_AMT".$products['idfactureligne']] = $products['total_ligne'];
             $params["L_PAYMENTREQUEST_0_QTY".$products['idfactureligne']] = $products['qte'];
         }
-
+        var_dump($products);
+        die();
         $response = $paypal_cls->request('SetExpressCheckout', $params);
         if($response){
             header("Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=". $response['TOKEN']);
