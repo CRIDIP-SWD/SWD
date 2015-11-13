@@ -2725,9 +2725,8 @@ include "inc/header.php";
 														<span class="label label-success"><?= date("d-m-Y", $facture['date_echeance']); ?></span>
 													<?php } ?>
 												</span><br>
-												<button type="button" class="btn disabled bg-info-gradient" style="font-size: 25px"><i class="fa fa-spinner fa-spin"></i> EN COURS...</button>
 												<?php
-												if($facture['etat_facture'] == 1){echo "<button type=\"button\" class=\"btn disabled bg-info-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-spinner fa-spin\"></i> IMPAYE</button>";}
+												if($facture['etat_facture'] == 1){echo "<button type=\"button\" class=\"btn disabled bg-danger-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-spinner fa-spin\"></i> IMPAYE</button>";}
 												if($facture['etat_facture'] == 2){echo "<button type=\"button\" class=\"btn disabled bg-warning-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-warning\"></i> PARTIELLEMENT PAYE</button>";}
 												if($facture['etat_facture'] == 3){echo "<button type=\"button\" class=\"btn disabled bg-success-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-check\"></i> PAYE</button>";}
 												?>
