@@ -2695,18 +2695,12 @@ include "inc/header.php";
 										<div class="row">
 											<div class="col-md-12">
 												<div class="pull-right">
-													<button type="button" class="btn btn-default" onclick="window.location.href='<?= ROOT,TOKEN; ?>pdf/facture.php?reference=<?= $facture['reference']; ?>'"><i class="fa fa-print"></i></button>
-													<div class="btn-group pull-right">
-														<button type="button" class="btn btn-info">Plus...</button>
-														<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
-														<ul class="dropdown-menu align-xs-left " role="menu">
-															<li><a data-toggle="modal" data-target="#edit-facture">Modifier la facture</a></li>
-															<li><a data-toggle="modal" data-target="#envoie-facture">Envoyer par email</a></li>
-															<li><a data-toggle="modal" data-target="#envoie-rappel">Envoyer un rappel</a></li>
-															<li class="divider"></li>
-															<li><a href="<?= ROOT,CONTROL; ?>gestion/facture.php?action=supp-facture&idfacture=<?= $idfacture; ?>">Supprimer la facture</a></li>
-														</ul>
-													</div>
+													<button type="button" class="btn btn-xs"><i class="fa fa-print"></i> Imprimer le devis</button>
+													<button type="button" class="btn btn-xs bg-info"><i class="fa fa-envelope"></i> Envoyer la facture</button>
+													<button type="button" class="btn btn-xs bg-info"><i class="fa fa-envelope"></i> Envoyer un rappel</button>
+													<button type="button" class="btn btn-xs bg-warning"><i class="fa fa-moeny"></i> Ajouter un réglement</button>
+													<button type="button" class="btn btn-xs bg-success"><i class="fa fa-pencil-square"></i> Modifier la facture</button>
+													<button type="button" class="btn btn-xs bg-danger"><i class="fa fa-remove"></i> Supprimer la facture</button>
 												</div>
 											</div>
 										</div>
