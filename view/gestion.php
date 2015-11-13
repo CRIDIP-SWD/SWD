@@ -1343,7 +1343,7 @@ include "inc/header.php";
 															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=devis-accepter&reference=<?= $reference; ?>">Marqué comme Accepté</a></li>
 															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=transf-facture&reference=<?= $reference; ?>">Transformer en facture</a></li>
 															<li class="divider"></li>
-															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=supp-devis&reference=<?= $reference; ?>">Supprimer le devis</a></li>
+															<li><a href="<?= ROOT,CONTROL; ?>gestion/devis.php?action=supp-devis&iddevis=<?= $iddevis; ?>">Supprimer le devis</a></li>
 														</ul>
 													</div>
 												</div>
