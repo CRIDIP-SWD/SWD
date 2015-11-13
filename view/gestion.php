@@ -3772,9 +3772,9 @@ include "inc/header.php";
 								</div>
 
 								<div class="form-group">
-									<label class="control-label col-md-3">Date du Devis</label>
+									<label class="control-label col-md-3">Date de la facture</label>
 									<div class="col-md-9">
-										<input type="text" id="date_devis" class="form-control" name="date_devis" value="<?= date("d-m-Y", $facture['date_devis']); ?>"/>
+										<input type="text" id="date_devis" class="form-control" name="date_facture" value="<?= date("d-m-Y", $facture['date_facture']); ?>"/>
 									</div>
 								</div>
 
