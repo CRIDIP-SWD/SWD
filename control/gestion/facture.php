@@ -321,15 +321,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             'PAYMENTREQUEST_0_AMT' => $montant_reglement,
             'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
         );
-        $sql_article = mysql_query("SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '$idfacture'")or die(mysql_error());
-        while($products = mysql_fetch_assoc($sql_article)) {
-            foreach($products as $k => $product){
-                $params["L_PAYMENTREQUEST_0_NAME$k"] = $product[$k]["nom_article"];
-                $params["L_PAYMENTREQUEST_0_DESC$k"] = '';
-                $params["L_PAYMENTREQUEST_0_AMT$k"] = $product[$k]["total_ligne"];
-                $params["L_PAYMENTREQUEST_0_QTY$k"] = $product[$k]["qte"];
-            }
-            print_r($products);
+        $dsn = new PDO("mysql:host=localhost;dbname=gestcom", "remote_user", "1992maxime");
+        $dsn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = $dsn->query('SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '.$idfacture);
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+
+        foreach($query as $k => $product)
+        {
+            var_dump($product);
         }
 
         $response = $paypal_cls->request('SetExpressCheckout', $params);
