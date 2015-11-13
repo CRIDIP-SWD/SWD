@@ -2645,7 +2645,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Projet</label>
 									<div class="col-md-9">
-										<select  class="selectpicker form-control rounded" name="idclient" data-size="10" data-live-search="true">
+										<select  class="selectpicker form-control rounded" name="projet" data-size="10" data-live-search="true">
 											<option value="0">NEANT</option>
 											<?php
 											$sql_projet = mysql_query("SELECT * FROM swd_projet")or die(mysql_error());
@@ -3720,7 +3720,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Projet</label>
 									<div class="col-md-9">
-										<select  class="selectpicker form-control rounded" name="idclient" data-size="10" data-live-search="true">
+										<select  class="selectpicker form-control rounded" name="projet" data-size="10" data-live-search="true">
 											<option value="0">NEANT</option>
 											<?php
 											$sql_projet = mysql_query("SELECT * FROM swd_projet")or die(mysql_error());
@@ -3795,7 +3795,7 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Projet</label>
 									<div class="col-md-9">
-										<select  class="selectpicker form-control rounded" name="idclient" data-size="10" data-live-search="true">
+										<select  class="selectpicker form-control rounded" name="projet" data-size="10" data-live-search="true">
 											<?php
 											$sql_projet = mysql_query("SELECT * FROM swd_projet WHERE idprojet =".$facture['idprojet'])or die(mysql_error());
 											$projet = mysql_fetch_array($sql_projet);
