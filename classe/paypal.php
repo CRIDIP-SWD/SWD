@@ -61,6 +61,7 @@ class paypal
                 header("Location: https://www.sandbox.paypal.com=webscr?cmd=_express-checkout&useraction=commit&token=$TOKEN");
             }else{
                 $this->errors = $responseArray;
+                header("Location: index.php");
                 curl_close($curl);
                 return false;
             }
