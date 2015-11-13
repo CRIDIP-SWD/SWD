@@ -3828,27 +3828,27 @@ include "inc/header.php";
 							</div>
 						</form>
 					</div>
-					<div id="envoie-devis" data-width="1400" class="modal fade">
+					<div id="envoie-facture" data-width="1400" class="modal fade">
 						<div class="modal-header bg-info-gradient">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-							<h4 class="modal-title"><i class="fa fa-envelope"></i> Envoie par mail du devis</h4>
+							<h4 class="modal-title"><i class="fa fa-envelope"></i> Envoie par mail de la facture</h4>
 						</div>
 						<!-- //modal-header-->
-						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
-							<input type="hidden" name="iddevis" value="<?= $iddevis; ?>" />
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+							<input type="hidden" name="idfacture" value="<?= $idfacture; ?>" />
 							<div class="modal-body">
 
 								<div class="form-group">
 									<label class="control-label col-md-3">Client</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control rounded" name="email" value="<?= $devis['email']; ?>">
+										<input type="text" class="form-control rounded" name="email" value="<?= $facture['email']; ?>">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label class="control-label col-md-3">Sujet</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control rounded" name="sujet" value="CRIDIP-SWD - Votre devis Ref: <?= $reference; ?>">
+										<input type="text" class="form-control rounded" name="sujet" value="CRIDIP-SWD - Votre facture Ref: <?= $reference; ?>">
 									</div>
 								</div>
 
@@ -3856,18 +3856,50 @@ include "inc/header.php";
 							</div>
 							<!-- //modal-body-->
 							<div class="modal-footer bg-success-gradient">
-								<button type="submit" class="btn btn-default pull-right" name="action" value="envoie-devis"><i class="fa fa-check"></i> Valider</button>
+								<button type="submit" class="btn btn-default pull-right" name="action" value="envoie-facture"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
+					<div id="envoie-rappel" data-width="1400" class="modal fade">
+						<div class="modal-header bg-info-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-envelope"></i> Envoie du rappel</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+							<input type="hidden" name="idfacture" value="<?= $idfacture; ?>" />
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Client</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="email" value="<?= $facture['email']; ?>">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Sujet</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control rounded" name="sujet" value="CRIDIP-SWD - Rappel pour non paiement de la facture réf: <?= $reference; ?>">
+									</div>
+								</div>
+
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="envoie-rappel"><i class="fa fa-check"></i> Valider</button>
 							</div>
 						</form>
 					</div>
 					<div id="add-article-devis" data-width="1400" class="modal fade">
 						<div class="modal-header bg-success-gradient">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un article au devis</h4>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un article à la facture</h4>
 						</div>
 						<!-- //modal-header-->
-						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
-							<input type="hidden" name="iddevis" value="<?= $iddevis; ?>" />
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+							<input type="hidden" name="idfacture" value="<?= $idfacture; ?>" />
 							<div class="modal-body">
 
 								<div class="form-group">
@@ -3912,7 +3944,7 @@ include "inc/header.php";
 							</div>
 							<!-- //modal-body-->
 							<div class="modal-footer bg-success-gradient">
-								<button type="submit" class="btn btn-default pull-right" name="action" value="add-article-devis"><i class="fa fa-check"></i> Valider</button>
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-article-facture"><i class="fa fa-check"></i> Valider</button>
 							</div>
 						</form>
 					</div>
