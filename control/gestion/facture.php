@@ -329,9 +329,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
 
         foreach($query as $k => $product)
         {
-            print_r($product);
+            $params["L_PAYMENTREQUEST_0_NAME$k"] = $product['nom_article'];
+            $params["L_PAYMENTREQUEST_0_DESC$k"] = '';
+            $params["L_PAYMENTREQUEST_0_AMT$k"] = $product['total_ligne'];
+            $params["L_PAYMENTREQUEST_0_QTY$k"] = $product['qte'];
         }
-        die();
         $response = $paypal_cls->request('SetExpressCheckout', $params);
         if($response){
             header("Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=". $response['TOKEN']);
