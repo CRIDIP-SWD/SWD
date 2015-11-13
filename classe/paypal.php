@@ -33,7 +33,7 @@ class paypal
     public function request($method, $params){
         $params = array_merge($params, array(
             'METHOD' => $method,
-            'VERSION' => '202.0',
+            'VERSION' => '124.0',
             'USER'	 => $this->user,
             'SIGNATURE' => $this->signature,
             'PWD'	 => $this->pwd
