@@ -2567,7 +2567,7 @@ include "inc/header.php";
 													<td>
 														<?php if(!empty($facture['nom_societe'])){echo "<strong>".$facture['nom_societe']."</strong><br><i>".$facture['nom_client']."</i>";}else{echo $facture['nom_client'];} ?>
 													</td>
-													<td class="text-center"><?= date("d/m/Y", $facture['date_devis']); ?></td>
+													<td class="text-center"><?= date("d/m/Y", $facture['date_facture']); ?></td>
 													<td class="text-center">
 														<?php if($facture_cls->verif_echeance($date_jour_strt, $facture['date_echeance']) == 1){ ?>
 															<span class="label label-danger"><i class="fa fa-warning text-warning" data-toggle="tooltip" data-original-title="Arriver à Echéance"></i> <?= date("d-m-Y", $facture['date_echeance']); ?></span>
