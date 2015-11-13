@@ -204,15 +204,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article-facture')
 {
     include "../../inc/config.php";
     include "../../inc/classe.php";
-    $iddevis = $_POST['iddevis'];
+    $idfacture = $_POST['idfacture'];
     $idarticle = $_POST['idarticle'];
     $qte = $_POST['qte'];
     $commentaire = htmlentities(addslashes($_POST['commentaire']));
 
-    $sql_devis = mysql_query("SELECT * FROM swd_devis WHERE iddevis = '$iddevis'")or die(mysql_error());
-    $devis = mysql_fetch_array($sql_devis);
-    $total_ht = $devis['total_ht'];
-    $reference = $devis['reference'];
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+    $total_ht = $facture['total_ht'];
+    $reference = $facture['reference'];
 
     $sql_article = mysql_query("SELECT * FROM swd_article WHERE idarticle = '$idarticle'")or die(mysql_error());
     $article = mysql_fetch_array($sql_article);
@@ -221,14 +221,14 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article-facture')
     $total_ligne = $prix_vente_ht + $qte;
     $total_ht = $total_ht + $total_ligne;
 
-    $sql_update_devis = mysql_query("UPDATE swd_devis SET total_ht = '$total_ht' WHERE iddevis = '$iddevis'")or die(mysql_error());
-    $sql_add_ligne_devis = mysql_query("INSERT INTO swd_devis_ligne(iddevisligne, iddevis, idarticle, qte, commentaire, total_ligne) VALUES (NULL, '$iddevis', '$idarticle', '$qte', '$commentaire', '$total_ligne')")or die(mysql_error());
+    $sql_update_facture = mysql_query("UPDATE swd_facture SET total_ht = '$total_ht' WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $sql_add_ligne_facture = mysql_query("INSERT INTO swd_facture_ligne(idfactureligne, idfacture, idarticle, qte, commentaire, total_ligne) VALUES (NULL, '$idfacture', '$idarticle', '$qte', '$commentaire', '$total_ligne')")or die(mysql_error());
 
-    if($sql_update_devis === TRUE AND $sql_add_ligne_devis === TRUE)
+    if($sql_update_facture === TRUE AND $sql_add_ligne_facture === TRUE)
     {
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=add-article-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-article-facture");
     }else{
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=add-article-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-article-facture");
     }
 }
 if(isset($_POST['action']) && $_POST['action'] == 'edit-article-facture')
@@ -236,27 +236,27 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-article-facture')
     include "../../inc/config.php";
     include "../../inc/classe.php";
 
-    $iddevisligne = $_POST['iddevisligne'];
+    $idfactureligne = $_POST['idfactureligne'];
     $commentaire = htmlentities(addslashes($_POST['commentaire']));
 
-    $sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+    $sql_ligne = mysql_query("SELECT * FROM swd_facture_ligne WHERE idfactureligne = '$idfactureligne'")or die(mysql_error());
     $ligne = mysql_fetch_array($sql_ligne);
-    $iddevis = $ligne['iddevis'];
+    $idfacture = $ligne['idfacture'];
 
-    $sql_devis = mysql_query("SELECT * FROM swd_devis WHERE iddevis = '$iddevis'")or die(mysql_error());
-    $devis = mysql_fetch_array($sql_devis);
-    $total_ht = $devis['total_ht'];
-    $reference = $devis['reference'];
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+    $total_ht = $facture['total_ht'];
+    $reference = $facture['reference'];
 
 
 
-    $sql_update_ligne_devis = mysql_query("UPDATE swd_devis_ligne SET commentaire = '$commentaire' WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+    $sql_update_ligne_facture = mysql_query("UPDATE swd_facture_ligne SET commentaire = '$commentaire' WHERE idfactureligne = '$idfactureligne'")or die(mysql_error());
 
-    if($sql_update_ligne_devis === TRUE )
+    if($sql_update_ligne_facture === TRUE )
     {
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=edit-article-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=edit-article-facture");
     }else{
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=edit-article-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=edit-article-facture");
     }
 }
 if(isset($_GET['action']) && $_GET['action'] == 'supp-article-facture')
@@ -264,29 +264,29 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-article-facture')
     include "../../inc/config.php";
     include "../../inc/classe.php";
 
-    $iddevisligne = $_GET['iddevisligne'];
+    $idfactureligne = $_GET['idfactureligne'];
 
-    $sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+    $sql_ligne = mysql_query("SELECT * FROM swd_facture_ligne WHERE idfactureligne = '$idfactureligne'")or die(mysql_error());
     $ligne = mysql_fetch_array($sql_ligne);
     $iddevis = $ligne['iddevis'];
     $total_ligne = $ligne['total_ligne'];
 
-    $sql_devis = mysql_query("SELECT * FROM swd_devis WHERE iddevis = '$iddevis'")or die(mysql_error());
-    $devis = mysql_fetch_array($sql_devis);
-    $total_ht = $devis['total_ht'];
-    $reference = $devis['reference'];
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+    $total_ht = $facture['total_ht'];
+    $reference = $facture['reference'];
 
 
     $total_ht = $total_ht - $total_ligne;
 
 
-    $sql_update_devis = mysql_query("UPDATE swd_devis SET total_ht = '$total_ht' WHERE iddevis = '$iddevis'")or die(mysql_error());
-    $sql_delete_ligne = mysql_query("DELETE FROM swd_devis_ligne WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+    $sql_update_facture = mysql_query("UPDATE swd_facture SET total_ht = '$total_ht' WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $sql_delete_ligne = mysql_query("DELETE FROM swd_facture_ligne WHERE idfactureligne = '$idfactureligne'")or die(mysql_error());
 
-    if($sql_delete_ligne === TRUE AND $sql_update_devis === TRUE)
+    if($sql_delete_ligne === TRUE AND $sql_update_facture === TRUE)
     {
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=supp-article-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=supp-article-facture");
     }else{
-        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=supp-article-devis");
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=supp-article-facture");
     }
 }
