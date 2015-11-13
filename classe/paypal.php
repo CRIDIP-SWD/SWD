@@ -8,44 +8,45 @@
  */
 class paypal
 {
-    private $password = "LV5RDCWQBYN2PB52";
-    private $username = "seller_api3.cridip.com";
-    private $signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31Avd9BqPFkOQDkPo3jMtK9SKuG.v2";
+    private $user      = "seller_api3.cridip.com";
+    private $pwd       = "LV5RDCWQBYN2PB52";
+    private $signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31Avd9BqPFkOQDkPo3jMtK9SKuG";
     private $endpoint = "https://api-3t.sandbox.paypal.com/nvp";
-    private $version = "202";
-    private $devise = "EUR";
-    private $error = array();
+    public $errors    = array();
 
 
-    private function params($method, $returnurl, $cancelurl, $total_ht)
-    {
-        $params = array(
-            "METHOD"                => $method,
-            "VERSION"               => $this->version,
-            "USER"                  => $this->username,
-            "SIGNATURE"             => $this->signature,
-            "PWD"                   => $this->password,
-            "RETURNURL"             => $returnurl,
-            "CANCELURL"             => $cancelurl,
-            "PAYMENTREQUEST_0_AMT"  => $total_ht
-        );
-
-        return $params;
+    public function __construct($user = false, $pwd = false, $signature = false, $prod = false){
+        if($user){
+            $this->user = $user;
+        }
+        if($pwd){
+            $this->pwd = $pwd;
+        }
+        if($signature){
+            $this->signature = $signature;
+        }
+        if($prod){
+            $this->endpoint = str_replace('sandbox.','', $this->endpoint);
+        }
     }
 
-    public function setExpressCheckout($method, $returnurl, $cancelurl, $total_ht, $idfacture)
-    {
-        $params = $this->params($method, $returnurl, $cancelurl, $total_ht);
-
-        //Initialisation de cURL
+    public function request($method, $params){
+        $params = array_merge($params, array(
+            'METHOD' => $method,
+            'VERSION' => '202',
+            'USER'	 => $this->user,
+            'SIGNATURE' => $this->signature,
+            'PWD'	 => $this->pwd
+        ));
+        $params = http_build_query($params);
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => $this->endpoint,
-            CURLOPT_POST => 1,
+            CURLOPT_POST=> 1,
             CURLOPT_POSTFIELDS => $params,
             CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_SSL_VERIFYPEER => FALSE,
-            CURLOPT_SSL_VERIFYHOST => FALSE,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
             CURLOPT_VERBOSE => 1
         ));
         $response = curl_exec($curl);
@@ -53,16 +54,14 @@ class paypal
         parse_str($response, $responseArray);
         if(curl_errno($curl)){
             $this->errors = curl_error($curl);
-            var_dump($responseArray);
             curl_close($curl);
             return false;
         }else{
             if($responseArray['ACK'] == 'Success'){
-                $TOKEN = $responseArray['TOKEN'];
-                header("Location: https://www.sandbox.paypal.com=webscr?cmd=_express-checkout&useraction=commit&token=$TOKEN");
+                curl_close($curl);
+                return $responseArray;
             }else{
                 $this->errors = $responseArray;
-                var_dump($responseArray);
                 curl_close($curl);
                 return false;
             }

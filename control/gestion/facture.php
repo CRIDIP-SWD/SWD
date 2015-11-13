@@ -313,7 +313,30 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
 
     if($mode_reglement == 1){$num_reglement = "VIR".rand(1000000,9999999);}
     if($mode_reglement == 2){$num_reglement = "CBM".rand(1000000,9999999);}
-    if($mode_reglement == 3){$paypal = $paypal_cls->setExpressCheckout("setExpressCheckout", ROOT.CONTROL."gestion/facture.php?action=add-paiement-paypal", ROOT."index.php?view=gestion&sub=facture&data=view_facture&reference=".$reference, $montant_reglement, $idfacture);}
+    if($mode_reglement == 3){
+        $params = array(
+            'RETURNURL' => 'http://localhost/Lab/Paypal/process.php',
+            'CANCELURL' => 'http://localhost/Lab/Paypal/cancel.php',
+
+            'PAYMENTREQUEST_0_AMT' => $montant_reglement,
+            'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
+        );
+        $sql_article = mysql_query("SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '$idfacture'")or die(mysql_error());
+        $products = mysql_fetch_array($sql_article);
+        foreach($products as $k => $product){
+            $params["L_PAYMENTREQUEST_0_NAME$k"] = $product['nom_article'];
+            $params["L_PAYMENTREQUEST_0_DESC$k"] = '';
+            $params["L_PAYMENTREQUEST_0_AMT$k"] = $product['total_ligne'];
+            $params["L_PAYMENTREQUEST_0_QTY$k"] = $product['qte'];
+        }
+        $response = $paypal_cls->request('SetExpressCheckout', $params);
+        if($response){
+            $paypal = 'https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=' . $response['TOKEN'];
+        }else{
+            var_dump($paypal_cls->errors);
+            die('Erreur ');
+        }
+    }
     if($mode_reglement == 4){$num_reglement = "PRLV".rand(1000000,9999999);}
     if($mode_reglement == 5){$num_reglement = "MDTC".rand(1000000,9999999);}
 }
