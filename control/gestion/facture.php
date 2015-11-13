@@ -307,9 +307,10 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
     $banque_reglement = $_POST['banque_reglement'];
     $montant_reglement = $_POST['montant_reglement'];
     
-    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $sql_facture = mysql_query("SELECT * FROM swd_facture, client WHERE swd_facture.idclient = client.idclient AND idfacture = '$idfacture'")or die(mysql_error());
     $facture = mysql_fetch_array($sql_facture);
     $reference = $facture['reference'];
+    $email = $facture['email'];
 
     if($mode_reglement == 1){$num_reglement = "VIR".rand(1000000,9999999);}
     if($mode_reglement == 2){$num_reglement = "CBM".rand(1000000,9999999);}
@@ -318,24 +319,13 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             'RETURNURL' => ROOT.CONTROL.'gestion/facture.php?action=active-paypal',
             'CANCELURL' => 'http://localhost/Lab/Paypal/cancel.php',
 
-            'PAYMENTREQUEST_0_AMT' => $montant_reglement,
-            'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
+            'PAYMENTREQUEST_0_AMT'              => $montant_reglement,
+            'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
+            'PAYMENTREQUEST_0_INVNUM'           => $reference,
+            'HDRIMG'                            => ROOT.ASSETS.IMG."logo_white_icon.png",
+            'EMAIL'                             => $email,
+            'BRANDNAME'                         => "CRIDIP SWD X1.00",
         );
-        $dsn = new PDO("mysql:host=localhost;dbname=gestcom", "remote_user", "1992maxime");
-        $dsn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $query = $dsn->query('SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '.$idfacture);
-        $query->setFetchMode(PDO::FETCH_ASSOC);
-
-        foreach($query as $k => $product)
-        {
-            $params["L_PAYMENTREQUEST_0_NAME$k"] = $product['nom_article'];
-            $params["L_PAYMENTREQUEST_0_DESC$k"] = '';
-            $params["L_PAYMENTREQUEST_0_AMT$k"] = $product['total_ligne'];
-            $params["L_PAYMENTREQUEST_0_QTY$k"] = $product['qte'];
-            var_dump($product);
-            echo $montant_reglement;
-        }
         $response = $paypal_cls->request('SetExpressCheckout', $params);
         if($response){
             header("Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=". $response['TOKEN']);
