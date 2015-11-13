@@ -53,6 +53,7 @@ class paypal
         parse_str($response, $responseArray);
         if(curl_errno($curl)){
             $this->errors = curl_error($curl);
+            var_dump($responseArray);
             curl_close($curl);
             return false;
         }else{
@@ -61,7 +62,7 @@ class paypal
                 header("Location: https://www.sandbox.paypal.com=webscr?cmd=_express-checkout&useraction=commit&token=$TOKEN");
             }else{
                 $this->errors = $responseArray;
-                header("Location: index.php");
+                var_dump($responseArray);
                 curl_close($curl);
                 return false;
             }
