@@ -322,7 +322,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
             'PAYMENTREQUEST_0_AMT'              => $montant_reglement,
             'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
             'PAYMENTREQUEST_0_INVNUM'           => $reference,
-            'HDRIMG'                            => ROOT.ASSETS.IMG."logo_white_icon.png",
+            'HDRIMG'                            => ROOT.ASSETS.IMG."logo_2x.png",
             'EMAIL'                             => $email,
             'BRANDNAME'                         => "CRIDIP SWD X1.00",
         );
