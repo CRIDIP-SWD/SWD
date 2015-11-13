@@ -274,7 +274,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-article-devis')
     include "../../inc/config.php";
     include "../../inc/classe.php";
 
-    $iddevisligne = $_POST['iddevisligne'];
+    $iddevisligne = $_GET['iddevisligne'];
 
     $sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
     $ligne = mysql_fetch_array($sql_ligne);
