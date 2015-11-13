@@ -3941,6 +3941,76 @@ include "inc/header.php";
 							</div>
 						</form>
 					</div>
+					<div id="add-reglement" data-width="700" class="modal fade">
+						<div class="modal-header bg-success-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un réglement</h4>
+						</div>
+						<!-- //modal-header-->
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+							<div class="modal-body">
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Date du réglement</label>
+									<div class="col-md-9">
+										<input type="text" id="date_devis" class="form-control" name="date_reglement" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Mode de réglement</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="mode_reglement" data-size="10" data-live-search="true">
+											<option value="1">Virement</option>
+											<option Value="2">CB - Manuel</option>
+											<option value="3">Paypal</option>
+											<option value="4">Prélèvement</option>
+											<option value="5">Mandat cash</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Nom du réglement</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" name="nom_reglement" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Numéro du réglement</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" name="nom_reglement" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-md-3">Banque du réglement</label>
+									<div class="col-md-9">
+										<select  class="selectpicker form-control rounded" name="mode_reglement" data-size="10" data-live-search="true">
+											<option value="">NEANT</option>
+											<option value="Paypal" data-content="<i class='fa fa-paypal'></i> Paypal"></option>
+											<?php
+											$sql_banque = mysql_query("SELECT * FROM swift")or die(mysql_error());
+											while($banque = mysql_fetch_array($sql_banque))
+											{
+											?>
+											<option value="<?= $banque['bank']; ?>" data-content="<img src='<?= SYNCHRONUS; ?>bank/<?= $banque['swift']; ?>.jpg' width='20' height='20' /> <?= $banque['bank']; ?>"></option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+
+
+
+
+							</div>
+							<!-- //modal-body-->
+							<div class="modal-footer bg-success-gradient">
+								<button type="submit" class="btn btn-default pull-right" name="action" value="add-facture"><i class="fa fa-check"></i> Valider</button>
+							</div>
+						</form>
+					</div>
 				<?php } ?>
 			<?php } ?>
 		</div>
