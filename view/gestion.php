@@ -3805,8 +3805,9 @@ include "inc/header.php";
 										<select  class="selectpicker form-control rounded" name="idclient" data-size="10" data-live-search="true">
 											<?php
 											$sql_projet = mysql_query("SELECT * FROM swd_projet WHERE idprojet =".$facture['idprojet'])or die(mysql_error());
-
+											$projet = mysql_fetch_array($sql_projet);
 											?>
+											<option value="<?= $projet['num_projet']; ?>"><?= $projet['nom_projet']; ?></option>
 											<option value="0">NEANT</option>
 											<?php
 											$sql_projet = mysql_query("SELECT * FROM swd_projet")or die(mysql_error());
