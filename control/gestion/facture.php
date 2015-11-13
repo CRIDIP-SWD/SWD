@@ -1,1 +1,223 @@
 <?php
+if(isset($_POST['action']) && $_POST['action'] == 'add-facture')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idclient = $_POST['idclient'];
+    $reference = "FCTSWD2015".date('n').rand(1,9999);
+    $date_facture = strtotime($_POST['date_facture']);
+    $date_echeance = $date_facture + $_POST['echeance'];
+    $projet = $_POST['projet'];
+
+    $sql_add_facture = mysql_query("INSERT INTO swd_facture(idfacture, ref_devis, reference, idclient, etat_facture, date_facture, date_echeance, idprojet, total_ht) VALUES (NULL, '', '$reference', '$idclient', '1', '$date_facture', '$date_echeance', '$projet', '0')")or die(mysql_error());
+
+    if($sql_add_devis === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-facture");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=facture&error=add-facture");
+    }
+}
+if(isset($_POST['action']) && $_POST['action'] == 'edit-facture')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idfacture = $_POST['idfacture'];
+    $idclient = $_POST['idclient'];
+    $date_facture = strtotime($_POST['date_facture']);
+    $date_echeance = $date_facture + $_POST['echeance'];
+    $projet = $_POST['projet'];
+
+    $sql_up_facture = mysql_query("UPDATE swd_facture SET idclient = '$idclient', date_facture = '$date_facture', date_echeance = '$date_echeance', idprojet = '$projet' WHERE idfacture = '$idfacture'")or die(mysql_error());
+
+    if($sql_up_facture === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=edit-facture");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=edit-facture");
+    }
+}
+if(isset($_GET['action']) && $_GET['action'] == 'supp-facture')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idfacture = $_GET['idfacture'];
+
+    $sql_delete_ligne = mysql_query("DELETE FROM swd_facture_ligne WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $sql_delete_facture = mysql_query("DELETE FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+
+    if($sql_delete_ligne === TRUE AND $sql_delete_facture === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=facture&success=supp-facture");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=facture&error=supp-facture");
+    }
+}
+
+if(isset($_POST['action']) && $_POST['action'] == 'envoie-facture')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idfacture = $_POST['idfacture'];
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+    $reference = $facture['reference'];
+
+    $email = $_POST['email'];
+    $sujet = $_POST['sujet'];
+
+    $info_bq = $client_cls->info_bancaire($facture['idclient']);
+
+    //Email
+    $to = $email;
+    $headers = 'Mime-Version: 1.0'."\r\n";
+    $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
+    $headers .= "\r\n";
+
+    ob_start();
+    ?>
+    <html>
+    <head>
+        <link rel="stylesheet" href="http://gestcom.cridip.com/assets/css/modif.css">
+    </head>
+    <body>
+    <div id="email">
+        <div class="header">
+            <div class="logo"><img src="<?= ROOT,ASSETS,IMG; ?>logo_white_icon.png" /></div>
+            <div class="dot-bar"><img src="<?= ROOT,ASSETS,IMG; ?>dot-bar.png" /></div>
+            <div class="adresse">
+                <strong>CRIDIP SWD</strong><br>
+                8 Rue Octave Voyer<br>
+                85100 Les Sables d'Olonne
+            </div>
+            <div class="sujet"><?= $sujet; ?></div>
+        </div>
+        <div class="corps">
+            <p>Bonjour,</p>
+            <p>Votre facture N°<strong><?= $reference; ?></strong> d'un montant de <strong><?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?></strong> vient d'être édité.</p>
+            <p>Vous pouvez prendre connaissance de cette facture à l'adresse ci-dessous:</p>
+            <p><a href="<?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?>"><?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?></a></p>
+            <?php if($client_cls->count_bq($facture['idclient']) != 0){ ?>
+                <p>Le montant de <strong><?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?></strong> sera prélevé le <strong><?= date("d",$facture['date_echeance']); ?> <?= $date_class->mois(date("n", $facture['date_echeance'])); ?> <?= date("Y",$facture['date_echeance']); ?></strong> sur le compte <strong>BIC: <?= $info_bq['bic']; ?> | IBAN: <?= $info_bq['iban']; ?></strong>.</p>
+            <?php }else{ ?>
+                <p>Comme aucun moyen de paiement par default n'est retenue sur votre compte client, nous vous invitons à en définir un ou nous vous proposons le paiement par carte bancaire.<br>Ceci dit si vous voulez utiliser le paiement par carte bancaire, le paiement doit survenir au plus tard la veille de la date d'échéance sous risque de coupure de service et de surfacturation.</p>
+            <?php } ?>
+            <p>Si vous avez des questions relatives à cette facture n'hésitez pas à nous contacter par téléphone au: 0 899 492 648 ou par mail: contact@cridip.com</p>
+            <p>Cordialement,</p>
+            <p>Le Service Commercial</p>
+        </div>
+        <div class="footer">
+            <hr />
+            SAS au capital de 100€ - RCS La Roche sur Yon 811 772 235 - Siège social: 8 rue Octave Voyer, 85100 Les Sables d'Olonne - FRANCE
+        </div>
+
+    </div>
+    </body>
+    </html>
+    <?php
+    $msg = ob_get_contents();
+    $mail_envoie = mail($to, $sujet, $msg, $headers);
+
+    if($mail_envoie === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=envoie-devis");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=envoie-devis");
+    }
+}
+
+
+if(isset($_POST['action']) && $_POST['action'] == 'add-article-facture')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+    $iddevis = $_POST['iddevis'];
+    $idarticle = $_POST['idarticle'];
+    $qte = $_POST['qte'];
+    $commentaire = htmlentities(addslashes($_POST['commentaire']));
+
+    $sql_devis = mysql_query("SELECT * FROM swd_devis WHERE iddevis = '$iddevis'")or die(mysql_error());
+    $devis = mysql_fetch_array($sql_devis);
+    $total_ht = $devis['total_ht'];
+    $reference = $devis['reference'];
+
+    $sql_article = mysql_query("SELECT * FROM swd_article WHERE idarticle = '$idarticle'")or die(mysql_error());
+    $article = mysql_fetch_array($sql_article);
+    $prix_vente_ht = $article['prix_vente_ht'];
+
+    $total_ligne = $prix_vente_ht + $qte;
+    $total_ht = $total_ht + $total_ligne;
+
+    $sql_update_devis = mysql_query("UPDATE swd_devis SET total_ht = '$total_ht' WHERE iddevis = '$iddevis'")or die(mysql_error());
+    $sql_add_ligne_devis = mysql_query("INSERT INTO swd_devis_ligne(iddevisligne, iddevis, idarticle, qte, commentaire, total_ligne) VALUES (NULL, '$iddevis', '$idarticle', '$qte', '$commentaire', '$total_ligne')")or die(mysql_error());
+
+    if($sql_update_devis === TRUE AND $sql_add_ligne_devis === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=add-article-devis");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=add-article-devis");
+    }
+}
+if(isset($_POST['action']) && $_POST['action'] == 'edit-article-facture')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $iddevisligne = $_POST['iddevisligne'];
+    $commentaire = htmlentities(addslashes($_POST['commentaire']));
+
+    $sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+    $ligne = mysql_fetch_array($sql_ligne);
+    $iddevis = $ligne['iddevis'];
+
+    $sql_devis = mysql_query("SELECT * FROM swd_devis WHERE iddevis = '$iddevis'")or die(mysql_error());
+    $devis = mysql_fetch_array($sql_devis);
+    $total_ht = $devis['total_ht'];
+    $reference = $devis['reference'];
+
+
+
+    $sql_update_ligne_devis = mysql_query("UPDATE swd_devis_ligne SET commentaire = '$commentaire' WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+
+    if($sql_update_ligne_devis === TRUE )
+    {
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=edit-article-devis");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=edit-article-devis");
+    }
+}
+if(isset($_GET['action']) && $_GET['action'] == 'supp-article-facture')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $iddevisligne = $_GET['iddevisligne'];
+
+    $sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+    $ligne = mysql_fetch_array($sql_ligne);
+    $iddevis = $ligne['iddevis'];
+    $total_ligne = $ligne['total_ligne'];
+
+    $sql_devis = mysql_query("SELECT * FROM swd_devis WHERE iddevis = '$iddevis'")or die(mysql_error());
+    $devis = mysql_fetch_array($sql_devis);
+    $total_ht = $devis['total_ht'];
+    $reference = $devis['reference'];
+
+
+    $total_ht = $total_ht - $total_ligne;
+
+
+    $sql_update_devis = mysql_query("UPDATE swd_devis SET total_ht = '$total_ht' WHERE iddevis = '$iddevis'")or die(mysql_error());
+    $sql_delete_ligne = mysql_query("DELETE FROM swd_devis_ligne WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
+
+    if($sql_delete_ligne === TRUE AND $sql_update_devis === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=supp-article-devis");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=supp-article-devis");
+    }
+}

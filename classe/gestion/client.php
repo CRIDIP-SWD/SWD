@@ -108,4 +108,18 @@ class client
         $data = mysql_fetch_array($sql);
         return $data;
     }
+
+    public function count_bq($idclient)
+    {
+        $sql = mysql_query("SELECT COUNT(idclientbancaire) FROM client_bancaire WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
+    public function info_bancaire($idclient)
+    {
+        $sql = mysql_query("SELECT * FROM client_bancaire WHERE idclient = '$idclient'")or die(mysql_error());
+        $data = mysql_fetch_array($sql);
+        return $data;
+    }
 }
