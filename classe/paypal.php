@@ -16,7 +16,7 @@ class paypal
     private $devise = "EUR";
 
 
-    private function params($method, $returnurl, $cancelurl)
+    private function params($method, $returnurl, $cancelurl, $total_ht)
     {
         $params = array(
             "METHOD"                => $method,
@@ -25,7 +25,8 @@ class paypal
             "SIGNATURE"             => $this->signature,
             "PWD"                   => $this->password,
             "RETURNURL"             => $returnurl,
-            "CANCELURL"             => $cancelurl
+            "CANCELURL"             => $cancelurl,
+            "PAYMENTREQUEST_0_AMT"  => $total_ht
         );
 
         return $params;
@@ -33,10 +34,8 @@ class paypal
 
     public function setExpressCheckout($method, $returnurl, $cancelurl, $total_ht, $idfacture)
     {
-        $params = $this->params($method, $returnurl, $cancelurl);
-        $params = array(
-            "PAYMENTREQUEST_0_AMT" => $total_ht
-        );
+        $params = $this->params($method, $returnurl, $cancelurl, $total_ht);
+
         $sql_article = mysql_query("SELECT * FROM swd_facture_ligne, swd_article WHERE swd_facture_ligne.idarticle = swd_article.idarticle AND idfacture = '$idfacture'")or die(mysql_error());
         while($article = mysql_fetch_array($sql_article))
         {
