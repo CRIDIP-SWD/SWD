@@ -294,3 +294,26 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-article-facture')
         header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=supp-article-facture");
     }
 }
+
+if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idfacture = $_POST['idfacture'];
+    $date_reglement = $_POST['date_reglement'];
+    $mode_reglement = $_POST['mode_reglement'];
+    $nom_reglement = $_POST['nom_reglement'];
+    $banque_reglement = $_POST['banque_reglement'];
+    $montant_reglement = $_POST['montant_reglement'];
+    
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+    $reference = $facture['reference'];
+
+    if($mode_reglement == 1){$num_reglement = "VIR".rand(1000000,9999999);}
+    if($mode_reglement == 2){$num_reglement = "CBM".rand(1000000,9999999);}
+    if($mode_reglement == 3){$paypal = $paypal_cls->setExpressCheckout("setExpressCheckout", ROOT.CONTROL."gestion/facture.php?action=add-paiement-paypal", ROOT."index.php?view=gestion&sub=facture&data=view_facture&reference=".$reference, $montant_reglement, $idfacture);}
+    if($mode_reglement == 4){$num_reglement = "PRLV".rand(1000000,9999999);}
+    if($mode_reglement == 5){$num_reglement = "MDTC".rand(1000000,9999999);}
+}

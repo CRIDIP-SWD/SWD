@@ -3948,6 +3948,7 @@ include "inc/header.php";
 						</div>
 						<!-- //modal-header-->
 						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+							<input type="hidden" name="idfacture" value="<?= $idfacture; ?>" />
 							<div class="modal-body">
 
 								<div class="form-group">
@@ -3980,14 +3981,14 @@ include "inc/header.php";
 								<div class="form-group">
 									<label class="control-label col-md-3">Numéro du réglement</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control" name="nom_reglement" />
+										<input type="text" class="form-control" name="num_reglement" />
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label class="control-label col-md-3">Banque du réglement</label>
 									<div class="col-md-9">
-										<select  class="selectpicker form-control rounded" name="mode_reglement" data-size="10" data-live-search="true">
+										<select  class="selectpicker form-control rounded" name="banque_reglement" data-size="10" data-live-search="true">
 											<option value="">NEANT</option>
 											<option value="Paypal" data-content="<i class='fa fa-paypal'></i> Paypal"></option>
 											<?php

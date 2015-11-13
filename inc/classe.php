@@ -35,6 +35,11 @@ $user = $user_cls->info_user($login);
 require_once dirname(__DIR__)."/classe/general.php";
 $gen_cls = new general();
 
+require_once dirname(__DIR__)."/classe/paypal.php";
+$paypal_cls = new paypal();
+
+
+
 require_once dirname(__DIR__)."/classe/gestion/client.php";
 $client_cls = new client();
 
