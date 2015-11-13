@@ -258,9 +258,6 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-article-devis')
     $total_ht = $devis['total_ht'];
     $reference = $devis['reference'];
 
-    $sql_article = mysql_query("SELECT * FROM swd_article WHERE idarticle = '$idarticle'")or die(mysql_error());
-    $article = mysql_fetch_array($sql_article);
-    $prix_vente_ht = $article['prix_vente_ht'];
 
 
     $sql_update_ligne_devis = mysql_query("UPDATE swd_devis_ligne SET commentaire = '$commentaire' WHERE iddevisligne = '$iddevisligne'")or die(mysql_error());
