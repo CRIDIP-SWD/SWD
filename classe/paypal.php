@@ -8,9 +8,9 @@
  */
 class paypal
 {
-    private $user      = "seller_api3.cridip.com";
-    private $pwd       = "LV5RDCWQBYN2PB52";
-    private $signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31Avd9BqPFkOQDkPo3jMtK9SKuG";
+    private $user      = "mmockelyn-facilitator_api1.cridip.com";
+    private $pwd       = "FGJ2MA5BNCGALE6L";
+    private $signature = "AlIzC5MUHzAatg55o.bcr2tROd51Au5uflSRutvRku6OKlD71-cBRMQ4";
     private $endpoint = "https://api-3t.sandbox.paypal.com/nvp";
     public $errors    = array();
 
