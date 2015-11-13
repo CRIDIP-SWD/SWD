@@ -105,12 +105,12 @@ if(isset($_POST['action']) && $_POST['action'] == 'envoie-devis')
                     $calc_50 = $devis['total_ht']/2;
             ?>
                 <ul>
-                    <li>50% à la commande, soit: <strong><?php number_format($calc_50, 2, ',', ' ')." €"; ?></strong></li>
-                    <li>50% à la livraison, soit: <strong><?php number_format($calc_50, 2, ',', ' ')." €"; ?></strong></li>
+                    <li>50% à la commande, soit: <strong><?= number_format($calc_50, 2, ',', ' ')." €"; ?></strong></li>
+                    <li>50% à la livraison, soit: <strong><?= number_format($calc_50, 2, ',', ' ')." €"; ?></strong></li>
                 </ul>
             <?php }else{ ?>
                 <ul>
-                    <li>100% à la livraison, soit: <strong><?php number_format($devis['total_ht'], 2, ',', ' ')." €"; ?></strong></li>
+                    <li>100% à la livraison, soit: <strong><?= number_format($devis['total_ht'], 2, ',', ' ')." €"; ?></strong></li>
                 </ul>
             <?php } ?>
             <p>Si vous avez des questions relatives à ce devis n'hésitez pas à nous contacter par téléphone au: 0 899 492 648 ou par mail: contact@cridip.com</p>
