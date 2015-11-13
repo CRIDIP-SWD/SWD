@@ -1087,6 +1087,7 @@ include "inc/header.php";
 						</div>
 						<!-- //modal-header-->
 						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/article.php" method="post">
+							<input type="hidden" name="idarticle" value="<?= $idarticle; ?>">
 							<div class="modal-body">
 
 								<div class="form-group">
