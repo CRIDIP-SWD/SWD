@@ -28,6 +28,7 @@ $me3 = $ovh3->get("/me");
 
 require_once dirname(__DIR__)."/classe/user.php";
 $user_cls = new user();
+$login = $_SESSION['login'];
 $user = $user_cls->info_user($login);
 
 require_once dirname(__DIR__)."/classe/general.php";
