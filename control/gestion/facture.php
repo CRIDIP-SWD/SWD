@@ -129,6 +129,74 @@ if(isset($_POST['action']) && $_POST['action'] == 'envoie-facture')
         header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=envoie-devis");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'envoie-rappel')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idfacture = $_POST['idfacture'];
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+    $reference = $facture['reference'];
+
+    $email = $_POST['email'];
+    $sujet = $_POST['sujet'];
+
+    $info_bq = $client_cls->info_bancaire($facture['idclient']);
+
+    //Email
+    $to = $email;
+    $headers = 'Mime-Version: 1.0'."\r\n";
+    $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
+    $headers .= "\r\n";
+
+    ob_start();
+    ?>
+    <html>
+    <head>
+        <link rel="stylesheet" href="http://gestcom.cridip.com/assets/css/modif.css">
+    </head>
+    <body>
+    <div id="email">
+        <div class="header">
+            <div class="logo"><img src="<?= ROOT,ASSETS,IMG; ?>logo_white_icon.png" /></div>
+            <div class="dot-bar"><img src="<?= ROOT,ASSETS,IMG; ?>dot-bar.png" /></div>
+            <div class="adresse">
+                <strong>CRIDIP SWD</strong><br>
+                8 Rue Octave Voyer<br>
+                85100 Les Sables d'Olonne
+            </div>
+            <div class="sujet"><?= $sujet; ?></div>
+        </div>
+        <div class="corps">
+            <p>Bonjour,</p>
+            <p>Sauf erreur ou omission de notre part, le montant de <strong><?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?></strong> concernant la facture N°<strong><?= $reference; ?></strong> ne nous est pas parvenue.</p>
+            <p>Afin d'éviter des surcout dù en l'abscence de paiement, nous vous inviton à régulariser votre situation en réglant la facture par le lien ci-dessous:</p>
+            <p><a href="<?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?>"><?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?></a></p>
+            <p>Nous vous informons également, que vous avez la possibilité de payer par prélèvement automatique par l'intermédiaire de votre espace client.</p>
+            <p>Si vous avez des questions ou des difficultés de paiement relatives à cette facture n'hésitez pas à nous contacter par téléphone au: 0 899 492 648 ou par mail: contact@cridip.com</p>
+            <p>Cordialement,</p>
+            <p>Le Service Commercial</p>
+        </div>
+        <div class="footer">
+            <hr />
+            SAS au capital de 100€ - RCS La Roche sur Yon 811 772 235 - Siège social: 8 rue Octave Voyer, 85100 Les Sables d'Olonne - FRANCE
+        </div>
+
+    </div>
+    </body>
+    </html>
+    <?php
+    $msg = ob_get_contents();
+    $mail_envoie = mail($to, $sujet, $msg, $headers);
+
+    if($mail_envoie === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&success=envoie-devis");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=devis&data=view_devis&reference=$reference&error=envoie-devis");
+    }
+}
 
 
 if(isset($_POST['action']) && $_POST['action'] == 'add-article-facture')
