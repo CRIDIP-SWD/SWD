@@ -2,10 +2,10 @@
 require (dirname(__DIR__)."/vendor/autoload.php");
 
 use \Ovh\Api;
-$apk1 = "vXjHPaL84Jct1zaB";
+$apk1 = "RZKbAlowUCBgoPds";
 $endpoint = "ovh-eu";
-$ask1 = "WwSivyMF8kcmKMlsjd6SRCQsmox8XKnO";
-$csk1 = "k1ung5OPmvb26KtO97wy6R85SyL2ZIVU";
+$ask1 = "mAcXugeOcn2gZBvyb76bKvN1y2gACqmz";
+$csk1 = "VTYF8K727bsg42Qn5so76iYb3994jbjp";
 $ovh1 = new Ovh\Api($apk1,$ask1,$endpoint,$csk1);
 $me1 = $ovh1->get("/me");
 
