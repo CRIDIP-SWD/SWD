@@ -12,7 +12,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-facture')
 
     $sql_add_facture = mysql_query("INSERT INTO swd_facture(idfacture, ref_devis, reference, idclient, etat_facture, date_facture, date_echeance, idprojet, total_ht) VALUES (NULL, '', '$reference', '$idclient', '1', '$date_facture', '$date_echeance', '$projet', '0')")or die(mysql_error());
 
-    if($sql_add_devis === TRUE)
+    if($sql_add_facture === TRUE)
     {
         header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-facture");
     }else{
