@@ -1363,7 +1363,8 @@ include "inc/header.php";
 													<?php }else{ ?>
 														<span class="label label-success"><?= date("d-m-Y", $devis['date_echeance']); ?></span>
 													<?php } ?>
-												</span>
+												</span><br>
+												<button type="button" class="btn" style="font-size: 25px"><i class="fa fa-spinner fa-spin"></i> EN COURS...</button>
 											</div>
 										</div>
 										<hr>
