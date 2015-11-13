@@ -3678,7 +3678,7 @@ include "inc/header.php";
 							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter une facture</h4>
 						</div>
 						<!-- //modal-header-->
-						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/devis.php" method="post">
+						<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
 							<div class="modal-body">
 
 								<div class="form-group">
