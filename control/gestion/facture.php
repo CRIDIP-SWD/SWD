@@ -316,11 +316,35 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         $num_reglement = "VIR".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+        if($facture['total_ht'] == $montant_reglement)
+        {
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }else{
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }
+        if($sql_add_paiement === TRUE && $sql_update_facture === TRUE)
+        {
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
+        }else{
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
+        }
     }
     if($mode_reglement == 2){
         $num_reglement = "CBM".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+        if($facture['total_ht'] == $montant_reglement)
+        {
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }else{
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }
+        if($sql_add_paiement === TRUE && $sql_update_facture === TRUE)
+        {
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
+        }else{
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
+        }
     }
     if($mode_reglement == 3){
         $paypal = new paypal('SetExpressCheckout', 'control/gestion/facture.php?action=process', 'index.php?view=cridip-ven-facture&error-cancel=true', $montant_reglement, $reference, '', '');
@@ -329,11 +353,35 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         $num_reglement = "PRLV".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+        if($facture['total_ht'] == $montant_reglement)
+        {
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }else{
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }
+        if($sql_add_paiement === TRUE && $sql_update_facture === TRUE)
+        {
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
+        }else{
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
+        }
     }
     if($mode_reglement == 5){
         $num_reglement = "MDTC".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+        if($facture['total_ht'] == $montant_reglement)
+        {
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }else{
+            $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        }
+        if($sql_add_paiement === TRUE && $sql_update_facture === TRUE)
+        {
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
+        }else{
+            header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
+        }
     }
 
 
