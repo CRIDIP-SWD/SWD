@@ -228,7 +228,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article-devis')
     $article = mysql_fetch_array($sql_article);
     $prix_vente_ht = $article['prix_vente_ht'];
     
-    $total_ligne = $prix_vente_ht + $qte;
+    $total_ligne = $prix_vente_ht * $qte;
     $total_ht = $total_ht + $total_ligne;
     
     $sql_update_devis = mysql_query("UPDATE swd_devis SET total_ht = '$total_ht' WHERE iddevis = '$iddevis'")or die(mysql_error());
