@@ -315,65 +315,24 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
     if($mode_reglement == 1){$num_reglement = "VIR".rand(1000000,9999999);}
     if($mode_reglement == 2){$num_reglement = "CBM".rand(1000000,9999999);}
     if($mode_reglement == 3){
-        $params = array(
-            'RETURNURL' => ROOT.CONTROL.'gestion/facture.php?action=active-paypal',
-            'CANCELURL' => 'http://localhost/Lab/Paypal/cancel.php',
-
-            'PAYMENTREQUEST_0_AMT'              => $montant_reglement,
-            'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
-            'PAYMENTREQUEST_0_INVNUM'           => $reference,
-            'HDRIMG'                            => ROOT.ASSETS.IMG."logo_2x.png",
-            'EMAIL'                             => $email,
-            'BRANDNAME'                         => "CRIDIP SWD X1.00",
-            'L_PAYMENTREQUEST_0_NAME0'          => $reference,
-            'L_PAYMENTREQUEST_0_AMT0'           => $montant_reglement,
-        );
-        $response = $paypal_cls->request('SetExpressCheckout', $params);
-        if($response){
-            header("Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=". $response['TOKEN']);
-        }else{
-            var_dump($paypal_cls->errors);
-            die('Erreur ');
-        }
+        $paypal = new paypal('SetExpressCheckout', 'control/gestion/facture.php?action=process', 'index.php?view=cridip-ven-facture&error-cancel=true', $montant_reglement, $num_facture, '', '');
     }
     if($mode_reglement == 4){$num_reglement = "PRLV".rand(1000000,9999999);}
     if($mode_reglement == 5){$num_reglement = "MDTC".rand(1000000,9999999);}
 }
-if(isset($_GET['action']) && $_GET['action'] == 'active-paypal')
+if(isset($_GET['action']) && $_GET['action'] == 'process')
 {
     include "../../inc/config.php";
     include "../../inc/classe.php";
 
-    $paypal = new paypal();
-    $response = $paypal->request("GetExpressCheckoutDetails", array(
-        'TOKEN' => $_GET['token']
-    ));
+    $paypal = new paypal('GetExpressCheckoutDetails', '', '', '', '', $_GET['token'], '');
 
-    if($response)
-    {
-        if($response['CHECKOUTSTATUS'] == 'PaymentActionCompleted'){
-            die('Ce paiement a déjà été validé');
-        }
-        $params = array(
-            'TOKEN' => $_GET['token'],
-            'PAYERID' => $_GET['PayerID'],
-            'PAYMENTACTION' => 'Sale',
+}
+if(isset($_GET['action']) && $_GET['action'] == 'payment')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
 
-            'PAYMENTREQUEST_0_AMT' => $response['PAYMENTREQUEST_0_AMT'],
-            'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
-        );
-        $response = $paypal->request('DoExpressCheckoutPayment', $params);
-        var_dump($response);
-        if($response)
-        {
-            $num_reglement = $response['PAYMENTINFO_0_TRANSACTIONID'];
-            var_dump($response);
+    $paypal = new paypal('GetExpressCheckoutDetails', '', '', '', '', $_GET['token'], '');
 
-        }else{
-            var_dump($paypal->errors);
-        }
-    }else{
-        var_dump($paypal->errors);
-        die();
-    }
 }
