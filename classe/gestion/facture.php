@@ -115,7 +115,7 @@ class facture
     {
         $sql_facture = mysql_query("SELECT SUM(total_ht) FROM swd_facture WHERE idclient = '$idclient'")or die(mysql_error());
         $facture = mysql_result($sql_facture, 0);
-        return $facture;
+        return round($facture, 2);
 
     }
 
@@ -123,7 +123,7 @@ class facture
     {
         $sql_reglement = mysql_query("SELECT SUM(montant_reglement) FROM swd_reglement, swd_facture WHERE swd_reglement.idfacture = swd_facture.idfacture AND swd_facture.idclient = '$idclient'")or die(mysql_error());
         $reglement = mysql_result($sql_reglement, 0);
-        return $reglement;
+        return round($reglement, 2);
     }
 
     public function balance($idclient)
@@ -132,6 +132,6 @@ class facture
         $rglt = $this->balance_reglement($idclient);
 
         $calc = $rglt - $facture;
-        return $calc;
+        return round($calc, 2);
     }
 }
