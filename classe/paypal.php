@@ -178,8 +178,6 @@ class paypal
             die();
         }else{
             if($responseArray['ACK'] == 'Success'){
-                include('gestion/facture.php');
-                $facture_cls = new facture();
                 $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE reference = '$reference'")or die(mysql_error());
                 $facture = mysql_fetch_array($sql_facture);
                 $idfacture = $facture['idfacture'];
