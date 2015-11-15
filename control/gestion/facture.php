@@ -301,7 +301,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
     include "../../inc/classe.php";
 
     $idfacture = $_POST['idfacture'];
-    $date_reglement = $_POST['date_reglement'];
+    $date_reglement = strtotime($_POST['date_reglement']);
     $mode_reglement = $_POST['mode_reglement'];
     $nom_reglement = $_POST['nom_reglement'];
     $banque_reglement = $_POST['banque_reglement'];
@@ -312,16 +312,31 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
     $reference = $facture['reference'];
     $email = $facture['email'];
 
-    if($mode_reglement == 1){$num_reglement = "VIR".rand(1000000,9999999);}
-    if($mode_reglement == 2){$num_reglement = "CBM".rand(1000000,9999999);}
+    if($mode_reglement == 1){
+        $num_reglement = "VIR".rand(1000000,9999999);
+        $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
+                                    VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+    }
+    if($mode_reglement == 2){
+        $num_reglement = "CBM".rand(1000000,9999999);
+        $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
+                                    VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+    }
     if($mode_reglement == 3){
         $paypal = new paypal('SetExpressCheckout', 'control/gestion/facture.php?action=process', 'index.php?view=cridip-ven-facture&error-cancel=true', $montant_reglement, $reference, '', '');
     }
-    if($mode_reglement == 4){$num_reglement = "PRLV".rand(1000000,9999999);}
-    if($mode_reglement == 5){$num_reglement = "MDTC".rand(1000000,9999999);}
-
-    $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
+    if($mode_reglement == 4){
+        $num_reglement = "PRLV".rand(1000000,9999999);
+        $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+    }
+    if($mode_reglement == 5){
+        $num_reglement = "MDTC".rand(1000000,9999999);
+        $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
+                                    VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+    }
+
+
 
     if($facture_cls->balance($facture['idclient']) == 0)
     {
