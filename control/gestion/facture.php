@@ -315,7 +315,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
     if($mode_reglement == 1){$num_reglement = "VIR".rand(1000000,9999999);}
     if($mode_reglement == 2){$num_reglement = "CBM".rand(1000000,9999999);}
     if($mode_reglement == 3){
-        $paypal = new paypal('SetExpressCheckout', 'control/gestion/facture.php?action=process', 'index.php?view=cridip-ven-facture&error-cancel=true', $montant_reglement, $num_facture, '', '');
+        $paypal = new paypal('SetExpressCheckout', 'control/gestion/facture.php?action=process', 'index.php?view=cridip-ven-facture&error-cancel=true', $montant_reglement, $reference, '', '');
     }
     if($mode_reglement == 4){$num_reglement = "PRLV".rand(1000000,9999999);}
     if($mode_reglement == 5){$num_reglement = "MDTC".rand(1000000,9999999);}
