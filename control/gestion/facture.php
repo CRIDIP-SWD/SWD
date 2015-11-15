@@ -338,20 +338,16 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
 
 
 
-    if($facture_cls->balance($facture['idclient']) == 0)
+    /*if($facture_cls->balance($facture['idclient']) == 0)
     {
         $sql_up_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
-        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
-    }else{
-        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
     }
     if($facture_cls->balance($facture['idclient'] > 0))
     {
         $sql_up_facture = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
-        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
     }else{
         header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
-    }
+    }*/
 
 }
 if(isset($_GET['action']) && $_GET['action'] == 'process')
