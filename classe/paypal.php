@@ -187,7 +187,7 @@ class paypal
                 $sql_add_reglement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `montant_reglement`)
                 VALUES (NULL,'$idfacture','$date_reglement','3','PAYPAL CHECKOUT CB AUTH','$num_reglement','$total_ttc')")or die(mysql_error());
 
-                if($facture_cls->balance($idclient) == 0)
+                if($this->balance($idclient) == 0)
                 {
                     $sql_up_fct = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
                 }else{
@@ -206,5 +206,28 @@ class paypal
             }
             curl_close($curl);
         }
+    }
+    public function balance_facture($idclient)
+    {
+        $sql_facture = mysql_query("SELECT SUM(total_ht) FROM swd_facture WHERE idclient = '$idclient'")or die(mysql_error());
+        $facture = mysql_result($sql_facture, 0);
+        return round($facture, 2);
+
+    }
+
+    public function balance_reglement($idclient)
+    {
+        $sql_reglement = mysql_query("SELECT SUM(montant_reglement) FROM swd_reglement, swd_facture WHERE swd_reglement.idfacture = swd_facture.idfacture AND swd_facture.idclient = '$idclient'")or die(mysql_error());
+        $reglement = mysql_result($sql_reglement, 0);
+        return round($reglement, 2);
+    }
+
+    public function balance($idclient)
+    {
+        $facture = $this->balance_facture($idclient);
+        $rglt = $this->balance_reglement($idclient);
+
+        $calc = $rglt - $facture;
+        return round($calc, 2);
     }
 }
