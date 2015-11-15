@@ -352,6 +352,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'payment')
     include "../../inc/config.php";
     include "../../inc/classe.php";
 
-    $paypal = new paypal('DoExpressCheckoutPayment', '', '', $_GET['total'], $_GET['num_facture'], $_GET['token'], $_GET['PayerID']);
+    $paypal = new paypal('DoExpressCheckoutPayment', '', '', $_GET['total'], $_GET['reference'], $_GET['token'], $_GET['PayerID']);
 
 }

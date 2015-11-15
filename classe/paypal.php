@@ -15,12 +15,12 @@ class paypal
     private $version_api = "124.0";
 
 
-    public function __construct($method, $returnUrl, $cancelUrl, $total_ttc, $num_facture, $token, $PayerID)
+    public function __construct($method, $returnUrl, $cancelUrl, $total_ttc, $reference, $token, $PayerID)
     {
         switch($method)
         {
             case 'SetExpressCheckout':
-                $this->setExpressCheckout($method, $this->endpoint, ROOT.$returnUrl, ROOT.$cancelUrl, $total_ttc, $num_facture);
+                $this->setExpressCheckout($method, $this->endpoint, ROOT.$returnUrl, ROOT.$cancelUrl, $total_ttc, $reference);
                 break;
 
             case 'GetExpressCheckoutDetails':
@@ -28,14 +28,14 @@ class paypal
                 break;
 
             case 'DoExpressCheckoutPayment':
-                $this->DoExpressCheckoutPayment($method, $token, $total_ttc, $PayerID, $num_facture);
+                $this->DoExpressCheckoutPayment($method, $token, $total_ttc, $PayerID, $reference);
                 break;
         }
 
     }
-    private function setExpressCheckout($method ,$endpoint , $returnUrl, $cancelUrl, $total_ttc, $num_facture)
+    private function setExpressCheckout($method ,$endpoint , $returnUrl, $cancelUrl, $total_ttc, $reference)
     {
-        $sql_fct = mysql_query("SELECT * FROM swd_facture, client WHERE swd_facture.idclient = client.idclient AND reference = '$num_facture'")or die(mysql_error());
+        $sql_fct = mysql_query("SELECT * FROM swd_facture, client WHERE swd_facture.idclient = client.idclient AND reference = '$reference'")or die(mysql_error());
         $fct = mysql_fetch_array($sql_fct);
         $nom_client = $fct['nom_client'];
         $adresse = html_entity_decode($fct['adresse']);
@@ -55,7 +55,7 @@ class paypal
             'PAYMENTREQUEST_0_CURRENCYCODE'     => "EUR",
             'LOGOIMG'                           => ROOT.ASSETS.IMG."logo_invice.png",
             'CUSTOMERSERVICENUMBER'             => "0033251232424",
-            'PAYMENTREQUEST_0_DESC'             => $num_facture,
+            'PAYMENTREQUEST_0_DESC'             => $reference,
 
             'PAYMENTREQUEST_0_SHIPTONAME'       => $nom_client,
             'PAYMENTREQUEST_0_SHIPTOSTREET'     => $adresse,
@@ -131,8 +131,8 @@ class paypal
                 $total = $responseArray['AMT'];
                 $token = $responseArray['TOKEN'];
                 $PayerID = $responseArray['PAYERID'];
-                $num_facture = $responseArray['PAYMENTREQUEST_0_DESC'];
-                header("Location: ../gestion/facture.php?action=payment&total=$total&token=$token&PayerID=$PayerID&num_facture=$num_facture");
+                $reference = $responseArray['PAYMENTREQUEST_0_DESC'];
+                header("Location: ../gestion/facture.php?action=payment&total=$total&token=$token&PayerID=$PayerID&reference=$reference");
             }else{
                 var_dump($responseArray);
                 die();
@@ -141,7 +141,7 @@ class paypal
         }
     }
 
-    private function DoExpressCheckoutPayment($method, $token, $total_ttc, $PayerID, $num_facture)
+    private function DoExpressCheckoutPayment($method, $token, $total_ttc, $PayerID, $reference)
     {
         $params = array(
             'METHOD'                            => $method,
@@ -178,20 +178,20 @@ class paypal
             die();
         }else{
             if($responseArray['ACK'] == 'Success'){
-                $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE reference = '$num_facture'")or die(mysql_error());
+                $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE reference = '$reference'")or die(mysql_error());
                 $facture = mysql_fetch_array($sql_facture);
                 $idfacture = $facture['idfacture'];
                 $date_reglement = strtotime(date("d-m-Y 00:00:00"));
                 $num_reglement = $responseArray['PAYMENTINFO_0_TRANSACTIONID'];
                 $sql_add_reglement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `montant_reglement`)
-                VALUES (NULL,'$idfacture','$date_reglement','2','PAYPAL CHECKOUT CB AUTH','$num_reglement','$total_ttc')")or die(mysql_error());
+                VALUES (NULL,'$idfacture','$date_reglement','3','PAYPAL CHECKOUT CB AUTH','$num_reglement','$total_ttc')")or die(mysql_error());
 
                 $sql_up_fct = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
                 if($sql_add_reglement === TRUE AND $sql_up_fct === TRUE)
                 {
-                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$num_facture&add-paiement=true");
+                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&add-paiement=true");
                 }else{
-                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$num_facture&add-paiement=false");
+                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&add-paiement=false");
                 }
             }else{
                 var_dump($responseArray);
