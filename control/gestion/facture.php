@@ -321,7 +321,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
 
             'PAYMENTREQUEST_0_AMT'              => $montant_reglement,
             'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
-            'INVNUM'                            => $reference,
+            'PAYMENTREQUEST_n_INVNUM'           => $reference,
             'HDRIMG'                            => ROOT.ASSETS.IMG."logo_2x.png",
             'EMAIL'                             => $email,
             'BRANDNAME'                         => "CRIDIP SWD X1.00",
@@ -365,8 +365,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'active-paypal')
         $response = $paypal->request('DoExpressCheckoutPayment', $params);
         if($response)
         {
-            $num_reglement = $response['PAYMENTINFO_0_TRANSACTIONID'];
-            echo $num_reglement.' = OK';
+            //$num_reglement = $response['PAYMENTINFO_0_TRANSACTIONID'];
+            //$sql_add_paiement =
+            var_dump($response);
         }else{
             var_dump($paypal->errors);
         }
