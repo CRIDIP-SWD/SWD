@@ -198,9 +198,9 @@ class paypal
 
                 if($sql_add_reglement === TRUE AND $sql_up_fct === TRUE)
                 {
-                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&add-paiement=true");
+                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
                 }else{
-                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&add-paiement=false");
+                    header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
                 }
             }else{
                 var_dump($responseArray);
