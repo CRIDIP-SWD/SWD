@@ -132,7 +132,7 @@ class paypal
                 $token = $responseArray['TOKEN'];
                 $PayerID = $responseArray['PAYERID'];
                 $num_facture = $responseArray['PAYMENTREQUEST_0_DESC'];
-                header("Location: ../control/gestion/facture.php?action=payment&total=$total&token=$token&PayerID=$PayerID&num_facture=$num_facture");
+                header("Location: ../gestion/facture.php?action=payment&total=$total&token=$token&PayerID=$PayerID&num_facture=$num_facture");
             }else{
                 var_dump($responseArray);
                 die();
