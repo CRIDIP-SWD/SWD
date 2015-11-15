@@ -363,11 +363,12 @@ if(isset($_GET['action']) && $_GET['action'] == 'active-paypal')
             'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
         );
         $response = $paypal->request('DoExpressCheckoutPayment', $params);
+        var_dump($response);
         if($response)
         {
-            //$num_reglement = $response['PAYMENTINFO_0_TRANSACTIONID'];
-            //$sql_add_paiement =
-            var_dump($response);
+            $num_reglement = $response['PAYMENTINFO_0_TRANSACTIONID'];
+
+
         }else{
             var_dump($paypal->errors);
         }
