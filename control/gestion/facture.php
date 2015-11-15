@@ -222,7 +222,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-article-facture')
     $article = mysql_fetch_array($sql_article);
     $prix_vente_ht = $article['prix_vente_ht'];
 
-    $total_ligne = $prix_vente_ht + $qte;
+    $total_ligne = $prix_vente_ht * $qte;
     $total_ht = $total_ht + $total_ligne;
 
     $sql_update_facture = mysql_query("UPDATE swd_facture SET total_ht = '$total_ht' WHERE idfacture = '$idfacture'")or die(mysql_error());
