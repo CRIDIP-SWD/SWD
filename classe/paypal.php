@@ -178,15 +178,24 @@ class paypal
             die();
         }else{
             if($responseArray['ACK'] == 'Success'){
+                include('gestion/facture.php');
+                $facture_cls = new facture();
                 $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE reference = '$reference'")or die(mysql_error());
                 $facture = mysql_fetch_array($sql_facture);
                 $idfacture = $facture['idfacture'];
+                $idclient = $facture['idclient'];
                 $date_reglement = strtotime(date("d-m-Y 00:00:00"));
                 $num_reglement = $responseArray['PAYMENTINFO_0_TRANSACTIONID'];
                 $sql_add_reglement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `montant_reglement`)
                 VALUES (NULL,'$idfacture','$date_reglement','3','PAYPAL CHECKOUT CB AUTH','$num_reglement','$total_ttc')")or die(mysql_error());
 
-                $sql_up_fct = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+                if($facture_cls->balance($idclient) == 0)
+                {
+                    $sql_up_fct = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
+                }else{
+                    $sql_up_fct = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+                }
+
                 if($sql_add_reglement === TRUE AND $sql_up_fct === TRUE)
                 {
                     header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&add-paiement=true");
