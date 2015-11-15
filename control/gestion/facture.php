@@ -339,3 +339,39 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
     if($mode_reglement == 4){$num_reglement = "PRLV".rand(1000000,9999999);}
     if($mode_reglement == 5){$num_reglement = "MDTC".rand(1000000,9999999);}
 }
+if(isset($_GET['action']) && $_GET['action'] == 'active-paypal')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $paypal = new paypal();
+    $response = $paypal->request("GetExpressCheckoutDetails", array(
+        'TOKEN' => $_GET['token']
+    ));
+
+    if($response)
+    {
+        if($response['CHECKOUTSTATUS'] == 'PaymentActionCompleted'){
+            die('Ce paiement a déjà été validé');
+        }
+        $params = array(
+            'TOKEN' => $_GET['token'],
+            'PAYERID' => $_GET['PayerID'],
+            'PAYMENTACTION' => 'Sale',
+
+            'PAYMENTREQUEST_0_AMT'              => $_GET['AMT'],
+            'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
+        );
+        $response = $paypal->request('DoExpressCheckoutPayment', $params);
+        if($response)
+        {
+            $num_reglement = $response['PAYMENTINFO_0_TRANSACTIONID'];
+            echo $num_reglement.' = OK';
+        }else{
+            var_dump($paypal->errors);
+        }
+    }else{
+        var_dump($paypal->errors);
+        die();
+    }
+}
