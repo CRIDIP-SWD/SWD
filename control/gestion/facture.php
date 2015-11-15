@@ -359,7 +359,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'active-paypal')
             'PAYERID' => $_GET['PayerID'],
             'PAYMENTACTION' => 'Sale',
 
-            'PAYMENTREQUEST_0_AMT'              => $_GET['AMT'],
+            'PAYMENTREQUEST_0_AMT'              => $_GET['PAYMENTREQUEST_0_AMT'],
             'PAYMENTREQUEST_0_CURRENCYCODE'     => 'EUR',
         );
         $response = $paypal->request('DoExpressCheckoutPayment', $params);
