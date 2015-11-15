@@ -367,7 +367,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'active-paypal')
         if($response)
         {
             $num_reglement = $response['PAYMENTINFO_0_TRANSACTIONID'];
-
+            var_dump($response);
 
         }else{
             var_dump($paypal->errors);
