@@ -319,6 +319,25 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
     }
     if($mode_reglement == 4){$num_reglement = "PRLV".rand(1000000,9999999);}
     if($mode_reglement == 5){$num_reglement = "MDTC".rand(1000000,9999999);}
+
+    $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
+                                    VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
+
+    if($facture_cls->balance($facture['idclient']) <= 0)
+    {
+        $sql_up_facture = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
+    }
+    if($facture_cls->balance($facture['idclient'] >= 0.01))
+    {
+        $sql_up_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=add-paiement");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=add-paiement");
+    }
+
 }
 if(isset($_GET['action']) && $_GET['action'] == 'process')
 {
