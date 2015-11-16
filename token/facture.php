@@ -125,7 +125,7 @@ include "../inc/header.php";
 /////////////////////////////////////////////////////////////////////
 -->
 		
-	<?php include "inc/script.php"; ?>
+	<?php include "../inc/script.php"; ?>
 
 </body>
 </html>
