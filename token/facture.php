@@ -29,7 +29,12 @@ $idfacture = $facture['idfacture'];
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
-											<a href="#"> <img alt="" src="assets/img/logo_invice.png"> </a>
+											<a href="#"> <img alt="" src="../assets/img/logo_invice.png"> </a><br>
+											<?php
+											if($facture['etat_facture'] == 1){echo "<button type=\"button\" class=\"btn disabled bg-danger-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-spinner fa-spin\"></i> IMPAYE</button>";}
+											if($facture['etat_facture'] == 2){echo "<button type=\"button\" class=\"btn disabled bg-warning-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-warning\"></i> PARTIELLEMENT PAYE</button>";}
+											if($facture['etat_facture'] == 3){echo "<button type=\"button\" class=\"btn disabled bg-success-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-check\"></i> PAYE</button>";}
+											?>
 										</div>
 										<div class="col-sm-6 align-lg-right">
 											<h3>FACTURE NO. <?= $reference; ?></h3>
@@ -42,11 +47,7 @@ $idfacture = $facture['idfacture'];
 														<span class="label label-success"><?= date("d-m-Y", $facture['date_echeance']); ?></span>
 													<?php } ?>
 												</span><br>
-											<?php
-											if($facture['etat_facture'] == 1){echo "<button type=\"button\" class=\"btn disabled bg-danger-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-spinner fa-spin\"></i> IMPAYE</button>";}
-											if($facture['etat_facture'] == 2){echo "<button type=\"button\" class=\"btn disabled bg-warning-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-warning\"></i> PARTIELLEMENT PAYE</button>";}
-											if($facture['etat_facture'] == 3){echo "<button type=\"button\" class=\"btn disabled bg-success-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-check\"></i> PAYE</button>";}
-											?>
+
 										</div>
 									</div>
 									<hr>
