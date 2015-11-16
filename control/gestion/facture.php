@@ -423,7 +423,23 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-paiement')
     $idreglement = $_GET['idreglement'];
     $reference = $_GET['reference'];
 
+    $sql_reglement = mysql_query("SELECT * FROM swd_reglement WHERE idreglement = '$idreglement'")or die(mysql_error());
+    $reglement = mysql_fetch_array($sql_reglement);
+    $idfacture = $reglement['idfacture'];
+
+    $sql_facture = mysql_query("SELECT * FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
+    $facture = mysql_fetch_array($sql_facture);
+
+
+
     $sql_delete_reglement = mysql_query("DELETE FROM swd_reglement WHERE idreglement = '$idreglement'")or die(mysql_error());
+
+    if($facture['total_ht'] == $facture_cls->total_reglement($idfacture))
+    {
+        $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
+    }else{
+        $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '2' WHERE idfacture = '$idfacture'")or die(mysql_error());
+    }
 
     if($sql_delete_reglement === TRUE)
     {
