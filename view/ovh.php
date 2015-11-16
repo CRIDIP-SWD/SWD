@@ -14,15 +14,27 @@ include "inc/header.php";
 						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
 				</ol>
 				<!-- //breadcrumb-->
-
-				<div id="content">
 					<?php if(!isset($_GET['sub'])){ ?>
 
 					<?php } ?>
-					<?php if(isset($_GET['sub']) && $_GET['view'] == 'view_domaine'){ ?>
+					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_domaine'){ ?>
 
 					<?php } ?>
-				</div>
+					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_hebergement'){ ?>
+
+					<?php } ?>
+					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_exchange'){ ?>
+
+					<?php } ?>
+					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_office'){ ?>
+
+					<?php } ?>
+					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_vps'){ ?>
+
+					<?php } ?>
+					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_license'){ ?>
+
+					<?php } ?>
 				<!-- //content-->
 								
 		</div>
