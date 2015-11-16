@@ -20,23 +20,71 @@ include "inc/header.php";
 				</ol>
 			<?php } ?>
 			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_domaine'){ ?>
-
-					<?php } ?>
+				<?php
+				$nom_sector = "OVH";
+				$nom_page = "DOMAINE";
+				?>
+				<ol class="breadcrumb">
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+				</ol>
+			<?php } ?>
 			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_hebergement'){ ?>
-
-					<?php } ?>
+				<?php
+				$nom_sector = "OVH";
+				$nom_page = "HEBERGEMENT";
+				?>
+				<ol class="breadcrumb">
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+				</ol>
+			<?php } ?>
 			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_exchange'){ ?>
-
-					<?php } ?>
+				<?php
+				$nom_sector = "OVH";
+				$nom_page = "EXCHANGE";
+				?>
+				<ol class="breadcrumb">
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+				</ol>
+			<?php } ?>
 			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_office'){ ?>
-
-					<?php } ?>
+				<?php
+				$nom_sector = "OVH";
+				$nom_page = "OFFICE";
+				?>
+				<ol class="breadcrumb">
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+				</ol>
+			<?php } ?>
 			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_vps'){ ?>
-
-					<?php } ?>
+				<?php
+				$nom_sector = "OVH";
+				$nom_page = "VPS";
+				?>
+				<ol class="breadcrumb">
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+				</ol>
+			<?php } ?>
 			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_license'){ ?>
-
-					<?php } ?>
+				<?php
+				$nom_sector = "OVH";
+				$nom_page = "LICENSE";
+				?>
+				<ol class="breadcrumb">
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+				</ol>
+			<?php } ?>
 				<!-- //content-->
 								
 		</div>
