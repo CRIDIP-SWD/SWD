@@ -415,3 +415,20 @@ if(isset($_GET['action']) && $_GET['action'] == 'payment')
     $paypal = new paypal('DoExpressCheckoutPayment', '', '', $_GET['total'], $_GET['reference'], $_GET['token'], $_GET['PayerID']);
 
 }
+if(isset($_GET['action']) && $_GET['action'] == 'supp-paiement')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idreglement = $_GET['idreglement'];
+    $reference = $_GET['reference'];
+
+    $sql_delete_reglement = mysql_query("DELETE FROM swd_reglement WHERE idreglement = '$idreglement'")or die(mysql_error());
+
+    if($sql_delete_reglement === TRUE)
+    {
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&success=supp-paiement");
+    }else{
+        header("Location: ../../index.php?view=gestion&sub=facture&data=view_facture&reference=$reference&error=supp-paiement");
+    }
+}
