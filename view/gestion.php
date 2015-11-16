@@ -4303,7 +4303,7 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
-<?php if(isset($_GET['success']) && $_GET['success'] == 'add-facture'){ ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-facture'){ ?>
 	<script type="text/javascript">
 		$(function(){
 			toastr.success("La facture à été supprimé", "FACTURE",{
