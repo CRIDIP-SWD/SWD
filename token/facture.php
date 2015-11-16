@@ -31,6 +31,7 @@ $idfacture = $facture['idfacture'];
 									<div class="row">
 										<div class="col-sm-6">
 											<a href="#"> <img alt="" src="../assets/img/logo_invice.png"> </a><br>
+											<img src="../assets/img/dot-bar.png" />
 											<?php
 											if($facture['etat_facture'] == 1){echo "<button type=\"button\" class=\"btn disabled bg-danger-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-spinner fa-spin\"></i> IMPAYE</button>";}
 											if($facture['etat_facture'] == 2){echo "<button type=\"button\" class=\"btn disabled bg-warning-gradient\" style=\"font-size: 25px\"><i class=\"fa fa-warning\"></i> PARTIELLEMENT PAYE</button>";}
