@@ -4283,6 +4283,97 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La facture <strong><?= $_GET['reference']; ?></strong> à été créé", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'edit-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La facture <strong><?= $_GET['reference']; ?></strong> à été modifié", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La facture à été supprimé", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'envoie-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("La facture <strong><?= $_GET['reference']; ?></strong> à été envoyer par mail au client", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'envoie-rappel'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un rappel pour la facture <strong><?= $_GET['reference']; ?></strong> à été envoyer au client.", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-article-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un article à été ajouté", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'edit-article-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un article à été modifié", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'supp-article-facture'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un article à été supprimé", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-reglement'){ ?>
+	<script type="text/javascript">
+		$(function(){
+			toastr.success("Un réglement à été ajouté à la facture <strong><?= $_GET['reference']; ?></strong>", "FACTURE",{
+				progressBar: true,
+				positionClass: "toast-bottom-right"
+			})
+		})
+	</script>
+<?php } ?>
+
 
 <!-- ////////////////////////////////////////////////////////////////-->
 
