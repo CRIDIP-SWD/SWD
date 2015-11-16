@@ -4363,7 +4363,7 @@ include "inc/header.php";
 		})
 	</script>
 <?php } ?>
-<?php if(isset($_GET['success']) && $_GET['success'] == 'add-reglement'){ ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-paiement'){ ?>
 	<script type="text/javascript">
 		$(function(){
 			toastr.success("Un réglement à été ajouté à la facture <strong><?= $_GET['reference']; ?></strong>", "FACTURE",{
