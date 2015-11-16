@@ -3689,7 +3689,6 @@ include "inc/header.php";
 													<td></td>
 												</tr>
 											<?php } ?>
-											?>
 											</tbody>
 											<tfoot>
 											<tr>
