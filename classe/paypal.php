@@ -188,7 +188,10 @@ class paypal
                 $sql_add_reglement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `montant_reglement`)
                 VALUES (NULL,'$idfacture','$date_reglement','3','PAYPAL CHECKOUT CB AUTH','$num_reglement','$total_ttc')")or die(mysql_error());
 
-                if($total_ht == $total_ttc)
+                $sql = mysql_query("SELECT SUM(montant_reglement) FROM swd_reglement WHERE idfacture = '$idfacture'")or die(mysql_error());
+                $data = mysql_result($sql, 0);
+
+                if($total_ht == $data)
                 {
                     $sql_up_fct = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
                 }else{

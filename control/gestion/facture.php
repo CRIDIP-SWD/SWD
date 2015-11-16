@@ -317,7 +317,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         $num_reglement = "VIR".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
-        if($facture['total_ht'] == $montant_reglement)
+        if($facture['total_ht'] == $facture_cls->total_reglement($idfacture))
         {
             $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
         }else{
@@ -334,7 +334,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         $num_reglement = "CBM".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
-        if($facture['total_ht'] == $montant_reglement)
+        if($facture['total_ht'] == $facture_cls->total_reglement($idfacture))
         {
             $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
         }else{
@@ -354,7 +354,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         $num_reglement = "PRLV".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
-        if($facture['total_ht'] == $montant_reglement)
+        if($facture['total_ht'] == $facture_cls->total_reglement($idfacture))
         {
             $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
         }else{
@@ -371,7 +371,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reglement')
         $num_reglement = "MDTC".rand(1000000,9999999);
         $sql_add_paiement = mysql_query("INSERT INTO `swd_reglement`(`idreglement`, `idfacture`, `date_reglement`, `mode_reglement`, `nom_reglement`, `num_reglement`, `banque_reglement`, `montant_reglement`)
                                     VALUES (NULL,'$idfacture','$date_reglement','$mode_reglement','$nom_reglement','$num_reglement','$banque_reglement','$montant_reglement')")or die(mysql_error());
-        if($facture['total_ht'] == $montant_reglement)
+        if($facture['total_ht'] == $facture_cls->total_reglement($idfacture))
         {
             $sql_update_facture = mysql_query("UPDATE swd_facture SET etat_facture = '3' WHERE idfacture = '$idfacture'")or die(mysql_error());
         }else{
