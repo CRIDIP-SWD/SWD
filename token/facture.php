@@ -20,7 +20,7 @@ $idfacture = $facture['idfacture'];
 									<div class="row">
 										<div class="col-md-12">
 											<div class="pull-right">
-												<button type="button" class="btn" onclick="window.location.href='<?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?>'"><i class="fa fa-file-pdf-o"></i> Imprimer le devis (pdf)</button>
+												<button type="button" class="btn" onclick="window.location.href='<?= ROOT,TOKEN; ?>pdf/facture.php?reference=<?= $reference; ?>'"><i class="fa fa-file-pdf-o"></i> Imprimer le devis (pdf)</button>
 												<?php if($facture_cls->total_reglement($idfacture) != $facture['total_ht']){?>
 													<button type="button" class="btn bg-danger" data-toggle="modal" data-target="#add-paiement"><i class="fa fa-credit-card"></i> Payer la facture</button>
 												<?php } ?>
@@ -1026,6 +1026,61 @@ $idfacture = $facture['idfacture'];
 
 								</div>
 								<!-- //invoice -->
+							</div>
+							<div id="add-paiement" data-width="700" class="modal fade">
+								<div class="modal-header bg-success-gradient">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+									<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un réglement</h4>
+								</div>
+								<!-- //modal-header-->
+								<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+									<input type="hidden" name="idfacture" value="<?= $idfacture; ?>" />
+									<input type="hidden" name="date_reglement" value="<?= $date_jour; ?>" />
+									<input type="hidden" name="nom_reglement" value="<?= $facture['nom_client']; ?>" />
+									<div class="modal-body">
+
+										<div class="form-group">
+											<label class="control-label col-md-3">Mode de réglement</label>
+											<div class="col-md-9">
+												<select  class="selectpicker form-control rounded" name="mode_reglement" data-size="10" data-live-search="true">
+													<option Value="2">CB</option>
+													<option value="3">Paypal</option>
+												</select>
+											</div>
+										</div>
+
+
+										<div class="form-group">
+											<label class="control-label col-md-3">Banque du réglement</label>
+											<div class="col-md-9">
+												<select  class="selectpicker form-control rounded" name="banque_reglement" data-size="10" data-live-search="true">
+													<option value="">NEANT</option>
+													<option value="Paypal" data-content="<i class='fa fa-paypal'></i> Paypal"></option>
+													<?php
+													$sql_banque = mysql_query("SELECT * FROM swift")or die(mysql_error());
+													while($banque = mysql_fetch_array($sql_banque))
+													{
+														?>
+														<option value="<?= $banque['bank']; ?>" data-content="<img src='<?= SYNCHRONUS; ?>bank/<?= $banque['swift']; ?>.jpg' width='20' height='20' /> <?= $banque['bank']; ?>"></option>
+													<?php } ?>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-md-3">Montant du réglement</label>
+											<div class="col-md-9">
+												<input type="text" class="form-control" name="montant_reglement" />
+											</div>
+										</div>
+
+
+									</div>
+									<!-- //modal-body-->
+									<div class="modal-footer bg-success-gradient">
+										<button type="submit" class="btn btn-default pull-right" name="action" value="add-reglement"><i class="fa fa-check"></i> Valider</button>
+									</div>
+								</form>
 							</div>
 						</section>
 					</div>
