@@ -27,6 +27,7 @@ $idfacture = $facture['idfacture'];
 											</div>
 										</div>
 									</div>
+									<hr>
 									<div class="row">
 										<div class="col-sm-6">
 											<a href="#"> <img alt="" src="../assets/img/logo_invice.png"> </a><br>
