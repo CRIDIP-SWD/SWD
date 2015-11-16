@@ -1,7 +1,7 @@
 <?php
 $nom_sector = "";
 $nom_page = "Bienvenue";
-include "inc/header.php";
+include "../inc/header.php";
 ?>
 <body class="leftMenu nav-collapse">
 <div id="wrapper">
