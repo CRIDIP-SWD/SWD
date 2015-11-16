@@ -3686,7 +3686,9 @@ include "inc/header.php";
 													<td class="text-center"><?= $reglement['nom_reglement']; ?></td>
 													<td class="text-center"><img src="<?= SYNCHRONUS; ?>bank/<?= $gen_cls->data_banque($reglement['banque_reglement']); ?>.jpg" /> <?= $reglement['banque_reglement']; ?></td>
 													<td class="text-right"><?= number_format(round($reglement['montant_reglement'], 2), 2, ',', ' ')." €"; ?></td>
-													<td></td>
+													<td>
+														<button type="button" class="btn" onclick="window.location.href='<?= ROOT,CONTROL; ?>gestion/facture.php&action=supp-paiement&idreglement=<?= $reglement['idreglement']; ?>'"><i class="fa fa-remove text-danger"></i></button>
+													</td>
 												</tr>
 											<?php } ?>
 											</tbody>
