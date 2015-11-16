@@ -22,7 +22,7 @@ $idfacture = $facture['idfacture'];
 											<div class="pull-right">
 												<button type="button" class="btn btn-xs" onclick="window.location.href='<?= ROOT,TOKEN; ?>facture.php?reference=<?= $reference; ?>'"><i class="fa fa-file-pdf-o"></i> Imprimer le devis (pdf)</button>
 												<?php if($facture_cls->total_reglement($idfacture) != $facture['total_ht']){?>
-													<button type="button" class="btn btn-xs bg-info" data-toggle="modal" data-target="#add-paiement"><i class="fa fa-credit-card"></i> Payer la facture</button>
+													<button type="button" class="btn btn-xs bg-danger" data-toggle="modal" data-target="#add-paiement"><i class="fa fa-credit-card"></i> Payer la facture</button>
 												<?php } ?>
 											</div>
 										</div>
