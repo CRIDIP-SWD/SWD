@@ -8,5 +8,5 @@ $domaine2 = $ovh2->get("/domain");
 $domaine3 = $ovh3->get("/domain");
 
 foreach ($domaine1 as $k => $domaine) {
-    echo $domaine[0];
+    echo $domaine;
 }
