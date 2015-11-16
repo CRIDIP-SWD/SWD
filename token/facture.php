@@ -2,6 +2,9 @@
 $nom_sector = "";
 $nom_page = "Bienvenue";
 include "../inc/header.php";
+$reference = $_GET['reference'];
+$sql_facture = mysql_query("SELECT * FROM swd_facture, client WHERE swd_facture.idclient = client.idclient AND reference = '$reference'")or die(mysql_error());
+$facture = mysql_fetch_array($sql_facture);
 ?>
 <body class="leftMenu nav-collapse">
 <div id="wrapper">
