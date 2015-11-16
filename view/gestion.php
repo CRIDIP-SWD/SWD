@@ -3663,6 +3663,41 @@ include "inc/header.php";
 										</table>
 										<button type="button" class="btn btn-success" data-toggle="modal" data-target="#add-article-facture"><i class="fa fa-plus"></i> Ajouter un article</button>
 										<br><br>
+										<table class="table table-bordered">
+											<thead>
+											<tr>
+												<th class="text-center">Numéro de Transaction</th>
+												<th class="text-center">Date de Réglement</th>
+												<th class="text-center">Nom du Réglement</th>
+												<th class="text-center">Banque</th>
+												<th class="text-right">Montant du Réglement</th>
+												<th class="text-center">Action</th>
+											</tr>
+											</thead>
+											<tbody>
+											<?php
+											$sql_reglement = mysql_query("SELECT * FROM swd_reglement, swift WHERE swd_reglement.banque_reglement = swift.bank AND idfacture = '$idfacture'")or die(mysql_error());
+											while($reglement = mysql_fetch_array($sql_reglement))
+											{
+											?>
+												<tr>
+													<td class="text-center"><?= $reglement['num_reglement']; ?></td>
+													<td class="text-center"><?= date("d/m/Y", $reglement['date_reglement']); ?></td>
+													<td class="text-center"><?= $reglement['nom_reglement']; ?></td>
+													<td class="text-center"><img src="<?= SYNCHRONUS; ?>bank/<?= $reglement['swift']; ?>.jpg" /> <?= $reglement['nom_banque']; ?></td>
+													<td class="text-right"><?= number_format(round($reglement['montant_reglement'], 2), 2, ',', ' ')." €"; ?></td>
+													<td></td>
+												</tr>
+											<?php } ?>
+											?>
+											</tbody>
+											<tfoot>
+											<tr>
+												<td colspan="3" class="text-right" style="font-weight: 700;">Total des réglements</td>
+												<td class="text-right"><?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?></td>
+											</tr>
+											</tfoot>
+										</table>
 
 									</div>
 									<!-- //invoice -->
