@@ -50,10 +50,11 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-facture')
 
     $idfacture = $_GET['idfacture'];
 
+    $sql_delete_rglt = mysql_query("DELETE FROM swd_reglement WHERE idfacture = '$idfacture'")or die(mysql_error());
     $sql_delete_ligne = mysql_query("DELETE FROM swd_facture_ligne WHERE idfacture = '$idfacture'")or die(mysql_error());
     $sql_delete_facture = mysql_query("DELETE FROM swd_facture WHERE idfacture = '$idfacture'")or die(mysql_error());
 
-    if($sql_delete_ligne === TRUE AND $sql_delete_facture === TRUE)
+    if($sql_delete_ligne === TRUE AND $sql_delete_facture === TRUE AND $sql_delete_rglt === TRUE)
     {
         header("Location: ../../index.php?view=gestion&sub=facture&success=supp-facture");
     }else{
