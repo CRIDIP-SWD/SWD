@@ -3693,7 +3693,7 @@ include "inc/header.php";
 											<tfoot>
 											<tr>
 												<td colspan="3" class="text-right" style="font-weight: 700;">Total des réglements</td>
-												<td class="text-right"><?= number_format($facture['total_ht'], 2, ',', ' ')." €"; ?></td>
+												<td class="text-right"><?= number_format(round($facture_cls->total_reglement($idfacture), 2), 2, ',', ' ')." €"; ?></td>
 											</tr>
 											</tfoot>
 										</table>

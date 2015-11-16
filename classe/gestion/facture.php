@@ -111,4 +111,11 @@ class facture
         return $data;
     }
 
+    public function total_reglement($idfacture)
+    {
+        $sql = mysql_query("SELECT SUM(montant_reglement) FROM swd_reglement WHERE idfacture = '$idfacture'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
 }
