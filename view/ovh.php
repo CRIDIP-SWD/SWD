@@ -8,31 +8,33 @@ include "inc/header.php";
 	<?php include "inc/headerbar.php"; ?>
 		<div id="main">
 
+			<?php if(!isset($_GET['sub'])){ ?>
+				<?php
+				$nom_sector = "OVH";
+				$nom_page = "ACCUEIL";
+				?>
 				<ol class="breadcrumb">
-						<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
-						<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
-						<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
+					<li><a href="#"><?= NOM_LOGICIEL; ?></a></li>
+					<?php if(!empty($nom_sector)){echo "<li><a href='#'>".$nom_sector."</a></li>";} ?>
+					<?php if(!empty($nom_page)){echo "<li><a href='#'>".$nom_page."</a></li>";} ?>
 				</ol>
-				<!-- //breadcrumb-->
-					<?php if(!isset($_GET['sub'])){ ?>
+			<?php } ?>
+			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_domaine'){ ?>
 
 					<?php } ?>
-					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_domaine'){ ?>
+			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_hebergement'){ ?>
 
 					<?php } ?>
-					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_hebergement'){ ?>
+			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_exchange'){ ?>
 
 					<?php } ?>
-					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_exchange'){ ?>
+			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_office'){ ?>
 
 					<?php } ?>
-					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_office'){ ?>
+			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_vps'){ ?>
 
 					<?php } ?>
-					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_vps'){ ?>
-
-					<?php } ?>
-					<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_license'){ ?>
+			<?php if(isset($_GET['sub']) && $_GET['view'] == 'web_license'){ ?>
 
 					<?php } ?>
 				<!-- //content-->
