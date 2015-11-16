@@ -3676,7 +3676,7 @@ include "inc/header.php";
 											</thead>
 											<tbody>
 											<?php
-											$sql_reglement = mysql_query("SELECT * FROM swd_reglement, swift WHERE swd_reglement.banque_reglement = swift.bank AND idfacture = '$idfacture'")or die(mysql_error());
+											$sql_reglement = mysql_query("SELECT * FROM swd_reglement WHERE idfacture = '$idfacture'")or die(mysql_error());
 											while($reglement = mysql_fetch_array($sql_reglement))
 											{
 											?>
@@ -3684,7 +3684,7 @@ include "inc/header.php";
 													<td class="text-center"><?= $reglement['num_reglement']; ?></td>
 													<td class="text-center"><?= date("d/m/Y", $reglement['date_reglement']); ?></td>
 													<td class="text-center"><?= $reglement['nom_reglement']; ?></td>
-													<td class="text-center"><img src="<?= SYNCHRONUS; ?>bank/<?= $reglement['swift']; ?>.jpg" /> <?= $reglement['banque_reglement']; ?></td>
+													<td class="text-center"><img src="<?= SYNCHRONUS; ?>bank/<?= $gen_cls->data_banque($reglement['banque_reglement']); ?>.jpg" /> <?= $reglement['banque_reglement']; ?></td>
 													<td class="text-right"><?= number_format(round($reglement['montant_reglement'], 2), 2, ',', ' ')." €"; ?></td>
 													<td></td>
 												</tr>

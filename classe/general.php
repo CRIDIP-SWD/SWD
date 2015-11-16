@@ -37,4 +37,11 @@ class general
         $data = mysql_result($sql, 0);
         return $data;
     }
+
+    public function data_banque($nom_banque)
+    {
+        $sql_banque = mysql_query("SELECT swift FROM swift WHERE bank = '$nom_banque'")or die(mysql_error());
+        $data = mysql_fetch_array($sql_banque);
+        return $data;
+    }
 }
