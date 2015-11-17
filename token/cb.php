@@ -81,37 +81,37 @@ include "../inc/config.php";
 -->
 
 <!-- Jquery Library -->
-<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>jquery.min.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>jquery.ui.min.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>jquery.min.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>jquery.ui.min.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>bootstrap/bootstrap.min.js"></script>
 <!-- Modernizr Library For HTML5 And CSS3 -->
-<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>modernizr/modernizr.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>mmenu/jquery.mmenu.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>styleswitch.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>modernizr/modernizr.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>mmenu/jquery.mmenu.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>styleswitch.js"></script>
 <!-- Library 10+ Form plugins-->
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>form/form.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>form/form.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js"></script>
 <!-- Datetime plugins -->
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datetime/datetime.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datetime/datetime.js"></script>
 <!-- Library Chart-->
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>chart/chart.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>chart/chart.js"></script>
 <!-- Library  5+ plugins for bootstrap -->
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>pluginsForBS/pluginsForBS.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>pluginsForBS/pluginsForBS.js"></script>
 <!-- Library 10+ miscellaneous plugins -->
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>miscellaneous/miscellaneous.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>miscellaneous/miscellaneous.js"></script>
 <!-- Library Themes Customize-->
-<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>caplet.custom.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>caplet.custom.js"></script>
 
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.date.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.numeric.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.phone.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.regex.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.date.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.numeric.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.phone.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.regex.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
 
 <!-- APPEL DATATABLE -->
 <script type="text/javascript">

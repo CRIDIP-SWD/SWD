@@ -1130,8 +1130,62 @@ $idfacture = $facture['idfacture'];
 //////////     JAVASCRIPT  LIBRARY     //////////
 /////////////////////////////////////////////////////////////////////
 -->
-		
-	<?php include "../inc/script.php"; ?>
+
+<!-- Jquery Library -->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>jquery.min.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>jquery.ui.min.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>bootstrap/bootstrap.min.js"></script>
+<!-- Modernizr Library For HTML5 And CSS3 -->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>modernizr/modernizr.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>mmenu/jquery.mmenu.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>styleswitch.js"></script>
+<!-- Library 10+ Form plugins-->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>form/form.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js"></script>
+<!-- Datetime plugins -->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datetime/datetime.js"></script>
+<!-- Library Chart-->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>chart/chart.js"></script>
+<!-- Library  5+ plugins for bootstrap -->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>pluginsForBS/pluginsForBS.js"></script>
+<!-- Library 10+ miscellaneous plugins -->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>miscellaneous/miscellaneous.js"></script>
+<!-- Library Themes Customize-->
+<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>caplet.custom.js"></script>
+
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.date.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.numeric.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.phone.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.regex.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
+
+<!-- APPEL DATATABLE -->
+<script type="text/javascript">
+	$('#listing-client').dataTable();
+	$('#listing-devis').dataTable();
+	$('#listing-facture').dataTable();
+	$('#listing-projet').dataTable();
+	$('#listing-license').dataTable();
+	$('#listing-ticket').dataTable();
+	$('#listing-famille').dataTable();
+	$('#listing-article').dataTable();
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#masked_phone').inputmask("mask", {"mask": "0033999999999"});
+		$('#masked_cp').inputmask("mask", {"mask": "99999"});
+		$('#date_devis').inputmask("mask", {"mask": "99-99-9999"});
+	});
+</script>
+<script type="text/javascript">
+	// Call CkEditor
+	//CKEDITOR.replace( 'short_description', {startupFocus : false, uiColor: '#FFFFFF'});
+</script>
 
 </body>
 </html>
