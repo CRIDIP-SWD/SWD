@@ -47,16 +47,32 @@ include "../inc/config.php";
 								<div class="panel-body">
 									<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
 
+										<div class="form-group">
+											<label class="control-label">Numéro de Carte Bancaire</label>
+											<div>
+												<input type="text" id="credit_card" class="form-control rounded" >
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label">Date d'expiration</label>
+											<div>
+												<input type="text" id="expire" class="form-control rounded">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label">CVC</label>
+											<div>
+												<input type="text" class="form-control rounded">
+											</div>
+										</div>
 									</form>
 								</div>
 							</section>
 						</div>
 						<div class="col-md-3">
 							<section class="panel">
-								<header class="panel-heading sm">
-									<h3>Paiement Par Carte Bancaire</h3>
-									<span class="pull-right"><img src="http://www.boutique-aboweb.com/echos-judiciaires/www/images/paiement/ogone.png" /></span>
-								</header>
 								<div class="panel-body">
 
 								</div>
@@ -129,6 +145,9 @@ include "../inc/config.php";
 		$('#masked_phone').inputmask("mask", {"mask": "0033999999999"});
 		$('#masked_cp').inputmask("mask", {"mask": "99999"});
 		$('#date_devis').inputmask("mask", {"mask": "99-99-9999"});
+		$('#credit_card').inputmask("mask", {"mask": "9999-9999-9999-9999"});
+		$('#expire').inputmask("mask", {"mask": "99/99"});
+
 	});
 </script>
 <script type="text/javascript">

@@ -467,7 +467,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-paiement-client')
 
     if($mode_reglement == 2)
     {
-        header("Location: http://".ROOT.TOKEN."cb.php?idfacture=$idfacture&date_reglement=$date_reglement&nom_reglement=$nom_reglement&banque_reglement=$banque_reglement&montant_reglement=$montant_reglement&reference=$reference");
+        header("Location: ".ROOT.TOKEN."cb.php?idfacture=$idfacture&date_reglement=$date_reglement&nom_reglement=$nom_reglement&banque_reglement=$banque_reglement&montant_reglement=$montant_reglement&reference=$reference");
     }
 
     if($mode_reglement == 3)
