@@ -15,20 +15,20 @@ include "../inc/config.php";
 	<title><?= NOM_LOGICIEL; ?> - <?= $nom_page; ?></title>
 
 	<!-- Favicons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?= ROOTS,ASSETS,ICO; ?>apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= ROOTS,ASSETS,ICO; ?>apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= ROOTS,ASSETS,ICO; ?>apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="<?= ROOTS,ASSETS,ICO; ?>apple-touch-icon-57-precomposed.png">
-	<link rel="shortcut icon" href="<?= ROOTS,ASSETS,ICO; ?>favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?= ROOT,ASSETS,ICO; ?>apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= ROOT,ASSETS,ICO; ?>apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= ROOT,ASSETS,ICO; ?>apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="<?= ROOT,ASSETS,ICO; ?>apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="<?= ROOT,ASSETS,ICO; ?>favicon.ico">
 
 	<!-- CSS Stylesheet-->
-	<link type="text/css" rel="stylesheet" href="<?= ROOTS,ASSETS,CSS; ?>bootstrap/bootstrap.min.css" />
-	<link type="text/css" rel="stylesheet" href="<?= ROOTS,ASSETS,CSS; ?>bootstrap/bootstrap-themes.css" />
-	<link type="text/css" rel="stylesheet" href="<?= ROOTS,ASSETS,CSS; ?>style.css" />
+	<link type="text/css" rel="stylesheet" href="<?= ROOT,ASSETS,CSS; ?>bootstrap/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="<?= ROOT,ASSETS,CSS; ?>bootstrap/bootstrap-themes.css" />
+	<link type="text/css" rel="stylesheet" href="<?= ROOT,ASSETS,CSS; ?>style.css" />
 
 	<!-- Styleswitch if  you don't chang theme , you can delete -->
-	<link type="text/css" rel="alternate stylesheet" media="screen" title="style4" href="<?= ROOTS,ASSETS,CSS; ?>styleTheme4.css" />
-	<link rel="stylesheet" href="<?= ROOTS,ASSETS,PLUGINS; ?>toastr/toastr.css">
+	<link type="text/css" rel="alternate stylesheet" media="screen" title="style4" href="<?= ROOT,ASSETS,CSS; ?>styleTheme4.css" />
+	<link rel="stylesheet" href="<?= ROOT,ASSETS,PLUGINS; ?>toastr/toastr.css">
 
 </head>
 <body class="leftMenu nav-collapse">
@@ -81,37 +81,37 @@ include "../inc/config.php";
 -->
 
 <!-- Jquery Library -->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>jquery.min.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>jquery.ui.min.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>jquery.min.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>jquery.ui.min.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>bootstrap/bootstrap.min.js"></script>
 <!-- Modernizr Library For HTML5 And CSS3 -->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>modernizr/modernizr.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>mmenu/jquery.mmenu.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>styleswitch.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>modernizr/modernizr.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>mmenu/jquery.mmenu.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>styleswitch.js"></script>
 <!-- Library 10+ Form plugins-->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>form/form.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>form/form.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>ckeditor/ckeditor.js"></script>
 <!-- Datetime plugins -->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datetime/datetime.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datetime/datetime.js"></script>
 <!-- Library Chart-->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>chart/chart.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>chart/chart.js"></script>
 <!-- Library  5+ plugins for bootstrap -->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>pluginsForBS/pluginsForBS.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>pluginsForBS/pluginsForBS.js"></script>
 <!-- Library 10+ miscellaneous plugins -->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>miscellaneous/miscellaneous.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>miscellaneous/miscellaneous.js"></script>
 <!-- Library Themes Customize-->
-<script type="text/javascript" src="<?= ROOTS,ASSETS,JS; ?>caplet.custom.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,JS; ?>caplet.custom.js"></script>
 
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.date.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.numeric.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.phone.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/inputmask.regex.extensions.js"></script>
-<script type="text/javascript" src="<?= ROOTS,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>datable/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>toastr/toastr.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.date.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.numeric.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.phone.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/inputmask.regex.extensions.js"></script>
+<script type="text/javascript" src="<?= ROOT,ASSETS,PLUGINS; ?>inputmask/jquery.inputmask.js"></script>
 
 <!-- APPEL DATATABLE -->
 <script type="text/javascript">
