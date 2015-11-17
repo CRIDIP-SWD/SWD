@@ -475,3 +475,21 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-paiement-client')
         $paypal = new paypal('SetExpressCheckout', 'control/gestion/facture.php?action=process', 'index.php?view=cridip-ven-facture&error-cancel=true', $montant_reglement, $reference, '', '');
     }
 }
+
+if(isset($_POST['action']) && $_POST['action'] == 'valide-paiement-cb')
+{
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
+    $idfacture = $_POST['idfacture'];
+    $date_reglement = $_POST['date_reglement'];
+    $nom_reglement = $_POST['nom_reglement'];
+    $banque_reglement = $_POST['banque_reglement'];
+    $montant_reglement = $_POST['montant_reglement'];
+    $reference = $_POST['reference'];
+    $num_carte = $_POST['num_carte'];
+    $date_carte = $_POST['date_carte'];
+    $cvc_carte = $_POST['cvc_carte'];
+
+    $ogone_cls->paiement_shell($reference, $montant_reglement, $num_carte, $date_carte, $cvc_carte);
+}

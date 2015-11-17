@@ -2,6 +2,13 @@
 $nom_sector = "";
 $nom_page = "Bienvenue";
 include "../inc/config.php";
+
+$idfacture = $_GET['idfacture'];
+$date_reglement = $_GET['date_reglement'];
+$nom_reglement = $_GET['nom_reglement'];
+$banque_reglement = $_GET['banque_reglement'];
+$montant_reglement = $_GET['montant_reglement'];
+$reference = $_GET['reference'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,31 +51,42 @@ include "../inc/config.php";
 									<h3>Paiement Par Carte Bancaire</h3>
 									<span class="pull-right"><img src="http://www.boutique-aboweb.com/echos-judiciaires/www/images/paiement/ogone.png" class="img-responsive" width="120"/></span>
 								</header>
-								<div class="panel-body">
-									<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+								<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
+									<input type="hidden" name="idfacture" value="<?= $idfacture; ?>" />
+									<input type="hidden" name="date_reglement" value="<?= $date_reglement; ?>" />
+									<input type="hidden" name="nom_reglement" value="<?= $nom_reglement; ?>" />
+									<input type="hidden" name="banque_reglement" value="<?= $banque_reglement; ?>" />
+									<input type="hidden" name="montant_reglement" value="<?= $montant_reglement; ?>" />
+									<input type="hidden" name="reference" value="<?= $reference; ?>" />
+									<div class="panel-body">
 
-										<div class="form-group">
-											<label class="control-label">Numéro de Carte Bancaire</label>
-											<div>
-												<input type="text" id="credit_card" class="form-control rounded" >
-											</div>
-										</div>
 
-										<div class="form-group">
-											<label class="control-label">Date d'expiration</label>
-											<div>
-												<input type="text" id="expire" class="form-control rounded">
+											<div class="form-group">
+												<label class="control-label">Numéro de Carte Bancaire</label>
+												<div>
+													<input type="text" id="credit_card" name="num_carte" class="form-control rounded" >
+												</div>
 											</div>
-										</div>
 
-										<div class="form-group">
-											<label class="control-label">CVC</label>
-											<div>
-												<input type="text" class="form-control rounded">
+											<div class="form-group">
+												<label class="control-label">Date d'expiration</label>
+												<div>
+													<input type="text" id="expire" name="date_carte" class="form-control rounded">
+												</div>
 											</div>
-										</div>
-									</form>
-								</div>
+
+											<div class="form-group">
+												<label class="control-label">CVC</label>
+												<div>
+													<input type="text" name="cvc_carte" class="form-control rounded">
+												</div>
+											</div>
+
+									</div>
+									<div class="panel-footer">
+										<button type="submit" class="btn btn-success" name="action" value="valide-paiement-cb"><i class="fa fa-check-square-o"></i> Payer votre facture</button>
+									</div>
+								</form>
 							</section>
 						</div>
 						<div class="col-md-3">
