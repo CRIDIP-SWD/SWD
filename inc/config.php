@@ -19,6 +19,7 @@ DEFINE("TOKEN", "token/");
 DEFINE("VENDOR", "vendor/");
 DEFINE("CLASSE", "classe/");
 DEFINE("SYNCHRONUS", "http://synchronus-media.cridip.com/gwcswd/");
+header('Access-Control-Allow-Origin: '.ROOTS);
 
 //DATE
 $date_jour = date("d-m-Y");
