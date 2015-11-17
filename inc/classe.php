@@ -36,6 +36,9 @@ $gen_cls = new general();
 
 require_once dirname(__DIR__)."/classe/paypal.php";
 
+require_once dirname(__DIR__)."/classe/ogone.php";
+$ogone_cls = new ogone();
+
 
 
 require_once dirname(__DIR__)."/classe/gestion/client.php";

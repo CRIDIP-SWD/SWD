@@ -1055,7 +1055,6 @@ $idfacture = $facture['idfacture'];
 											<div class="col-md-9">
 												<select  class="selectpicker form-control rounded" name="banque_reglement" data-size="10" data-live-search="true">
 													<option value="">NEANT</option>
-													<option value="Paypal" data-content="<i class='fa fa-paypal'></i> Paypal"></option>
 													<?php
 													$sql_banque = mysql_query("SELECT * FROM swift")or die(mysql_error());
 													while($banque = mysql_fetch_array($sql_banque))
