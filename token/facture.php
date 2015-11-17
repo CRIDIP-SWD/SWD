@@ -1,6 +1,8 @@
 <?php
 $nom_sector = "";
 $nom_page = "Bienvenue";
+include "../inc/config.php";
+include "../inc/classe.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
