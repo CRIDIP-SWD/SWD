@@ -6,6 +6,7 @@ DEFINE("BUILD_LOGICIEL", "1236");
 
 //DEFINE LINK
 DEFINE("ROOT", "http://swd.cridip.com/");
+DEFINE("ROOTS", "https://swd.cridip.com/");
 DEFINE("ASSETS", "assets/");
 DEFINE("CSS", "css/");
 DEFINE("ICO", "ico/");
