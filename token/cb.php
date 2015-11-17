@@ -42,7 +42,7 @@ include "../inc/config.php";
 							<section class="panel">
 								<header class="panel-heading sm">
 									<h3>Paiement Par Carte Bancaire</h3>
-									<span class="pull-right"><img src="http://www.boutique-aboweb.com/echos-judiciaires/www/images/paiement/ogone.png" /></span>
+									<span class="pull-right"><img src="http://www.boutique-aboweb.com/echos-judiciaires/www/images/paiement/ogone.png" class="img-responsive" width="120"/></span>
 								</header>
 								<div class="panel-body">
 									<form class="form-horizontal" action="<?= ROOT,CONTROL; ?>gestion/facture.php" method="post">
