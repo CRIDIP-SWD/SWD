@@ -451,6 +451,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-paiement')
 
 if(isset($_POST['action']) && $_POST['action'] == 'add-paiement-client')
 {
+    include "../../inc/config.php";
+    include "../../inc/classe.php";
+
     $idfacture = $_POST['idfacture'];
     $date_reglement = $_POST['date_reglement'];
     $nom_reglement = $_POST['nom_reglement'];
