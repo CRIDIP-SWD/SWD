@@ -1,7 +1,7 @@
 <?php
 $nom_sector = "";
 $nom_page = "Bienvenue";
-
+include "../inc/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
