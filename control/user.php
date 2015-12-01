@@ -9,7 +9,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'connexion')
         $sha_pass = sha1($pass);
 
         // on teste si une entrée de la base contient ce couple login / pass
-        $sql_verif_login = mysql_query("SELECT count(*) FROM utilisateur WHERE login = '$login' AND password = '$sha_pass'")or die(mysql_error());
+        $sql_verif_login = mysql_query("SELECT count(*) FROM user WHERE email = '$login' AND password = '$sha_pass'")or die(mysql_error());
         $data = mysql_result($sql_verif_login, 0);
 
 
@@ -19,9 +19,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'connexion')
             $_SESSION['login'] = $_POST['login'];
             $login = $_POST['login'];
 
-            $sql_user = mysql_query("SELECT * FROM utilisateur WHERE login = '$login'")or die(mysql_error());
+            $sql_user = mysql_query("SELECT * FROM user WHERE email = '$login'")or die(mysql_error());
             $user = mysql_fetch_array($sql_user);
-            $sql_up_user = mysql_query("UPDATE utilisateur SET connect = '1', last_login = '$date_jour_heure_strt' WHERE login = '$login'")or die(mysql_error());
+            $sql_up_user = mysql_query("UPDATE user SET connect = '2', last_connect = '$date_jour_heure_strt' WHERE email = '$login'")or die(mysql_error());
             if($user['active_totp'] == 1)
             {
                 header('Location: ../index.php?view=login&sub=auth-o&login=$login');
