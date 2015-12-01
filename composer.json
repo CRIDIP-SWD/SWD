@@ -1,7 +1,7 @@
 {
   "name": "vendor_name/package_name",
   "description": "description_text",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "proprietary",
   "authors": [
     {
@@ -10,9 +10,7 @@
     }
   ],
   "require": {
-    "ovh/ovh": "dev-master",
-    "dropbox/dropbox-sdk": "v1.1.6",
-    "ifsnop/mysqldump-php": "dev-master",
-    "paypal/rest-api-sdk-php": "v1.6.1"
+    "ovh/ovh": "v1.1.1",
+    "mikehaertl/phpwkhtmltopdf": "2.1.1"
   }
 }
