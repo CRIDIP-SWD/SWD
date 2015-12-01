@@ -6,7 +6,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'connexion')
     if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['password']) && !empty($_POST['password']))) {
         $login = $_POST['login'];
         $pass = $_POST['password'];
-        $sha_pass = sha1($pass);
+        $sha_pass = sha1($login."_".$pass);
 
         // on teste si une entrée de la base contient ce couple login / pass
         $sql_verif_login = mysql_query("SELECT count(*) FROM user WHERE email = '$login' AND password = '$sha_pass'")or die(mysql_error());
