@@ -1268,7 +1268,7 @@ include "inc/header.php";
 											while($client = mysql_fetch_array($sql_client))
 											{
 												?>
-												<option value="<?= $client['idclient']; ?>"><?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_societe']."</strong> - <i>".$client['nom_client']."</i>";}else{echo $client['nom_client'];} ?></option>
+												<option value="<?= $client['idclient']; ?>"><?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_societe']."</strong> - <i>".$client['nom']." ".$client['prenom']."</i>";}else{echo $client['nom']." ".$client['prenom'];} ?></option>
 											<?php } ?>
 										</select>
 									</div>
