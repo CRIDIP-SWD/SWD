@@ -1403,7 +1403,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">NOM DE DOMAINE</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='4' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='1' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 												?>
@@ -1478,7 +1478,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">HEBERGEMENT</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='5' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='2' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -1553,7 +1553,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">EMAIL</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='6' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='3' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -1628,7 +1628,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">SERVEUR DEDIE</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='7' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='4' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -1703,7 +1703,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">VPS</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='8' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='5' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -1778,7 +1778,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">RESEAU & INFRASTRUCTURE</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='9' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='6' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -1853,7 +1853,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">OFFRE INTERNET</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='10' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='7' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -1928,7 +1928,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">VOIP</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='11' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='8' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -2003,7 +2003,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">SMS & FAX</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='12' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='9' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -2078,7 +2078,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">SERVICES</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='14' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='10' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -2153,7 +2153,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">LICENSE</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='15' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='11' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
@@ -2228,7 +2228,7 @@ include "inc/header.php";
 													<td colspan="5" style="background-color: #00a1f3; color: white; font-weight: 700;">MATERIEL</td>
 												</tr>
 												<?php
-												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='16' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
+												$sql_ligne = mysql_query("SELECT * FROM swd_devis_ligne, swd_article WHERE swd_devis_ligne.idarticle = swd_article.idarticle AND swd_article.famille='12' AND swd_devis_ligne.iddevis = '$iddevis'")or die(mysql_error());
 												while($ligne = mysql_fetch_array($sql_ligne))
 												{
 													?>
