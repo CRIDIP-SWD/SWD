@@ -169,15 +169,15 @@ include "inc/header.php";
 											</thead>
 											<tbody align="center">
 											<?php
-											$sql_client = mysql_query("SELECT * FROM client ORDER BY nom_client ASC")or die(mysql_error());
+											$sql_client = mysql_query("SELECT * FROM client ORDER BY nom_entreprise ASC")or die(mysql_error());
 											while($client = mysql_fetch_array($sql_client))
 											{
 												?>
 												<tr onclick="window.location.href='index.php?view=gestion&sub=client&data=view_client&num_client=<?= $client['num_client']; ?>'">
 													<td><?= $client['num_client']; ?></td>
 													<td>
-														<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom_client']."</strong><br>";} ?>
-														<?= $client['nom_client']; ?>
+														<?php if(!empty($client['nom_societe'])){echo "<strong>".$client['nom']." ".$client['prenom']."</strong><br>";} ?>
+														<?= $client['nom']; ?> <?= $client['prenom']; ?>
 													</td>
 													<td>
 														<?= html_entity_decode($client['adresse']); ?><br>
@@ -185,7 +185,6 @@ include "inc/header.php";
 													</td>
 													<td>
 														<i class="fa fa-phone"></i>: <?= $client['telephone']; ?><br>
-														<i class="fa fa-envelope"></i>: <?= $client['email']; ?>
 													</td>
 												</tr>
 											<?php } ?>
