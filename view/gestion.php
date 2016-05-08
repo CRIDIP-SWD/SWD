@@ -228,9 +228,11 @@ include "inc/header.php";
 											<button type="button" class="btn btn-success"><i class="fa fa-phone"></i></button>
 										</div>
 										<div class="profile-status">
-											<a class="btn"> 14,548 <small>Sales</small></a>
-											<a class="btn"> 254 <small> Follower</small></a>
-											<a class="btn"> 254 <small> Follower</small></a>
+											<a class="btn"> 5 <small>Devis</small></a>
+											<a class="btn"> 3 <small> Factures</small></a>
+											<a class="btn"> 0 <small> Projets</small></a>
+											<a class="btn"> 1 <small> Licenses</small></a>
+											<a class="btn"> 0 <small> Tickets</small></a>
 										</div>
 									</section>
 								</div>
