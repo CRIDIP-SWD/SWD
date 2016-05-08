@@ -220,11 +220,12 @@ include "inc/header.php";
 												<?php if(!empty($client['nom_societe'])){ ?>
 													<span><strong><?= $client['nom_societe']; ?></strong></span>
 												<?php }else{ ?>
-													<strong><?= $client['nom_client']; ?></strong>
+													<strong><?= $client['nom']; ?></strong>
 												<?php } ?>
 											</div>
-											<a class="btn btn-theme" title="Add friends"><i class="fa fa-plus"></i> friends</a>
-											<a class="btn btn-theme-inverse" ><i class="fa fa-comments"></i> messages</a>
+											<button type="button" class="btn btn-info"><i class="fa fa-edit"></i> Editer le client</button>
+											<button type="button" class="btn btn-info"><i class="fa fa-remove"></i> Supprimer le client</button>
+											<button type="button" class="btn btn-success"><i class="fa fa-phone"></i></button>
 										</div>
 										<div class="profile-status">
 											<a class="btn"> 14,548 <small>Sales</small></a>
