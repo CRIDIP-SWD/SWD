@@ -230,6 +230,7 @@ include "inc/header.php";
 										<div class="profile-status">
 											<a class="btn"> 14,548 <small>Sales</small></a>
 											<a class="btn"> 254 <small> Follower</small></a>
+											<a class="btn"> 254 <small> Follower</small></a>
 										</div>
 									</section>
 								</div>
