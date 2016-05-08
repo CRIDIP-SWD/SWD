@@ -218,7 +218,9 @@ include "inc/header.php";
 											<div>
 												<img alt="" src="assets/img/avatar6.png" class="circle">
 												<?php if(!empty($client['nom_societe'])){ ?>
-													<span><strong><?= $client['nom_societe']; ?></strong><br><i><?= $client['nom_client']; ?></i></span>
+													<span><strong><?= $client['nom_societe']; ?></strong></span>
+												<?php }else{ ?>
+													<strong><?= $client['nom_client']; ?></strong>
 												<?php } ?>
 											</div>
 											<a class="btn btn-theme" title="Add friends"><i class="fa fa-plus"></i> friends</a>
