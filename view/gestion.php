@@ -240,9 +240,22 @@ include "inc/header.php";
 
 								<div class="col-sm-4">
 									<section class="profile-about">
-										<h3>About</h3>
+										<h3>BALANCE</h3>
 										<hr>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non leo convallis nibh tristique commodo.</p>
+										<table style="width: 100%;">
+											<tr>
+												<td>Total Facturer:</td>
+												<td>0,00 €</td>
+											</tr>
+											<tr>
+												<td>Total Payer:</td>
+												<td>0,00 €</td>
+											</tr>
+											<tr>
+												<td>BALANCE</td>
+												<td>0,00 €</td>
+											</tr>
+										</table>
 									</section>
 								</div>
 								<!-- //content > row > col-lg-3 -->
