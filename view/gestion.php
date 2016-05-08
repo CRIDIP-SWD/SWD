@@ -212,7 +212,7 @@ include "inc/header.php";
 					<div id="main">
 						<div id="overview">
 							<div class="row">
-								<div class="col-sm-9">
+								<div class="col-sm-8">
 									<section class="profile-cover">
 										<div class="profile-avatar">
 											<div>
@@ -238,7 +238,7 @@ include "inc/header.php";
 								</div>
 								<!-- //content > row > col-sm-9 -->
 
-								<div class="col-sm-3">
+								<div class="col-sm-4">
 									<section class="profile-about">
 										<h3>About</h3>
 										<hr>
