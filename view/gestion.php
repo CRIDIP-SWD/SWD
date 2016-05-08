@@ -224,7 +224,7 @@ include "inc/header.php";
 												<?php } ?>
 											</div>
 											<button type="button" class="btn btn-info"><i class="fa fa-edit"></i> Editer le client</button>
-											<button type="button" class="btn btn-info"><i class="fa fa-remove"></i> Supprimer le client</button>
+											<button type="button" class="btn btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
 											<button type="button" class="btn btn-success"><i class="fa fa-phone"></i></button>
 										</div>
 										<div class="profile-status">
