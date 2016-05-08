@@ -223,7 +223,7 @@ include "inc/header.php";
 													<strong><?= $client['nom']; ?></strong>
 												<?php } ?>
 											</div>
-											<button type="button" class="btn btn-info"><i class="fa fa-edit"></i> Editer le client</button>
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-client-modal"><i class="fa fa-edit"></i> Editer le client</button>
 											<button type="button" class="btn btn-danger"><i class="fa fa-remove"></i> Supprimer le client</button>
 											<button type="button" class="btn btn-success"><i class="fa fa-phone"></i></button>
 										</div>
@@ -250,7 +250,20 @@ include "inc/header.php";
 							<!-- //row-->
 						</div>
 					</div>
-
+					<div id="edit-client-modal" data-width="700" class="modal fade">
+						<div class="modal-header bg-success-gradient">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+							<h4 class="modal-title"><i class="fa fa-plus"></i> Ajouter un client</h4>
+						</div>
+						<!-- //modal-header-->
+						<div class="modal-body">
+							<p>One fine body&hellip;</p>
+						</div>
+						<!-- //modal-body-->
+						<div class="modal-footer bg-success-gradient">
+							<button type="submit" class="btn btn-default pull-right"><i class="fa fa-check"></i> Valider</button>
+						</div>
+					</div>
 				<?php } ?>
 				<div id="add-client" data-width="700" class="modal fade">
 					<div class="modal-header bg-success-gradient">
