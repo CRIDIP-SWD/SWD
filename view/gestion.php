@@ -244,16 +244,16 @@ include "inc/header.php";
 										<hr>
 										<table style="width: 100%;">
 											<tr>
-												<td>Total Facturer:</td>
-												<td>0,00 €</td>
+												<td style="width: 50%;">Total Facturer:</td>
+												<td style="width: 50%;">0,00 €</td>
 											</tr>
 											<tr>
-												<td>Total Payer:</td>
-												<td>0,00 €</td>
+												<td style="width: 50%;">Total Payer:</td>
+												<td style="width: 50%;">0,00 €</td>
 											</tr>
 											<tr>
-												<td>BALANCE</td>
-												<td>0,00 €</td>
+												<td style="width: 50%;">BALANCE</td>
+												<td style="width: 50%;">0,00 €</td>
 											</tr>
 										</table>
 									</section>
